@@ -13,5 +13,8 @@ public class Speler {
     private String naam;
     private Kaart[] kaarten;
     // Constructors
+    public Speler(String naam) {
+        this.naam = naam;
+    }
     // Methods
 }
