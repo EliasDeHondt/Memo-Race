@@ -12,5 +12,8 @@ public class Pad {
     private List<Integer> posities;
     private Pion pion;
     // Constructors
+    public Pad() {
+        this.posities = new LinkedList<>();
+    }
     // Methods
 }

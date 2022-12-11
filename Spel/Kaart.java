@@ -9,6 +9,7 @@ import java.util.*;
 public class Kaart {
     // Classes
     public enum types {
+        A, B, C, D, E, F, G, H,
     }
     // Attributes
     private boolean afbeelding;

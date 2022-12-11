@@ -16,6 +16,8 @@ public class Speelbord {
     private final Scanner key = new Scanner(System.in);
     // Constructors
     public Speelbord() {
+        this.kaart = new LinkedList<>();
+        this.spelers = new LinkedList<>();
     }
     // Methods
     public void start() {
@@ -35,10 +37,16 @@ public class Speelbord {
         }
     }
     public void playNewGame() {
-        this.MakePlayer();
+        this.newPlayer();
     }
-    public void MakePlayer() {
-        System.out.print("║\n╠[How many players?]\n║\n╠➤ ");
+    public void newPlayer() {
+        System.out.print(
+                """
+                ║
+                ╠[How many players?]
+                ║
+                """);
+        System.out.print("╠➤ ");
         int aantal = key.nextInt();
         for (int i = 0; aantal >= i; i++) {
             System.out.printf(
@@ -48,8 +56,8 @@ public class Speelbord {
                     ║
                     """,i+1);
             System.out.print("╠➤ ");
-            String newName = key.nextLine();
-            this.spelers.add(new Speler(newName));
+            key.nextLine();
+            this.spelers.add(new Speler(key.nextLine()));
         }
     }
     public void exit() {
@@ -64,15 +72,19 @@ public class Speelbord {
         System.out.printf(
                 """
                 ║
-                ╠═════╦═════╦═════╦═════╗
-                ║  %s  ║  %s  ║  %s  ║  %s  ║
-                ╠═════╬═════╬═════╬═════╣
-                ║  %s  ║  %s  ║  %s  ║  %s  ║
-                ╠═════╬═════╬═════╬═════╣
-                ║  %s  ║  %s  ║  %s  ║  %s  ║
-                ╠═════╬═════╬═════╬═════╣
-                ║  %s  ║  %s  ║  %s  ║  %s  ║
-                ╠═════╩═════╩═════╩═════╝
+                ╠═════╦═════╦═════╦═════╦═════╦═════╗
+                ║  GO  ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║
+                ╠═════╬═════╬═════╬═════╬═════╬═════╣
+                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ╠═════╬═════╬═════╬═════╬═════╬═════╣
+                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ╠═════╬═════╬═════╬═════╬═════╬═════╣
+                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ╠═════╬═════╬═════╬═════╬═════╬═════╣
+                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ╠═════╬═════╬═════╬═════╬═════╬═════╣
+                ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║
+                ╠═════╩═════╩═════╩═════╩═════╩═════╝
                 """);
     }
 }
