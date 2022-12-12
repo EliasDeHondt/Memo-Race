@@ -34,7 +34,15 @@ public class Kaart {
     public boolean isOmgedraaid() { // Controleert of de kaart is omgedraaid. Ja of nee?
         return this.omgedraaid;
     }
-
+    @Override // Override van equals
+    public boolean equals(Object tempObject) {
+        Kaart tempKaar = (Kaart)tempObject;
+        return this.type == tempKaar.type;
+    }
+    @Override // Override van hashCode
+    public int hashCode() {
+        return type;
+    }
     @Override
     public String toString() {
         return String.format("%s",this.type);

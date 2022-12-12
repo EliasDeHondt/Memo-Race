@@ -23,8 +23,11 @@ public class Speelbord {
         // Vult de lijst kaarten volledig met Kaarten. Altijd twee dezelfde.
         for (int i = 0; i <= 8; i++ ){
             Kaart newKaart = new Kaart();
-            this.kaarten.add(newKaart);
-            this.kaarten.add(newKaart);
+            if (!this.kaarten.contains(newKaart)) {
+                this.kaarten.add(newKaart);
+                this.kaarten.add(newKaart);
+            } else i--;
+            if (this.kaarten.size() == 16) break; // Dit if statement stopt de for loop, anders blijft het eindeloos doorgaan.
         }
         // Zet alle kaarten In de lijst (kaarten) op een random plaats.
         Collections.shuffle(this.kaarten);
@@ -83,7 +86,6 @@ public class Speelbord {
     public void printBord() {
         System.out.printf(
                 """
-                ║
                 ╠═════╦═════╦═════╦═════╦═════╦═════╗
                 ║ GO! ║  %d  ║  %d  ║  %d  ║  %d  ║     ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
