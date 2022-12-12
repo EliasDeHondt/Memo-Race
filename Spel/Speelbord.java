@@ -69,28 +69,31 @@ public class Speelbord {
         System.exit(0);
     }
     public void printBord() {
-        System.out.printf(
+        Integer[] nr_Array = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+        List<Integer> nr = new ArrayList<>(Arrays.asList(nr_Array));
+        pad = new Pad(nr);
+
+        System.out.print(
                 """
                 ║
-                ╠═════╦═════╦═════╦═════╦═════╦═════╗     
-                ║ GO! ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║
+                ╠═════╦═════╦═════╦═════╦═════╦═════╗
+                ║ GO! ║ """);
+        for (int i = 0; i < 5; i++) {
+            System.out.printf("  %d  ║",pad.getPosities().get(i));
+        }
+        System.out.println();
+        int k = 13;
+        for (int j = 5; j < 9; j++) {
+            System.out.println("╠═════╬═════╬═════╬═════╬═════╬═════╣");
+            System.out.printf("║ %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║\n",
+                    pad.getPosities().get(j+k),"A","B","C","D",pad.getPosities().get(j));
+            k--; k--;
+        }
+        System.out.printf(
+                """
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
-                ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
-                ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
-                ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
-                ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║
+                ║ %d  ║ %d  ║ %d  ║ %d  ║ %d  ║ %d  ║
                 ╠═════╩═════╩═════╩═════╩═════╩═════╝
-                """,
-                1,1,1,1,1,
-                1,"A","B","C","D",1,
-                1,"A","B","C","D",1,
-                1,"A","B","C","D",1,
-                1,"A","B","C","D",1,
-                1,1,1,1,1,1); // Temp [Is voor te testen]
+                """,15,14,13,12,11,10); // Minder Temp, maar nog steeds Temp
     }
 }
