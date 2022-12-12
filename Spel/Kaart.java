@@ -7,13 +7,36 @@ import java.util.*;
  * 08/12/2022
  */
 public class Kaart {
-    // Classes
-    public enum types {
-        A, B, C, D, E, F, G, H,
-    }
     // Attributes
-    private boolean afbeelding;
+    private boolean omgedraaid;
     private char type;
     // Constructors
+    public Kaart() {
+        this.omgedraaid = false;
+        Random random = new Random();
+        switch (random.nextInt(0, 8)) { // Neemt een random kaart [A-H | 0-7].
+            case 0 -> this.type = 'A';
+            case 1 -> this.type = 'B';
+            case 2 -> this.type = 'C';
+            case 3 -> this.type = 'D';
+            case 4 -> this.type = 'E';
+            case 5 -> this.type = 'F';
+            case 6 -> this.type = 'G';
+            case 7 -> this.type = 'H';
+        }
+    }
     // Methods
+    public void omdraaien() { // Als de kaart is omgedraaid, wordt het terug. Op zijn standaard positie gezet. Of omgedraaid.
+        if (this.omgedraaid) {
+            this.omgedraaid = false;
+        } else this.omgedraaid = true;
+    }
+    public boolean isOmgedraaid() { // Controleert of de kaart is omgedraaid. Ja of nee?
+        return this.omgedraaid;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s",this.type);
+    }
 }

@@ -10,14 +10,25 @@ public class Speelbord {
     // Attributes
     private Random dobbelsteen;
     private Pad pad;
-    private List<Kaart> kaart;
+    private List<Kaart> kaarten;
     private List<Speler> spelers;
     private final Scanner key = new Scanner(System.in);
     // Constructors
     public Speelbord() {
-        dobbelsteen = new Random();
-        pad = new Pad();
-        this.kaart = new LinkedList<>();
+        // Initializing [dobbelsteen]
+        this.dobbelsteen = new Random();
+        // Initializing [pad]
+        this.pad = new Pad();
+        this.kaarten = new LinkedList<>();
+        // Vult de lijst kaarten volledig met Kaarten. Altijd twee dezelfde.
+        for (int i = 0; i <= 8; i++ ){
+            Kaart newKaart = new Kaart();
+            this.kaarten.add(newKaart);
+            this.kaarten.add(newKaart);
+        }
+        // Zet alle kaarten In de lijst (kaarten) op een random plaats.
+        Collections.shuffle(this.kaarten);
+        // Initializing [spelers]
         this.spelers = new LinkedList<>();
     }
     // Methods
@@ -88,10 +99,10 @@ public class Speelbord {
                 ╠═════╩═════╩═════╩═════╩═════╩═════╝
                 """,
                 this.pad.getPosities().get(0),this.pad.getPosities().get(1),this.pad.getPosities().get(2),this.pad.getPosities().get(3),
-                this.pad.getPosities().get(15),this.kaart.get(0),this.kaart.get(1),this.kaart.get(2),this.kaart.get(3),this.pad.getPosities().get(4),
-                this.pad.getPosities().get(14),this.kaart.get(4),this.kaart.get(5),this.kaart.get(6),this.kaart.get(7),this.pad.getPosities().get(5),
-                this.pad.getPosities().get(13),this.kaart.get(8),this.kaart.get(9),this.kaart.get(10),this.kaart.get(11),this.pad.getPosities().get(6),
-                this.pad.getPosities().get(12),this.kaart.get(12),this.kaart.get(13),this.kaart.get(14),this.kaart.get(15),this.pad.getPosities().get(7),
+                this.pad.getPosities().get(15),this.kaarten.get(0),this.kaarten.get(1),this.kaarten.get(2),this.kaarten.get(3),this.pad.getPosities().get(4),
+                this.pad.getPosities().get(14),this.kaarten.get(4),this.kaarten.get(5),this.kaarten.get(6),this.kaarten.get(7),this.pad.getPosities().get(5),
+                this.pad.getPosities().get(13),this.kaarten.get(8),this.kaarten.get(9),this.kaarten.get(10),this.kaarten.get(11),this.pad.getPosities().get(6),
+                this.pad.getPosities().get(12),this.kaarten.get(12),this.kaarten.get(13),this.kaarten.get(14),this.kaarten.get(15),this.pad.getPosities().get(7),
                 this.pad.getPosities().get(11),this.pad.getPosities().get(10),this.pad.getPosities().get(9),this.pad.getPosities().get(8));
     }
 }

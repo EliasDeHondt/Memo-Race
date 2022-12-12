@@ -3,36 +3,41 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="179.5" y="-96.5">Spel.Pion</node>
-    <node x="415.0" y="209.0">Spel.Speelbord</node>
-    <node x="144.0" y="68.0">Spel.Pad</node>
-    <node x="-106.0" y="68.0">Spel.Kaart</node>
-    <node x="-65.0" y="274.5">Spel.Kaart.types</node>
+    <node x="131.0" y="97.0">Spel.Speelbord</node>
+    <node x="370.0" y="-97.0">Spel.Pion</node>
+    <node x="153.5" y="-97.0">Spel.Speler</node>
+    <node x="-105.16666666666669" y="-84.0">Spel.Pad</node>
   </nodes>
   <notes />
   <edges>
+    <edge source="Spel.Speelbord" target="Spel.Speler" relationship="CREATE">
+      <point x="15.0" y="-97.0" />
+      <point x="15.0" y="71.0" />
+    </edge>
     <edge source="Spel.Pad" target="Spel.Pion" relationship="TO_ONE">
       <point x="-0.0" y="-58.0" />
-      <point x="-0.0" y="71.0" />
+      <point x="0.8333333333333144" y="-114.5" />
+      <point x="440.5" y="-114.5" />
+      <point x="-0.0" y="-71.0" />
     </edge>
     <edge source="Spel.Speelbord" target="Spel.Pad" relationship="TO_ONE">
-      <point x="-0.0" y="-97.0" />
-      <point x="521.0" y="126.0" />
+      <point x="-106.0" y="-0.0" />
+      <point x="0.8333333333333144" y="194.0" />
+      <point x="-0.0" y="58.0" />
+    </edge>
+    <edge source="Spel.Speelbord" target="Spel.Speler" relationship="TO_MANY">
+      <point x="0.0" y="-97.0" />
+      <point x="0.0" y="71.0" />
+    </edge>
+    <edge source="Spel.Speelbord" target="Spel.Pad" relationship="CREATE">
+      <point x="-101.0" y="-97.0" />
+      <point x="136.0" y="-26.0" />
       <point x="106.0" y="-0.0" />
     </edge>
-    <edge source="Spel.Kaart.types" target="Spel.Kaart" relationship="INNER_CLASS">
-      <point x="0.0" y="-31.5" />
-      <point x="0.0" y="58.0" />
-    </edge>
-    <edge source="Spel.Speelbord" target="Spel.Kaart" relationship="TO_MANY">
-      <point x="-106.0" y="-49.0" />
-      <point x="7.0" y="257.0" />
-      <point x="15.0" y="58.0" />
-    </edge>
   </edges>
-  <settings layout="Hierarchic Compact" zoom="1.5" showDependencies="true" x="521.0" y="306.0" />
+  <settings layout="Hierarchic Compact" zoom="1.5" showDependencies="true" x="0.0" y="194.0" />
   <SelectedNodes>
-    <node>Spel.Speelbord</node>
+    <node>Spel.Pad</node>
   </SelectedNodes>
   <Categories>
     <Category>Constructors</Category>
