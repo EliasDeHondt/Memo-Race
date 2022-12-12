@@ -7,31 +7,16 @@ import java.util.*;
  * 08/12/2022
  */
 public class Speelbord {
+    // Classes
     // Attributes
     private Random dobbelsteen;
     private Pad pad;
-    private List<Kaart> kaarten;
+    private List<Kaart> kaart;
     private List<Speler> spelers;
     private final Scanner key = new Scanner(System.in);
     // Constructors
     public Speelbord() {
-        // Initializing [dobbelsteen]
-        this.dobbelsteen = new Random();
-        // Initializing [pad]
-        this.pad = new Pad();
-        this.kaarten = new LinkedList<>();
-        // Vult de lijst kaarten volledig met Kaarten. Altijd twee dezelfde.
-        for (int i = 0; i <= 8; i++ ){
-            Kaart newKaart = new Kaart();
-            if (!this.kaarten.contains(newKaart)) {
-                this.kaarten.add(newKaart);
-                this.kaarten.add(newKaart);
-            } else i--;
-            if (this.kaarten.size() == 16) break; // Dit if statement stopt de for loop, anders blijft het eindeloos doorgaan.
-        }
-        // Zet alle kaarten In de lijst (kaarten) op een random plaats.
-        Collections.shuffle(this.kaarten);
-        // Initializing [spelers]
+        this.kaart = new LinkedList<>();
         this.spelers = new LinkedList<>();
     }
     // Methods
@@ -42,16 +27,17 @@ public class Speelbord {
                 ║    Welcome to Memo Race    ║
                 ╠════════════════════════════╝
                 ╠[1 Play new game⌛]
-                ╠[2 Test[printBord]☢]
-                ╠[3 Exit❌]
+                ╠[2 Exit❌]
                 ║
                 """);
         System.out.print("╠➤ ");
         switch (this.key.nextInt()) {
-            case 1 -> this.newPlayer();
-            case 2 -> this.printBord();
-            case 3 -> this.exit();
+            case 1 -> this.playNewGame();
+            case 2 -> this.exit();
         }
+    }
+    public void playNewGame() {
+        this.newPlayer();
     }
     public void newPlayer() {
         System.out.print(
@@ -74,9 +60,6 @@ public class Speelbord {
             this.spelers.add(new Speler(key.nextLine()));
         }
     }
-    public void play() {
-
-    }
     public void exit() {
         System.out.print("╚[🤙]");
         System.exit(0);
@@ -88,25 +71,26 @@ public class Speelbord {
     public void printBord() {
         System.out.printf(
                 """
-                ╠═════╦═════╦═════╦═════╦═════╦═════╗
-                ║ GO! ║  %d  ║  %d  ║  %d  ║  %d  ║     ║
+                ║
+                ╠═════╦═════╦═════╦═════╦═════╦═════╗     
+                ║ GO! ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║ %3d ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║ %3d ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║ %3d ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║ %3d ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║     ║ %3d ║ %3d ║ %3d ║  %d  ║     ║
+                ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║
                 ╠═════╩═════╩═════╩═════╩═════╩═════╝
                 """,
-                this.pad.getPosities().get(0),this.pad.getPosities().get(1),this.pad.getPosities().get(2),this.pad.getPosities().get(3),
-                this.pad.getPosities().get(15),this.kaarten.get(0),this.kaarten.get(1),this.kaarten.get(2),this.kaarten.get(3),this.pad.getPosities().get(4),
-                this.pad.getPosities().get(14),this.kaarten.get(4),this.kaarten.get(5),this.kaarten.get(6),this.kaarten.get(7),this.pad.getPosities().get(5),
-                this.pad.getPosities().get(13),this.kaarten.get(8),this.kaarten.get(9),this.kaarten.get(10),this.kaarten.get(11),this.pad.getPosities().get(6),
-                this.pad.getPosities().get(12),this.kaarten.get(12),this.kaarten.get(13),this.kaarten.get(14),this.kaarten.get(15),this.pad.getPosities().get(7),
-                this.pad.getPosities().get(11),this.pad.getPosities().get(10),this.pad.getPosities().get(9),this.pad.getPosities().get(8));
+                1,1,1,1,1,
+                1,"A","B","C","D",1,
+                1,"A","B","C","D",1,
+                1,"A","B","C","D",1,
+                1,"A","B","C","D",1,
+                1,1,1,1,1,1); // Temp [Is voor te testen]
     }
 }
