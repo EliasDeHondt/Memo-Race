@@ -42,17 +42,16 @@ public class Speelbord {
                 ║    Welcome to Memo Race    ║
                 ╠════════════════════════════╝
                 ╠[1 Play new game⌛]
-                ╠[2 Exit❌]
+                ╠[2 Test[printBord]☢]
+                ╠[3 Exit❌]
                 ║
                 """);
         System.out.print("╠➤ ");
         switch (this.key.nextInt()) {
-            case 1 -> this.playNewGame();
-            case 2 -> this.exit();
+            case 1 -> this.newPlayer();
+            case 2 -> this.printBord();
+            case 3 -> this.exit();
         }
-    }
-    public void playNewGame() {
-        this.newPlayer();
     }
     public void newPlayer() {
         System.out.print(
@@ -74,6 +73,9 @@ public class Speelbord {
             key.nextLine();
             this.spelers.add(new Speler(key.nextLine()));
         }
+    }
+    public void play() {
+
     }
     public void exit() {
         System.out.print("╚[🤙]");
