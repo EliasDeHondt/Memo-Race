@@ -14,6 +14,15 @@ public class Pad {
     // Constructors
     public Pad() {
         this.posities = new LinkedList<>();
+        this.maakPad();
     }
     // Methods
+    public void maakPad() {
+        for (int i = 1; i <= 16; i++) {
+            this.posities.add(i);
+        }
+    }
+    public List<Integer> getPosities() { // Get..
+        return this.posities;
+    }
 }

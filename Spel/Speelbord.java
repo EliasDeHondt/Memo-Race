@@ -7,7 +7,6 @@ import java.util.*;
  * 08/12/2022
  */
 public class Speelbord {
-    // Classes
     // Attributes
     private Random dobbelsteen;
     private Pad pad;
@@ -16,6 +15,8 @@ public class Speelbord {
     private final Scanner key = new Scanner(System.in);
     // Constructors
     public Speelbord() {
+        dobbelsteen = new Random();
+        pad = new Pad();
         this.kaart = new LinkedList<>();
         this.spelers = new LinkedList<>();
     }
@@ -73,18 +74,24 @@ public class Speelbord {
                 """
                 ║
                 ╠═════╦═════╦═════╦═════╦═════╦═════╗
-                ║ GO! ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║
+                ║ GO! ║  %d  ║  %d  ║  %d  ║  %d  ║     ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ║ %3d ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ║ %3d ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ║ %3d ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║  %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                ║ %3d ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
                 ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║  %d  ║
+                ║     ║ %3d ║ %3d ║ %3d ║  %d  ║     ║
                 ╠═════╩═════╩═════╩═════╩═════╩═════╝
-                """,1,1,1,1,1,1,"A","B","C","D",1,1,"A","B","C","D",1,1,"A","B","C","D",1,1,"A","B","C","D",1,1,1,1,1,1,1); // Temp [Is voor te testen]
+                """,
+                this.pad.getPosities().get(0),this.pad.getPosities().get(1),this.pad.getPosities().get(2),this.pad.getPosities().get(3),
+                this.pad.getPosities().get(15),this.kaart.get(0),this.kaart.get(1),this.kaart.get(2),this.kaart.get(3),this.pad.getPosities().get(4),
+                this.pad.getPosities().get(14),this.kaart.get(4),this.kaart.get(5),this.kaart.get(6),this.kaart.get(7),this.pad.getPosities().get(5),
+                this.pad.getPosities().get(13),this.kaart.get(8),this.kaart.get(9),this.kaart.get(10),this.kaart.get(11),this.pad.getPosities().get(6),
+                this.pad.getPosities().get(12),this.kaart.get(12),this.kaart.get(13),this.kaart.get(14),this.kaart.get(15),this.pad.getPosities().get(7),
+                this.pad.getPosities().get(11),this.pad.getPosities().get(10),this.pad.getPosities().get(9),this.pad.getPosities().get(8));
     }
 }
