@@ -5,6 +5,6 @@
 public class Demo {
     public static void main(String[] args) {
         Speelbord speelbord = new Speelbord();
-        speelbord.printBord();
+        speelbord.start();
     }
 }

@@ -8,12 +8,24 @@ public class Speelbord {
     // Attributes
     private Random dobbelsteen;
     private Pad pad;
-    private List<Kaart> kaart;
+    private List<Kaart> kaarten;
     private List<Speler> spelers;
     private final Scanner key = new Scanner(System.in);
     // Constructors
     public Speelbord() {
-        this.kaart = new LinkedList<>();
+        // Maakt het pad van 1 tot 16.
+        this.pad = new Pad();
+        // Voegt 8 paar unieke kaarten toe.
+        this.kaarten = new LinkedList<>();
+        for (int i = 0; i < 9; i++) {
+            Kaart newKaart = new Kaart();
+            if (!this.kaarten.contains(newKaart)) {
+                this.kaarten.add(newKaart);
+                this.kaarten.add(newKaart);
+            }
+            if (this.kaarten.size() == 16) break;
+        }
+        // Lijst van alle spelers.
         this.spelers = new LinkedList<>();
     }
     // Methods
@@ -24,13 +36,15 @@ public class Speelbord {
                 ║    Welcome to Memo Race    ║
                 ╠════════════════════════════╝
                 ╠[1 Play new game⌛]
-                ╠[2 Exit❌]
+                ╠[2 Test Print Bord☢]
+                ╠[3 Exit❌]
                 ║
                 """);
         System.out.print("╠➤ ");
         switch (this.key.nextInt()) {
             case 1 -> this.playNewGame();
-            case 2 -> this.exit();
+            case 2 -> this.printBord();
+            case 3 -> this.exit();
         }
     }
     public void playNewGame() {
@@ -66,31 +80,28 @@ public class Speelbord {
         System.exit(0);
     }
     public void printBord() {
-        Integer[] nr_Array = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
-        List<Integer> nr = new ArrayList<>(Arrays.asList(nr_Array));
-        pad = new Pad(nr);
-
+        // Bovenkant spelbord
         System.out.print(
                 """
                 ║
                 ╠═════╦═════╦═════╦═════╦═════╦═════╗
                 ║ GO! ║""");
-        for (int i = 0; i < 5; i++) {
-            System.out.printf("  %d  ║",pad.getPosities().get(i));
+        for (int i = 0; i < 4; i++) System.out.printf("  %d  ║",this.pad.getPosities().get(i));
+        System.out.println("     ║");
+        // Het middelste deel van het spelbord.
+        int teller = 11;
+        for (int i = 4; i < 8; i++) {
+            System.out.printf("""
+                            ╠═════╬═════╬═════╬═════╬═════╬═════╣
+                            ║ %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
+                            """, pad.getPosities().get(i+teller),"A","B","C","D",this.pad.getPosities().get(i));
+            teller--; teller--;
         }
-        System.out.println();
-        int k = 13;
-        for (int j = 5; j < 9; j++) {
-            System.out.println("╠═════╬═════╬═════╬═════╬═════╬═════╣");
-            System.out.printf("║ %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║\n",
-                    pad.getPosities().get(j+k),"A","B","C","D",pad.getPosities().get(j));
-            k--; k--;
-        }
-        System.out.printf(
-                """
-                ╠═════╬═════╬═════╬═════╬═════╬═════╣
-                ║ %d  ║ %d  ║ %d  ║ %d  ║ %d  ║ %d  ║
-                ╠═════╩═════╩═════╩═════╩═════╩═════╝
-                """,15,14,13,12,11,10); // Minder Temp, maar nog steeds Temp
+        // Onderkant spelbord.
+        System.out.print("╠═════╬═════╬═════╬═════╬═════╬═════╣\n║     ");
+        for (int i = 11; i > 7; i--) System.out.printf("║ %2d  ",this.pad.getPosities().get(i));
+        System.out.println("║     ║\n╠═════╩═════╩═════╩═════╩═════╩═════╝");
+
+        // Minder minder minder Temp :-), maar nog steeds Temp
     }
 }
