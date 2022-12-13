@@ -22,9 +22,10 @@ public class Speelbord {
             if (!this.kaarten.contains(newKaart)) {
                 this.kaarten.add(newKaart);
                 this.kaarten.add(newKaart);
-            }
+            } else i--;
             if (this.kaarten.size() == 16) break;
         }
+        Collections.shuffle(this.kaarten);
         // Lijst van alle spelers.
         this.spelers = new LinkedList<>();
     }
@@ -89,13 +90,16 @@ public class Speelbord {
         for (int i = 0; i < 4; i++) System.out.printf("  %d  ║",this.pad.getPosities().get(i));
         System.out.println("     ║");
         // Het middelste deel van het spelbord.
-        int teller = 11;
+        int teller1 = 11;
+        int teller2 = 0;
         for (int i = 4; i < 8; i++) {
             System.out.printf("""
                             ╠═════╬═════╬═════╬═════╬═════╬═════╣
                             ║ %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
-                            """, pad.getPosities().get(i+teller),"A","B","C","D",this.pad.getPosities().get(i));
-            teller--; teller--;
+                            """,this.pad.getPosities().get(i+teller1),this.kaarten.get(teller2).getType(),this.kaarten.get(1+teller2).getType(),
+                                this.kaarten.get(2+teller2).getType(),this.kaarten.get(3+teller2).getType(),this.pad.getPosities().get(i));
+            teller1--; teller1--; teller2+=4;
+
         }
         // Onderkant spelbord.
         System.out.print("╠═════╬═════╬═════╬═════╬═════╬═════╣\n║     ");

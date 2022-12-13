@@ -24,6 +24,9 @@ public class Kaart {
         }
     }
     // Methods
+    public char getType() {
+        return this.type;
+    }
     public void omdraaien() { // Als de kaart is omgedraaid, wordt het terug. Op zijn standaard positie gezet. Of omgedraaid.
         if (this.omgedraaid) {
             this.omgedraaid = false;
