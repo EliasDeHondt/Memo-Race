@@ -1,5 +1,3 @@
-package Spel;
-
 import java.util.*;
 
 /**

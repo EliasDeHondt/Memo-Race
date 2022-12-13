@@ -1,7 +1,3 @@
-package Demo;
-
-import Spel.*;
-
 /**
  * Vera Wise & Elias De Hondt
  * 08/12/2022

@@ -1,5 +1,3 @@
-package Spel;
-
 import java.util.*;
 
 /**
@@ -7,7 +5,6 @@ import java.util.*;
  * 08/12/2022
  */
 public class Speelbord {
-    // Classes
     // Attributes
     private Random dobbelsteen;
     private Pad pad;
@@ -77,7 +74,7 @@ public class Speelbord {
                 """
                 ║
                 ╠═════╦═════╦═════╦═════╦═════╦═════╗
-                ║ GO! ║ """);
+                ║ GO! ║""");
         for (int i = 0; i < 5; i++) {
             System.out.printf("  %d  ║",pad.getPosities().get(i));
         }
