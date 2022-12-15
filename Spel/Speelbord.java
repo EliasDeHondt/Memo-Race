@@ -31,6 +31,7 @@ public class Speelbord {
             if (this.kaarten.size() == 16) break;
         }
         Collections.shuffle(this.kaarten);
+        System.out.println(kaarten);
         // Lijst van alle spelers.
         this.spelers = new LinkedList<>();
     }
@@ -95,6 +96,10 @@ public class Speelbord {
             this.pion.setPositie(tempWorp);
             this.printBord();
         }
+        //Geeft de te trekken kaart mogelijkheden adhv de positie.
+        pion.setPositie(1);
+        //GetValidCards();
+        System.out.println(GetValidCards()); //test of het werkt.
     }
     public void exit() {
         System.out.print("╚[🤙]");
@@ -134,5 +139,53 @@ public class Speelbord {
         for (int i = 11; i > 7; i--) System.out.printf("║ %2d  ",this.pad.getPosities().get(i));
         System.out.println("║     ║\n╠═════╩═════╩═════╩═════╩═════╩═════╝");
         // Minder minder minder Temp :-), maar nog steeds Temp
+    }
+
+    public List<Kaart> GetValidCards(){
+        List<Kaart> kaarts = new ArrayList<>(kaarten.size());
+        kaarts.addAll(GetCards(pion.getPositie()));
+        return kaarts;
+    }
+    public List<Kaart> GetCards(int i){
+        List<Kaart> kaarts = new ArrayList<>(kaarten.size());
+        if(i >= 0 && i <= 4){
+            kaarts.add(kaarten.get(i-1));
+            kaarts.add(kaarten.get(i-1+4));
+            kaarts.add(kaarten.get(i-1+8));
+            kaarts.add(kaarten.get(i-1+12));
+//            kaarts.add(kaarten.get(0));
+//            kaarts.add(kaarten.get(4));
+//            kaarts.add(kaarten.get(8));
+//            kaarts.add(kaarten.get(12));
+            return kaarts;
+        }
+        else if (i >= 5 && i <= 8) {
+            kaarts.add(kaarten.get(i-2-3));
+            kaarts.add(kaarten.get(i-2-2));
+            kaarts.add(kaarten.get(i-2-1));
+            kaarts.add(kaarten.get(i-2));
+            return kaarts;
+        }
+        else if (i >= 9 && i <= 12) {
+            switch (i) {
+                case 9 -> i = 0;
+                case 10 -> i = 1;
+                case 11 -> i = 2;
+                case 12 -> i = 3;
+                default -> i = 0;
+            }
+            kaarts.add(kaarten.get(i)); //3
+            kaarts.add(kaarten.get(i+3)); //7
+            kaarts.add(kaarten.get(i+8)); //11
+            kaarts.add(kaarten.get(i-12)); //15
+            return kaarts;
+        }
+        else { //(i >= 13 && i <= 16)
+            kaarts.add(kaarten.get(i+2-3));
+            kaarts.add(kaarten.get(i+2-2));
+            kaarts.add(kaarten.get(i+2-1));
+            kaarts.add(kaarten.get(i+2));
+            return kaarts;
+        }
     }
 }
