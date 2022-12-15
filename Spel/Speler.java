@@ -5,7 +5,6 @@ import java.util.*;
  * 08/12/2022
  */
 public class Speler {
-    // Classes
     // Attributes
     private int score;
     private String naam;

@@ -4,7 +4,7 @@ import java.util.*;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class Speelbord {
+public class Speelbord implements Kleur{
     // Attributes
     private Random dobbelsteen;
     private Pad pad;
@@ -36,7 +36,7 @@ public class Speelbord {
     }
     // Methods
     public void start() {
-        System.out.print(
+        System.out.print(ANSI_CYAN +
                 """
                 ╔════════════════════════════╗
                 ║    Welcome to Memo Race    ║
@@ -127,7 +127,6 @@ public class Speelbord {
                             """,this.pad.getPosities().get(i+teller1),this.kaarten.get(teller2).getType(),this.kaarten.get(1+teller2).getType(),
                                 this.kaarten.get(2+teller2).getType(),this.kaarten.get(3+teller2).getType(),this.pad.getPosities().get(i));
             teller1--; teller1--; teller2+=4;
-
         }
         // Onderkant spelbord.
         System.out.print("╠═════╬═════╬═════╬═════╬═════╬═════╣\n║     ");
