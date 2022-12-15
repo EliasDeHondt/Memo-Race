@@ -4,7 +4,7 @@ import java.util.*;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class Speelbord {
+public class Speelbord implements Kleur{
     // Attributes
     private Random dobbelsteen;
     private Pad pad;
@@ -37,7 +37,7 @@ public class Speelbord {
     }
     // Methods
     public void start() {
-        System.out.print(
+        System.out.print(ANSI_RESET +
                 """
                 ╔════════════════════════════╗
                 ║    Welcome to Memo Race    ║
@@ -58,7 +58,7 @@ public class Speelbord {
         this.newPlayer();
     }
     public void newPlayer() {
-        System.out.print(
+        System.out.print(ANSI_RESET +
                 """
                 ║
                 ╠[How many players?]
@@ -67,7 +67,7 @@ public class Speelbord {
         System.out.print("╠➤ ");
         int aantal = this.key.nextInt();
         for (int i = 1; aantal >= i; i++) {
-            System.out.printf(
+            System.out.printf(ANSI_RESET +
                     """
                     ║
                     ╠[Name of player %d]
@@ -88,7 +88,7 @@ public class Speelbord {
         // Doet een eerste worp.
         for (int i = 0; i < this.spelers.size(); i++) {
             int tempWorp = this.dobbelsteen.nextInt(1,7);
-            System.out.printf("""
+            System.out.printf(ANSI_RESET + """
                     ║
                     ╠[%s you rolled an %d.]
                     ║
@@ -114,9 +114,8 @@ public class Speelbord {
     }
     public void printBord() {
         // Bovenkant spelbord
-        System.out.print(
+        System.out.print(ANSI_GREEN +
                 """
-                ║
                 ╠═════╦═════╦═════╦═════╦═════╦═════╗
                 ║ GO! ║""");
         for (int i = 0; i < 4; i++) System.out.printf("  %d  ║",this.pad.getPosities().get(i));
@@ -131,7 +130,6 @@ public class Speelbord {
                             """,this.pad.getPosities().get(i+teller1),this.kaarten.get(teller2).getType(),this.kaarten.get(1+teller2).getType(),
                                 this.kaarten.get(2+teller2).getType(),this.kaarten.get(3+teller2).getType(),this.pad.getPosities().get(i));
             teller1--; teller1--; teller2+=4;
-
         }
         // Onderkant spelbord.
         System.out.print("╠═════╬═════╬═════╬═════╬═════╬═════╣\n║     ");

@@ -3,34 +3,34 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="-106.0" y="387.5">Speelbord</node>
-    <node x="215.0" y="-97.0">Pion</node>
-    <node x="174.0" y="59.0">Pad</node>
-    <node x="176.0" y="249.0">Kaart</node>
+    <node x="207.0" y="328.0">Pion</node>
+    <node x="425.0" y="159.0">Kaart</node>
+    <node x="-105.33333333333331" y="-96.5">Speelbord</node>
+    <node x="166.0" y="146.0">Pad</node>
   </nodes>
   <notes />
   <edges>
     <edge source="Speelbord" target="Pad" relationship="CREATE">
-      <point x="-0.0" y="-97.0" />
-      <point x="0.0" y="130.0" />
-      <point x="-106.0" y="-0.0" />
+      <point x="106.0" y="0.0" />
+      <point x="272.0" y="13.5" />
+      <point x="0.0" y="-71.0" />
     </edge>
     <edge source="Speelbord" target="Pad" relationship="TO_ONE">
-      <point x="-15.0" y="-97.0" />
-      <point x="-15.0" y="115.0" />
-      <point x="-106.0" y="-15.0" />
+      <point x="0.0" y="110.0" />
+      <point x="0.6666666666666856" y="217.0" />
+      <point x="-106.0" y="0.0" />
     </edge>
     <edge source="Speelbord" target="Kaart" relationship="TO_MANY">
-      <point x="106.0" y="-0.0" />
-      <point x="280.0" y="484.5" />
-      <point x="-0.0" y="58.0" />
+      <point x="106.0" y="-15.0" />
+      <point x="529.0" y="-1.5" />
+      <point x="0.0" y="-58.0" />
     </edge>
     <edge source="Pad" target="Pion" relationship="TO_ONE">
-      <point x="0.0" y="-71.0" />
-      <point x="0.0" y="58.0" />
+      <point x="0.0" y="71.0" />
+      <point x="0.0" y="-58.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Compact" zoom="1.5" showDependencies="true" x="0.0" y="484.5" />
+  <settings layout="Hierarchic Compact" zoom="0.7680000000000002" showDependencies="true" x="413.7239583333335" y="418.5260416666665" />
   <SelectedNodes>
     <node>Speelbord</node>
   </SelectedNodes>

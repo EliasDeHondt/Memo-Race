@@ -5,7 +5,6 @@ import java.util.*;
  * 08/12/2022
  */
 public class Pad {
-    // Classes
     // Attributes
     private List<Integer> posities;
     private Pion pion;
