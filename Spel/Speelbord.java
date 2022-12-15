@@ -36,7 +36,7 @@ public class Speelbord implements Kleur{
     }
     // Methods
     public void start() {
-        System.out.print(ANSI_CYAN +
+        System.out.print(ANSI_RESET +
                 """
                 ╔════════════════════════════╗
                 ║    Welcome to Memo Race    ║
@@ -57,7 +57,7 @@ public class Speelbord implements Kleur{
         this.newPlayer();
     }
     public void newPlayer() {
-        System.out.print(
+        System.out.print(ANSI_RESET +
                 """
                 ║
                 ╠[How many players?]
@@ -66,7 +66,7 @@ public class Speelbord implements Kleur{
         System.out.print("╠➤ ");
         int aantal = this.key.nextInt();
         for (int i = 1; aantal >= i; i++) {
-            System.out.printf(
+            System.out.printf(ANSI_RESET +
                     """
                     ║
                     ╠[Name of player %d]
@@ -87,7 +87,7 @@ public class Speelbord implements Kleur{
         // Doet een eerste worp.
         for (int i = 0; i < this.spelers.size(); i++) {
             int tempWorp = this.dobbelsteen.nextInt(0,7);
-            System.out.printf("""
+            System.out.printf(ANSI_RESET + """
                     ║
                     ╠[%s you rolled an %d.]
                     ║
@@ -110,9 +110,8 @@ public class Speelbord implements Kleur{
     }
     public void printBord() {
         // Bovenkant spelbord
-        System.out.print(
+        System.out.print(ANSI_GREEN +
                 """
-                ║
                 ╠═════╦═════╦═════╦═════╦═════╦═════╗
                 ║ GO! ║""");
         for (int i = 0; i < 4; i++) System.out.printf("  %d  ║",this.pad.getPosities().get(i));
