@@ -87,7 +87,7 @@ public class Speelbord {
         }
         // Doet een eerste worp.
         for (int i = 0; i < this.spelers.size(); i++) {
-            int tempWorp = this.dobbelsteen.nextInt(0,7);
+            int tempWorp = this.dobbelsteen.nextInt(1,7);
             System.out.printf("""
                     ║
                     ╠[%s you rolled an %d.]
@@ -97,9 +97,8 @@ public class Speelbord {
             this.printBord();
         }
         //Geeft de te trekken kaart mogelijkheden adhv de positie.
-        pion.setPositie(1);
-        //GetValidCards();
-        System.out.println(GetValidCards()); //test of het werkt.
+        //GetValidCards(pion.getPositie());
+        System.out.println("positie: " + pion.getPositie() + " " + GetValidCards(pion.getPositie())); //test of het werkt.
     }
     public void exit() {
         System.out.print("╚[🤙]");
@@ -141,50 +140,59 @@ public class Speelbord {
         // Minder minder minder Temp :-), maar nog steeds Temp
     }
 
-    public List<Kaart> GetValidCards(){
+    public List<Kaart> GetValidCards(int i){
         List<Kaart> kaarts = new ArrayList<>(kaarten.size());
-        kaarts.addAll(GetCards(pion.getPositie()));
-        return kaarts;
-    }
-    public List<Kaart> GetCards(int i){
-        List<Kaart> kaarts = new ArrayList<>(kaarten.size());
+        //boven
         if(i >= 0 && i <= 4){
             kaarts.add(kaarten.get(i-1));
             kaarts.add(kaarten.get(i-1+4));
             kaarts.add(kaarten.get(i-1+8));
             kaarts.add(kaarten.get(i-1+12));
-//            kaarts.add(kaarten.get(0));
-//            kaarts.add(kaarten.get(4));
-//            kaarts.add(kaarten.get(8));
-//            kaarts.add(kaarten.get(12));
             return kaarts;
         }
+        //rechts
         else if (i >= 5 && i <= 8) {
-            kaarts.add(kaarten.get(i-2-3));
-            kaarts.add(kaarten.get(i-2-2));
-            kaarts.add(kaarten.get(i-2-1));
-            kaarts.add(kaarten.get(i-2));
-            return kaarts;
-        }
-        else if (i >= 9 && i <= 12) {
             switch (i) {
-                case 9 -> i = 0;
-                case 10 -> i = 1;
-                case 11 -> i = 2;
-                case 12 -> i = 3;
+                case 5 -> i = 0;
+                case 6 -> i = 4;
+                case 7 -> i = 8;
+                case 8 -> i = 12;
                 default -> i = 0;
             }
-            kaarts.add(kaarten.get(i)); //3
-            kaarts.add(kaarten.get(i+3)); //7
-            kaarts.add(kaarten.get(i+8)); //11
-            kaarts.add(kaarten.get(i-12)); //15
+            kaarts.add(kaarten.get(i));
+            kaarts.add(kaarten.get(i+1));
+            kaarts.add(kaarten.get(i+2));
+            kaarts.add(kaarten.get(i+3));
             return kaarts;
         }
+        //onder
+        else if (i >= 9 && i <= 12) {
+            switch (i) {
+                case 9 -> i = 12;
+                case 10 -> i = 13;
+                case 11 -> i = 14;
+                case 12 -> i = 15;
+                default -> i = 0;
+            }
+            kaarts.add(kaarten.get(i));
+            kaarts.add(kaarten.get(i-4));
+            kaarts.add(kaarten.get(i-8));
+            kaarts.add(kaarten.get(i-12));
+            return kaarts;
+        }
+        //links
         else { //(i >= 13 && i <= 16)
-            kaarts.add(kaarten.get(i+2-3));
-            kaarts.add(kaarten.get(i+2-2));
-            kaarts.add(kaarten.get(i+2-1));
+            switch (i) {
+                case 13 -> i = 12;
+                case 14 -> i = 8;
+                case 15 -> i = 4;
+                case 16 -> i = 0;
+                default -> i = 0;
+            }
+            kaarts.add(kaarten.get(i));
+            kaarts.add(kaarten.get(i+1));
             kaarts.add(kaarten.get(i+2));
+            kaarts.add(kaarten.get(i+3));
             return kaarts;
         }
     }
