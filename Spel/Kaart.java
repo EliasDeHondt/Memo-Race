@@ -10,7 +10,6 @@ public class Kaart {
     private char type;
     private int x;
     private int y;
-
     // Constructors
     public Kaart() {
         this.omgedraaid = false;
@@ -26,28 +25,34 @@ public class Kaart {
             case 7 -> this.type = 'H';
         }
     }
-
-    public void setType(char type) {
+    // Methods
+    public void setType(char type) { // Set..
         this.type = type;
     }
-
-    // Methods
-    public char getType() {
-        if(!this.omgedraaid) {
-            return 'x';
-        }
-        else
-            return this.type;
+    public void setX(int x) { // Set..
+        this.x = x;
     }
-    public void omdraaien() { // Als de kaart is omgedraaid, wordt het terug. Op zijn standaard positie gezet. Of omgedraaid.
+    public void setY(int y) { // Set..
+        this.y = y;
+    }
+    public int getX() { // Get..
+        return x;
+    }
+    public int getY() { // Get..
+        return y;
+    }
+    public char getType() { // Get..
+        if(!this.omgedraaid) return 'x';
+        else return this.type;
+    }
+    public void omdraaien() { // If the card is turned over, it will be returned. Set to its default position. Or reversed.
         if (this.omgedraaid) {
             this.omgedraaid = false;
         } else this.omgedraaid = true;
     }
-    public boolean isOmgedraaid() { // Controleert of de kaart is omgedraaid. Ja of nee?
+    public boolean isOmgedraaid() { // Checks if the card is flipped. Yes or no?
         return this.omgedraaid;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -55,30 +60,12 @@ public class Kaart {
         Kaart kaart = (Kaart) o;
         return type == kaart.type && x == kaart.x && y == kaart.y;
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(type, x, y);
     }
-
     @Override
     public String toString() {
         return String.format("%s",this.type);
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
     }
 }

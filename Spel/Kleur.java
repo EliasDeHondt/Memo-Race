@@ -3,7 +3,7 @@
  * 15/12/2022
  */
 public interface Kleur {
-    // In ons project worden niet alle kleuren gebruikt, maar voor de volledigheid zijn ze allemaal hier?
+    // Not all colors are used in our project, but for completeness they are all here?
     String ANSI_RESET = "\u001B[0m";
     String ANSI_BLACK = "\u001B[30m";
     String ANSI_RED = "\u001B[31m";
