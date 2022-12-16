@@ -109,7 +109,7 @@ public class Speelbord implements Kleur{
         }
         // Doet een eerste worp.
         for (int i = 0; i < this.spelers.size(); i++) {
-            //doe een worp en bepaal de mogelijke kaarten
+            //doe een worp en bepaal de mogelijke kaarten.
             List<Kaart> newCards = worp(this.spelers.get(i));
             //geef de opties uit de lijst met mogelijke eerste opties:
             for (int j = 0; j < newCards.size(); j++) {
