@@ -115,40 +115,20 @@ public class Speelbord implements Kleur{
         }
         // Doet een eerste worp.
         for (int i = 0; i < this.spelers.size(); i++) {
-            int tempWorp = this.dobbelsteen.nextInt(1,7);
-            this.pion.setPositie(tempWorp);
-            List<Kaart> newCards = GetValidCards(tempWorp);
-            System.out.printf(ANSI_RESET + """
-                    ║
-                    ╠[%s you rolled an %d.]
-                    ║
-                    ╠ Your choices are:
-                    """,this.spelers.get(i).getNaam(),tempWorp);
-
+            //doe een worp en bepaal de mogelijke kaarten
+            List<Kaart> newCards = worp(this.spelers.get(i));
+            //geef de opties uit de lijst met mogelijke eerste opties:
             for (int j = 0; j < newCards.size(); j++) {
                 System.out.printf("╠ \tOption %d: [%d, %d]\n",j+1,newCards.get(j).getX(),newCards.get(j).getY());
             }
-
-            //get opties
             Scanner keyboard = new Scanner(System.in);
             System.out.print(
                             "║\n" +
                             "╠ Your choice: ");
             int option = keyboard.nextInt();
-            switch (option){
-                case 1: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(0).getX(),newCards.get(0).getY()));
-                        spelers.get(0).getKaarten().get(0).omdraaien();
-                        break;
-                case 2: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(1).getX(),newCards.get(1).getY()));
-                        spelers.get(0).getKaarten().get(0).omdraaien();
-                        break;
-                case 3: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(2).getX(),newCards.get(2).getY()));
-                        spelers.get(0).getKaarten().get(0).omdraaien();
-                        break;
-                case 4: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(3).getX(),newCards.get(3).getY()));
-                        spelers.get(0).getKaarten().get(0).omdraaien();
-                        break;
-            }
+            //draait de gekozen kaart om en zet die in de spelers kaarten
+            Kaart kaart1 = turnChosenCard(option,newCards);
+
             System.out.print("║\n");
             for (int j = 0; j < kaarten.size(); j++) {
                 if ((j)%4 == 0) System.out.print("╠ ");
@@ -157,14 +137,40 @@ public class Speelbord implements Kleur{
                     System.out.println();
                 }
             }
+            this.printBord();
+            System.out.println();
+            for (int q = 0; q < this.kaarten.size(); q++) {
+                System.out.println("kaart " + kaarten.get(q) + ": " + kaarten.get(q).getX() + ", " + kaarten.get(q).getY());
+            }
             System.out.print(
                             "║\n" +
                             "╠ Your choice: ");
             option = keyboard.nextInt();
+            //draait de volgend gekozen kaart om
+            Kaart kaart2 = new Kaart();
             for (int o = 0; o < kaarten.size();o++){
                 if((option-1) == o){
                     kaarten.get(o).omdraaien();
+                    kaart2 = kaarten.get(o);
                 }
+            }
+            //check of de 2 omgedraaide kaarten gelijk zijn:
+            if(kaart1.getType() == kaart2.getType()){
+                //spelers.get(i).getKaarten().get(0).setType(' ');
+                System.out.println("====== " + kaart2.getX() + " " + kaart2.getY());
+                //getNewKaart(kaart2.getX(),kaart2.getY()).setType(' ');
+                for (int o = 0; o < kaarten.size();o++){
+                    if(kaart1 == kaarten.get(o)){
+                        kaarten.set(i,kaart1);
+                        kaarten.get(i).setType(' ');
+                    }
+                }
+                //getNewKaart(spelers.get(i).getKaarten().get(0).getX(),spelers.get(i).getKaarten().get(0).getY());
+                kaarten.get(option-1).setType(' ');
+            }
+            else {
+                spelers.get(i).getKaarten().get(0).omdraaien();
+                kaarten.get(option-1).omdraaien();
             }
             this.printBord();
 
@@ -285,19 +291,34 @@ public class Speelbord implements Kleur{
         return null;
     }
 
-//    public void worp(Speler s){
-//        int tempWorp = this.dobbelsteen.nextInt(1,7);
-//        this.pion.setPositie(tempWorp);
-//        List<Kaart> newCards = GetValidCards(tempWorp);
-//        System.out.printf(ANSI_RESET + """
-//                    ║
-//                    ╠[%s you rolled an %d.]
-//                    ║
-//                    ╠ Your choices are:
-//                    """,this.spelers.get(i).getNaam(),tempWorp);
-//
-//        for (int j = 0; j < newCards.size(); j++) {
-//            System.out.printf("╠ \tOption %d: [%d, %d]\n",j+1,newCards.get(j).getX(),newCards.get(j).getY());
-//        }
-//    }
+    public List<Kaart> worp(Speler s){
+        int tempWorp = this.dobbelsteen.nextInt(1,7);
+        this.pion.setPositie(tempWorp);
+        List<Kaart> newCards = GetValidCards(tempWorp);
+        System.out.printf(ANSI_RESET + """
+                    ║
+                    ╠[%s you rolled an %d.]
+                    ║
+                    ╠ Your choices are:
+                    """,s.getNaam(),tempWorp);
+        return newCards;
+    }
+
+    public Kaart turnChosenCard(int option,List<Kaart> newCards){
+        switch (option){
+            case 1: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(0).getX(),newCards.get(0).getY()));
+                    spelers.get(0).getKaarten().get(0).omdraaien();
+                    return spelers.get(0).getKaarten().get(0);
+            case 2: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(1).getX(),newCards.get(1).getY()));
+                    spelers.get(0).getKaarten().get(0).omdraaien();
+                    return spelers.get(0).getKaarten().get(0);
+            case 3: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(2).getX(),newCards.get(2).getY()));
+                    spelers.get(0).getKaarten().get(0).omdraaien();
+                    return spelers.get(0).getKaarten().get(0);
+            case 4: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(3).getX(),newCards.get(3).getY()));
+                    spelers.get(0).getKaarten().get(0).omdraaien();
+                    return spelers.get(0).getKaarten().get(0);
+            default: return spelers.get(0).getKaarten().get(0);
+        }
+    }
 }

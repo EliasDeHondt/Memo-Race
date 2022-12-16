@@ -26,6 +26,11 @@ public class Kaart {
             case 7 -> this.type = 'H';
         }
     }
+
+    public void setType(char type) {
+        this.type = type;
+    }
+
     // Methods
     public char getType() {
         if(!this.omgedraaid) {
