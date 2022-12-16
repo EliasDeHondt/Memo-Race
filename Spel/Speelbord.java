@@ -47,10 +47,10 @@ public class Speelbord implements Kleur{
             k[i].setY(y);
             kaarten.get(i).setY(y); // Ga naar volgende rij.
 
-            System.out.println("kaart " + kaarten.get(i) + ": " + kaarten.get(i).getX() + ", " + kaarten.get(i).getY());
+            //System.out.println("kaart " + kaarten.get(i) + ": " + kaarten.get(i).getX() + ", " + kaarten.get(i).getY());
         }
-        System.out.println();
-        System.out.println(kaarten);
+//        System.out.println();
+//        System.out.println(kaarten);
         this.kaarten.clear();
         this.kaarten.addAll(List.of(k));
         // Lijst van alle spelers.
@@ -150,20 +150,39 @@ public class Speelbord implements Kleur{
             }
             //check of de 2 omgedraaide kaarten gelijk zijn:
             if(kaart1.getType() == kaart2.getType()){
-                System.out.println("====== " + kaart2.getX() + " " + kaart2.getY());
+                System.out.println(kaart2.getX() + ", " + kaart2.getY());
+                spelers.get(i).getKaarten()[i] = kaart1;
                 for (int o = 0; o < kaarten.size();o++){
                     if(kaart1 == kaarten.get(o)){
-                        kaarten.set(i,kaart1);
-                        kaarten.get(i).setType(' ');
+                        System.out.println("player cards: " + spelers.get(i).getKaarten()[0]);
+                        kaarten.get(o).setType(' ');
                     }
                 }
-                kaarten.get(option-1).setType(' ');
+                for (int o = 0; o < kaarten.size();o++){
+                    if(kaart2.getX() == kaarten.get(o).getX() && kaart2.getY() == kaarten.get(o).getY()){
+                        kaarten.get(o).setType(' ');
+                    }
+                }
+                this.printBord();
             }
-            else {
-                spelers.get(i).getKaarten().get(0).omdraaien();
-                kaarten.get(option-1).omdraaien();
+            else{
+                for (int o = 0; o < kaarten.size();o++){
+                    if(kaart1.getX() == kaarten.get(o).getX() && kaart1.getY() == kaarten.get(o).getY()){
+                        kaarten.get(o).omdraaien();
+                    }
+                }
+                for (int o = 0; o < kaarten.size();o++){
+                    if(kaart2.getX() == kaarten.get(o).getX() && kaart2.getY() == kaarten.get(o).getY()){
+                        kaarten.get(o).omdraaien();
+                    }
+                }
             }
-            this.printBord();
+
+//            kaarten.get(0).setType('.');
+//            kaarten.get(0).omdraaien();
+            System.out.println(kaarten);
+            this.printBord();System.out.println(kaarten);
+            System.out.println("player cards: " + spelers.get(i).getKaarten()[0]);
         }
     }
     public void exit() {
@@ -295,19 +314,15 @@ public class Speelbord implements Kleur{
 
     public Kaart turnChosenCard(int option,List<Kaart> newCards){
         switch (option){
-            case 1: spelers.get(0).getKaarten().add(getAKaart(newCards.get(0).getX(),newCards.get(0).getY()));
-                    spelers.get(0).getKaarten().get(0).omdraaien();
-                    return spelers.get(0).getKaarten().get(0);
-            case 2: spelers.get(0).getKaarten().add(getAKaart(newCards.get(1).getX(),newCards.get(1).getY()));
-                    spelers.get(0).getKaarten().get(0).omdraaien();
-                    return spelers.get(0).getKaarten().get(0);
-            case 3: spelers.get(0).getKaarten().add(getAKaart(newCards.get(2).getX(),newCards.get(2).getY()));
-                    spelers.get(0).getKaarten().get(0).omdraaien();
-                    return spelers.get(0).getKaarten().get(0);
-            case 4: spelers.get(0).getKaarten().add(getAKaart(newCards.get(3).getX(),newCards.get(3).getY()));
-                    spelers.get(0).getKaarten().get(0).omdraaien();
-                    return spelers.get(0).getKaarten().get(0);
-            default: return spelers.get(0).getKaarten().get(0);
+            case 1: getAKaart(newCards.get(0).getX(),newCards.get(0).getY()).omdraaien();
+                    return getAKaart(newCards.get(0).getX(),newCards.get(0).getY());
+            case 2: getAKaart(newCards.get(1).getX(),newCards.get(1).getY()).omdraaien();
+                    return getAKaart(newCards.get(1).getX(),newCards.get(1).getY());
+            case 3: getAKaart(newCards.get(2).getX(),newCards.get(2).getY()).omdraaien();
+                    return getAKaart(newCards.get(2).getX(),newCards.get(2).getY());
+            case 4: getAKaart(newCards.get(3).getX(),newCards.get(3).getY()).omdraaien();
+                    return getAKaart(newCards.get(3).getX(),newCards.get(3).getY());
+            default: return null;
         }
     }
 }

@@ -8,21 +8,21 @@ public class Speler {
     // Attributes
     private int score;
     private String naam;
-    private List<Kaart> kaarten = new ArrayList<>(4);
+    private Kaart[] kaarten = new Kaart[4];
     // Constructors
     public Speler(String naam) {
         this.naam = naam;
     }
     // Methods
     public int getScore() { // Get..
-        this.score = this.kaarten.size()*10;
+        this.score = this.kaarten.length*10;
         return this.score;
     }
     public String getNaam() { // Get..
         return this.naam;
     }
 
-    public List<Kaart> getKaarten() {
+    public Kaart[] getKaarten() {
         return kaarten;
     }
 }
