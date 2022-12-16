@@ -31,10 +31,21 @@ public class Speelbord implements Kleur{
             if (this.kaarten.size() == 16) break;
         }
         Collections.shuffle(this.kaarten);
-        //positie opslaan
-        for (int i = 0; i < kaarten.size();i++) {
-            kaarten.get(i).setPositie(new int[]{i, i});
+        // Positie opslaan.
+        int x = 1; int y = 4; int teller = -1;
+        for (int i = 0; i < this.kaarten.size(); i++) {
+            // Zet de x positie.
+            kaarten.get(i).setX(x);
+            x++; teller++;
+            if (x == 5) x = 1; // Ga naar volgende kolom.
+            // Zet de y positie.
+            if (teller%4 == 0) y++;
+            if (y == 9) y = 5;
+            kaarten.get(i).setY(y); // Ga naar volgende rij.
+
+            //System.out.println("kaart " + kaarten.get(i) + ": " + kaarten.get(i).getX() + ", " + kaarten.get(i).getY());
         }
+
         System.out.println(kaarten);
         // Lijst van alle spelers.
         this.spelers = new LinkedList<>();
@@ -137,7 +148,7 @@ public class Speelbord implements Kleur{
                             ╠═════╬═════╬═════╬═════╬═════╬═════╣
                             ║ %d  ║  %s  ║  %s  ║  %s  ║  %s  ║  %d  ║
                             """,this.pad.getPosities().get(i+teller1),this.kaarten.get(teller2).getType(),this.kaarten.get(1+teller2).getType(),
-                                this.kaarten.get(2+teller2).getType(),this.kaarten.get(3+teller2).getType(),this.pad.getPosities().get(i));
+                    this.kaarten.get(2+teller2).getType(),this.kaarten.get(3+teller2).getType(),this.pad.getPosities().get(i));
             teller1--; teller1--; teller2+=4;
         }
         // Onderkant spelbord.
