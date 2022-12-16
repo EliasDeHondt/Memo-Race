@@ -101,14 +101,15 @@ public class Speelbord implements Kleur{
         for (int i = 0; i < this.spelers.size(); i++) {
             int tempWorp = this.dobbelsteen.nextInt(1,7);
             this.pion.setPositie(tempWorp);
+            List<Kaart> newCards = GetValidCards(pion.getPositie());
             System.out.printf(ANSI_RESET + """
                     ║
                     ╠[%s you rolled an %d.]
-                    ╠[x %d y %d]
+                    ╠[Your choices are: %d]
                     ║
-                    """,this.spelers.get(i).getNaam(),tempWorp);
+                    """,this.spelers.get(i).getNaam(),tempWorp,
+                    newCards);
             //get opties
-            GetValidCards(pion.getPositie());
 
 
             this.printBord();
