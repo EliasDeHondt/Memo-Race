@@ -28,8 +28,7 @@ public class Speelbord implements Kleur{
                 this.kaarten.add(newKaart);
                 this.kaarten.add(newKaart);
             } else i--;
-            if (this.kaarten.size() == 16) break;
-        }
+            if (this.kaarten.size() == 16) break;}
         Collections.shuffle(this.kaarten);
         // Positie opslaan.
         int x = 1; int y = 4; int teller = -1;
@@ -42,8 +41,6 @@ public class Speelbord implements Kleur{
             if (teller%4 == 0) y++;
             if (y == 9) y = 5;
             kaarten.get(i).setY(y); // Ga naar volgende rij.
-
-            //System.out.println("kaart " + kaarten.get(i) + ": " + kaarten.get(i).getX() + ", " + kaarten.get(i).getY());
         }
 
         System.out.println(kaarten);
@@ -103,12 +100,13 @@ public class Speelbord implements Kleur{
         // Doet een eerste worp.
         for (int i = 0; i < this.spelers.size(); i++) {
             int tempWorp = this.dobbelsteen.nextInt(1,7);
+            this.pion.setPositie(tempWorp);
             System.out.printf(ANSI_RESET + """
                     ║
                     ╠[%s you rolled an %d.]
+                    ╠[x %d y %d]
                     ║
                     """,this.spelers.get(i).getNaam(),tempWorp);
-            this.pion.setPositie(tempWorp);
             //get opties
             GetValidCards(pion.getPositie());
 
@@ -117,7 +115,6 @@ public class Speelbord implements Kleur{
         }
         //Geeft de te trekken kaart mogelijkheden adhv de positie.
         //GetValidCards(pion.getPositie());
-        System.out.println("positie: " + pion.getPositie() + " " + GetValidCards(pion.getPositie())); //test of het werkt.
 
     }
     public void exit() {
