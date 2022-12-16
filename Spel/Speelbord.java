@@ -50,15 +50,15 @@ public class Speelbord implements Kleur{
             System.out.println("kaart " + kaarten.get(i) + ": " + kaarten.get(i).getX() + ", " + kaarten.get(i).getY());
         }
         System.out.println();
-        for (int q = 0; q < this.kaarten.size(); q++) {
-            System.out.println("kaart " + k[q] + ": " + k[q].getX() + ", " + k[q].getY());
-        }
+//        for (int q = 0; q < this.kaarten.size(); q++) {
+//            System.out.println("kaart " + k[q] + ": " + k[q].getX() + ", " + k[q].getY());
+//        }
         System.out.println(kaarten);
         this.kaarten.clear();
         this.kaarten.addAll(List.of(k));
-        for (int q = 0; q < this.kaarten.size(); q++) {
-            System.out.println("kaart " + kaarten.get(q) + ": " + kaarten.get(q).getX() + ", " + kaarten.get(q).getY());
-        }
+//        for (int q = 0; q < this.kaarten.size(); q++) {
+//            System.out.println("kaart " + kaarten.get(q) + ": " + kaarten.get(q).getX() + ", " + kaarten.get(q).getY());
+//        }
         // Lijst van alle spelers.
         this.spelers = new LinkedList<>();
     }
@@ -76,7 +76,6 @@ public class Speelbord implements Kleur{
                 """);
         System.out.print("╠➤ ");
         switch (this.key.nextInt()) {
-
             case 1 -> this.playNewGame();
             case 2 -> this.printBord();
             case 3 -> this.exit();
@@ -114,9 +113,6 @@ public class Speelbord implements Kleur{
             if (!this.kaarten.get(i).isOmgedraaid()) break;
             else if (i == this.kaarten.size()-1) this.win();
         }
-//        for (int y = 0; y < this.kaarten.size(); y++) {
-//            System.out.println("kaart " + kaarten.get(y) + ": " + kaarten.get(y).getX() + ", " + kaarten.get(y).getY());
-//        }
         // Doet een eerste worp.
         for (int i = 0; i < this.spelers.size(); i++) {
             int tempWorp = this.dobbelsteen.nextInt(1,7);
@@ -125,18 +121,53 @@ public class Speelbord implements Kleur{
             System.out.printf(ANSI_RESET + """
                     ║
                     ╠[%s you rolled an %d.]
-                    ╠[Your choices are:
+                    ║
+                    ╠ Your choices are:
                     """,this.spelers.get(i).getNaam(),tempWorp);
-//            for (int y = 0; y < this.kaarten.size(); y++) {
-//                System.out.println("kaart " + kaarten.get(y) + ": " + kaarten.get(y).getX() + ", " + kaarten.get(y).getY());
-//            }
+
             for (int j = 0; j < newCards.size(); j++) {
-                System.out.printf("╠[%d, %d]",newCards.get(j).getX(),newCards.get(j).getY());
+                System.out.printf("╠ \tOption %d: [%d, %d]\n",j+1,newCards.get(j).getX(),newCards.get(j).getY());
             }
+
             //get opties
-
-
+            Scanner keyboard = new Scanner(System.in);
+            System.out.print(
+                            "║\n" +
+                            "╠ Your choice: ");
+            int option = keyboard.nextInt();
+            switch (option){
+                case 1: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(0).getX(),newCards.get(0).getY()));
+                        spelers.get(0).getKaarten().get(0).omdraaien();
+                        break;
+                case 2: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(1).getX(),newCards.get(1).getY()));
+                        spelers.get(0).getKaarten().get(0).omdraaien();
+                        break;
+                case 3: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(2).getX(),newCards.get(2).getY()));
+                        spelers.get(0).getKaarten().get(0).omdraaien();
+                        break;
+                case 4: spelers.get(0).getKaarten().add(getNewKaart(newCards.get(3).getX(),newCards.get(3).getY()));
+                        spelers.get(0).getKaarten().get(0).omdraaien();
+                        break;
+            }
+            System.out.print("║\n");
+            for (int j = 0; j < kaarten.size(); j++) {
+                if ((j)%4 == 0) System.out.print("╠ ");
+                System.out.printf("Option %-3d: [%d, %d] \t\t",j+1,kaarten.get(j).getX(),kaarten.get(j).getY());
+                if ((j+1)%4 == 0){
+                    System.out.println();
+                }
+            }
+            System.out.print(
+                            "║\n" +
+                            "╠ Your choice: ");
+            option = keyboard.nextInt();
+            for (int o = 0; o < kaarten.size();o++){
+                if((option-1) == o){
+                    kaarten.get(o).omdraaien();
+                }
+            }
             this.printBord();
+
         }
         //Geeft de te trekken kaart mogelijkheden adhv de positie.
         //GetValidCards(pion.getPositie());
@@ -244,4 +275,29 @@ public class Speelbord implements Kleur{
             return kaarts;
         }
     }
+
+    public Kaart getNewKaart(int x, int y){
+        for (Kaart kaart : kaarten) {
+            if(kaart.getY() == y && kaart.getX() == x){
+                return kaart;
+            }
+        }
+        return null;
+    }
+
+//    public void worp(Speler s){
+//        int tempWorp = this.dobbelsteen.nextInt(1,7);
+//        this.pion.setPositie(tempWorp);
+//        List<Kaart> newCards = GetValidCards(tempWorp);
+//        System.out.printf(ANSI_RESET + """
+//                    ║
+//                    ╠[%s you rolled an %d.]
+//                    ║
+//                    ╠ Your choices are:
+//                    """,this.spelers.get(i).getNaam(),tempWorp);
+//
+//        for (int j = 0; j < newCards.size(); j++) {
+//            System.out.printf("╠ \tOption %d: [%d, %d]\n",j+1,newCards.get(j).getX(),newCards.get(j).getY());
+//        }
+//    }
 }

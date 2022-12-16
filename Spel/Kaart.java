@@ -28,10 +28,10 @@ public class Kaart {
     }
     // Methods
     public char getType() {
-//        if(!this.omgedraaid) {
-//            return 'x';
-//        }
-//        else
+        if(!this.omgedraaid) {
+            return 'x';
+        }
+        else
             return this.type;
     }
     public void omdraaien() { // Als de kaart is omgedraaid, wordt het terug. Op zijn standaard positie gezet. Of omgedraaid.

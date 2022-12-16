@@ -8,7 +8,7 @@ public class Speler {
     // Attributes
     private int score;
     private String naam;
-    private List<Kaart> kaarten;
+    private List<Kaart> kaarten = new ArrayList<>(4);
     // Constructors
     public Speler(String naam) {
         this.naam = naam;
