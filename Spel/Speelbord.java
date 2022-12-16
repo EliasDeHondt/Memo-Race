@@ -31,19 +31,34 @@ public class Speelbord implements Kleur{
             if (this.kaarten.size() == 16) break;}
         Collections.shuffle(this.kaarten);
         // Positie opslaan.
+        Kaart[] k = new Kaart[16];
         int x = 1; int y = 4; int teller = -1;
         for (int i = 0; i < this.kaarten.size(); i++) {
+            k[i] = new Kaart();
             // Zet de x positie.
+            k[i].setX(x);
             kaarten.get(i).setX(x);
+
             x++; teller++;
             if (x == 5) x = 1; // Ga naar volgende kolom.
             // Zet de y positie.
             if (teller%4 == 0) y++;
             if (y == 9) y = 5;
+            k[i].setY(y);
             kaarten.get(i).setY(y); // Ga naar volgende rij.
-        }
 
+            System.out.println("kaart " + kaarten.get(i) + ": " + kaarten.get(i).getX() + ", " + kaarten.get(i).getY());
+        }
+        System.out.println();
+        for (int q = 0; q < this.kaarten.size(); q++) {
+            System.out.println("kaart " + k[q] + ": " + k[q].getX() + ", " + k[q].getY());
+        }
         System.out.println(kaarten);
+        this.kaarten.clear();
+        this.kaarten.addAll(List.of(k));
+        for (int q = 0; q < this.kaarten.size(); q++) {
+            System.out.println("kaart " + kaarten.get(q) + ": " + kaarten.get(q).getX() + ", " + kaarten.get(q).getY());
+        }
         // Lijst van alle spelers.
         this.spelers = new LinkedList<>();
     }
@@ -61,6 +76,7 @@ public class Speelbord implements Kleur{
                 """);
         System.out.print("╠➤ ");
         switch (this.key.nextInt()) {
+
             case 1 -> this.playNewGame();
             case 2 -> this.printBord();
             case 3 -> this.exit();
@@ -70,6 +86,7 @@ public class Speelbord implements Kleur{
         this.newPlayer();
     }
     public void newPlayer() {
+
         System.out.print(ANSI_RESET +
                 """
                 ║
@@ -97,18 +114,25 @@ public class Speelbord implements Kleur{
             if (!this.kaarten.get(i).isOmgedraaid()) break;
             else if (i == this.kaarten.size()-1) this.win();
         }
+//        for (int y = 0; y < this.kaarten.size(); y++) {
+//            System.out.println("kaart " + kaarten.get(y) + ": " + kaarten.get(y).getX() + ", " + kaarten.get(y).getY());
+//        }
         // Doet een eerste worp.
         for (int i = 0; i < this.spelers.size(); i++) {
             int tempWorp = this.dobbelsteen.nextInt(1,7);
             this.pion.setPositie(tempWorp);
-            List<Kaart> newCards = GetValidCards(pion.getPositie());
+            List<Kaart> newCards = GetValidCards(tempWorp);
             System.out.printf(ANSI_RESET + """
                     ║
                     ╠[%s you rolled an %d.]
-                    ╠[Your choices are: %d]
-                    ║
-                    """,this.spelers.get(i).getNaam(),tempWorp,
-                    newCards);
+                    ╠[Your choices are:
+                    """,this.spelers.get(i).getNaam(),tempWorp);
+//            for (int y = 0; y < this.kaarten.size(); y++) {
+//                System.out.println("kaart " + kaarten.get(y) + ": " + kaarten.get(y).getX() + ", " + kaarten.get(y).getY());
+//            }
+            for (int j = 0; j < newCards.size(); j++) {
+                System.out.printf("╠[%d, %d]",newCards.get(j).getX(),newCards.get(j).getY());
+            }
             //get opties
 
 
@@ -164,6 +188,14 @@ public class Speelbord implements Kleur{
             kaarts.add(kaarten.get(i-1+4));
             kaarts.add(kaarten.get(i-1+8));
             kaarts.add(kaarten.get(i-1+12));
+            kaarts.get(0).setX(kaarten.get(i-1).getX());
+            kaarts.get(1).setX(kaarten.get(i-1+4).getX());
+            kaarts.get(2).setX(kaarten.get(i-1+8).getX());
+            kaarts.get(3).setX(kaarten.get(i-1+12).getX());
+            kaarts.get(0).setY(kaarten.get(i-1).getY());
+            kaarts.get(1).setY(kaarten.get(i-1+4).getY());
+            kaarts.get(2).setY(kaarten.get(i-1+8).getY());
+            kaarts.get(3).setY(kaarten.get(i-1+12).getY());
             return kaarts;
         }
         //rechts

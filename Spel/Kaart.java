@@ -42,15 +42,20 @@ public class Kaart {
     public boolean isOmgedraaid() { // Controleert of de kaart is omgedraaid. Ja of nee?
         return this.omgedraaid;
     }
-    @Override // Override van equals
-    public boolean equals(Object tempObject) {
-        Kaart tempKaar = (Kaart)tempObject;
-        return this.type == tempKaar.type;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Kaart kaart = (Kaart) o;
+        return type == kaart.type && x == kaart.x && y == kaart.y;
     }
-    @Override // Override van hashCode
+
+    @Override
     public int hashCode() {
-        return type;
+        return Objects.hash(type, x, y);
     }
+
     @Override
     public String toString() {
         return String.format("%s",this.type);
