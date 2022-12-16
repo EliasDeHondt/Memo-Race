@@ -21,4 +21,8 @@ public class Speler {
     public String getNaam() { // Get..
         return this.naam;
     }
+
+    public List<Kaart> getKaarten() {
+        return kaarten;
+    }
 }
