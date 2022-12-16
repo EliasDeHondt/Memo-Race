@@ -31,6 +31,10 @@ public class Speelbord implements Kleur{
             if (this.kaarten.size() == 16) break;
         }
         Collections.shuffle(this.kaarten);
+        //positie opslaan
+        for (int i = 0; i < kaarten.size();i++) {
+            kaarten.get(i).setPositie(new int[]{i, i});
+        }
         System.out.println(kaarten);
         // Lijst van alle spelers.
         this.spelers = new LinkedList<>();
@@ -94,11 +98,16 @@ public class Speelbord implements Kleur{
                     ║
                     """,this.spelers.get(i).getNaam(),tempWorp);
             this.pion.setPositie(tempWorp);
+            //get opties
+            GetValidCards(pion.getPositie());
+
+
             this.printBord();
         }
         //Geeft de te trekken kaart mogelijkheden adhv de positie.
         //GetValidCards(pion.getPositie());
         System.out.println("positie: " + pion.getPositie() + " " + GetValidCards(pion.getPositie())); //test of het werkt.
+
     }
     public void exit() {
         System.out.print("╚[🤙]");

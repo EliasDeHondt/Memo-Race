@@ -8,6 +8,7 @@ public class Kaart {
     // Attributes
     private boolean omgedraaid;
     private char type;
+    private int[] positie;
     // Constructors
     public Kaart() {
         this.omgedraaid = false;
@@ -22,10 +23,14 @@ public class Kaart {
             case 6 -> this.type = 'G';
             case 7 -> this.type = 'H';
         }
+        this.positie = new int[2];
     }
     // Methods
     public char getType() {
-        return this.type;
+        if(!this.omgedraaid) {
+            return 'x';
+        }
+        else return this.type;
     }
     public void omdraaien() { // Als de kaart is omgedraaid, wordt het terug. Op zijn standaard positie gezet. Of omgedraaid.
         if (this.omgedraaid) {
@@ -47,5 +52,9 @@ public class Kaart {
     @Override
     public String toString() {
         return String.format("%s",this.type);
+    }
+
+    public void setPositie(int[] positie) {
+        this.positie = positie;
     }
 }
