@@ -90,7 +90,7 @@ public class Speelbord implements Kleur{
         for (int i = 1; aantal >= i; i++) {
             System.out.printf("""
             ╠════════════════════════════╗
-            ║     Name of player %1d      ║
+            ║     Name of player: %1d      ║
             ╠════════════════════════════╝
             """,i);
             System.out.print("╠➤ ");
@@ -151,7 +151,7 @@ public class Speelbord implements Kleur{
                     if (kaart1 == kaart) {
                         System.out.printf("""
                         ╠════════════════════════════╗
-                        ║     Player cards %s      ║
+                        ║     Player cards: %s       ║
                         ╠════════════════════════════╝
                         """,spelers.get(i).getKaarten()[0]);
                         kaart.setType(' ');
@@ -167,7 +167,7 @@ public class Speelbord implements Kleur{
             this.printBord();
             System.out.printf("""
             ╠════════════════════════════╗
-            ║     Player cards %s      ║
+            ║     Player cards: %s     ║
             ╠════════════════════════════╝
             """,spelers.get(i).getKaarten()[0]);
         }
@@ -179,7 +179,7 @@ public class Speelbord implements Kleur{
         System.out.printf("""
         ╠════════════════════════════╗
         ║%8s you rolled an %-5d║
-        ║      Your choices are      ║
+        ║      Your choices are:     ║
         """,s.getNaam(),tempWorp);
         return newCards;
     }
@@ -311,13 +311,13 @@ public class Speelbord implements Kleur{
     public Kaart turnChosenCard(int option,List<Kaart> newCards){
         switch (option){
             case 1: getAKaart(newCards.get(0).getX(),newCards.get(0).getY()).omdraaien();
-                return getAKaart(newCards.get(0).getX(),newCards.get(0).getY());
+                    return getAKaart(newCards.get(0).getX(),newCards.get(0).getY());
             case 2: getAKaart(newCards.get(1).getX(),newCards.get(1).getY()).omdraaien();
-                return getAKaart(newCards.get(1).getX(),newCards.get(1).getY());
+                    return getAKaart(newCards.get(1).getX(),newCards.get(1).getY());
             case 3: getAKaart(newCards.get(2).getX(),newCards.get(2).getY()).omdraaien();
-                return getAKaart(newCards.get(2).getX(),newCards.get(2).getY());
+                    return getAKaart(newCards.get(2).getX(),newCards.get(2).getY());
             case 4: getAKaart(newCards.get(3).getX(),newCards.get(3).getY()).omdraaien();
-                return getAKaart(newCards.get(3).getX(),newCards.get(3).getY());
+                    return getAKaart(newCards.get(3).getX(),newCards.get(3).getY());
             default: return null;
         }
     }
