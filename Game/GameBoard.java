@@ -127,37 +127,17 @@ public class GameBoard implements Colour {
             System.out.print("╠➤ ");
 
             optie = keyboard.nextInt();
-            // Turns over the next selected card.
+            // Determine the next turned over card.
             Card kaart2 = new Card();
             for (int o = 0; o < kaarten.size();o++){
+                kaarten.get(o).omdraaien();
                 if((optie-1) == o){
-                    kaarten.get(o).omdraaien();
                     kaart2 = kaarten.get(o);
                 }
             }
             // Check if the 2 flipped cards are the same.
-            if(kaart1.getType() == kaart2.getType()){
-                System.out.println(kaart2.getX() + ", " + kaart2.getY());
-                spelers.get(i).getKaarten()[i] = kaart1;
-                for (Card kaart : kaarten) {
-                    if (kaart1 == kaart) {
-                        this.printSpelerKaarten();
-                        kaart.setType(' ');
-                    }
-                }
-                for (Card kaart : kaarten){
-                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.setType(' ');
-                }
-                this.printBord();
-            }
-            else {
-                for (Card kaart : kaarten){
-                    if (kaart1.getX() == kaart.getX() && kaart1.getY() == kaart.getY()) kaart.omdraaien();
-                }
-                for (Card kaart : kaarten){
-                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.omdraaien();
-                }
-            }
+            this.vergelijk2kaarten(kaart1,kaart2);
+
             this.printBord();
             this.printSpelerKaarten();
         }
@@ -190,6 +170,31 @@ public class GameBoard implements Colour {
         System.out.print("╠");
         for (int J = 0; J < 80; J++) System.out.print("═");
         System.out.println("╝");
+    }
+    public void vergelijk2kaarten(Card kaart1, Card kaart2){
+        for (int i = 0; i < this.spelers.size(); i++) {
+            if (kaart1.getType() == kaart2.getType()) {
+                System.out.println(kaart2.getX() + ", " + kaart2.getY());
+                spelers.get(i).getKaarten()[i] = kaart1;
+                for (Card kaart : kaarten) {
+                    if (kaart1 == kaart) {
+                        this.printSpelerKaarten();
+                        kaart.setType(' ');
+                    }
+                }
+                for (Card kaart : kaarten) {
+                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.setType(' ');
+                }
+                this.printBord();
+            } else {
+                for (Card kaart : kaarten) {
+                    if (kaart1.getX() == kaart.getX() && kaart1.getY() == kaart.getY()) kaart.omdraaien();
+                }
+                for (Card kaart : kaarten) {
+                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.omdraaien();
+                }
+            }
+        }
     }
     public List<Card> worp(Player s){
         int tempWorp = this.dobbelsteen.nextInt(1,7);
