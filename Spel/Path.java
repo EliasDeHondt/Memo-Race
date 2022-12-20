@@ -4,15 +4,15 @@ import java.util.*;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class Pad {
+public class Path {
     // Attributes
     private List<Integer> posities;
-    private Pion pion;
+    private Pawn pion;
     // Constructors
-    public Pad(List<Integer> posities) {
+    public Path(List<Integer> posities) {
         this.posities = posities;
     }
-    public Pad() {
+    public Path() {
         this.posities = new LinkedList<>();
         this.maakPad();
     }

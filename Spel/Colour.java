@@ -2,7 +2,7 @@
  * Van Elias De Hondt
  * 15/12/2022
  */
-public interface Kleur {
+public interface Colour {
     // Not all colors are used in our project, but for completeness they are all here?
     String ANSI_RESET = "\u001B[0m";
     String ANSI_BLACK = "\u001B[30m";

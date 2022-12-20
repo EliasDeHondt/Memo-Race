@@ -2,12 +2,12 @@
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class Pion {
+public class Pawn {
     // Attributes
     private int positie;
     private int beurt;
     // Constructors
-    public Pion() {
+    public Pawn() {
         this.positie = 0;
         this.beurt = 0;
     }

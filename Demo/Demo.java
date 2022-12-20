@@ -5,7 +5,7 @@
 public class Demo {
     public static void main(String[] args) {
         // Be aware that our game loope takes place in the Gameboard class.
-        Speelbord speelbord = new Speelbord();
+        GameBoard speelbord = new GameBoard();
         speelbord.start();
     }
 }

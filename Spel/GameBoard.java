@@ -4,26 +4,26 @@ import java.util.*;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class Speelbord implements Kleur{
+public class GameBoard implements Colour {
     // Attributes
     private final Random dobbelsteen;
-    private final Pad pad;
-    private final Pion pion;
-    private final List<Kaart> kaarten;
-    private final List<Speler> spelers;
+    private final Path pad;
+    private final Pawn pion;
+    private final List<Card> kaarten;
+    private final List<Player> spelers;
     private final Scanner key = new Scanner(System.in);
     // Constructors
-    public Speelbord() {
+    public GameBoard() {
         // Creates a new die
         this.dobbelsteen = new Random();
         // Makes the path from 1 to 16.
-        this.pad = new Pad();
+        this.pad = new Path();
         // Creates a new pawn
-        this.pion = new Pion();
+        this.pion = new Pawn();
         // Adds 8 pairs of unique cards.
         this.kaarten = new LinkedList<>();
         for (int i = 0; i < 9; i++) {
-            Kaart newKaart = new Kaart();
+            Card newKaart = new Card();
             if (!this.kaarten.contains(newKaart)) {
                 this.kaarten.add(newKaart);
                 this.kaarten.add(newKaart);
@@ -31,10 +31,10 @@ public class Speelbord implements Kleur{
             if (this.kaarten.size() == 16) break;}
         Collections.shuffle(this.kaarten);
         // Save position.
-        Kaart[] k = new Kaart[16];
+        Card[] k = new Card[16];
         int x = 1; int y = 4; int teller = -1;
         for (int i = 0; i < this.kaarten.size(); i++) {
-            k[i] = new Kaart();
+            k[i] = new Card();
             // Set the x position.
             k[i].setX(x);
             kaarten.get(i).setX(x);
@@ -94,7 +94,7 @@ public class Speelbord implements Kleur{
             ╠════════════════════════════╝
             """,i);
             System.out.print("╠➤ ");
-            this.spelers.add(new Speler(this.key.next()));
+            this.spelers.add(new Player(this.key.next()));
         }
         this.round();
     }
@@ -108,7 +108,7 @@ public class Speelbord implements Kleur{
         // Makes a throw.
         for (int i = 0; i < this.spelers.size(); i++) {
             // Make a roll and determine the possible cards.
-            List<Kaart> newCards = worp(this.spelers.get(i));
+            List<Card> newCards = worp(this.spelers.get(i));
             // Specify the options from the list of possible first options.
             System.out.println("╠════════════════════════════╣");
             for (int j = 0; j < newCards.size(); j++) System.out.printf(
@@ -119,7 +119,7 @@ public class Speelbord implements Kleur{
             System.out.print("╠➤ ");
             int option = key.nextInt();
             // Turns over the chosen card and puts it in the players cards.
-            Kaart kaart1 = turnChosenCard(option,newCards);
+            Card kaart1 = turnChosenCard(option,newCards);
             System.out.print("║\n");
             System.out.print("╠");
             for (int J = 0; J < 80; J++) System.out.print("═");
@@ -136,7 +136,7 @@ public class Speelbord implements Kleur{
             System.out.print("╠➤ ");
             option = key.nextInt();
             // Turns over the next selected card.
-            Kaart kaart2 = new Kaart();
+            Card kaart2 = new Card();
             for (int o = 0; o < kaarten.size();o++){
                 if((option-1) == o){
                     kaarten.get(o).omdraaien();
@@ -147,7 +147,7 @@ public class Speelbord implements Kleur{
             if(kaart1.getType() == kaart2.getType()){
                 System.out.println(kaart2.getX() + ", " + kaart2.getY());
                 spelers.get(i).getKaarten()[i] = kaart1;
-                for (Kaart kaart : kaarten) {
+                for (Card kaart : kaarten) {
                     if (kaart1 == kaart) {
                         System.out.printf("""
                         ╠════════════════════════════╗
@@ -157,12 +157,12 @@ public class Speelbord implements Kleur{
                         kaart.setType(' ');
                     }
                 }
-                for (Kaart kaart : kaarten) if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.setType(' ');
+                for (Card kaart : kaarten) if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.setType(' ');
                 this.printBord();
             }
             else {
-                for (Kaart kaart : kaarten) if (kaart1.getX() == kaart.getX() && kaart1.getY() == kaart.getY()) kaart.omdraaien();
-                for (Kaart kaart : kaarten) if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.omdraaien();
+                for (Card kaart : kaarten) if (kaart1.getX() == kaart.getX() && kaart1.getY() == kaart.getY()) kaart.omdraaien();
+                for (Card kaart : kaarten) if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.omdraaien();
             }
             this.printBord();
             System.out.printf("""
@@ -172,10 +172,10 @@ public class Speelbord implements Kleur{
             """,spelers.get(i).getKaarten()[0]);
         }
     }
-    public List<Kaart> worp(Speler s){
+    public List<Card> worp(Player s){
         int tempWorp = this.dobbelsteen.nextInt(1,7);
         this.pion.setPositie(tempWorp);
-        List<Kaart> newCards = GetValidCards(tempWorp);
+        List<Card> newCards = GetValidCards(tempWorp);
         System.out.printf("""
         ╠════════════════════════════╗
         ║%8s you rolled an %-5d║
@@ -234,9 +234,9 @@ public class Speelbord implements Kleur{
         for (int i = 11; i > 7; i--) System.out.printf("║ %2d  ",this.pad.getPosities().get(i));
         System.out.println("║     ║\n╠═════╩═════╩═════╩═════╩═════╩═════╝" + ANSI_RESET);
     }
-    public List<Kaart> GetValidCards(int i){
+    public List<Card> GetValidCards(int i){
         // Gives the card to draw options based on the position.
-        List<Kaart> kaarts = new ArrayList<>(kaarten.size());
+        List<Card> kaarts = new ArrayList<>(kaarten.size());
         // Top game board.
         if(i >= 0 && i <= 4){
             kaarts.add(kaarten.get(i-1));
@@ -299,16 +299,16 @@ public class Speelbord implements Kleur{
             return kaarts;
         }
     }
-    public Kaart getAKaart(int x, int y){
+    public Card getAKaart(int x, int y){
         //geeft een kaart op basis van de gegeven x en y
-        for (Kaart kaart : kaarten) {
+        for (Card kaart : kaarten) {
             if(kaart.getY() == y && kaart.getX() == x){
                 return kaart;
             }
         }
         return null;
     }
-    public Kaart turnChosenCard(int option,List<Kaart> newCards){
+    public Card turnChosenCard(int option, List<Card> newCards){
         switch (option){
             case 1: getAKaart(newCards.get(0).getX(),newCards.get(0).getY()).omdraaien();
                     return getAKaart(newCards.get(0).getX(),newCards.get(0).getY());

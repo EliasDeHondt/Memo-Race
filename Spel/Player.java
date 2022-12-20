@@ -2,13 +2,13 @@
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class Speler {
+public class Player {
     // Attributes
     private int score;
     private String naam;
-    private Kaart[] kaarten = new Kaart[4];
+    private Card[] kaarten = new Card[4];
     // Constructors
-    public Speler(String naam) {
+    public Player(String naam) {
         this.naam = naam;
     }
     // Methods
@@ -19,7 +19,7 @@ public class Speler {
     public String getNaam() { // Get..
         return this.naam;
     }
-    public Kaart[] getKaarten() { // Get..
+    public Card[] getKaarten() { // Get..
         return kaarten;
     }
 }

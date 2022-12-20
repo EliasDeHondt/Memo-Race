@@ -4,14 +4,14 @@ import java.util.*;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class Kaart {
+public class Card {
     // Attributes
     private boolean omgedraaid;
     private char type;
     private int x;
     private int y;
     // Constructors
-    public Kaart() {
+    public Card() {
         this.omgedraaid = false;
         Random random = new Random();
         switch (random.nextInt(0, 8)) { // Neemt een random kaart [A-H | 0-7].
@@ -57,7 +57,7 @@ public class Kaart {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Kaart kaart = (Kaart) o;
+        Card kaart = (Card) o;
         return type == kaart.type && x == kaart.x && y == kaart.y;
     }
     @Override
