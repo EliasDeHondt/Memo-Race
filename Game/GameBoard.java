@@ -1,3 +1,5 @@
+package Game;
+
 import java.util.*;
 
 /**
@@ -11,14 +13,14 @@ public class GameBoard implements Colour {
     private final Pawn pion;
     private final List<Card> kaarten;
     private final List<Player> spelers;
-    private final Scanner key = new Scanner(System.in);
+    private final Scanner keyboard = new Scanner(System.in);
     // Constructors
     public GameBoard() {
-        // Creates a new die
+        // Creates a new die.
         this.dobbelsteen = new Random();
         // Makes the path from 1 to 16.
         this.pad = new Path();
-        // Creates a new pawn
+        // Creates a new pawn.
         this.pion = new Pawn();
         // Adds 8 pairs of unique cards.
         this.kaarten = new LinkedList<>();
@@ -64,28 +66,28 @@ public class GameBoard implements Colour {
         ║
         """);
         System.out.print("╠➤ ");
-        switch (this.key.nextInt()) {
-            case 1 -> this.playNewGame();
+        switch (this.keyboard.nextInt()) {
+            case 1 -> this.nieuwSpel();
             case 2 -> this.printBord();
             case 3 -> this.exit();
         }
     }
-    public void playNewGame() {
+    public void nieuwSpel() {
         System.out.print("""
         ╠════════════════════════════╗
         ║     How many players?      ║
         ╠════════════════════════════╝
         """);
         System.out.print("╠➤ ");
-        int aantal = this.key.nextInt();
+        int aantal = this.keyboard.nextInt();
         // Checks if that. The number of players is not too much or too little.
         if (aantal<2 || aantal>6) {
             System.out.print("""
-            ╠════════════════════════════════════════════════════════════╗
-            ║ Be aware the number of players must be above 1 and below 6 ║
-            ╠════════════════════════════════════════════════════════════╝
+            ╠═════════════════════════════════════════════════════════════╗
+            ║ Be aware: the number of players must be above 1 and below 6 ║
+            ╠═════════════════════════════════════════════════════════════╝
             """);
-            this.playNewGame();
+            this.nieuwSpel();
         }
         for (int i = 1; aantal >= i; i++) {
             System.out.printf("""
@@ -94,11 +96,11 @@ public class GameBoard implements Colour {
             ╠════════════════════════════╝
             """,i);
             System.out.print("╠➤ ");
-            this.spelers.add(new Player(this.key.next()));
+            this.spelers.add(new Player(this.keyboard.next()));
         }
-        this.round();
+        this.ronde();
     }
-    public void round() {
+    public void ronde() {
         // Checks that all cards have been turned over and the game can end.
         for (int i = 0; i < this.kaarten.size(); i++) {
             if (!this.kaarten.get(i).isOmgedraaid()) break;
@@ -110,35 +112,25 @@ public class GameBoard implements Colour {
             // Make a roll and determine the possible cards.
             List<Card> newCards = worp(this.spelers.get(i));
             // Specify the options from the list of possible first options.
-            System.out.println("╠════════════════════════════╣");
-            for (int j = 0; j < newCards.size(); j++) System.out.printf(
-               """
-               ║      Option %d: %2d,%2d       ║
-                """,j+1,newCards.get(j).getX(),newCards.get(j).getY());
-            System.out.println("╠════════════════════════════╝");
+            this.printOpties_1(newCards);
+
             System.out.print("╠➤ ");
-            int option = key.nextInt();
+            int optie = keyboard.nextInt();
             // Turns over the chosen card and puts it in the players cards.
-            Card kaart1 = turnChosenCard(option,newCards);
+            Card kaart1 = draaiGekozenKaart(optie,newCards);
             System.out.print("║\n");
             System.out.print("╠");
-            for (int J = 0; J < 80; J++) System.out.print("═");
-            System.out.println("╗");
-            for (int j = 0; j < kaarten.size(); j++) {
-                if ((j)%4 == 0) System.out.print("║");
-                System.out.printf(" Option %-3d: %d,%-5d",j+1,kaarten.get(j).getX(),kaarten.get(j).getY());
-                if ((j+1)%4 == 0) System.out.println("║");
-            }
-            System.out.print("╠");
-            for (int J = 0; J < 80; J++) System.out.print("═");
-            System.out.println("╝");
+
+            this.printOpties_2();
+
             this.printBord();
             System.out.print("╠➤ ");
-            option = key.nextInt();
+
+            optie = keyboard.nextInt();
             // Turns over the next selected card.
             Card kaart2 = new Card();
             for (int o = 0; o < kaarten.size();o++){
-                if((option-1) == o){
+                if((optie-1) == o){
                     kaarten.get(o).omdraaien();
                     kaart2 = kaarten.get(o);
                 }
@@ -149,33 +141,60 @@ public class GameBoard implements Colour {
                 spelers.get(i).getKaarten()[i] = kaart1;
                 for (Card kaart : kaarten) {
                     if (kaart1 == kaart) {
-                        System.out.printf("""
-                        ╠════════════════════════════╗
-                        ║     Player cards: %s       ║
-                        ╠════════════════════════════╝
-                        """,spelers.get(i).getKaarten()[0]);
+                        this.printSpelerKaarten();
                         kaart.setType(' ');
                     }
                 }
-                for (Card kaart : kaarten) if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.setType(' ');
+                for (Card kaart : kaarten){
+                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.setType(' ');
+                }
                 this.printBord();
             }
             else {
-                for (Card kaart : kaarten) if (kaart1.getX() == kaart.getX() && kaart1.getY() == kaart.getY()) kaart.omdraaien();
-                for (Card kaart : kaarten) if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.omdraaien();
+                for (Card kaart : kaarten){
+                    if (kaart1.getX() == kaart.getX() && kaart1.getY() == kaart.getY()) kaart.omdraaien();
+                }
+                for (Card kaart : kaarten){
+                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.omdraaien();
+                }
             }
             this.printBord();
-            System.out.printf("""
-            ╠════════════════════════════╗
-            ║     Player cards: %s     ║
-            ╠════════════════════════════╝
-            """,spelers.get(i).getKaarten()[0]);
+            this.printSpelerKaarten();
         }
+    }
+    public void printSpelerKaarten(){
+        for (Player speler : this.spelers) {
+            System.out.printf("""
+                    ╠════════════════════════════╗
+                    ║     Player cards %s        ║
+                    ╠════════════════════════════╝
+                    """, speler.getKaarten()[0]);
+        }
+    }
+    public void printOpties_1(List<Card> newCards){
+        System.out.println("╠════════════════════════════╣");
+        for (int j = 0; j < newCards.size(); j++) System.out.printf(
+                """
+                ║      Option %d: %2d,%2d       ║
+                 """,j+1,newCards.get(j).getX(),newCards.get(j).getY());
+        System.out.println("╠════════════════════════════╝");
+    }
+    public void printOpties_2(){
+        for (int J = 0; J < 80; J++) System.out.print("═");
+        System.out.println("╗");
+        for (int j = 0; j < kaarten.size(); j++) {
+            if ((j)%4 == 0) System.out.print("║");
+            System.out.printf(" Option %-3d: %d,%-5d",j+1,kaarten.get(j).getX(),kaarten.get(j).getY());
+            if ((j+1)%4 == 0) System.out.println("║");
+        }
+        System.out.print("╠");
+        for (int J = 0; J < 80; J++) System.out.print("═");
+        System.out.println("╝");
     }
     public List<Card> worp(Player s){
         int tempWorp = this.dobbelsteen.nextInt(1,7);
         this.pion.setPositie(tempWorp);
-        List<Card> newCards = GetValidCards(tempWorp);
+        List<Card> newCards = GetGeldigeKaarten(tempWorp);
         System.out.printf("""
         ╠════════════════════════════╗
         ║%8s you rolled an %-5d║
@@ -201,7 +220,7 @@ public class GameBoard implements Colour {
         """);
         System.exit(0);
     }
-    public void draw() {
+    public void gelijk() {
         System.out.print("""
         ║
         ╠════════════════════════════╗
@@ -234,7 +253,7 @@ public class GameBoard implements Colour {
         for (int i = 11; i > 7; i--) System.out.printf("║ %2d  ",this.pad.getPosities().get(i));
         System.out.println("║     ║\n╠═════╩═════╩═════╩═════╩═════╩═════╝" + ANSI_RESET);
     }
-    public List<Card> GetValidCards(int i){
+    public List<Card> GetGeldigeKaarten(int i){
         // Gives the card to draw options based on the position.
         List<Card> kaarts = new ArrayList<>(kaarten.size());
         // Top game board.
@@ -243,14 +262,6 @@ public class GameBoard implements Colour {
             kaarts.add(kaarten.get(i-1+4));
             kaarts.add(kaarten.get(i-1+8));
             kaarts.add(kaarten.get(i-1+12));
-            kaarts.get(0).setX(kaarten.get(i-1).getX());
-            kaarts.get(1).setX(kaarten.get(i-1+4).getX());
-            kaarts.get(2).setX(kaarten.get(i-1+8).getX());
-            kaarts.get(3).setX(kaarten.get(i-1+12).getX());
-            kaarts.get(0).setY(kaarten.get(i-1).getY());
-            kaarts.get(1).setY(kaarten.get(i-1+4).getY());
-            kaarts.get(2).setY(kaarten.get(i-1+8).getY());
-            kaarts.get(3).setY(kaarten.get(i-1+12).getY());
             return kaarts;
         }
         // Right game board.
@@ -299,8 +310,8 @@ public class GameBoard implements Colour {
             return kaarts;
         }
     }
-    public Card getAKaart(int x, int y){
-        //geeft een kaart op basis van de gegeven x en y
+    public Card getEenKaart(int x, int y){
+        // Gives a card back using the given x and y.
         for (Card kaart : kaarten) {
             if(kaart.getY() == y && kaart.getX() == x){
                 return kaart;
@@ -308,16 +319,16 @@ public class GameBoard implements Colour {
         }
         return null;
     }
-    public Card turnChosenCard(int option, List<Card> newCards){
+    public Card draaiGekozenKaart(int option, List<Card> newCards){
         switch (option){
-            case 1: getAKaart(newCards.get(0).getX(),newCards.get(0).getY()).omdraaien();
-                    return getAKaart(newCards.get(0).getX(),newCards.get(0).getY());
-            case 2: getAKaart(newCards.get(1).getX(),newCards.get(1).getY()).omdraaien();
-                    return getAKaart(newCards.get(1).getX(),newCards.get(1).getY());
-            case 3: getAKaart(newCards.get(2).getX(),newCards.get(2).getY()).omdraaien();
-                    return getAKaart(newCards.get(2).getX(),newCards.get(2).getY());
-            case 4: getAKaart(newCards.get(3).getX(),newCards.get(3).getY()).omdraaien();
-                    return getAKaart(newCards.get(3).getX(),newCards.get(3).getY());
+            case 1: getEenKaart(newCards.get(0).getX(),newCards.get(0).getY()).omdraaien();
+                    return getEenKaart(newCards.get(0).getX(),newCards.get(0).getY());
+            case 2: getEenKaart(newCards.get(1).getX(),newCards.get(1).getY()).omdraaien();
+                    return getEenKaart(newCards.get(1).getX(),newCards.get(1).getY());
+            case 3: getEenKaart(newCards.get(2).getX(),newCards.get(2).getY()).omdraaien();
+                    return getEenKaart(newCards.get(2).getX(),newCards.get(2).getY());
+            case 4: getEenKaart(newCards.get(3).getX(),newCards.get(3).getY()).omdraaien();
+                    return getEenKaart(newCards.get(3).getX(),newCards.get(3).getY());
             default: return null;
         }
     }

@@ -1,3 +1,5 @@
+package Game;
+
 /**
  * Van Elias De Hondt
  * 15/12/2022
