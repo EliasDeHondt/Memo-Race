@@ -107,7 +107,7 @@ public class GameBoard implements Colour {
         for (int i = 0; i < this.kaarten.size(); i++) {
             if (!this.kaarten.get(i).isOmgedraaid()) endGame = true;
             // else if (this.kaarten.get(i).isOmgedraaid()) this.draw();
-            else if (i == this.kaarten.size()-1) Conclusion.won();
+            else if (i == this.kaarten.size()-1) this.won();
         }
         // Makes a throw.
         for (int i = 0; i < this.spelers.size(); i++) {
