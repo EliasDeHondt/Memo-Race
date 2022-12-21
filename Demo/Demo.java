@@ -1,4 +1,4 @@
-import Game.*;
+import Game.GameBoard;
 
 /**
  * Vera Wise & Elias De Hondt

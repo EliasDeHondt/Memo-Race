@@ -1,3 +1,9 @@
+package App;
+
+import Game.Colour;
+import Game.Conclusion;
+import Game.Player;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
@@ -27,18 +33,18 @@ public class FileHandler {
             file.close();
             Conclusion.exit();
         } catch (FileNotFoundException e) {
-            System.out.println(Game.Colour.ANSI_BLACK + "The specified file was not found.\nFor example: GameLog/players.csv");
+            System.out.println(Colour.ANSI_BLACK + "The specified file was not found.\nFor example: GameLog/players.csv");
         }
     }
-    public static void writeFile(String url, List<Game.Player> players) { // Write
+    public static void writeFile(String url, List<Player> players) { // Write
         try {
             Formatter formatter = new Formatter(url);
-            for (Game.Player player : players) {
+            for (Player player : players) {
                 formatter.format("%s;%d\n", player.getNaam(), player.getScore());
             }
             formatter.close();
         } catch (IOException e) {
-            System.out.println(Game.Colour.ANSI_BLACK + "Specify a correct path and also a correct file name with the correct extension.\nFor example: GameLog/players.csv");
+            System.out.println(Colour.ANSI_BLACK + "Specify a correct path and also a correct file name with the correct extension.\nFor example: GameLog/players.csv");
         }
     }
     public Image[] loadImages() {

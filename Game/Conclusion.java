@@ -1,3 +1,5 @@
+package Game;
+
 /**
  * Vera Wise & Elias De Hondt
  * 8/12/2022

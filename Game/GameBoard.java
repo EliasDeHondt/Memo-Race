@@ -1,3 +1,6 @@
+package Game;
+import App.FileHandler;
+
 import java.util.*;
 
 /**
@@ -201,7 +204,7 @@ public class GameBoard implements Colour {
     public List<Card> worp(Player s){
         int tempWorp = this.dobbelsteen.nextInt(1,7);
         this.pion.setPositie(tempWorp);
-        List<Card> newCards = GetValidCards(tempWorp);
+        List<Card> newCards = GetGeldigeKaarten(tempWorp);
         System.out.printf("""
         ╠════════════════════════════╗
         ║%8s you rolled an %-5d║
