@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/game" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/App" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Game" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
