@@ -9,11 +9,7 @@ import java.util.*;
 public class Path {
     // Attributes
     private List<Integer> posities;
-    private Pawn pion;
     // Constructors
-    public Path(List<Integer> posities) {
-        this.posities = posities;
-    }
     public Path() {
         this.posities = new LinkedList<>();
         this.maakPad();

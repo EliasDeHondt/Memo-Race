@@ -7,25 +7,14 @@ package Game;
 public class Pawn {
     // Attributes
     private int positie;
-    private int beurt;
     // Constructors
     public Pawn() {
         this.positie = 0;
-        this.beurt = 0;
     }
     // Methods
     public void setPositie(int positie) { // Set..
-        // Controleert of de positie wel op het spelbord past indien niet wordt de positie gelijk gesteld aan de huidige positie - de newPositie - 1.
+        // Checks whether the position fits on the game board, if not, the position is set equal to the current position - the newPosition - 1.
         if (this.positie > 16) this.positie = this.positie - positie - 1;
         this.positie += positie;
-    }
-    public void setBeurt(int beurt) { // Set..
-        this.beurt = beurt;
-    }
-    public int getPositie() { // Get..
-        return this.positie;
-    }
-    public int getBeurt() { // Get..
-        return this.beurt;
     }
 }

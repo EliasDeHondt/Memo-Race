@@ -6,10 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Demo" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/game" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/App" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Game" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Resources/GameLog" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/Resources/Image" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

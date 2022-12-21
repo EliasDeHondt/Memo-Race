@@ -16,7 +16,7 @@ public class Card {
     public Card() {
         this.omgedraaid = false;
         Random random = new Random();
-        switch (random.nextInt(0, 8)) { // Neemt een random kaart [A-H | 0-7].
+        switch (random.nextInt(0, 8)) { // Takes a random card [A-H | 0-7].
             case 0 -> this.type = 'A';
             case 1 -> this.type = 'B';
             case 2 -> this.type = 'C';

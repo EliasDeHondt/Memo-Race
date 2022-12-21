@@ -1,9 +1,6 @@
 package App;
 
-import Game.Colour;
-import Game.Conclusion;
-import Game.Player;
-
+import Game.*;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
