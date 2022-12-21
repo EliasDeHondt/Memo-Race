@@ -1,8 +1,8 @@
 package Game;
 
 /**
- * Van Elias De Hondt
- * 15/12/2022
+ * Vera Wise & Elias De Hondt
+ * 8/12/2022
  */
 public interface Colour {
     // Not all colors are used in our project, but for completeness they are all here?

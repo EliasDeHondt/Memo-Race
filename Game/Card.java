@@ -48,9 +48,7 @@ public class Card {
         else return this.type;
     }
     public void omdraaien() { // If the card is turned over, it will be returned. Set to its default position. Or reversed.
-        if (this.omgedraaid) {
-            this.omgedraaid = false;
-        } else this.omgedraaid = true;
+        this.omgedraaid = !this.omgedraaid;
     }
     public boolean isOmgedraaid() { // Checks if the card is flipped. Yes or no?
         return this.omgedraaid;

@@ -1,5 +1,3 @@
-package Game;
-
 import java.util.*;
 
 /**
@@ -62,14 +60,16 @@ public class GameBoard implements Colour {
         ╠════════════════════════════╝
         ╠[1 Play new game⌛]
         ╠[2 Test Print Bord☢]
-        ╠[3 Exit❌]
+        ╠[3 View game log📁]
+        ╠[4 Exit❌]
         ║
         """);
         System.out.print("╠➤ ");
         switch (this.keyboard.nextInt()) {
             case 1 -> this.nieuwSpel();
             case 2 -> this.printBord();
-            case 3 -> this.exit();
+            case 3 -> FileHandler.readFile("Resources/GameLog/players.csv");
+            case 4 -> Conclusion.exit();
         }
     }
     public void nieuwSpel() {
@@ -100,12 +100,14 @@ public class GameBoard implements Colour {
         }
         this.ronde();
     }
+    // TODO:  Must get its own class in [Game.Round] (If this has been done properly, this line can be removed.)
     public void ronde() {
         // Checks that all cards have been turned over and the game can end.
+        Boolean endGame = null; // This is for the do-while below
         for (int i = 0; i < this.kaarten.size(); i++) {
-            if (!this.kaarten.get(i).isOmgedraaid()) break;
+            if (!this.kaarten.get(i).isOmgedraaid()) endGame = true;
             // else if (this.kaarten.get(i).isOmgedraaid()) this.draw();
-            else if (i == this.kaarten.size()-1) this.won();
+            else if (i == this.kaarten.size()-1) Conclusion.won();
         }
         // Makes a throw.
         for (int i = 0; i < this.spelers.size(); i++) {
@@ -199,7 +201,7 @@ public class GameBoard implements Colour {
     public List<Card> worp(Player s){
         int tempWorp = this.dobbelsteen.nextInt(1,7);
         this.pion.setPositie(tempWorp);
-        List<Card> newCards = GetGeldigeKaarten(tempWorp);
+        List<Card> newCards = GetValidCards(tempWorp);
         System.out.printf("""
         ╠════════════════════════════╗
         ║%8s you rolled an %-5d║
@@ -225,7 +227,7 @@ public class GameBoard implements Colour {
         """);
         System.exit(0);
     }
-    public void gelijk() {
+    public void draw() {
         System.out.print("""
         ║
         ╠════════════════════════════╗
