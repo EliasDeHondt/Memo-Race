@@ -10,9 +10,9 @@ import java.util.*;
 public class GameBoard implements Colour {
     // Attributes
     //private final Random dobbelsteen;
-    private static class Dobbelsteen{
+    private static class Die{
         private int zijde;
-        public Dobbelsteen() {
+        public Die() {
             final Random dobbelsteen = new Random();
             zijde = dobbelsteen.nextInt(1,7);
         }
@@ -213,7 +213,7 @@ public class GameBoard implements Colour {
         }
     }
     public List<Card> worp(Player s){
-        Dobbelsteen dobbelsteen = new Dobbelsteen();
+        Die dobbelsteen = new Die();
         int tempWorp = dobbelsteen.getZijde();
         this.pion.setPositie(tempWorp);
         List<Card> newCards = GetGeldigeKaarten(tempWorp);
