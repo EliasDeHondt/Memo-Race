@@ -9,7 +9,21 @@ import java.util.*;
  */
 public class GameBoard implements Colour {
     // Attributes
-    private final Random dobbelsteen;
+    //private final Random dobbelsteen;
+    private static class Dobbelsteen{
+        private int zijde;
+        public Dobbelsteen() {
+            final Random dobbelsteen = new Random();
+            zijde = dobbelsteen.nextInt(1,7);
+        }
+        public int getZijde() {
+            return zijde;
+        }
+        @Override
+        public String toString() {
+            return String.format("Je hebt %d gegooid",this.zijde);
+        }
+    }
     private final Path pad;
     private final Pawn pion;
     private final List<Card> kaarten;
@@ -18,7 +32,7 @@ public class GameBoard implements Colour {
     // Constructors
     public GameBoard() {
         // Creates a new die.
-        this.dobbelsteen = new Random();
+        //this.dobbelsteen = new Random();
         // Makes the path from 1 to 16.
         this.pad = new Path();
         // Creates a new pawn.
@@ -199,7 +213,8 @@ public class GameBoard implements Colour {
         }
     }
     public List<Card> worp(Player s){
-        int tempWorp = this.dobbelsteen.nextInt(1,7);
+        Dobbelsteen dobbelsteen = new Dobbelsteen();
+        int tempWorp = dobbelsteen.getZijde();
         this.pion.setPositie(tempWorp);
         List<Card> newCards = GetGeldigeKaarten(tempWorp);
         System.out.printf("""
