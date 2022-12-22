@@ -45,7 +45,7 @@ public class FileHandler {
         }
     }
     public Image[] loadImages() {
-        Image[] images = {
+        return new Image[]{
         new ImageIcon("Resources/Image/path_1.png").getImage(),
         new ImageIcon("Resources/Image/path_2.png").getImage(),
         new ImageIcon("Resources/Image/path_3.png").getImage(),
@@ -62,7 +62,7 @@ public class FileHandler {
         new ImageIcon("Resources/Image/path_14.png").getImage(),
         new ImageIcon("Resources/Image/path_15.png").getImage(),
         new ImageIcon("Resources/Image/path_16.png").getImage(),
+        new ImageIcon("Resources/Image/question_mark.png").getImage(),
         };
-        return images;
     }
 }
