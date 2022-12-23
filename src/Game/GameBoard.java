@@ -35,6 +35,14 @@ public class GameBoard implements Colour {
     private int playerAantal;
     private final Scanner keyboard = new Scanner(System.in);
 
+    public List<Card> getKaarten() {
+        return kaarten;
+    }
+
+    public List<Player> getSpelers() {
+        return spelers;
+    }
+
     // Constructors
     public GameBoard() {
         // Creates a new die.

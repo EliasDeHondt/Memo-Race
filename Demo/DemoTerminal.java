@@ -15,24 +15,7 @@ public class DemoTerminal {
         GameBoard gameBord = new GameBoard();
 
         // Start.
-        System.out.print(
-                """
-                        ╔════════════════════════════╗
-                        ║    Welcome to Memo Race    ║
-                        ╠════════════════════════════╝
-                        ╠[1 Play new game⌛]
-                        ╠[2 Test Print Bord☢]
-                        ╠[3 View game log📁]
-                        ╠[4 Exit❌]
-                        ║
-                                """);
-        System.out.print("╠➤ ");
-        switch (keyboard.nextInt()) {
-            case 1: break;
-            case 2: System.out.println(gameBord); break; // PrintBoard
-            case 3: FileHandler.readFile("Resources/GameLog/players.csv"); break;
-            case 4: Conclusion.exit(); break;
-        }
+        start(keyboard,gameBord);
 
         // New Player.
         System.out.print("""
@@ -65,5 +48,54 @@ public class DemoTerminal {
             gameBord.newPlayerName(keyboard.next());
         }
 
+    }
+
+    public static void start(Scanner keyboard, GameBoard gameBord) {
+        System.out.print(
+                """
+                ╔════════════════════════════╗
+                ║    Welcome to Memo Race    ║
+                ╠════════════════════════════╝
+                ╠[1 Play new game⌛]
+                ╠[2 Test Print Bord☢]
+                ╠[3 View game log📁]
+                ╠[4 Exit❌]
+                ║
+                """);
+        System.out.print("╠➤ ");
+        switch (keyboard.nextInt()) {
+            case 1: nieuwSpel(keyboard,gameBord);
+            case 2: System.out.println(gameBord); break; // PrintBoard
+            case 3: FileHandler.readFile("Resources/GameLog/players.csv"); break;
+            case 4: Conclusion.exit(); break;
+        }
+    }
+    public static void nieuwSpel(Scanner keyboard, GameBoard gameBord) {
+        System.out.print("""
+        ╠════════════════════════════╗
+        ║     How many players?      ║
+        ╠════════════════════════════╝
+        """);
+        System.out.print("╠➤ ");
+        int aantal = keyboard.nextInt();
+        // Checks if that. The number of players is not too much or too little.
+        if (aantal<2 || aantal>6) {
+            System.out.print("""
+            ╠═════════════════════════════════════════════════════════════╗
+            ║ Be aware: the number of players must be above 1 and below 6 ║
+            ╠═════════════════════════════════════════════════════════════╝
+            """);
+            nieuwSpel(keyboard,gameBord);
+        }
+        for (int i = 1; aantal >= i; i++) {
+            System.out.printf("""
+            ╠════════════════════════════╗
+            ║     Name of player: %1d      ║
+            ╠════════════════════════════╝
+            """,i);
+            System.out.print("╠➤ ");
+            gameBord.getSpelers().add(new Player(keyboard.next()));
+        }
+        gameBord.ronde();
     }
 }
