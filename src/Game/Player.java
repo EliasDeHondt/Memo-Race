@@ -22,6 +22,11 @@ public class Player {
         return this.naam;
     }
     public Card[] getKaarten() { // Get..
-        return kaarten;
+        if(kaarten.length == 0){
+            Card e = new Card();
+            e.setType('0');
+            return new Card[]{e};
+        }
+        else return kaarten;
     }
 }

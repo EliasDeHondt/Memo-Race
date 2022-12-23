@@ -17,19 +17,11 @@ public class DemoTerminal {
         // Start.
         start(keyboard,gameBord);
 
-        nieuwSpel(keyboard,gameBord);
+        //nieuwSpel(keyboard,gameBord);
 
         // New Player.
-        for (int i = 1; gameBord.getPlayerAantal() >= i; i++) {
-            System.out.printf("""
-                    ╠════════════════════════════╗
-                    ║     Name of player: %1d      ║
-                    ╠════════════════════════════╝
-                    """, i);
-            System.out.print("╠➤ ");
-            gameBord.newPlayerName(keyboard.next());
-            printSpelerKaarten(gameBord);
-        }
+            //gameBord.newPlayerName(keyboard.next());
+        printSpelerKaarten(gameBord);
 
     }
 
@@ -47,7 +39,7 @@ public class DemoTerminal {
                 """);
         System.out.print("╠➤ ");
         switch (keyboard.nextInt()) {
-            case 1: nieuwSpel(keyboard,gameBord);
+            case 1: nieuwSpel(keyboard,gameBord); break;
             case 2: System.out.println(gameBord); break; // PrintBoard
             case 3: FileHandler.readFile("Resources/GameLog/players.csv"); break;
             case 4: Conclusion.exit(); break;
@@ -73,7 +65,7 @@ public class DemoTerminal {
         for (int i = 1; aantal >= i; i++) {
             System.out.printf("""
             ╠════════════════════════════╗
-            ║     Name of player: %1d      ║
+            ║     Name of player: %d      ║
             ╠════════════════════════════╝
             """,i);
             System.out.print("╠➤ ");
@@ -85,10 +77,12 @@ public class DemoTerminal {
     public static void printSpelerKaarten(GameBoard gameBord) {
         for (Player speler : gameBord.getSpelers()) {
             System.out.printf("""
-                    ╠════════════════════════════╗
-                    ║     Player cards %s        ║
-                    ╠════════════════════════════╝
-                    """, speler.getKaarten()[0]);
+                    ║
+                    ╠════════════════════════════════════════════════════╗
+                    ║     Player %s cards: %s         ║
+                    ╠════════════════════════════════════════════════════╝
+                    ║
+                    """, speler.getNaam(), Arrays.toString(speler.getKaarten()));
         }
     }
 }
