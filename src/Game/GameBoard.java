@@ -155,7 +155,6 @@ public class GameBoard implements Colour {
     }
 
     public void printOpties_2() {
-        ;
         System.out.print("╠");
         for (int J = 0; J < 80; J++) System.out.print("═");
         System.out.println("╗");
