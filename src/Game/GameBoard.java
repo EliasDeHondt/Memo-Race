@@ -94,7 +94,6 @@ public class GameBoard implements Colour {
 
     public void newPlayerName(String name) {
         this.spelers.add(new Player(name));
-
         this.ronde();
     }
 
@@ -138,19 +137,10 @@ public class GameBoard implements Colour {
             // Check if the 2 flipped cards are the same.
             this.vergelijk2kaarten(kaart1, kaart2);
             System.out.println(this); // PrintBoard
-            this.printSpelerKaarten();
         }
     }
 
-    public void printSpelerKaarten() {
-        for (Player speler : this.spelers) {
-            System.out.printf("""
-                    ╠════════════════════════════╗
-                    ║     Player cards %s        ║
-                    ╠════════════════════════════╝
-                    """, speler.getKaarten()[0]);
-        }
-    }
+
 
     public void printOpties_1(List<Card> newCards) {
         System.out.println("╠════════════════════════════╣");
@@ -183,7 +173,7 @@ public class GameBoard implements Colour {
                 spelers.get(i).getKaarten()[i] = kaart1;
                 for (Card kaart : kaarten) {
                     if (kaart1 == kaart) {
-                        this.printSpelerKaarten();
+                        //this.printSpelerKaarten();
                         kaart.setType(' ');
                     }
                 }

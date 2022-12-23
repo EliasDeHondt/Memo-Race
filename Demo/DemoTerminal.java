@@ -17,35 +17,21 @@ public class DemoTerminal {
         // Start.
         start(keyboard,gameBord);
 
-        // New Player.
-        System.out.print("""
-                ╠════════════════════════════╗
-                ║     How many players?      ║
-                ╠════════════════════════════╝
-                """);
-        System.out.print("╠➤ ");
-        boolean goed = true;
-        do {
-            try {
-                gameBord.newPlayerAantal(keyboard.nextInt());
-            } catch (ExceptionPlayer e) {
-                System.out.print("""
-                        ╠═════════════════════════════════════════════════════════════╗
-                        ║ Be aware: the number of players must be above 1 and below 6 ║
-                        ╠═════════════════════════════════════════════════════════════╝
-                        """);
-                goed = false;
-            }
-        } while (goed);
+        nieuwSpel(keyboard,gameBord);
 
+        // New Player.
         for (int i = 1; gameBord.getPlayerAantal() >= i; i++) {
-            System.out.printf("""
-                    ╠════════════════════════════╗
-                    ║     Name of player: %1d      ║
-                    ╠════════════════════════════╝
-                    """, i);
-            System.out.print("╠➤ ");
+                System.out.printf("""
+            ╠════════════════════════════╗
+            ║     Name of player: %1d      ║
+            ╠════════════════════════════╝
+            """,i);
+                System.out.print("╠➤ ");
+                gameBord.getSpelers().add(new Player(keyboard.next()));
+
+            gameBord.ronde();
             gameBord.newPlayerName(keyboard.next());
+            printSpelerKaarten(gameBord);
         }
 
     }
@@ -87,15 +73,15 @@ public class DemoTerminal {
             """);
             nieuwSpel(keyboard,gameBord);
         }
-        for (int i = 1; aantal >= i; i++) {
+    }
+
+    public static void printSpelerKaarten(GameBoard gameBord) {
+        for (Player speler : gameBord.getSpelers()) {
             System.out.printf("""
-            ╠════════════════════════════╗
-            ║     Name of player: %1d      ║
-            ╠════════════════════════════╝
-            """,i);
-            System.out.print("╠➤ ");
-            gameBord.getSpelers().add(new Player(keyboard.next()));
+                    ╠════════════════════════════╗
+                    ║     Player cards %s        ║
+                    ╠════════════════════════════╝
+                    """, speler.getKaarten()[0]);
         }
-        gameBord.ronde();
     }
 }
