@@ -21,15 +21,12 @@ public class DemoTerminal {
 
         // New Player.
         for (int i = 1; gameBord.getPlayerAantal() >= i; i++) {
-                System.out.printf("""
-            ╠════════════════════════════╗
-            ║     Name of player: %1d      ║
-            ╠════════════════════════════╝
-            """,i);
-                System.out.print("╠➤ ");
-                gameBord.getSpelers().add(new Player(keyboard.next()));
-
-            gameBord.ronde();
+            System.out.printf("""
+                    ╠════════════════════════════╗
+                    ║     Name of player: %1d      ║
+                    ╠════════════════════════════╝
+                    """, i);
+            System.out.print("╠➤ ");
             gameBord.newPlayerName(keyboard.next());
             printSpelerKaarten(gameBord);
         }
@@ -73,6 +70,16 @@ public class DemoTerminal {
             """);
             nieuwSpel(keyboard,gameBord);
         }
+        for (int i = 1; aantal >= i; i++) {
+            System.out.printf("""
+            ╠════════════════════════════╗
+            ║     Name of player: %1d      ║
+            ╠════════════════════════════╝
+            """,i);
+            System.out.print("╠➤ ");
+            gameBord.getSpelers().add(new Player(keyboard.next()));
+        }
+        gameBord.ronde();
     }
 
     public static void printSpelerKaarten(GameBoard gameBord) {
