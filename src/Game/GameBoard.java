@@ -1,6 +1,7 @@
 package Game;
 
 import App.*;
+
 import java.util.*;
 
 /**
@@ -36,11 +37,11 @@ public class GameBoard implements Colour {
     private final Scanner keyboard = new Scanner(System.in);
 
     public List<Card> getKaarten() {
-        return kaarten;
+        return this.kaarten;
     }
 
     public List<Player> getSpelers() {
-        return spelers;
+        return this.spelers;
     }
 
     // Constructors
@@ -86,6 +87,7 @@ public class GameBoard implements Colour {
         // List of all players.
         this.spelers = new LinkedList<>();
     }
+
     // Methods
     public void newPlayerAantal(int aantal) {
         if (aantal < 2 || aantal > 6) throw new ExceptionPlayer();
@@ -94,7 +96,6 @@ public class GameBoard implements Colour {
 
     public void newPlayerName(String name) {
         this.spelers.add(new Player(name));
-        this.ronde();
     }
 
     public int getPlayerAantal() {
@@ -139,7 +140,6 @@ public class GameBoard implements Colour {
             System.out.println(this); // PrintBoard
         }
     }
-
 
 
     public void printOpties_1(List<Card> newCards) {
