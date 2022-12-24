@@ -15,7 +15,7 @@ public class DemeJavaFX extends JFrame {
         DemeJavaFX memoRace = new DemeJavaFX();
         memoRace.setVisible(true);
         memoRace.setTitle("Memo Race");
-        memoRace.setSize(380,420);
+        memoRace.setSize(700,700);
         memoRace.setDefaultCloseOperation(EXIT_ON_CLOSE);
         memoRace.setLocationRelativeTo(null);
         memoRace.setIconImage(FileHandler.loadImages(0));

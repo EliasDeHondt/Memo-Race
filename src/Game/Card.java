@@ -8,13 +8,13 @@ import java.util.*;
  */
 public class Card {
     // Attributes
-    private boolean omgedraaid;
+    private boolean turned;
     private char type;
     private int x;
     private int y;
     // Constructors
     public Card() {
-        this.omgedraaid = false;
+        this.turned = false;
         Random random = new Random();
         switch (random.nextInt(0, 8)) { // Takes a random card [A-H | 0-7].
             case 0 -> this.type = 'A';
@@ -44,14 +44,14 @@ public class Card {
         return y;
     }
     public char getType() { // Get..
-        if(!this.omgedraaid) return 'x';
-        else return this.type;
+        if(this.isTurned()) return this.type;
+        else return 'x';
     }
-    public void omdraaien() { // If the card is turned over, it will be returned. Set to its default position. Or reversed.
-        this.omgedraaid = !this.omgedraaid;
+    public void turned() { // If the card is turned over, it will be returned. Set to its default position. Or reversed.
+        this.turned = !this.turned;
     }
-    public boolean isOmgedraaid() { // Checks if the card is flipped. Yes or no?
-        return this.omgedraaid;
+    public boolean isTurned() { // Checks if the card is flipped. Yes or no?
+        return this.turned;
     }
     @Override
     public boolean equals(Object o) {

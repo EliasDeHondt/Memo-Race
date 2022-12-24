@@ -15,13 +15,13 @@ public class Conclusion {
         """);
         System.exit(1);
     }
-    public static void won() {
-        System.out.print("""
+    public static void won(String name) {
+        System.out.printf("""
         ║
         ╠════════════════════════════╗
-        ║      You have won 🤙       ║
+        ║      You have won %s 🤙       ║
         ╚════════════════════════════╝
-        """);
+        """,name);
         System.exit(1);
     }
     public static void draw() {

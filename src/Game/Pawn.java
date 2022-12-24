@@ -6,15 +6,15 @@ package Game;
  */
 public class Pawn {
     // Attributes
-    private int positie;
+    private int position;
     // Constructors
     public Pawn() {
-        this.positie = 0;
+        this.position = 0;
     }
     // Methods
-    public void setPositie(int positie) { // Set..
+    public void setPosition(int position) { // Set..
         // Checks whether the position fits on the game board, if not, the position is set equal to the current position - the newPosition - 1.
-        if (this.positie > 16) this.positie = this.positie - positie - 1;
-        this.positie += positie;
+        if (this.position > 16) this.position = this.position - position - 1;
+        this.position += position;
     }
 }

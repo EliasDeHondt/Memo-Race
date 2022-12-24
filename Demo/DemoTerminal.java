@@ -56,7 +56,7 @@ public class DemoTerminal {
                 ╠════════════════════════════╝
                 """);
                 System.out.print("╠➤ ");
-                gameBord.newPlayerAantal(keyboard.nextInt());
+                gameBord.newPlayerQuantity(keyboard.nextInt());
             } catch (ExceptionPlayer e) {
                 System.out.print("""
                 ╠═════════════════════════════════════════════════════════════╗
@@ -67,7 +67,7 @@ public class DemoTerminal {
             }
         } while (x);
 
-        for (int i = 1; gameBord.getPlayerAantal() >= i; i++) {
+        for (int i = 1; gameBord.getPlayerQuantity() >= i; i++) {
             System.out.printf("""
                     ╠════════════════════════════╗
                     ║     Name of player: %1d      ║
@@ -76,20 +76,18 @@ public class DemoTerminal {
             System.out.print("╠➤ ");
             gameBord.newPlayerName(keyboard.next());
         }
-
-
         gameBord.ronde();
     }
 
     public static void printSpelerKaarten(GameBoard gameBord) {
-        for (Player speler : gameBord.getSpelers()) {
+        for (Player speler : gameBord.getPlayers()) {
             System.out.printf("""
                     ║
                     ╠════════════════════════════════════════════════════╗
                     ║     Player %s cards: %s         ║
                     ╠════════════════════════════════════════════════════╝
                     ║
-                    """, speler.getNaam(), Arrays.toString(speler.getKaarten()));
+                    """, speler.getName(), Arrays.toString(speler.getCards()));
         }
     }
 

@@ -7,26 +7,26 @@ package Game;
 public class Player {
     // Attributes
     private int score;
-    private String naam;
-    private Card[] kaarten = new Card[4];
+    private String Name;
+    private Card[] Cards = new Card[4];
     // Constructors
-    public Player(String naam) {
-        this.naam = naam;
+    public Player(String Name) {
+        this.Name = Name;
     }
     // Methods
     public int getScore() { // Get..
-        this.score = this.kaarten.length*10;
+        this.score = this.Cards.length*100;
         return this.score;
     }
-    public String getNaam() { // Get..
-        return this.naam;
+    public String getName() { // Get..
+        return this.Name;
     }
-    public Card[] getKaarten() { // Get..
-        if(kaarten.length == 0){
+    public Card[] getCards() { // Get..
+        if(Cards.length == 0){
             Card e = new Card();
             e.setType('0');
             return new Card[]{e};
         }
-        else return kaarten;
+        else return Cards;
     }
 }

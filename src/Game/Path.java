@@ -8,19 +8,19 @@ import java.util.*;
  */
 public class Path {
     // Attributes
-    private List<Integer> posities;
+    private List<Integer> positions;
     // Constructors
     public Path() {
-        this.posities = new LinkedList<>();
+        this.positions = new LinkedList<>();
         this.maakPad();
     }
     // Methods
     public void maakPad() {
         for (int i = 1; i <= 16; i++) {
-            this.posities.add(i);
+            this.positions.add(i);
         }
     }
     public List<Integer> getPosities() { // Get..
-        return this.posities;
+        return this.positions;
     }
 }
