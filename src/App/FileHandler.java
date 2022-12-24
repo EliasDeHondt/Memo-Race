@@ -48,25 +48,26 @@ public class FileHandler {
         }
     }
 
-    public Image[] loadImages() {
-        return new Image[]{
-                new ImageIcon("Resources/Image/path_1.png").getImage(),
-                new ImageIcon("Resources/Image/path_2.png").getImage(),
-                new ImageIcon("Resources/Image/path_3.png").getImage(),
-                new ImageIcon("Resources/Image/path_4.png").getImage(),
-                new ImageIcon("Resources/Image/path_5.png").getImage(),
-                new ImageIcon("Resources/Image/path_6.png").getImage(),
-                new ImageIcon("Resources/Image/path_7.png").getImage(),
-                new ImageIcon("Resources/Image/path_8.png").getImage(),
-                new ImageIcon("Resources/Image/path_9.png").getImage(),
-                new ImageIcon("Resources/Image/path_10.png").getImage(),
-                new ImageIcon("Resources/Image/path_11.png").getImage(),
-                new ImageIcon("Resources/Image/path_12.png").getImage(),
-                new ImageIcon("Resources/Image/path_13.png").getImage(),
-                new ImageIcon("Resources/Image/path_14.png").getImage(),
-                new ImageIcon("Resources/Image/path_15.png").getImage(),
-                new ImageIcon("Resources/Image/path_16.png").getImage(),
-                new ImageIcon("Resources/Image/question_mark.png").getImage(),
+    public static Image loadImages(int index) {
+        return switch (index) {
+            case 0 -> new ImageIcon("Resources/Image/question_mark.png").getImage();
+            case 1 -> new ImageIcon("Resources/Image/path_1.png").getImage();
+            case 2 -> new ImageIcon("Resources/Image/path_2.png").getImage();
+            case 3 -> new ImageIcon("Resources/Image/path_3.png").getImage();
+            case 4 -> new ImageIcon("Resources/Image/path_4.png").getImage();
+            case 5 -> new ImageIcon("Resources/Image/path_5.png").getImage();
+            case 6 -> new ImageIcon("Resources/Image/path_6.png").getImage();
+            case 7 -> new ImageIcon("Resources/Image/path_7.png").getImage();
+            case 8 -> new ImageIcon("Resources/Image/path_8.png").getImage();
+            case 9 -> new ImageIcon("Resources/Image/path_9.png").getImage();
+            case 10 -> new ImageIcon("Resources/Image/path_10.png").getImage();
+            case 11 -> new ImageIcon("Resources/Image/path_11.png").getImage();
+            case 12 -> new ImageIcon("Resources/Image/path_12.png").getImage();
+            case 13 -> new ImageIcon("Resources/Image/path_13.png").getImage();
+            case 14 -> new ImageIcon("Resources/Image/path_14.png").getImage();
+            case 15 -> new ImageIcon("Resources/Image/path_15.png").getImage();
+            case 16 -> new ImageIcon("Resources/Image/path_16.png").getImage();
+            default -> throw new IllegalStateException("Unexpected value: " + index);
         };
     }
 }

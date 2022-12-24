@@ -2,14 +2,16 @@ package Game;
 
 import App.*;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.*;
 
 /**
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class GameBoard implements Colour {
-    // Attributes
+public class GameBoard extends JPanel implements Colour, ActionListener {
     //private final Random dobbelsteen;
     private static class Die {
         private final int zijde;
@@ -28,7 +30,7 @@ public class GameBoard implements Colour {
             return String.format("Je hebt %d gegooid", this.zijde);
         }
     }
-
+    // Attributes
     private final Path pad;
     private final Pawn pion;
     private final List<Card> kaarten;
@@ -290,6 +292,11 @@ public class GameBoard implements Colour {
             default:
                 return null;
         }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        repaint();
     }
 
     @Override
