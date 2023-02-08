@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Memo-Race.iml" filepath="$PROJECT_DIR$/Memo-Race.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Wireframes/Wireframes.iml" filepath="$PROJECT_DIR$/Wireframes/Wireframes.iml" />
     </modules>
   </component>
 </project>

@@ -1,12 +1,12 @@
 package be.kdg.MemoRace.model;
 
-import console.App.ExceptionPlayer;
+import be.kdg.MemoRace.model.App.*;
 
 import java.util.*;
 
 /**
- * Vera Wise
- * 8/02/2023
+ * Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class GameBoard {
     //eigenenlijk de klasse GameBoard

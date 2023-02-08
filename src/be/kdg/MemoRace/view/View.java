@@ -1,13 +1,13 @@
 package be.kdg.MemoRace.view;
 
-import javafx.geometry.Pos;
+
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 
 /**
- * Vera Wise
- * 8/02/2023
+ * Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class View extends BorderPane {
     private ImageView dobbelsteen1;

@@ -1,8 +1,8 @@
 package be.kdg.MemoRace;
 
 /**
- * Vera Wise
- * 8/02/2023
+ * Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class LauncherMemoRace {
     public static void main(String[] args) {
