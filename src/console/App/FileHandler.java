@@ -1,6 +1,6 @@
 package console.App;
 
-import Game.*;
+import console.Game.*;
 import console.Game.Colour;
 import console.Game.Player;
 

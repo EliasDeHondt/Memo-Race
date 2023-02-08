@@ -1,6 +1,6 @@
 package console.Game;
 
-import App.*;
+import console.App.*;
 import console.App.ExceptionPlayer;
 
 import javax.swing.*;
