@@ -1,5 +1,10 @@
 import App.*;
 import Game.*;
+import console.App.ExceptionPlayer;
+import console.App.FileHandler;
+import console.Game.Conclusion;
+import console.Game.GameBoard;
+import console.Game.Player;
 
 import java.util.*;
 

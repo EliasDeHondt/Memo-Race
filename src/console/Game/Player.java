@@ -1,4 +1,4 @@
-package Game;
+package console.Game;
 
 /**
  * Vera Wise & Elias De Hondt

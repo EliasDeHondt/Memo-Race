@@ -1,5 +1,5 @@
-import App.FileHandler;
-import Game.GameBoard;
+import console.App.FileHandler;
+import console.Game.GameBoard;
 
 import javax.swing.*;
 

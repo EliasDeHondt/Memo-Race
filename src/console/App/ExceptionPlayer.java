@@ -1,4 +1,4 @@
-package App;
+package console.App;
 
 /**
  * Vera Wise & Elias De Hondt
