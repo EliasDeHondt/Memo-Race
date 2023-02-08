@@ -1,6 +1,6 @@
 package be.kdg.MemoRace.view;
 
-import be.kdg.MemoRace.model.Model;
+import be.kdg.MemoRace.model.GameBoard;
 
 /**
  * Vera Wise
@@ -8,10 +8,10 @@ import be.kdg.MemoRace.model.Model;
  */
 public class Presenteer {
 
-    private Model model;
+    private GameBoard model;
     private View view;
 
-    public Presenteer(Model model, View view) {
+    public Presenteer(GameBoard model, View view) {
         this.model = model;
         this.view = view;
         addEventHandlers();

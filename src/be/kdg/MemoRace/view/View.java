@@ -20,14 +20,10 @@ public class View extends BorderPane {
     }
 
     public void initialiseNodes(){
-        this.dobbelsteen1 = new ImageView();
-        this.dobbelsteen1 = new ImageView();
-        this.button = new Button("Werp");
+
     }
 
     public void layoutNodes(){
-        this.setCenter(button);
-        BorderPane.setAlignment(button, Pos.CENTER);
 
     }
 }

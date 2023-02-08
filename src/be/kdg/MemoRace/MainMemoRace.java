@@ -1,6 +1,6 @@
 package be.kdg.MemoRace;
 
-import be.kdg.MemoRace.model.Model;
+import be.kdg.MemoRace.model.GameBoard;
 import be.kdg.MemoRace.view.Presenteer;
 import be.kdg.MemoRace.view.View;
 import javafx.application.Application;
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 public class MainMemoRace extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Model model = new Model();
+        GameBoard model = new GameBoard();
         View view = new View();
         Presenteer presenter = new Presenteer(model, view);
         Scene scene = new Scene(view);
