@@ -1,4 +1,4 @@
-package be.kdg.MemoRace.view;
+package be.kdg.memorace.view;
 
 
 import javafx.scene.control.Button;

@@ -1,6 +1,6 @@
-package be.kdg.MemoRace.model;
+package be.kdg.memorace.model;
 
-import be.kdg.MemoRace.model.App.*;
+import be.kdg.memorace.model.App.*;
 
 import java.util.*;
 

@@ -1,7 +1,6 @@
-package be.kdg.MemoRace.model.App;
+package be.kdg.memorace.model.App;
 
-import be.kdg.MemoRace.view.*;
-import be.kdg.MemoRace.model.*;
+import be.kdg.memorace.model.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;

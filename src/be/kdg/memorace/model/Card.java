@@ -1,4 +1,4 @@
-package be.kdg.MemoRace.model;
+package be.kdg.memorace.model;
 
 import java.util.Objects;
 import java.util.Random;

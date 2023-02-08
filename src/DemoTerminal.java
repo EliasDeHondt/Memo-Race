@@ -1,7 +1,6 @@
-import be.kdg.MemoRace.model.App.ExceptionPlayer;
-import be.kdg.MemoRace.model.App.FileHandler;
-import be.kdg.MemoRace.view.*;
-import be.kdg.MemoRace.model.*;
+import be.kdg.memorace.model.App.ExceptionPlayer;
+import be.kdg.memorace.model.App.FileHandler;
+import be.kdg.memorace.model.*;
 
 import java.util.*;
 

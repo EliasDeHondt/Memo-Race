@@ -1,8 +1,8 @@
-package be.kdg.MemoRace;
+package be.kdg.memorace;
 
-import be.kdg.MemoRace.model.GameBoard;
-import be.kdg.MemoRace.view.Presenter;
-import be.kdg.MemoRace.view.View;
+import be.kdg.memorace.model.GameBoard;
+import be.kdg.memorace.view.Presenter;
+import be.kdg.memorace.view.View;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;

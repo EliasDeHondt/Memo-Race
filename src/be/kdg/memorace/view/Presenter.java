@@ -1,8 +1,6 @@
-package be.kdg.MemoRace.view;
+package be.kdg.memorace.view;
 
-import be.kdg.MemoRace.model.GameBoard;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import be.kdg.memorace.model.GameBoard;
 
 /**
  * Vera Wise & Elias De Hondt

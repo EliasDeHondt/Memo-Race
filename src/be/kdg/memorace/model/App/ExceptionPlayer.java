@@ -1,4 +1,4 @@
-package be.kdg.MemoRace.model.App;
+package be.kdg.memorace.model.App;
 
 /**
  * Vera Wise & Elias De Hondt
