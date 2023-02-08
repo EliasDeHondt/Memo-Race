@@ -7,12 +7,12 @@ import javax.swing.*;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class DemeJavaFX extends JFrame {
+public class DemoJavaFX extends JFrame {
     public void memoRace() {
         GameBoard gameBord = new GameBoard();
     }
     public static void main(String[] args) {
-        DemeJavaFX memoRace = new DemeJavaFX();
+        DemoJavaFX memoRace = new DemoJavaFX();
         memoRace.setVisible(true);
         memoRace.setTitle("Memo Race");
         memoRace.setSize(700,700);
