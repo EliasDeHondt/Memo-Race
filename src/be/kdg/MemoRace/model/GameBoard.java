@@ -90,68 +90,12 @@ public class GameBoard {
     }
 
     public void newPlayerQuantity(int aantal) { // New Player Quantity.
-        if (aantal < 2 || aantal > 6) throw new ExceptionPlayer();
+        if (aantal <= 2 || aantal >= 6) throw new ExceptionPlayer();
         else this.playerQuantity = aantal;
     }
 
     public void newPlayerName(String name) { // New Player Name.
         this.players.add(new Player(name));
-    }
-
-    public void ronde() { // Start ronde.
-        // Makes a throw.
-        for (Player speler : this.players) {
-            // Make a roll and determine the possible cards.
-            List<Card> newCards = worp(speler);
-            // Specify the options from the list of possible first options.
-            this.printOpties_1(newCards);
-
-            System.out.print("╠➤ ");
-            int optie = keyboard.nextInt();
-            // Turns over the chosen card and puts it in the players cards.
-            Card card1 = draaiGekozenKaart(optie, newCards);
-            System.out.println(this); // PrintBoard
-
-            this.printOpties_2();
-            System.out.print("╠➤ ");
-
-            optie = keyboard.nextInt();
-            // Determine the next turned over card.
-            Card card2 = new Card();
-            for (int o = 0; o < cards.size(); o++) {
-                cards.get(o).turned();
-                if ((optie - 1) == o) {
-                    card2 = cards.get(o);
-                }
-            }
-            // Check if the 2 flipped cards are the same.
-            this.vergelijk2kaarten(card1, card2);
-            System.out.println(this); // PrintBoard
-        }
-    }
-
-    public void printOpties_1(List<Card> newCards) {
-        System.out.println("╠════════════════════════════╣");
-        for (int j = 0; j < newCards.size(); j++)
-            System.out.printf(
-                    """
-                            ║      Option %d: %2d,%2d       ║
-                             """, j + 1, newCards.get(j).getX(), newCards.get(j).getY());
-        System.out.println("╠════════════════════════════╝");
-    }
-
-    public void printOpties_2() {
-        System.out.print("╠");
-        for (int J = 0; J < 80; J++) System.out.print("═");
-        System.out.println("╗");
-        for (int j = 0; j < cards.size(); j++) {
-            if ((j) % 4 == 0) System.out.print("║");
-            System.out.printf(" Option %-3d: %d,%-5d", j + 1, cards.get(j).getX(), cards.get(j).getY());
-            if ((j + 1) % 4 == 0) System.out.println("║");
-        }
-        System.out.print("╠");
-        for (int J = 0; J < 80; J++) System.out.print("═");
-        System.out.println("╝");
     }
 
     public void vergelijk2kaarten(Card kaart1, Card kaart2) {

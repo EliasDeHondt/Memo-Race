@@ -12,11 +12,15 @@ import javafx.scene.layout.BorderPane;
 public class View extends BorderPane {
     private ImageView dobbelsteen1;
     private ImageView dobbelsteen2;
-    private Button button;
+    private Button startButton;
 
     public View() {
         initialiseNodes();
         layoutNodes();
+    }
+
+    Button getStartButton() {
+        return startButton;
     }
 
     public void initialiseNodes(){

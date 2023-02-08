@@ -1,6 +1,8 @@
 package be.kdg.MemoRace.view;
 
 import be.kdg.MemoRace.model.GameBoard;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
 /**
  * Vera Wise
@@ -20,9 +22,19 @@ public class Presenteer {
 
     private void addEventHandlers() {
         //TODO
+        view.getStartButton().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                updateView();
+
+            }
+        });
     }
 
     private void updateView() {
         //TODO
+        //get input van namen en aantal players.
+//        String txt = view.getGeboorteJaarField().getText();
+//        model.setGeboorteJaar(Integer.parseInt(txt));
     }
 }
