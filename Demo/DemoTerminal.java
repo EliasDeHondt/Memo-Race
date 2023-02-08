@@ -1,5 +1,5 @@
-import App.*;
-import Game.*;
+import console.App.*;
+import console.Game.*;
 import console.App.ExceptionPlayer;
 import console.App.FileHandler;
 import console.Game.Conclusion;
