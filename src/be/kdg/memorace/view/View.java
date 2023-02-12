@@ -10,23 +10,19 @@ import javafx.scene.layout.BorderPane;
  * 08/12/2022
  */
 public class View extends BorderPane {
+    // Attributes
     private ImageView dobbelsteen1;
     private ImageView dobbelsteen2;
     private Button startButton;
-
+    // Constructors
     public View() {
         initialiseNodes();
         layoutNodes();
     }
-
-    Button getStartButton() {
-        return startButton;
-    }
-
+    // Methods
     public void initialiseNodes(){
 
     }
-
     public void layoutNodes(){
 
     }

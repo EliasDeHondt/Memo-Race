@@ -19,6 +19,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/be/kdg/MemoRace/resources/img/pawn" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/be/kdg/MemoRace/resources/log" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/wireframes" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/be/kdg/memorace/resources/images" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
