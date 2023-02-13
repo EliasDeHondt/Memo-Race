@@ -30,6 +30,7 @@
       <sourceFolder url="file://$MODULE_DIR$/resources/images/path" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/resources/images/pawn" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/resources/log" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/resources/fonts" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
