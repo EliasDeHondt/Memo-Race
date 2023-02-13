@@ -9,18 +9,18 @@ import be.kdg.memorace.model.GameBoard;
 public class Presenter {
 
     private GameBoard model;
-    private View view;
+    private NewGameView newGameView;
 
-    public Presenter(GameBoard model, View view) {
+    public Presenter(GameBoard model, NewGameView newGameView) {
         this.model = model;
-        this.view = view;
+        this.newGameView = newGameView;
         this.addEventHandlers();
         this.updateView();
     }
 
     private void addEventHandlers() {
         //TODO
-//        this.view.getStartButton().setOnAction(new EventHandler<ActionEvent>() {
+//        this.newGameView.getStartButton().setOnAction(new EventHandler<ActionEvent>() {
 //            @Override
 //            public void handle(ActionEvent event) {
 //                updateView();
@@ -31,7 +31,7 @@ public class Presenter {
     private void updateView() {
         //TODO
         //get input van namen en aantal players.
-//        String txt = view.getGeboorteJaarField().getText();
+//        String txt = newGameView.getGeboorteJaarField().getText();
 //        model.setGeboorteJaar(Integer.parseInt(txt));
     }
 }

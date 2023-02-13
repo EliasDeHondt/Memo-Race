@@ -2,7 +2,7 @@ package be.kdg.memorace;
 
 import be.kdg.memorace.model.GameBoard;
 import be.kdg.memorace.view.Presenter;
-import be.kdg.memorace.view.View;
+import be.kdg.memorace.view.NewGameView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -17,16 +17,18 @@ public class MainMemoRace extends Application {
     public void start(Stage stage) throws Exception {
         // Making Model (GameBoard.class).
         GameBoard model = new GameBoard();
-        // Making View (View.class).
-        View view = new View();
-        // Making Presenter (View.class).
-        new Presenter(model,view);
+        // Making NewGameView (NewGameView.class).
+        NewGameView newGameView = new NewGameView();
+        // Making Presenter (NewGameView.class).
+        // new Presenter(model, newGameView);
         // Making Scene.
-        Scene scene = new Scene(view);
+        Scene scene = new Scene(newGameView);
+        // Making stage (scene).
+        stage.setScene(scene);
         // Making Title.
         stage.setTitle("Memo-Race");
         // Making Icon.
-        stage.getIcons().add(new Image("be\\kdg\\MemoRace\\resources\\img\\question_mark.png"));
+        stage.getIcons().add(new Image("/question_mark.png"));
         // Show Stage.
         stage.show();
     }
