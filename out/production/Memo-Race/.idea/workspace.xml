@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a6d0b8da-a161-47f4-bb4c-129761feeb55" name="Changes" comment="gameboard model en view verdelen">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/git_toolbox_prj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/DemoTerminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/DemoTerminal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/Memo-Race.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/LauncherMemoRace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/MainMemoRace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/model/Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/model/Path.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/model/Pawn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/model/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/view/View.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/question_mark.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LSM1PA4pgHsTrx9gi1tsxjrFJs" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/v/IdeaProjects/Memo-Race_P3/src/be/kdg/MemoRace/model&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/be/kdg/MemoRace/model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.be.kdg.memorace.LauncherMemoRace">
+    <configuration name="LauncherMemoRace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="be.kdg.MemoRace.LauncherMemoRace" />
+      <module name="Memo-Race" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.kdg.MemoRace.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="be.kdg.memorace.LauncherMemoRace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="be.kdg.memorace.LauncherMemoRace" />
+      <module name="Memo-Race" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.kdg.memorace.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.be.kdg.memorace.LauncherMemoRace" />
+        <item itemvalue="Application.LauncherMemoRace" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6d0b8da-a161-47f4-bb4c-129761feeb55" name="Changes" comment="" />
+      <created>1675859814393</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675859814393</updated>
+      <workItem from="1675859816885" duration="563000" />
+      <workItem from="1675866769338" duration="4899000" />
+      <workItem from="1675929335086" duration="37000" />
+      <workItem from="1675939327755" duration="406000" />
+      <workItem from="1676023104160" duration="64000" />
+      <workItem from="1676029938880" duration="3000" />
+    </task>
+    <task id="LOCAL-00001" summary="deme">
+      <created>1675859878215</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675859878215</updated>
+    </task>
+    <task id="LOCAL-00002" summary="MPV structuur">
+      <created>1675867483461</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675867483461</updated>
+    </task>
+    <task id="LOCAL-00003" summary="MPV structuur - in klasses algemene waken">
+      <created>1675867820482</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675867820482</updated>
+    </task>
+    <task id="LOCAL-00004" summary="MPV structuur - in klasses algemene waken">
+      <created>1675867886346</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675867886346</updated>
+    </task>
+    <task id="LOCAL-00005" summary="console">
+      <created>1675867926519</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675867926519</updated>
+    </task>
+    <task id="LOCAL-00006" summary="console">
+      <created>1675867941287</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675867941287</updated>
+    </task>
+    <task id="LOCAL-00007" summary="wireframes + stuff">
+      <created>1675869992872</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675869992872</updated>
+    </task>
+    <task id="LOCAL-00008" summary="gameboard model en view verdelen">
+      <created>1675871618090</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675871618090</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="deme" />
+    <MESSAGE value="MPV structuur" />
+    <MESSAGE value="MPV structuur - in klasses algemene waken" />
+    <MESSAGE value="console" />
+    <MESSAGE value="wireframes + stuff" />
+    <MESSAGE value="gameboard model en view verdelen" />
+    <option name="LAST_COMMIT_MESSAGE" value="gameboard model en view verdelen" />
+  </component>
+</project>

@@ -1,0 +1,306 @@
+Index: out/production/Memo-Race/.idea/compiler.xml
+===================================================================
+diff --git a/out/production/Memo-Race/.idea/compiler.xml b/out/production/Memo-Race/.idea/compiler.xml
+deleted file mode 100644
+--- a/out/production/Memo-Race/.idea/compiler.xml	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="17" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: out/production/Memo-Race/.idea/.gitignore
+===================================================================
+diff --git a/out/production/Memo-Race/.idea/.gitignore b/out/production/Memo-Race/.idea/.gitignore
+deleted file mode 100644
+--- a/out/production/Memo-Race/.idea/.gitignore	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,8 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: out/production/Memo-Race/Memo-Race.iml
+===================================================================
+diff --git a/out/production/Memo-Race/Memo-Race.iml b/out/production/Memo-Race/Memo-Race.iml
+deleted file mode 100644
+--- a/out/production/Memo-Race/Memo-Race.iml	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,17 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/Demo" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/Resources" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/Resources/GameLog" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/Resources/Image" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-    <orderEntry type="library" name="javafx-swt" level="application" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: out/production/Memo-Race/Resources/GameLog/players.csv
+===================================================================
+diff --git a/out/production/Memo-Race/Resources/GameLog/players.csv b/out/production/Memo-Race/Resources/GameLog/players.csv
+deleted file mode 100644
+--- a/out/production/Memo-Race/Resources/GameLog/players.csv	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,6 +0,0 @@
+-EliasDeHondt;12034
+-Axel;34
+-Tanja;65
+-Tom;864
+-Tim;5683
+-Koen;8750
+\ No newline at end of file
+Index: out/production/Memo-Race/README.md
+===================================================================
+diff --git a/out/production/Memo-Race/README.md b/out/production/Memo-Race/README.md
+deleted file mode 100644
+--- a/out/production/Memo-Race/README.md	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,4 +0,0 @@
+-# Memo Race
+-Dit is een groepsproject van de opleiding TI (Toegepaste Informatica) van KdG (Karel de grote Hogeschool)
+-#
+-![LOGO](https://user-images.githubusercontent.com/25233962/206480828-0b86ed07-861b-40ea-9b29-7633df38650f.png)
+Index: out/production/Memo-Race/.idea/vcs.xml
+===================================================================
+diff --git a/out/production/Memo-Race/.idea/vcs.xml b/out/production/Memo-Race/.idea/vcs.xml
+deleted file mode 100644
+--- a/out/production/Memo-Race/.idea/vcs.xml	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: out/production/Memo-Race/.idea/uiDesigner.xml
+===================================================================
+diff --git a/out/production/Memo-Race/.idea/uiDesigner.xml b/out/production/Memo-Race/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/out/production/Memo-Race/.idea/uiDesigner.xml	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: out/production/Memo-Race/players.csv
+===================================================================
+diff --git a/out/production/Memo-Race/players.csv b/out/production/Memo-Race/players.csv
+deleted file mode 100644
+--- a/out/production/Memo-Race/players.csv	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,6 +0,0 @@
+-EliasDeHondt;12034
+-Axel;34
+-Tanja;65
+-Tom;864
+-Tim;5683
+-Koen;8750
+\ No newline at end of file
+Index: out/production/Memo-Race/.idea/git_toolbox_prj.xml
+===================================================================
+diff --git a/out/production/Memo-Race/.idea/git_toolbox_prj.xml b/out/production/Memo-Race/.idea/git_toolbox_prj.xml
+deleted file mode 100644
+--- a/out/production/Memo-Race/.idea/git_toolbox_prj.xml	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,15 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="GitToolBoxProjectSettings">
+-    <option name="commitMessageIssueKeyValidationOverride">
+-      <BoolValueOverride>
+-        <option name="enabled" value="true" />
+-      </BoolValueOverride>
+-    </option>
+-    <option name="commitMessageValidationEnabledOverride">
+-      <BoolValueOverride>
+-        <option name="enabled" value="true" />
+-      </BoolValueOverride>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: out/production/Memo-Race/GameLog/players.csv
+===================================================================
+diff --git a/out/production/Memo-Race/GameLog/players.csv b/out/production/Memo-Race/GameLog/players.csv
+deleted file mode 100644
+--- a/out/production/Memo-Race/GameLog/players.csv	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,6 +0,0 @@
+-EliasDeHondt;12034
+-Axel;34
+-Tanja;65
+-Tom;864
+-Tim;5683
+-Koen;8750
+\ No newline at end of file
+Index: out/production/Memo-Race/.idea/misc.xml
+===================================================================
+diff --git a/out/production/Memo-Race/.idea/misc.xml b/out/production/Memo-Race/.idea/misc.xml
+deleted file mode 100644
+--- a/out/production/Memo-Race/.idea/misc.xml	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: out/production/Memo-Race/.idea/modules.xml
+===================================================================
+diff --git a/out/production/Memo-Race/.idea/modules.xml b/out/production/Memo-Race/.idea/modules.xml
+deleted file mode 100644
+--- a/out/production/Memo-Race/.idea/modules.xml	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
++++ /dev/null	(revision b7e7fa32f9c20f558ca91e55fea1cb5335468e8e)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/Memo-Race.iml" filepath="$PROJECT_DIR$/Memo-Race.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
