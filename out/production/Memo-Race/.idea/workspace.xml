@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b0f2f3c-d5e4-437f-bca1-7f34b2669973" name="Changes" comment="Commit MVP and JavaFX">
-      <change afterPath="$PROJECT_DIR$/src/be/kdg/memorace/view/GameBoardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/shelved.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25__Changes_.xml" afterDir="false" />
+    <list default="true" id="6b0f2f3c-d5e4-437f-bca1-7f34b2669973" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;out/production/Memo-Race/.idea/misc.xml&#10;#&#9;out/production/Memo-Race/.idea/workspace.xml&#10;#&#9;out/production/Memo-Race/css/style.css&#10;#&#9;out/production/Memo-Race/resources/css/style.css&#10;#&#9;out/production/Memo-Race/style.css&#10;#&#9;resources/css/style.css">
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/model/App/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/model/App/FileHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/model/Colour.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/memorace/view/NewGameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/memorace/view/NewGameView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fonts/Pixeltype.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/memorace/model/App/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/memorace/model/App/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/memorace/model/Colour.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/memorace/view/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/memorace/view/NewGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/memorace/view/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/memorace/view/WelcomeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/kdg/memorace/view/WonView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/kdg/memorace/view/WonView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/view/NewGameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/view/NewGameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/view/WelcomePresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/view/WelcomePresenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/view/WelcomeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/view/WelcomeView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/view/WonView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/view/WonView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,30 +35,34 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/elias/OneDrive/Data Core/Documents/School Documents/(5) KdG/Toegepaste Informatica/[1] Toegepaste Informatica Eerste Jaar/[1] Programmeren/Groepsproject/Memo-Race-Game/src/be/kdg/memorace/view",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;CSS&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "CSS"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\elias\OneDrive\Data Core\Documents\School Documents\(5) KdG\Toegepaste Informatica\[1] Toegepaste Informatica Eerste Jaar\[1] Programmeren\Groepsproject\Memo-Race-Game\src\be\kdg\memorace\view" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\elias\OneDrive\Data Core\Documents\School Documents\(5) KdG\Toegepaste Informatica\[1] Toegepaste Informatica Eerste Jaar\[1] Programmeren\Groepsproject\Memo-Race-Game\resources\images" />
       <recent name="C:\Users\elias\OneDrive\Data Core\Documents\School Documents\(5) KdG\Toegepaste Informatica\[1] Toegepaste Informatica Eerste Jaar\[1] Programmeren\Groepsproject\Memo-Race-Game\resources\fonts" />
       <recent name="C:\Users\elias\OneDrive\Data Core\Documents\School Documents\(5) KdG\Toegepaste Informatica\[1] Toegepaste Informatica Eerste Jaar\[1] Programmeren\Groepsproject\Memo-Race-Game\resources\css" />
       <recent name="C:\Users\elias\OneDrive\Data Core\Documents\School Documents\(5) KdG\Toegepaste Informatica\[1] Toegepaste Informatica Eerste Jaar\[1] Programmeren\Groepsproject\Memo-Race-Game\resources" />
       <recent name="C:\Users\elias\OneDrive\Data Core\Documents\School Documents\(5) KdG\Toegepaste Informatica\[1] Toegepaste Informatica Eerste Jaar\[1] Programmeren\Groepsproject\Memo-Race-Game\resources\log" />
-      <recent name="C:\Users\elias\OneDrive\Data Core\Documents\School Documents\(5) KdG\Toegepaste Informatica\[1] Toegepaste Informatica Eerste Jaar\[1] Programmeren\Groepsproject\Memo-Race-Game\resources\images" />
     </key>
   </component>
   <component name="RunManager" selected="Application.LauncherMemoRace">
@@ -82,7 +74,7 @@
       </method>
     </configuration>
     <configuration name="DemoTerminal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DemoTerminal" />
+      <option name="MAIN_CLASS_NAME" value="be.kdg.memorace.DemoTerminal" />
       <module name="Memo-Race" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,7 +121,8 @@
       <workItem from="1676299361726" duration="1484000" />
       <workItem from="1676301224908" duration="218000" />
       <workItem from="1676301461567" duration="1947000" />
-      <workItem from="1676321357550" duration="1113000" />
+      <workItem from="1676321357550" duration="6969000" />
+      <workItem from="1676328642432" duration="545000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Wireframes + Commit Resources">
       <created>1675879395127</created>
@@ -187,7 +180,28 @@
       <option name="project" value="LOCAL" />
       <updated>1676299070332</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Commit MVP and JavaFX">
+      <created>1676328386177</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676328386177</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Commit MVP and JavaFX">
+      <created>1676328400535</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676328400535</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;out/production/Memo-Race/.idea/misc.xml&#10;#&#9;out/production/Memo-Race/.idea/workspace.xml&#10;#&#9;out/production/Memo-Race/css/style.css&#10;#&#9;out/production/Memo-Race/resources/css/style.css&#10;#&#9;out/production/Memo-Race/style.css&#10;#&#9;resources/css/style.css">
+      <created>1676328811118</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676328811119</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +222,8 @@
     <MESSAGE value="Commit Wireframes + Commit Resources" />
     <MESSAGE value="Commit data structures MVP" />
     <MESSAGE value="Commit MVP and JavaFX" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit MVP and JavaFX" />
+    <MESSAGE value="Commit JavaFX" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;out/production/Memo-Race/.idea/misc.xml&#10;#&#9;out/production/Memo-Race/.idea/workspace.xml&#10;#&#9;out/production/Memo-Race/css/style.css&#10;#&#9;out/production/Memo-Race/resources/css/style.css&#10;#&#9;out/production/Memo-Race/style.css&#10;#&#9;resources/css/style.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;out/production/Memo-Race/.idea/misc.xml&#10;#&#9;out/production/Memo-Race/.idea/workspace.xml&#10;#&#9;out/production/Memo-Race/css/style.css&#10;#&#9;out/production/Memo-Race/resources/css/style.css&#10;#&#9;out/production/Memo-Race/style.css&#10;#&#9;resources/css/style.css" />
   </component>
 </project>

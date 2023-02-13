@@ -34,7 +34,6 @@ public class FileHandler {
         }
         return null;
     }
-
     public static void writeFile(String url, List<Player> players) { // Write
         // The URL variable is the path where the file to be read is located.
         // The list That is specified will be added. At the file location.

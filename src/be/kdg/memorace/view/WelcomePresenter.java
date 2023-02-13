@@ -3,8 +3,8 @@ package be.kdg.memorace.view;
 import be.kdg.memorace.model.GameBoard;
 
 /**
- * Van Elias De Hondt
- * 13/02/2023
+ * Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class WelcomePresenter {
     // Attributes
@@ -19,18 +19,18 @@ public class WelcomePresenter {
     }
     // Methods
     private void addEventHandlers() {
-        // Action-> [Play New Game] (getPlayNewGame)
-        this.welcomeView.getPlayNewGame().setOnAction((e -> {
-            // TODO
-        }));
-        // Action-> [View Game Log] (getViewGameLog)
-        this.welcomeView.getViewGameLog().setOnAction((e -> {
-            // TODO
-        }));
-        // Action-> [Exit Game] (getQuit)
-        this.welcomeView.getQuit().setOnAction((e -> {
-            System.exit(0);
-        }));
+//        // Action-> [Play New Game] (getPlayNewGame)
+//        this.welcomeView.getPlayNewGame().setOnAction((e -> {
+//            // TODO
+//        }));
+//        // Action-> [View Game Log] (getViewGameLog)
+//        this.welcomeView.getViewGameLog().setOnAction((e -> {
+//            // TODO
+//        }));
+//        // Action-> [Exit Game] (getQuit)
+//        this.welcomeView.getQuit().setOnAction((e -> {
+//            System.exit(0);
+//        }));
     }
     private void updateView() {
         // TODO

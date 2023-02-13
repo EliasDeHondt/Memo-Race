@@ -48,7 +48,7 @@
     -fx-padding: 20px;
     -fx-width: 200px;
 }
-#pane{
+#pane {
     -fx-background-image: url("game_background.gif");
     -fx-background-repeat: stretch;
     -fx-background-size: 900 506;

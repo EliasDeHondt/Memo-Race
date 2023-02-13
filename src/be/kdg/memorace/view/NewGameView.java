@@ -10,8 +10,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 /**
- * Van Elias De Hondt
- * 13/02/2023
+ * Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class NewGameView extends GridPane {
     // Attributes
