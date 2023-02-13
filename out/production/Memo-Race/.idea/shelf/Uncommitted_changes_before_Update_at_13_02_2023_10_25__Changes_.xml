@@ -1,129 +1,159 @@
-<changelist name="Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]" date="1676280350532" recycled="true" deleted="true">
+<changelist name="Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]" date="1676280358124" recycled="true" deleted="true">
   <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/shelved.patch" />
   <option name="DESCRIPTION" value="Uncommitted changes before Update at 13/02/2023 10:25 [Changes]" />
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/MainMemoRace.class" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_12.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_12.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_14.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/pawn/pawn_3.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/pawn_3.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/model/Card.class" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_8.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_8.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_4.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_5.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_5.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/DemoTerminal.class" />
-    <option name="AFTER_PATH" value="out/production/Memo-Race/DemoTerminal.class" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/DemoTerminal.class" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/die/die_4.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/die_4.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/model/Player.class" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/die/die_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/die_1.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/model/Pawn.class" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/question_mark.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/question_mark.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_10.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_2.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_2.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_8.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_1.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_13.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_14.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_14.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_5.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_4.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_4.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_16.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_7.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_7.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_2.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/die/die_3.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/die_3.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/question_mark.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/die/die_6.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/die_6.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/LauncherMemoRace.class" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_13.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_13.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/model/Path.class" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_10.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_10.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_11.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/pawn/pawn_6.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/pawn_6.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_15.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/die/die_0.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/die_0.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_3.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/die/die_5.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/die_5.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_7.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_9.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_9.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/view/View.class" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/die/die_2.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/die_2.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_6.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_3.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_3.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_12.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_0.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_0.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_1.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/pawn/pawn_5.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/pawn_5.png" />
   </binary>
   <binary>
-    <option name="BEFORE_PATH" value="out/production/Memo-Race/path_9.png" />
-    <option name="AFTER_PATH" />
-    <option name="SHELVED_PATH" />
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_16.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_16.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_11.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_11.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/pawn/pawn_2.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/pawn_2.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/pawn/pawn_4.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/pawn_4.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/pawn/pawn_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/pawn_1.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_15.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_15.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="resources/images/path/path_6.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_10_25_[Changes]/path_6.png" />
   </binary>
 </changelist>

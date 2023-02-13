@@ -30,7 +30,7 @@ public class FileHandler {
             }
             file.close();
         } catch (FileNotFoundException e) {
-            System.out.println(Colour.ANSI_BLACK + "The specified file was not found.\nFor example: GameLog/players.csv");
+            System.out.println("The specified file was not found.\nFor example: GameLog/players.csv");
         }
         return null;
     }
@@ -45,7 +45,7 @@ public class FileHandler {
             }
             formatter.close();
         } catch (IOException e) {
-            System.out.println(Colour.ANSI_BLACK + "Specify a correct path and also a correct file name with the correct extension.\nFor example: GameLog/players.csv");
+            System.out.println("Specify a correct path and also a correct file name with the correct extension.\nFor example: GameLog/players.csv");
         }
     }
 }

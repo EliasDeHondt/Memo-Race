@@ -1,3 +1,5 @@
+package be.kdg.memorace;
+
 import be.kdg.memorace.model.App.ExceptionPlayer;
 import be.kdg.memorace.model.App.FileHandler;
 import be.kdg.memorace.model.*;

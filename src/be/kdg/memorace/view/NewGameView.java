@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 /**
@@ -33,6 +34,7 @@ public class NewGameView extends GridPane {
     private Image pawn4;
     private Image pawn5;
     private Image pawn6;
+    private BorderPane bottom;
     private Button startGame;
     // Constructors
     public NewGameView() {
@@ -60,6 +62,7 @@ public class NewGameView extends GridPane {
         this.pawn4 = new Image("/pawn_4.png");
         this.pawn5 = new Image("/pawn_5.png");
         this.pawn6 = new Image("/pawn_6.png");
+        this.bottom = new BorderPane();
         this.startGame = new Button("Start Game");
     }
     public void layoutNodes() {
@@ -88,8 +91,11 @@ public class NewGameView extends GridPane {
         this.add(new ImageView(this.pawn4),2,4);
         this.add(new ImageView(this.pawn5),2,5);
         this.add(new ImageView(this.pawn6),2,6);
+        // Add (BorderPane) in to (GridPane)
+        // column 0, row 7, column span 3, row span 1
+        this.add(this.bottom,0,7,3,1);
         // Add (startGame) in to (GridPane)
-        this.add(this.startGame,1,7);
+        this.bottom.setCenter(this.startGame);
         // Set Hgap and Vgap to 10
         this.setHgap(10);
         this.setVgap(10);
@@ -101,9 +107,27 @@ public class NewGameView extends GridPane {
         this.player4.setId("playerX");
         this.player5.setId("playerX");
         this.player6.setId("playerX");
-
-        //temp
-        //player1.setStyle("-fx-font-family: Pixeltype; -fx-font-size: 22;");
         this.startGame.setId("startGame");
+    }
+    public TextField getPlayer1Name() { // Get..
+        return this.player1Name;
+    }
+    public TextField getPlayer2Name() { // Get..
+        return this.player2Name;
+    }
+    public TextField getPlayer3Name() { // Get..
+        return this.player3Name;
+    }
+    public TextField getPlayer4Name() { // Get..
+        return this.player4Name;
+    }
+    public TextField getPlayer5Name() { // Get..
+        return this.player5Name;
+    }
+    public TextField getPlayer6Name() { // Get..
+        return this.player6Name;
+    }
+    public Button getStartGame() { // Get..
+        return this.startGame;
     }
 }

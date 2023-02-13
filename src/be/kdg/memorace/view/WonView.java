@@ -35,4 +35,10 @@ public class WonView extends GridPane {
         this.playerName.setId("labelNSL");
         this.playerScore.setId("labelNSL");
     }
+    public Label getPlayerName() { // Get..
+        return this.playerName;
+    }
+    public Label getPlayerScore() { // Get..
+        return this.playerScore;
+    }
 }

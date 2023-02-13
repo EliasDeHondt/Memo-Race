@@ -1,8 +1,8 @@
 package be.kdg.memorace;
 
 import be.kdg.memorace.model.GameBoard;
-import be.kdg.memorace.view.NewGameView;
-import be.kdg.memorace.view.Presenter;
+import be.kdg.memorace.view.WelcomePresenter;
+import be.kdg.memorace.view.WelcomeView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -18,11 +18,11 @@ public class MainMemoRace extends Application {
         // Making Model(GameBoard.class).
         GameBoard model = new GameBoard();
         // Making WelcomeView (WelcomeView.class).
-        NewGameView NewGameView = new NewGameView();
+        WelcomeView welcomeView = new WelcomeView();
         // Making Presenter (WelcomeView.class).
-        new Presenter(model, NewGameView);
+        new WelcomePresenter(model, welcomeView);
         // Making Scene.
-        Scene scene = new Scene(NewGameView);
+        Scene scene = new Scene(welcomeView);
         // CSS
         scene.getStylesheets().add("/style.css");
         // Making stage (scene).
@@ -36,7 +36,6 @@ public class MainMemoRace extends Application {
         // Show Stage.
         stage.show();
     }
-
     public static void main(String[] args) {
         Application.launch(args);
     }
