@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6d0b8da-a161-47f4-bb4c-129761feeb55" name="Changes" comment="gameboard model en view verdelen">
+      <change afterPath="$PROJECT_DIR$/resources/fonts/Pixeltype.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Memo-Race.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Memo-Race.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/git_toolbox_prj.xml" beforeDir="false" />
@@ -13,7 +15,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/DemoTerminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Memo-Race/DemoTerminal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/Memo-Race.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/LauncherMemoRace.class" beforeDir="false" />
@@ -22,7 +23,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/model/Path.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/model/Pawn.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/model/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/be/kdg/MemoRace/view/View.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_10.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_11.png" beforeDir="false" />
@@ -40,6 +40,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_8.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/path_9.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Memo-Race/question_mark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,26 +64,27 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/v/IdeaProjects/Memo-Race_P3/src/be/kdg/MemoRace/model&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-19",
+    "last_opened_file_path": "/home/v/IdeaProjects/Memo-Race_P3/resources/fonts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/fonts" />
       <recent name="$PROJECT_DIR$/src/be/kdg/MemoRace/model" />
     </key>
   </component>
@@ -134,6 +136,8 @@
       <workItem from="1675939327755" duration="406000" />
       <workItem from="1676023104160" duration="64000" />
       <workItem from="1676029938880" duration="3000" />
+      <workItem from="1676280339713" duration="87000" />
+      <workItem from="1676298213839" duration="841000" />
     </task>
     <task id="LOCAL-00001" summary="deme">
       <created>1675859878215</created>

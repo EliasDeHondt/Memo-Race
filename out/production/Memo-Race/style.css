@@ -8,7 +8,11 @@
     -fx-color: #FFFFFF;
     -fx-padding: 20px;
     -fx-width: 15px;
+    src: url('/Pixeltype.ttf');
+    font-family:'Pixeltype';
+    font-style: normal;
 }
+
 #howManyPlayers {
     -fx-font-size: 20px;
     -fx-color: #FFFFFF;
