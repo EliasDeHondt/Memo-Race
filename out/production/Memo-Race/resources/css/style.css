@@ -1,0 +1,41 @@
+/*
+ * Van Elias De Hondt
+ * Van Vera Wise
+*/
+/* NewGameView */
+#playerX {
+    -fx-font-size: 20px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-width: 15px;
+}
+#howManyPlayers {
+    -fx-font-size: 20px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-width: 200px;
+}
+#startGame {
+    -fx-background-color: #4F94F0;
+    -fx-font-size: 20px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 20px;
+}
+/* NewGameView */
+/* WonView */
+#labelNSL {
+    -fx-font-size: 28px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-width: 200px;
+}
+/* WonView */
+/* WelcomeView */
+#buttonNGQB {
+    -fx-background-color: #4F94F0;
+    -fx-font-size: 28px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-width: 200px;
+}
+/* WelcomeView */
