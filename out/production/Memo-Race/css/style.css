@@ -3,14 +3,15 @@
  * Van Vera Wise
 */
 /* NewGameView */
+@font-face {
+    font-family: Delicious;
+    src: url('Pixeltype.ttf');
+}
 #playerX {
     -fx-font-size: 20px;
     -fx-color: #FFFFFF;
     -fx-padding: 20px;
     -fx-width: 15px;
-    src: url('/Pixeltype.ttf');
-    font-family:'Pixeltype';
-    font-style: normal;
 }
 
 #howManyPlayers {
