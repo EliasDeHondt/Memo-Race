@@ -24,6 +24,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/be/kdg/memorace/resources/images/path" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/be/kdg/memorace/resources/images/pawn" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/resources/css" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/resources/images" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/resources/images/die" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/resources/images/path" type="java-resource" />

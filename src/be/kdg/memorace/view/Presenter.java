@@ -9,11 +9,11 @@ import be.kdg.memorace.model.GameBoard;
 public class Presenter {
 
     private GameBoard model;
-    private NewGameView newGameView;
+    private NewGameView NewGameView;
 
-    public Presenter(GameBoard model, NewGameView newGameView) {
+    public Presenter(GameBoard model, NewGameView NewGameView) {
         this.model = model;
-        this.newGameView = newGameView;
+        this.NewGameView = NewGameView;
         this.addEventHandlers();
         this.updateView();
     }
