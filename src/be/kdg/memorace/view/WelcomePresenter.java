@@ -19,18 +19,18 @@ public class WelcomePresenter {
     }
     // Methods
     private void addEventHandlers() {
-//        // Action-> [Play New Game] (getPlayNewGame)
-//        this.welcomeView.getPlayNewGame().setOnAction((e -> {
-//            // TODO
-//        }));
-//        // Action-> [View Game Log] (getViewGameLog)
-//        this.welcomeView.getViewGameLog().setOnAction((e -> {
-//            // TODO
-//        }));
-//        // Action-> [Exit Game] (getQuit)
-//        this.welcomeView.getQuit().setOnAction((e -> {
-//            System.exit(0);
-//        }));
+        // Action-> [Play New Game] (getPlayNewGame)
+        this.welcomeView.getPlayNewGame().setOnAction((e -> {
+            // TODO
+        }));
+        // Action-> [View Game Log] (getViewGameLog)
+        this.welcomeView.getViewGameLog().setOnAction((e -> {
+            // TODO
+        }));
+        // Action-> [Exit Game] (getQuit)
+        this.welcomeView.getQuit().setOnAction((e -> {
+            System.exit(0);
+        }));
     }
     private void updateView() {
         // TODO
