@@ -103,7 +103,7 @@ public class NewGameView extends GridPane {
         this.player6.setId("playerX");
 
         //temp
-        player1.setStyle("-fx-font-family: Pixeltype; -fx-font-size: 22;");
+        //player1.setStyle("-fx-font-family: Pixeltype; -fx-font-size: 22;");
         this.startGame.setId("startGame");
     }
 }

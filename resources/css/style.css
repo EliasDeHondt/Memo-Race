@@ -8,23 +8,26 @@
     src: url('Pixeltype.ttf');
 }
 #playerX {
-    -fx-font-size: 20px;
+    -fx-font-size: 23px;
     -fx-color: #FFFFFF;
     -fx-padding: 20px;
     -fx-width: 15px;
+    -fx-font-family: Pixeltype;
 }
 
 #howManyPlayers {
-    -fx-font-size: 20px;
+    -fx-font-size: 26px;
     -fx-color: #FFFFFF;
     -fx-padding: 20px;
     -fx-width: 200px;
+    -fx-font-family: Pixeltype;
 }
 #startGame {
     -fx-background-color: #4F94F0;
     -fx-font-size: 20px;
     -fx-color: #FFFFFF;
     -fx-padding: 20px;
+    -fx-font-family: Pixeltype;
 }
 /* NewGameView */
 /* WonView */
@@ -33,6 +36,7 @@
     -fx-color: #FFFFFF;
     -fx-padding: 20px;
     -fx-width: 200px;
+    -fx-font-family: Pixeltype;
 }
 /* WonView */
 /* WelcomeView */
@@ -42,5 +46,6 @@
     -fx-color: #FFFFFF;
     -fx-padding: 20px;
     -fx-width: 200px;
+    -fx-font-family: Pixeltype;
 }
 /* WelcomeView */
