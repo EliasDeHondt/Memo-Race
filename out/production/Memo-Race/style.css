@@ -5,6 +5,23 @@
 /* VT323 Font */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 /* VT323 Font */
+/* WelcomeView */
+#buttonWelcome {
+    -fx-font-family: 'VT323', monospace;
+    -fx-background-color: #00A2E8;
+    -fx-font-size: 28px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-width: 200px;
+}
+#pane {
+    -fx-background-image: url("game_background.gif");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+/* WelcomeView */
 /* NewGameView */
 #playerX {
     -fx-font-family: 'VT323', monospace;
@@ -24,7 +41,7 @@
 }
 #startGame {
     -fx-font-family: 'VT323', monospace;
-    -fx-background-color: #4F94F0;
+    -fx-background-color: #00A2E8;
     -fx-font-size: 20px;
     -fx-color: #FFFFFF;
     -fx-padding: 20px;
@@ -39,20 +56,3 @@
     -fx-width: 200px;
 }
 /* WonView */
-/* WelcomeView */
-#buttonWelcome {
-    -fx-font-family: 'VT323', monospace;
-    -fx-background-color: #4F94F0;
-    -fx-font-size: 28px;
-    -fx-color: #FFFFFF;
-    -fx-padding: 20px;
-    -fx-width: 200px;
-}
-#pane {
-    -fx-background-image: url("game_background.gif");
-    -fx-background-repeat: stretch;
-    -fx-background-size: 900 506;
-    -fx-background-position: center center;
-    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
-}
-/* WelcomeView */

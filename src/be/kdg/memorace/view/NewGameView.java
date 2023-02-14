@@ -16,24 +16,9 @@ import javafx.scene.layout.GridPane;
 public class NewGameView extends GridPane {
     // Attributes
     private Label howManyPlayers;
-    private Label player1;
-    private Label player2;
-    private Label player3;
-    private Label player4;
-    private Label player5;
-    private Label player6;
-    private TextField player1Name;
-    private TextField player2Name;
-    private TextField player3Name;
-    private TextField player4Name;
-    private TextField player5Name;
-    private TextField player6Name;
-    private Image pawn1;
-    private Image pawn2;
-    private Image pawn3;
-    private Image pawn4;
-    private Image pawn5;
-    private Image pawn6;
+    private Label player1, player2, player3, player4, player5, player6;
+    private TextField player1Name, player2Name, player3Name, player4Name, player5Name, player6Name;
+    private Image pawn1, pawn2, pawn3, pawn4, pawn5, pawn6;
     private BorderPane bottom;
     private Button startGame;
     // Constructors

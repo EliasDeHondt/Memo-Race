@@ -2,8 +2,12 @@ package be.kdg.memorace.view;
 
 import javafx.animation.FadeTransition;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 /**
@@ -12,6 +16,7 @@ import javafx.util.Duration;
  */
 public class WelcomeView extends GridPane {
     // Attributes
+    private Image logo;
     private Button playNewGame;
     private Button viewGameLog;
     private Button quit;
@@ -22,17 +27,22 @@ public class WelcomeView extends GridPane {
     }
     // Methods
     public void initialiseNodes() {
+        this.logo = new Image("/logo.png");
         this.playNewGame = new Button("Play new game");
         this.viewGameLog = new Button("View game log");
         this.quit = new Button("    Quit     ");
     }
     public void layoutNodes() {
         // Set Padding (20)
-        setPadding(new Insets(50));
-        // Add (playNewGame) and (viewGameLog) and (quit) in to (GridPane)
-        this.add(this.playNewGame,1,0);
-        this.add(this.viewGameLog,1,1);
-        this.add(this.quit,1,2);
+        setPadding(new Insets(60));
+        // Creating the top layer of the screen to place the logo in.
+        VBox top = new VBox(new ImageView(this.logo));
+        top.setAlignment(Pos.CENTER);
+        // Add (top), (playNewGame), (viewGameLog) and (quit) in to (GridPane)
+        this.add(top,1,0);
+        this.add(this.playNewGame,1,1);
+        this.add(this.viewGameLog,1,2);
+        this.add(this.quit,1,3);
         // Set Vgap to 10
         this.setVgap(30);
         // CSS For (playNewGame) and (viewGameLog) and (quit) and (this)

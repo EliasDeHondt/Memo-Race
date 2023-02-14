@@ -1,5 +1,6 @@
 package be.kdg.memorace.view;
 
+import be.kdg.memorace.MainMemoRace;
 import be.kdg.memorace.model.GameBoard;
 
 /**
@@ -21,6 +22,7 @@ public class WelcomePresenter {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
+
             // TODO
         }));
         // Action-> [View Game Log] (getViewGameLog)
