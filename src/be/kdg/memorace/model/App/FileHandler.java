@@ -1,6 +1,7 @@
 package be.kdg.memorace.model.App;
 
 import be.kdg.memorace.model.*;
+import javafx.scene.control.Alert;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,11 +27,13 @@ public class FileHandler {
                 String[] regelData = regel.split(";");
                 if (i == index) return regelData;
                 else i++;
-
             }
             file.close();
         } catch (FileNotFoundException e) {
-            System.out.println("The specified file was not found.\nFor example: GameLog/players.csv");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("The specified file was not found.\nFor example: GameLog/players.csv");
+            alert.setTitle("File Handler ERROR");
+            alert.showAndWait();
         }
         return null;
     }
@@ -44,7 +47,10 @@ public class FileHandler {
             }
             formatter.close();
         } catch (IOException e) {
-            System.out.println("Specify a correct path and also a correct file name with the correct extension.\nFor example: GameLog/players.csv");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Specify a correct path and also a correct file name with the correct extension.\nFor example: GameLog/players.csv");
+            alert.setTitle("File Handler ERROR");
+            alert.showAndWait();
         }
     }
 }

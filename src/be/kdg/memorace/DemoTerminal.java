@@ -89,7 +89,7 @@ public class DemoTerminal {
 
     public static void scoreBoard() {
         for (int i = 0; i <= 3; i++) {
-            String[] regelData = FileHandler.readFile("Resources/GameLog/players.csv", i);
+            String[] regelData = FileHandler.readFile("/players.csv", i);
             assert regelData != null;
             int score = Integer.parseInt(regelData[1]);
             System.out.printf("""

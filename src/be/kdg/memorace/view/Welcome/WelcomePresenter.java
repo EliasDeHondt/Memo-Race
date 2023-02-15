@@ -1,6 +1,7 @@
 package be.kdg.memorace.view.Welcome;
 
 import be.kdg.memorace.model.GameBoard;
+import be.kdg.memorace.view.GameLog.GameLogView;
 import be.kdg.memorace.view.NewGame.NewGamePresenter;
 import be.kdg.memorace.view.NewGame.NewGameView;
 import javafx.application.Platform;
@@ -33,8 +34,10 @@ public class WelcomePresenter {
         }));
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
-            welcomeView.getCustomStage().setTitle("Memo-Race / Game Log"); // Making Title (Memo-Race / Game Log).
-            // TODO
+            GameLogView gameLogView = new GameLogView(); // Making View (GameLogView.class).
+            this.welcomeView.getScene().setRoot(gameLogView); // Add (GameLogView.class) to (WelcomeView.class).
+            gameLogView.getScene().getWindow().sizeToScene(); // Add new Size.
+            this.welcomeView.getCustomStage().setTitle("Memo-Race / Game Log"); // Making Title (Memo-Race / Game Log).
         }));
         // Action-> [Exit Game] (getQuit)
         this.welcomeView.getQuit().setOnAction((e -> {
