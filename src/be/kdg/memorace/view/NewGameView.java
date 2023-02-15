@@ -77,8 +77,8 @@ public class NewGameView extends GridPane {
         this.add(new ImageView(this.pawn5),6,2);
         this.add(new ImageView(this.pawn6),6,3);
         // Add (BorderPane) in to (GridPane)
-        // column 0, row 7, column span 3, row span 1
-        this.add(this.bottom,2,7,3,1);
+        // column 0, row 7, column span 7, row span 1
+        this.add(this.bottom,0,7,7,1);
         // Add (startGame) in to (GridPane)
         this.bottom.setCenter(this.startGame);
         // Set Hgap and Vgap to 10

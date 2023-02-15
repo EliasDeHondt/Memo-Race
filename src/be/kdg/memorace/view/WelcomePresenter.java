@@ -1,9 +1,6 @@
 package be.kdg.memorace.view;
 
-import be.kdg.memorace.MainMemoRace;
 import be.kdg.memorace.model.GameBoard;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -24,15 +21,10 @@ public class WelcomePresenter {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             new NewGamePresenter(this.model, newGameView); // Making Presenter (NewGamePresenter.class).
-
-            welcomeView.getScene().setRoot(newGameView);
-            newGameView.getScene().getWindow().sizeToScene();
-            welcomeView.getTitle().setTitle("Memo-Race / New Game");
-
-            // TODO
+            welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
+            newGameView.getScene().getWindow().sizeToScene(); // Add new Scene.
         }));
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
@@ -40,16 +32,10 @@ public class WelcomePresenter {
         }));
         // Action-> [Exit Game] (getQuit)
         this.welcomeView.getQuit().setOnAction((e -> {
-            System.exit(0);
+            System.exit(0); // exit
         }));
     }
     private void updateView() {
         // TODO
-    }
-    public Stage setTitle(Stage primaryStage){
-        return primaryStage;
-    }
-    public String getTitle(Stage primaryStage){
-        return primaryStage.getTitle();
     }
 }
