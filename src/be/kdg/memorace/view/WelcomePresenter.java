@@ -22,6 +22,9 @@ public class WelcomePresenter {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
+            welcomeView.setPrefHeight(1000);
+            welcomeView.setPrefWidth(1000);
+            welcomeView.getScene().setRoot(new NewGameView());
 
             // TODO
         }));
