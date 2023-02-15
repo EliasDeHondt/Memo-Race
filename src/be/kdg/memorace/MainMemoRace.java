@@ -6,6 +6,8 @@ import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 /**
@@ -29,6 +31,10 @@ public class MainMemoRace extends Application {
         primaryStage.getIcons().add(new Image("/question_mark.png")); // Making Icon.
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
+
+        MediaPlayer player = new MediaPlayer(new Media("music.mp3"));
+        player.play();
+
         primaryStage.show(); // Show Stage.
     }
 }
