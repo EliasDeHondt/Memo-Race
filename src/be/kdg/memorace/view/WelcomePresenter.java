@@ -1,8 +1,6 @@
 package be.kdg.memorace.view;
 
-import be.kdg.memorace.MainMemoRace;
 import be.kdg.memorace.model.GameBoard;
-import javafx.scene.Scene;
 
 /**
  * Vera Wise & Elias De Hondt
