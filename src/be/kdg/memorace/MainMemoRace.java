@@ -10,6 +10,8 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 /**
  * Vera Wise & Elias De Hondt
  * 08/12/2022
@@ -32,7 +34,10 @@ public class MainMemoRace extends Application {
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
 
-        MediaPlayer player = new MediaPlayer(new Media("music.mp3"));
+//        String uriString = new File("music-2.wav").toURI().toString();
+//        Media m = new Media(uriString);
+        Media media = new Media(new File("music-2.wav").toURI().toString());
+        MediaPlayer player = new MediaPlayer(media);
         player.play();
 
         primaryStage.show(); // Show Stage.
