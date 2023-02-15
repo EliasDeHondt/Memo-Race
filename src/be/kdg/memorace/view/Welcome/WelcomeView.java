@@ -1,4 +1,4 @@
-package be.kdg.memorace.view;
+package be.kdg.memorace.view.Welcome;
 
 import javafx.animation.FadeTransition;
 import javafx.geometry.Insets;

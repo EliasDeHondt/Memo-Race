@@ -1,4 +1,4 @@
-package be.kdg.memorace.view;
+package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.model.GameBoard;
 

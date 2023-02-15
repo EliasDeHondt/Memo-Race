@@ -1,4 +1,4 @@
-package be.kdg.memorace.view;
+package be.kdg.memorace.view.GameBoard;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

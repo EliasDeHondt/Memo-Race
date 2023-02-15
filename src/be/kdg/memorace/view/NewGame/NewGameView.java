@@ -1,4 +1,4 @@
-package be.kdg.memorace.view;
+package be.kdg.memorace.view.NewGame;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;

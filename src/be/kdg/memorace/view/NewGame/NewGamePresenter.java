@@ -1,6 +1,8 @@
-package be.kdg.memorace.view;
+package be.kdg.memorace.view.NewGame;
 
 import be.kdg.memorace.model.GameBoard;
+import be.kdg.memorace.view.GameBoard.GameBoardPresenter;
+import be.kdg.memorace.view.GameBoard.GameBoardView;
 
 /**
  * Van Elias De Hondt

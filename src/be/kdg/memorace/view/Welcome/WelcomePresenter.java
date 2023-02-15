@@ -1,6 +1,8 @@
-package be.kdg.memorace.view;
+package be.kdg.memorace.view.Welcome;
 
 import be.kdg.memorace.model.GameBoard;
+import be.kdg.memorace.view.NewGame.NewGamePresenter;
+import be.kdg.memorace.view.NewGame.NewGameView;
 import javafx.application.Platform;
 
 /**

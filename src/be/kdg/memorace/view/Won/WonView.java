@@ -1,4 +1,4 @@
-package be.kdg.memorace.view;
+package be.kdg.memorace.view.Won;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
