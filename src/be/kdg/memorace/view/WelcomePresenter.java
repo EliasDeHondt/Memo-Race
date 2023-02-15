@@ -2,6 +2,7 @@ package be.kdg.memorace.view;
 
 import be.kdg.memorace.MainMemoRace;
 import be.kdg.memorace.model.GameBoard;
+import javafx.scene.Scene;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -22,9 +23,14 @@ public class WelcomePresenter {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-            welcomeView.setPrefHeight(1000);
-            welcomeView.setPrefWidth(1000);
-            welcomeView.getScene().setRoot(new NewGameView());
+
+            NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
+            newGameView.setPrefHeight(2000);
+            newGameView.setPrefWidth(2000);
+            new NewGamePresenter(this.model, newGameView); // Making Presenter (NewGamePresenter.class).
+
+            welcomeView.getScene().setRoot(newGameView);
+
 
             // TODO
         }));
