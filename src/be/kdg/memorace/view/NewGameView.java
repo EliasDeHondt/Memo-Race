@@ -59,26 +59,26 @@ public class NewGameView extends GridPane {
         this.add(this.player1,0,1);
         this.add(this.player2,0,2);
         this.add(this.player3,0,3);
-        this.add(this.player4,0,4);
-        this.add(this.player5,0,5);
-        this.add(this.player6,0,6);
+        this.add(this.player4,3,1);
+        this.add(this.player5,3,2);
+        this.add(this.player6,3,3);
         // Add (playerXName) in to (GridPane)
         this.add(this.player1Name,1,1);
         this.add(this.player2Name,1,2);
         this.add(this.player3Name,1,3);
-        this.add(this.player4Name,1,4);
-        this.add(this.player5Name,1,5);
-        this.add(this.player6Name,1,6);
+        this.add(this.player4Name,4,1);
+        this.add(this.player5Name,4,2);
+        this.add(this.player6Name,4,3);
         // Add (pawnX) in to (GridPane)
         this.add(new ImageView(this.pawn1),2,1);
         this.add(new ImageView(this.pawn2),2,2);
         this.add(new ImageView(this.pawn3),2,3);
-        this.add(new ImageView(this.pawn4),2,4);
-        this.add(new ImageView(this.pawn5),2,5);
-        this.add(new ImageView(this.pawn6),2,6);
+        this.add(new ImageView(this.pawn4),6,1);
+        this.add(new ImageView(this.pawn5),6,2);
+        this.add(new ImageView(this.pawn6),6,3);
         // Add (BorderPane) in to (GridPane)
         // column 0, row 7, column span 3, row span 1
-        this.add(this.bottom,0,7,3,1);
+        this.add(this.bottom,2,7,3,1);
         // Add (startGame) in to (GridPane)
         this.bottom.setCenter(this.startGame);
         // Set Hgap and Vgap to 10
