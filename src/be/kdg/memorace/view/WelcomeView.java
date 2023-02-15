@@ -67,10 +67,10 @@ public class WelcomeView extends GridPane {
     public Button getQuit() { // Get..
         return this.quit;
     }
-    public void setTitle(Stage primaryStage){
+    public void setCustomStage(Stage primaryStage){
         s = primaryStage;
     }
-    public Stage getTitle(){
+    public Stage getCustomStage(){
         return s;
     }
 }

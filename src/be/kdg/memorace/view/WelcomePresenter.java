@@ -25,9 +25,11 @@ public class WelcomePresenter {
             new NewGamePresenter(this.model, newGameView); // Making Presenter (NewGamePresenter.class).
             welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
             newGameView.getScene().getWindow().sizeToScene(); // Add new Scene.
+            welcomeView.getCustomStage().setTitle("Memo-Race / New Game");
         }));
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
+            welcomeView.getCustomStage().setTitle("Memo-Race / Game Log");
             // TODO
         }));
         // Action-> [Exit Game] (getQuit)
