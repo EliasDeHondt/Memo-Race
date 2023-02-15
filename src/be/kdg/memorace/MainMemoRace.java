@@ -27,7 +27,7 @@ public class MainMemoRace extends Application {
         primaryStage.setResizable(false); // Making Resizable False
         primaryStage.getIcons().add(new Image("/question_mark.png")); // Making Icon.
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
-        welcomeView.setCustomStage(primaryStage);
+        welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
         primaryStage.show(); // Show Stage.
     }
 }

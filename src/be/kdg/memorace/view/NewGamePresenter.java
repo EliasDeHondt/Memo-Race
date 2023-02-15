@@ -19,7 +19,13 @@ public class NewGamePresenter {
     }
     // Methods
     private void addEventHandlers() {
-        // TODO
+        this.newGameView.getStartGame().setOnAction(actionEvent -> {
+            GameBoardView gameBoardView = new GameBoardView(); // Making View (NewGameView.class).
+            new GameBoardPresenter(this.model, gameBoardView); // Making Presenter (NewGamePresenter.class).
+            this.newGameView.getScene().setRoot(gameBoardView); // Add (NewGameView.class) to (WelcomeView.class).
+            gameBoardView.getScene().getWindow().sizeToScene(); // Add new Size.
+            this.newGameView.getCustomStage().setTitle("Memo-Race / Game Bord"); // Making Title (Memo-Race / Game Bord).
+        });
     }
     private void updateView() {
         // TODO

@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -21,6 +22,7 @@ public class NewGameView extends GridPane {
     private Image pawn1, pawn2, pawn3, pawn4, pawn5, pawn6;
     private BorderPane bottom;
     private Button startGame;
+    private Stage primaryStage;
     // Constructors
     public NewGameView() {
         this.initialiseNodes();
@@ -51,6 +53,7 @@ public class NewGameView extends GridPane {
         this.startGame = new Button("Start Game");
     }
     public void layoutNodes() {
+        setId("pane");
         // Set Padding (20)
         setPadding(new Insets(20));
         // Add (playerX) in to (GridPane)
@@ -114,5 +117,11 @@ public class NewGameView extends GridPane {
     }
     public Button getStartGame() { // Get..
         return this.startGame;
+    }
+    public void setCustomStage(Stage primaryStage){ // Set..
+        this.primaryStage = primaryStage;
+    }
+    public Stage getCustomStage(){ // Get..
+        return this.primaryStage;
     }
 }

@@ -9,7 +9,6 @@ import java.util.*;
  * 08/12/2022
  */
 public class GameBoard {
-    //eigenenlijk de klasse GameBoard
     private static class Die {
         private final int silk;
 
@@ -20,11 +19,6 @@ public class GameBoard {
 
         public int getZijde() {
             return this.silk;
-        }
-
-        @Override
-        public String toString() {
-            return String.format("Je hebt %d gegooid", this.silk);
         }
     }
 

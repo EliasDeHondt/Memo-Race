@@ -1,6 +1,7 @@
 package be.kdg.memorace.view;
 
 import be.kdg.memorace.model.GameBoard;
+import javafx.application.Platform;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -22,19 +23,20 @@ public class WelcomePresenter {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
-            new NewGamePresenter(this.model, newGameView); // Making Presenter (NewGamePresenter.class).
-            welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
-            newGameView.getScene().getWindow().sizeToScene(); // Add new Scene.
-            welcomeView.getCustomStage().setTitle("Memo-Race / New Game");
+            new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
+            this.welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
+            newGameView.getScene().getWindow().sizeToScene(); // Add new Size.
+            this.welcomeView.getCustomStage().setTitle("Memo-Race / New Game"); // Making Title (Memo-Race / New Game).
+            newGameView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (NewGameView.class)
         }));
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
-            welcomeView.getCustomStage().setTitle("Memo-Race / Game Log");
+            welcomeView.getCustomStage().setTitle("Memo-Race / Game Log"); // Making Title (Memo-Race / Game Log).
             // TODO
         }));
         // Action-> [Exit Game] (getQuit)
         this.welcomeView.getQuit().setOnAction((e -> {
-            System.exit(0); // exit
+            Platform.exit(); // exit
         }));
     }
     private void updateView() {

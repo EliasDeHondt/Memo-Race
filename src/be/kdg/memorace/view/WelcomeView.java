@@ -21,7 +21,7 @@ public class WelcomeView extends GridPane {
     private Button playNewGame;
     private Button viewGameLog;
     private Button quit;
-    private Stage s;
+    private Stage primaryStage;
     // Constructors
     public WelcomeView() {
         this.initialiseNodes();
@@ -67,10 +67,10 @@ public class WelcomeView extends GridPane {
     public Button getQuit() { // Get..
         return this.quit;
     }
-    public void setCustomStage(Stage primaryStage){
-        s = primaryStage;
+    public void setCustomStage(Stage primaryStage){ // Set..
+        this.primaryStage = primaryStage;
     }
-    public Stage getCustomStage(){
-        return s;
+    public Stage getCustomStage(){ // Get..
+        return this.primaryStage;
     }
 }
