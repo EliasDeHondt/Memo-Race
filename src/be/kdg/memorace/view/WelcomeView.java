@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
@@ -20,6 +21,7 @@ public class WelcomeView extends GridPane {
     private Button playNewGame;
     private Button viewGameLog;
     private Button quit;
+    private Stage s;
     // Constructors
     public WelcomeView() {
         this.initialiseNodes();
@@ -64,5 +66,11 @@ public class WelcomeView extends GridPane {
     }
     public Button getQuit() { // Get..
         return this.quit;
+    }
+    public void setTitle(Stage primaryStage){
+        s = primaryStage;
+    }
+    public Stage getTitle(){
+        return s;
     }
 }

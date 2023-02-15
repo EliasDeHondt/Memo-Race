@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import javax.swing.text.View;
+
 /**
  * Vera Wise & Elias De Hondt
  * 08/12/2022
@@ -32,11 +34,11 @@ public class MainMemoRace extends Application {
         WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
         new WelcomePresenter(this.model, welcomeView); // Making Presenter (WelcomePresenter.class).
         Scene scene = new Scene(welcomeView); // Making Scene.
-        primaryStage.setWidth(320);
         scene.getStylesheets().add("/style.css"); // CSS
         primaryStage.setScene(scene); // Making stage (scene).
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         primaryStage.show(); // Show Stage.
+        welcomeView.setTitle(primaryStage);
         //welcomeView.addEventHandler(welcomeView.getPlayNewGame().setOnAction((e -> newGamePV(primaryStage))));
     }
     public void newGamePV(Stage primaryStage) {

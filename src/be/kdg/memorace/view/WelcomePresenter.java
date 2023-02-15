@@ -3,6 +3,7 @@ package be.kdg.memorace.view;
 import be.kdg.memorace.MainMemoRace;
 import be.kdg.memorace.model.GameBoard;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -22,8 +23,6 @@ public class WelcomePresenter {
     // Methods
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
-        welcomeView.setPrefWidth(900);
-
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
@@ -31,6 +30,7 @@ public class WelcomePresenter {
 
             welcomeView.getScene().setRoot(newGameView);
             newGameView.getScene().getWindow().sizeToScene();
+            welcomeView.getTitle().setTitle("Memo-Race / New Game");
 
             // TODO
         }));
@@ -45,5 +45,11 @@ public class WelcomePresenter {
     }
     private void updateView() {
         // TODO
+    }
+    public Stage setTitle(Stage primaryStage){
+        return primaryStage;
+    }
+    public String getTitle(Stage primaryStage){
+        return primaryStage.getTitle();
     }
 }
