@@ -22,6 +22,7 @@ public class MainMemoRace extends Application {
     public void start(Stage primaryStage) { // Start
         primaryStage.setResizable(false); // Making Resizable False
         primaryStage.getIcons().add(new Image("/question_mark.png")); // Making Icon.
+
         this.welcomePV(primaryStage);
 //        this.newGamePV(primaryStage);
 //        this.gameBoardPV(primaryStage);
