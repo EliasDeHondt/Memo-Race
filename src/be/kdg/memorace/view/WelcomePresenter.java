@@ -22,17 +22,11 @@ public class WelcomePresenter {
     // Methods
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
-        welcomeView.setPrefWidth(900);
-
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             new NewGamePresenter(this.model, newGameView); // Making Presenter (NewGamePresenter.class).
-
-            welcomeView.getScene().setRoot(newGameView);
-            newGameView.getScene().getWindow().sizeToScene();
-
-            // TODO
+            welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
+            newGameView.getScene().getWindow().sizeToScene(); // Add new Scene.
         }));
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
@@ -40,7 +34,7 @@ public class WelcomePresenter {
         }));
         // Action-> [Exit Game] (getQuit)
         this.welcomeView.getQuit().setOnAction((e -> {
-            System.exit(0);
+            System.exit(0); // exit
         }));
     }
     private void updateView() {
