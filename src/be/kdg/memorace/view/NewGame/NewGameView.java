@@ -64,18 +64,15 @@ public class NewGameView extends GridPane {
         // Add (playerXName) in to (GridPane)
         for (int i = 0; i < 3; i++) {
             this.add(playerTxt[i],1,i+1);
-        }
-        for (int i = 3; i < 6; i++) {
-            this.add(playerTxt[i],4,(i-2));
+            this.add(playerTxt[i+3],4,i+1);
         }
 
         // Add (pawnX) in to (GridPane)
         for (int i = 0; i < 3; i++) {
             this.add(new ImageView(pawnImages[i]),2,i+1);
+            this.add(new ImageView(pawnImages[i+3]),6,i+1);
         }
-        for (int i = 3; i < 6; i++) {
-            this.add(new ImageView(pawnImages[i]),6,(i-2));
-        }
+
         // Add (BorderPane) in to (GridPane)
         // column 0, row 7, column span 7, row span 1
         this.add(this.bottom,0,7,7,1);
