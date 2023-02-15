@@ -10,8 +10,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.util.List;
-
 /**
  * Vera Wise & Elias De Hondt
  * 08/12/2022

@@ -32,7 +32,6 @@
       <sourceFolder url="file://$MODULE_DIR$/resources/log" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/resources/fonts" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/resources/images/card" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/resources/music" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
