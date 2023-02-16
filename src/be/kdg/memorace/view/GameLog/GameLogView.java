@@ -11,8 +11,8 @@ import static be.kdg.memorace.model.App.FileHandler.readLog;
  */
 public class GameLogView extends BorderPane {
     // Attributes
-    private TextArea log;
-
+    private TextArea startUpLog;
+    private TextArea errorLog;
     // Constructors
     public GameLogView() {
         this.initialiseNodes();
@@ -20,15 +20,28 @@ public class GameLogView extends BorderPane {
     }
     // Methods
     public void initialiseNodes() {
-        this.log = new TextArea();
+        this.startUpLog = new TextArea();
+        this.errorLog = new TextArea();
     }
     public void layoutNodes() {
-        // Set TextArea (this.log) in Center
-        setCenter(this.log);
-        // Read log in to (this.log)
-        String[] lines = readLog("resources/log/startUpLog.csv");
-        for (String line : lines) {
-            this.log.setText(line);
+        // Set the text areas to be read-only
+        this.startUpLog.setEditable(false);
+        this.errorLog.setEditable(false);
+        // Set TextArea (this.startUpLog) in Left
+        setLeft(this.startUpLog);
+        // Set TextArea (this.errorLog) in Right
+        setRight(this.errorLog);
+        // Read log in to (this.startUpLog)
+        String[] linesStartUp = readLog("resources/log/startUpLog.csv");
+        assert linesStartUp != null;
+        for (String line : linesStartUp) {
+            this.startUpLog.appendText(line + "\n");
+        }
+        // Read log in to (this.errorLog)
+        String[] linesError = readLog("resources/log/errorLog.csv");
+        assert linesError != null;
+        for (String line : linesError) {
+            this.errorLog.appendText(line + "\n");
         }
     }
 }

@@ -36,7 +36,7 @@ public class MainMemoRace extends Application {
         Media media = new Media(new File("resources/music/introductionMusic.wav").toURI().toString()); // set niet (Media)
         MediaPlayer player = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
         player.play(); // Play media (introductionMusic.wav)
-        writeStartUpLog("resources/log/startUpLog.csv", "Starting game"); // Set log
+        writeStartUpLog("resources/log/startUpLog.csv", "Startup Time"); // Set log
         primaryStage.show(); // Show Stage.
     }
 }
