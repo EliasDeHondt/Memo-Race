@@ -25,15 +25,10 @@ public class GameLogView extends BorderPane {
     public void layoutNodes() {
         // Set TextArea (this.log) in Center
         setCenter(this.log);
-        // Print log in to (this.log)
-
-
-        // Read log
+        // Read log in to (this.log)
         String[] lines = readLog("resources/log/startUpLog.csv");
         for (String line : lines) {
             this.log.setText(line);
-
-            System.out.println(line);
         }
     }
 }

@@ -1,5 +1,6 @@
 package be.kdg.memorace;
 
+import static be.kdg.memorace.model.App.FileHandler.writeStartUpLog;
 import be.kdg.memorace.model.GameBoard;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
@@ -9,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-
 import java.io.File;
 
 /**
@@ -33,11 +33,10 @@ public class MainMemoRace extends Application {
         primaryStage.getIcons().add(new Image("/question_mark.png")); // Making Icon.
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
-        /*
         Media media = new Media(new File("resources/music/introductionMusic.wav").toURI().toString()); // set niet (Media)
         MediaPlayer player = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
         player.play(); // Play media (introductionMusic.wav)
-        */
+        writeStartUpLog("resources/log/startUpLog.csv", "Starting game"); // Set log
         primaryStage.show(); // Show Stage.
     }
 }

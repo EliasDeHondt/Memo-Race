@@ -21,14 +21,16 @@ public class FileHandler {
             List<String> lines = Files.readAllLines(Paths.get(url));
             return lines.toArray(new String[0]);
         } catch (IOException e) {
+            String errorMessage = "(readLog) Our apologies, there seem to be an issue with our file system handler. :-(";
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("The specified file was not found.\nFor example: GameLog/players.csv");
+            alert.setHeaderText(errorMessage);
             alert.setTitle("File Handler ERROR");
             alert.showAndWait();
+            writeErrotLog("resources/log/errorLog.csv", errorMessage); // The file handler error will also be placed in a log.
         }
         return null;
     }
-    public static void writeLog(String filename, String message) {
+    public static void writeStartUpLog(String filename, String message) { // Write
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String timestamp = LocalDateTime.now().format(formatter);
         String[] data = {timestamp, message};
@@ -39,8 +41,27 @@ public class FileHandler {
             writer.flush();
             writer.close();
         } catch (IOException e) {
+            String errorMessage = "(writeStartUpLog) Our apologies, there seem to be an issue with our file system handler. :-(";
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("Specify a correct path and also a correct file name with the correct extension.\nFor example: GameLog/players.csv");
+            alert.setHeaderText(errorMessage);
+            alert.setTitle("File Handler ERROR");
+            alert.showAndWait();
+            writeErrotLog("resources/log/errorLog.csv", errorMessage); // The file handler error will also be placed in a log.
+        }
+    }
+    public static void writeErrotLog(String filename, String errorMessage) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String timestamp = LocalDateTime.now().format(formatter);
+        String[] data = {timestamp, errorMessage};
+        try {
+            FileWriter writer = new FileWriter(filename, true);
+            writer.append(String.join(" ", data));
+            writer.append("\n");
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Our apologies, there seem to be an issue with our file system handler. :-(");
             alert.setTitle("File Handler ERROR");
             alert.showAndWait();
         }
