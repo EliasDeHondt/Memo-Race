@@ -1,14 +1,14 @@
 package be.kdg.memorace.model.App;
 
-import be.kdg.memorace.model.*;
 import javafx.scene.control.Alert;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Formatter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -16,20 +16,11 @@ import java.util.Scanner;
  */
 public class FileHandler {
     // Methods
-    public static String[] readFile(String url, int index) { // Read
-        // The URL variable is the path where the file to be read is located. The index is the line that will be read and returned.
-        // A little obvious if I say so myself, but still useful I guess :). [And Vera If you're reading this, no touchy :) ].
-        int i = 0;
+    public static String[] readLog(String url) { // Read
         try {
-            Scanner file = new Scanner(new File(url));
-            while (file.hasNext()) {
-                String regel = file.nextLine();
-                String[] regelData = regel.split(";");
-                if (i == index) return regelData;
-                else i++;
-            }
-            file.close();
-        } catch (FileNotFoundException e) {
+            List<String> lines = Files.readAllLines(Paths.get(url));
+            return lines.toArray(new String[0]);
+        } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("The specified file was not found.\nFor example: GameLog/players.csv");
             alert.setTitle("File Handler ERROR");
@@ -37,15 +28,16 @@ public class FileHandler {
         }
         return null;
     }
-    public static void writeFile(String url, List<Player> players) { // Write
-        // The URL variable is the path where the file to be read is located.
-        // The list That is specified will be added. At the file location.
+    public static void writeLog(String filename, String message) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String timestamp = LocalDateTime.now().format(formatter);
+        String[] data = {timestamp, message};
         try {
-            Formatter formatter = new Formatter(url);
-            for (Player player : players) {
-                formatter.format("%s;%d\n", player.getName(), player.getScore());
-            }
-            formatter.close();
+            FileWriter writer = new FileWriter(filename, true);
+            writer.append(String.join(" ", data));
+            writer.append("\n");
+            writer.flush();
+            writer.close();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Specify a correct path and also a correct file name with the correct extension.\nFor example: GameLog/players.csv");

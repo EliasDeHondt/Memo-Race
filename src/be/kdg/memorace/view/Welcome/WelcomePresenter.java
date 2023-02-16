@@ -5,6 +5,10 @@ import be.kdg.memorace.view.GameLog.GameLogView;
 import be.kdg.memorace.view.NewGame.NewGamePresenter;
 import be.kdg.memorace.view.NewGame.NewGameView;
 import javafx.application.Platform;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 /**
  * Vera Wise & Elias De Hondt

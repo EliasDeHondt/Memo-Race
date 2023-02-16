@@ -1,9 +1,9 @@
 package be.kdg.memorace.view.GameLog;
 
-import be.kdg.memorace.model.App.FileHandler;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
+
+import static be.kdg.memorace.model.App.FileHandler.readLog;
 
 /**
  * Van Elias De Hondt
@@ -28,12 +28,12 @@ public class GameLogView extends BorderPane {
         // Print log in to (this.log)
 
 
-        // TEMP
-        for (int i = 0; i <= 4; i++) {
-            String[] regelData = FileHandler.readFile("resources/log/players.csv", i);
-            assert regelData != null;
-            int score = Integer.parseInt(regelData[1]);
-            this.log.setText(regelData[0] + " " + score);
+        // Read log
+        String[] lines = readLog("resources/log/startUpLog.csv");
+        for (String line : lines) {
+            this.log.setText(line);
+
+            System.out.println(line);
         }
     }
 }

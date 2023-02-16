@@ -31,14 +31,12 @@ public class DemoTerminal {
                         ╠════════════════════════════╝
                         ╠[1 Play new game⌛]
                         ╠[2 Test Print Bord☢]
-                        ╠[3 View game log📁]
                         ║
                         """);
         System.out.print("╠➤ ");
         switch (keyboard.nextInt()) {
             case 1 -> nieuwSpel(keyboard, gameBord);
             case 2 -> System.out.println(gameBord); // PrintBoard
-            case 3 -> scoreBoard();
         }
     }
 
@@ -84,20 +82,6 @@ public class DemoTerminal {
                     ╠════════════════════════════════════════════════════╝
                     ║
                     """, speler.getName(), Arrays.toString(speler.getCards()));
-        }
-    }
-
-    public static void scoreBoard() {
-        for (int i = 0; i <= 3; i++) {
-            String[] regelData = FileHandler.readFile("/players.csv", i);
-            assert regelData != null;
-            int score = Integer.parseInt(regelData[1]);
-            System.out.printf("""
-                    ╠═════════════════════════════════╗
-                    ║     Player name:  %-13s ║
-                    ║     Player score: %-13d ║
-                    ╠═════════════════════════════════╝
-                    """, regelData[0], score);
         }
     }
 }
