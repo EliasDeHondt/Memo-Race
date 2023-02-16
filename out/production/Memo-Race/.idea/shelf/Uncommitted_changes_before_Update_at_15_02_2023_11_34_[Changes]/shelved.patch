@@ -1,0 +1,32 @@
+Index: src/be/kdg/memorace/view/WelcomePresenter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package be.kdg.memorace.view;\r\n\r\nimport be.kdg.memorace.MainMemoRace;\r\nimport be.kdg.memorace.model.GameBoard;\r\nimport javafx.scene.Scene;\r\n\r\n/**\r\n * Vera Wise & Elias De Hondt\r\n * 08/12/2022\r\n */\r\npublic class WelcomePresenter {\r\n    // Attributes\r\n    private GameBoard model;\r\n    private WelcomeView welcomeView;\r\n    // Constructors\r\n    public WelcomePresenter(GameBoard model, WelcomeView welcomeView) {\r\n        this.model = model;\r\n        this.welcomeView = welcomeView;\r\n        this.addEventHandlers();\r\n        this.updateView();\r\n    }\r\n    // Methods\r\n    private void addEventHandlers() {\r\n        // Action-> [Play New Game] (getPlayNewGame)\r\n        this.welcomeView.getPlayNewGame().setOnAction((e -> {\r\n\r\n            NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).\r\n            newGameView.setPrefHeight(2000);\r\n            newGameView.setPrefWidth(2000);\r\n            new NewGamePresenter(this.model, newGameView); // Making Presenter (NewGamePresenter.class).\r\n\r\n            welcomeView.getScene().setRoot(newGameView);\r\n\r\n\r\n            // TODO\r\n        }));\r\n        // Action-> [View Game Log] (getViewGameLog)\r\n        this.welcomeView.getViewGameLog().setOnAction((e -> {\r\n            // TODO\r\n        }));\r\n        // Action-> [Exit Game] (getQuit)\r\n        this.welcomeView.getQuit().setOnAction((e -> {\r\n            System.exit(0);\r\n        }));\r\n    }\r\n    private void updateView() {\r\n        // TODO\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/be/kdg/memorace/view/WelcomePresenter.java b/src/be/kdg/memorace/view/WelcomePresenter.java
+--- a/src/be/kdg/memorace/view/WelcomePresenter.java	(revision 7ff58ba2f3335eecedaf4ad31f995959f258d996)
++++ b/src/be/kdg/memorace/view/WelcomePresenter.java	(date 1676457279338)
+@@ -1,8 +1,6 @@
+ package be.kdg.memorace.view;
+ 
+-import be.kdg.memorace.MainMemoRace;
+ import be.kdg.memorace.model.GameBoard;
+-import javafx.scene.Scene;
+ 
+ /**
+  * Vera Wise & Elias De Hondt
+@@ -25,10 +23,9 @@
+         this.welcomeView.getPlayNewGame().setOnAction((e -> {
+ 
+             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
+-            newGameView.setPrefHeight(2000);
+-            newGameView.setPrefWidth(2000);
++            welcomeView.setPrefSize(2000,2000);
+             new NewGamePresenter(this.model, newGameView); // Making Presenter (NewGamePresenter.class).
+-
++            newGameView.getScene().getWindow().sizeToScene();
+             welcomeView.getScene().setRoot(newGameView);
+ 
+ 

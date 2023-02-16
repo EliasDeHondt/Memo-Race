@@ -1,0 +1,38 @@
+Index: resources/css/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*\r\n * Van Elias De Hondt\r\n * Van Vera Wise\r\n*/\r\n/* NewGameView */\r\n#playerX {\r\n    -fx-font-size: 20px;\r\n    -fx-color: #FFFFFF;\r\n    -fx-padding: 20px;\r\n    -fx-width: 15px;\r\n    src: url('/Pixeltype.ttf');\r\n    font-family:'Pixeltype';\r\n    font-style: normal;\r\n}\r\n\r\n#howManyPlayers {\r\n    -fx-font-size: 20px;\r\n    -fx-color: #FFFFFF;\r\n    -fx-padding: 20px;\r\n    -fx-width: 200px;\r\n}\r\n#startGame {\r\n    -fx-background-color: #4F94F0;\r\n    -fx-font-size: 20px;\r\n    -fx-color: #FFFFFF;\r\n    -fx-padding: 20px;\r\n}\r\n/* NewGameView */\r\n/* WonView */\r\n#labelNSL {\r\n    -fx-font-size: 28px;\r\n    -fx-color: #FFFFFF;\r\n    -fx-padding: 20px;\r\n    -fx-width: 200px;\r\n}\r\n/* WonView */\r\n/* WelcomeView */\r\n#buttonNGQB {\r\n    -fx-background-color: #4F94F0;\r\n    -fx-font-size: 28px;\r\n    -fx-color: #FFFFFF;\r\n    -fx-padding: 20px;\r\n    -fx-width: 200px;\r\n}\r\n/* WelcomeView */
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/resources/css/style.css b/resources/css/style.css
+--- a/resources/css/style.css	(revision 407fa9d1b49235419803dde239779616fd024966)
++++ b/resources/css/style.css	(date 1676299622720)
+@@ -8,7 +8,7 @@
+     -fx-color: #FFFFFF;
+     -fx-padding: 20px;
+     -fx-width: 15px;
+-    src: url('/Pixeltype.ttf');
++    src: url('/fonts/Pixeltype.ttf');
+     font-family:'Pixeltype';
+     font-style: normal;
+ }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"openjdk-19\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 407fa9d1b49235419803dde239779616fd024966)
++++ b/.idea/misc.xml	(date 1676299623155)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file

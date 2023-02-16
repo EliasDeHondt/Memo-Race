@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_13_02_2023_15_44_[Changes]" date="1676299472773" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_15_44_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 13/02/2023 15:44 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/view/Presenter.class" />
+    <option name="AFTER_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/view/Presenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_15_44_[Changes]/Presenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/view/NewGameView.class" />
+    <option name="AFTER_PATH" value="out/production/Memo-Race/be/kdg/MemoRace/view/NewGameView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_02_2023_15_44_[Changes]/NewGameView.class" />
+  </binary>
+</changelist>
