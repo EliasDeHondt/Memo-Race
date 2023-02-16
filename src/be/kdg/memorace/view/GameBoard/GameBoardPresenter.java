@@ -19,7 +19,10 @@ public class GameBoardPresenter {
     }
     // Methods
     private void addEventHandlers() {
-        // TODO
+        gameBoardView.getDie().setOnAction(event -> {
+            model.werp();
+            updateView();
+        });
     }
     private void updateView() {
         // TODO

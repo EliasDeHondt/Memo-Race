@@ -10,15 +10,15 @@ import java.util.*;
  */
 public class GameBoard {
     private static class Die {
-        private final int silk;
+        private final int side;
 
         public Die() {
             final Random dobbelsteen = new Random();
-            this.silk = dobbelsteen.nextInt(1, 7);
+            this.side = dobbelsteen.nextInt(1, 7);
         }
 
         public int getZijde() {
-            return this.silk;
+            return this.side;
         }
     }
 
@@ -118,13 +118,11 @@ public class GameBoard {
         }
     }
 
-    public List<Card> worp(Player s) { // Start Worp
+    public void werp() {
         GameBoard.Die dobbelsteen = new GameBoard.Die();
         int tempWorp = dobbelsteen.getZijde();
         this.pawn.setPosition(tempWorp);
-        List<Card> newCards = GetGeldigeKaarten(tempWorp);
-        //uitvoer?
-        return newCards;
+
     }
 
     public List<Card> GetGeldigeKaarten(int i) {
