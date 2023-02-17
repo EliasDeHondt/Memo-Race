@@ -33,11 +33,11 @@ public class MainMemoRace extends Application {
         primaryStage.getIcons().add(new Image("/question_mark.png")); // Making Icon.
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
-        /*
-        Media media = new Media(new File("resources/music/introductionMusic.wav").toURI().toString()); // set niet (Media)
+
+        Media media = new Media(new File("resources/music/introductionMusic.wav").toURI().toString()); // set (Media)
         MediaPlayer player = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
         player.play(); // Play media (introductionMusic.wav)
-        */
+
         writeStartUpLog("resources/log/startUpLog.csv", "Startup Time"); // Set log
         primaryStage.show(); // Show Stage.
     }
