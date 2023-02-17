@@ -1,5 +1,6 @@
 package be.kdg.memorace.view.GameLog;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 
@@ -31,6 +32,8 @@ public class GameLogView extends BorderPane {
         setLeft(this.startUpLog);
         // Set TextArea (this.errorLog) in Right
         setRight(this.errorLog);
+
+        errorLog.setPrefSize(600,600);
         // Read log in to (this.startUpLog)
         String[] linesStartUp = readLog("resources/log/startUpLog.csv");
         assert linesStartUp != null;
