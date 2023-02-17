@@ -27,7 +27,7 @@ public class GameBoardView extends BorderPane {
     public void initialiseNodes() {
         this.playerName = new Label("(Player Name)"); // <- TEMP
         this.gameTime = new Label("(Game Time)"); // <- TEMP
-        path = new Image[16];
+        path = new Image[17];
         cards = new Image[8];
         die = new Button("Die");
 
@@ -53,7 +53,7 @@ public class GameBoardView extends BorderPane {
 //        this.path16 = new Image("/path_16.png");
 
         for (int i = 0; i < 8; i++) {
-            cards[i] = new Image("/images/card_" + i + ".png"); // kan de images niet vinden?
+            cards[i] = new Image("/card_" + (i+1) + ".png"); // kan de images niet vinden?
         }
 //        this.card1 = new Image("");
 //        this.card2 = new Image("");
