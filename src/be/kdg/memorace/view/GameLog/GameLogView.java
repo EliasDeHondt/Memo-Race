@@ -33,7 +33,7 @@ public class GameLogView extends BorderPane {
         // Set TextArea (this.errorLog) in Right
         setRight(this.errorLog);
 
-        errorLog.setPrefSize(600,600);
+        setPrefSize(600,600);
         // Read log in to (this.startUpLog)
         String[] linesStartUp = readLog("resources/log/startUpLog.csv");
         assert linesStartUp != null;
