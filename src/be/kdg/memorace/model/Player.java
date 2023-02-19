@@ -18,9 +18,11 @@ public class Player {
         this.score = this.Cards.length*100;
         return this.score;
     }
+
     public String getName() { // Get..
         return this.Name;
     }
+
     public Card[] getCards() { // Get..
         if(Cards.length == 0){
             Card e = new Card();

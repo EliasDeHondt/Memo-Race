@@ -1,7 +1,7 @@
 package be.kdg.memorace;
 
 import static be.kdg.memorace.model.App.FileHandler.writeStartUpLog;
-import be.kdg.memorace.model.GameBoard;
+import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Application;
@@ -23,7 +23,7 @@ public class MainMemoRace extends Application {
     }
     @Override
     public void start(Stage primaryStage) { // Start
-        GameBoard model = new GameBoard(); // Making Model(GameBoard.class).
+        Memorace model = new Memorace(); // Making Model(GameBoard.class).
         WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
         new WelcomePresenter(model, welcomeView); // Making Presenter (WelcomePresenter.class).
         Scene scene = new Scene(welcomeView); // Making Scene.

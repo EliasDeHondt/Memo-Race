@@ -1,6 +1,6 @@
 package be.kdg.memorace.view.NewGame;
 
-import be.kdg.memorace.model.GameBoard;
+import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.GameBoard.GameBoardPresenter;
 import be.kdg.memorace.view.GameBoard.GameBoardView;
 
@@ -10,10 +10,10 @@ import be.kdg.memorace.view.GameBoard.GameBoardView;
  */
 public class NewGamePresenter {
     // Attributes
-    private GameBoard model;
+    private Memorace model;
     private NewGameView newGameView;
     // Constructors
-    public NewGamePresenter(GameBoard model, NewGameView newGameView) {
+    public NewGamePresenter(Memorace model, NewGameView newGameView) {
         this.model = model;
         this.newGameView = newGameView;
         this.addEventHandlers();
@@ -27,9 +27,28 @@ public class NewGamePresenter {
             this.newGameView.getScene().setRoot(gameBoardView); // Add (NewGameView.class) to (WelcomeView.class).
             gameBoardView.getScene().getWindow().sizeToScene(); // Add new Size.
             this.newGameView.getCustomStage().setTitle("Memo-Race / Game Bord"); // Making Title (Memo-Race / Game Bord).
+            updateView();
         });
     }
     private void updateView() {
-        // TODO
+        for (int i = 1; i <= 6; i++) {
+            // Takes the player name from the view and puts it in a variable.
+            String playerName = this.newGameView.getPlayerName(i).getText();
+            // If the variable is not empty, it will be added to the player list.
+            if (!playerName.isEmpty()) {
+                this.model.setPlayer(playerName);
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+

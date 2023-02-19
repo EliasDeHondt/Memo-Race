@@ -1,6 +1,6 @@
 package be.kdg.memorace.view.Welcome;
 
-import be.kdg.memorace.model.GameBoard;
+import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.GameLog.GameLogView;
 import be.kdg.memorace.view.NewGame.NewGamePresenter;
 import be.kdg.memorace.view.NewGame.NewGameView;
@@ -12,10 +12,10 @@ import javafx.application.Platform;
  */
 public class WelcomePresenter {
     // Attributes
-    private GameBoard model;
+    private Memorace model;
     private WelcomeView welcomeView;
     // Constructors
-    public WelcomePresenter(GameBoard model, WelcomeView welcomeView) {
+    public WelcomePresenter(Memorace model, WelcomeView welcomeView) {
         this.model = model;
         this.welcomeView = welcomeView;
         this.addEventHandlers();

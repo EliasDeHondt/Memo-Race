@@ -14,7 +14,6 @@ public class GameBoard {
     private final Pawn pawn;
     private final List<Card> cards;
     private final List<Player> players;
-    private int playerQuantity;
 
     // Constructors
     public GameBoard() {
@@ -61,22 +60,6 @@ public class GameBoard {
     }
 
     // Methods
-    public List<Player> getPlayers() { // Get..
-        return this.players;
-    }
-
-    public int getPlayerQuantity() { // Get..
-        return this.playerQuantity;
-    }
-
-    public void newPlayerQuantity(int aantal) { // New Player Quantity.
-        if (aantal <= 2 || aantal >= 6) throw new ExceptionPlayer();
-        else this.playerQuantity = aantal;
-    }
-
-    public void newPlayerName(String name) { // New Player Name.
-        this.players.add(new Player(name));
-    }
 
     public void compare2Cards(Card kaart1, Card kaart2) {
         for (int i = 0; i < this.players.size(); i++) {

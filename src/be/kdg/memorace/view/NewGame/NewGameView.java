@@ -25,9 +25,9 @@ public class NewGameView extends GridPane {
     private Stage primaryStage;
     // Constructors
     public NewGameView() {
-        playerLabels = new Label[6];
-        playerTxt = new TextField[6];
-        pawnImages = new Image[6];
+        this.playerLabels = new Label[6];
+        this.playerTxt = new TextField[6];
+        this.pawnImages = new Image[6];
 
         this.initialiseNodes();
         this.layoutNodes();
@@ -48,9 +48,12 @@ public class NewGameView extends GridPane {
         this.startGame = new Button("Start Game");
     }
     public void layoutNodes() {
+        // CSS
         setId("pane");
+
         // Set Padding (20)
         setPadding(new Insets(20));
+
         // Add (playerX) in to (GridPane)
         // column 0, row 0, column span 3, row span 1
         this.add(this.howManyPlayers,0,0,3,1);
@@ -74,11 +77,14 @@ public class NewGameView extends GridPane {
         // Add (BorderPane) in to (GridPane)
         // column 0, row 7, column span 7, row span 1
         this.add(this.bottom,0,7,7,1);
+
         // Add (startGame) in to (GridPane)
         this.bottom.setCenter(this.startGame);
+
         // Set Hgap and Vgap to 10
         this.setHgap(10);
         this.setVgap(10);
+
         // CSS For (playNewGame) and (viewGameLog)
         this.howManyPlayers.setId("howManyPlayers");
         for (Label playerLabel : playerLabels) {
@@ -86,23 +92,8 @@ public class NewGameView extends GridPane {
         }
         this.startGame.setId("startGame");
     }
-    public TextField getPlayer1Name() { // Get..
-        return playerTxt[0];
-    }
-    public TextField getPlayer2Name() { // Get..
-        return playerTxt[1];
-    }
-    public TextField getPlayer3Name() { // Get..
-        return playerTxt[2];
-    }
-    public TextField getPlayer4Name() { // Get..
-        return playerTxt[3];
-    }
-    public TextField getPlayer5Name() { // Get..
-        return playerTxt[4];
-    }
-    public TextField getPlayer6Name() { // Get..
-        return playerTxt[6];
+    public TextField getPlayerName(int index ) { // Get..
+        return this.playerTxt[index ];
     }
     public Button getStartGame() { // Get..
         return this.startGame;

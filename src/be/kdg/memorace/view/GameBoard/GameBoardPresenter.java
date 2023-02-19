@@ -1,6 +1,6 @@
 package be.kdg.memorace.view.GameBoard;
 
-import be.kdg.memorace.model.GameBoard;
+import be.kdg.memorace.model.Memorace;
 
 /**
  * Van Elias De Hondt
@@ -8,10 +8,10 @@ import be.kdg.memorace.model.GameBoard;
  */
 public class GameBoardPresenter {
     // Attributes
-    private GameBoard model;
+    private Memorace model;
     private GameBoardView gameBoardView;
     // Constructors
-    public GameBoardPresenter(GameBoard model, GameBoardView gameBoardView) {
+    public GameBoardPresenter(Memorace model, GameBoardView gameBoardView) {
         this.model = model;
         this.gameBoardView = gameBoardView;
         this.addEventHandlers();
@@ -20,7 +20,7 @@ public class GameBoardPresenter {
     // Methods
     private void addEventHandlers() {
         gameBoardView.getDie().setOnAction(event -> {
-            model.werp();
+            // model.werp();
             updateView();
         });
     }
