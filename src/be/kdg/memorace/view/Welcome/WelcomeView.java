@@ -48,9 +48,9 @@ public class WelcomeView extends GridPane {
         // Set Vgap to 10
         this.setVgap(30);
         // CSS For (playNewGame) and (viewGameLog) and (quit) and (this)
-        this.playNewGame.setId("buttonWelcome");
-        this.viewGameLog.setId("buttonWelcome");
-        this.quit.setId("buttonWelcome");
+        this.playNewGame.setId("button");
+        this.viewGameLog.setId("button");
+        this.quit.setId("button");
         this.setId("pane");
         // Causes all Node to appear with a delay.
         FadeTransition ft = new FadeTransition(Duration.millis(3000), this);

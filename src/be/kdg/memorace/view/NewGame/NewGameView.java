@@ -90,18 +90,25 @@ public class NewGameView extends GridPane {
         for (Label playerLabel : playerLabels) {
             playerLabel.setId("playerX");
         }
-        this.startGame.setId("startGame");
+        this.startGame.setId("button");
     }
-    public TextField getPlayerName(int index ) { // Get..
-        return this.playerTxt[index ];
+    public TextField getPlayerName(int index) { // Get..
+        return this.playerTxt[index];
     }
+
+    public TextField[] getPlayerTxt() { // Get..
+        return this.playerTxt;
+    }
+
     public Button getStartGame() { // Get..
         return this.startGame;
     }
-    public void setCustomStage(Stage primaryStage){ // Set..
-        this.primaryStage = primaryStage;
-    }
+
     public Stage getCustomStage(){ // Get..
         return this.primaryStage;
+    }
+
+    public void setCustomStage(Stage primaryStage){ // Set..
+        this.primaryStage = primaryStage;
     }
 }

@@ -1,7 +1,6 @@
 package be.kdg.memorace.view.GameBoard;
 
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,7 +16,8 @@ public class GameBoardView extends BorderPane {
     private Label playerName, gameTime;
     private Image[] path;
     private Image[] cards;
-    private Button die;
+    private Image[] die;
+    private Image primaryDieImage;
     // Constructors
     public GameBoardView() {
         this.initialiseNodes();
@@ -29,7 +29,8 @@ public class GameBoardView extends BorderPane {
         this.gameTime = new Label("(Game Time)"); // <- TEMP
         this.path = new Image[18];
         this.cards = new Image[8];
-        this.die = new Button("Die");
+        this.die = new Image[7];
+        this.primaryDieImage = new Image("/die_0.png");
 
         // Images, Loading the path.
         for (int i = 0; i < 17; i++) {
@@ -39,6 +40,11 @@ public class GameBoardView extends BorderPane {
         // Images, Loading cards.
         for (int i = 0; i < 8; i++) {
             this.cards[i] = new Image("/card_" + (i+1) + ".png"); // kan de images niet vinden?
+        }
+
+        // Images, Loading the path.
+        for (int i = 0; i < 7; i++) {
+            this.die[i] = new Image("/die_" + i + ".png");
         }
 
     }
@@ -72,11 +78,26 @@ public class GameBoardView extends BorderPane {
             teller--;
         }
 
-        setCenter(gridGameBoard); // TEMP
-        // TODO
+        // Set gridGameBoard (GameBoard Layout) Center
+        setCenter(gridGameBoard);
+
+        BorderPane buttom = new BorderPane(); // Making new BorderPane (BUTTOM)
+        buttom.setId("background"); // Set CSS background
+        setBottom(buttom); // Set (buttom) in Buttom
+        buttom.setCenter(new ImageView(this.primaryDieImage)); // Set (this.die) in Center
+
+
     }
 
-    Button getDie() {
+    Image[] getDie() {
         return this.die;
+    }
+
+    public void setPrimaryDieImage(Image primaryDieImage) { // Set..
+        this.primaryDieImage = primaryDieImage;
+        this.layoutNodes();
+    }
+    public Image getPrimaryDieImage() { // Get..
+        return primaryDieImage;
     }
 }

@@ -1,6 +1,10 @@
 package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.model.Memorace;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * Van Elias De Hondt
@@ -15,13 +19,24 @@ public class GameBoardPresenter {
         this.model = model;
         this.gameBoardView = gameBoardView;
         this.addEventHandlers();
-        this.updateView();
     }
     // Methods
     private void addEventHandlers() {
-        gameBoardView.getDie().setOnAction(event -> {
-            // model.werp();
-            updateView();
+        // Get the die images from the view
+        Image[] dieImages = gameBoardView.getDie();
+
+        // Add an action to the ImageView of the die
+        ImageView dieImageView = new ImageView(this.gameBoardView.getPrimaryDieImage());
+
+        dieImageView.setOnMouseClicked(event -> {
+            // Roll the die
+            this.model.rollDice();
+            // Get the die
+            int dieSide = this.model.getDie().getSide();
+            // Set new image on action
+            dieImageView.setImage(dieImages[dieSide]);
+            // Update View
+            this.gameBoardView.setPrimaryDieImage(dieImages[dieSide]);
         });
     }
     private void updateView() {

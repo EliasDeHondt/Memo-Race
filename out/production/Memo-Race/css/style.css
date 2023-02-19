@@ -5,6 +5,17 @@
 /* VT323 Font */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 /* VT323 Font */
+/* [Everything] */
+#button {
+    -fx-font-family: 'VT323', monospace;
+    -fx-background-color: #00A2E8;
+    -fx-font-size: 28px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-width: 200px;
+}
+/* [Everything] */
+
 /* WelcomeView | NewGameView */
 #pane {
     -fx-background-image: url("game_background.gif");
@@ -15,18 +26,7 @@
 }
 /* WelcomeView | NewGameView */
 /* WelcomeView */
-#buttonWelcome {
-    -fx-font-family: 'VT323', monospace;
-    -fx-background-color: #00A2E8;
-    -fx-font-size: 28px;
-    -fx-color: #FFFFFF;
-    -fx-padding: 20px;
-    -fx-width: 200px;
-}
 /* WelcomeView */
-/* GameLogView */
-
-/* GameLogView */
 /* NewGameView */
 #playerX {
     -fx-font-family: 'VT323', monospace;
@@ -46,13 +46,6 @@
     -fx-width: 200px;
 
 }
-#startGame {
-    -fx-font-family: 'VT323', monospace;
-    -fx-background-color: #00A2E8;
-    -fx-font-size: 20px;
-    -fx-color: #FFFFFF;
-    -fx-padding: 20px;
-}
 /* NewGameView */
 /* GameBoardView */
 #background {
@@ -61,9 +54,10 @@
 #top {
     -fx-font-family: 'VT323', monospace;
     -fx-background-color: #00A2E8;
-    -fx-font-size: 20px;
+    -fx-font-size: 28px;
     -fx-color: #FFFFFF;
-    -fx-padding: 10px;
+    -fx-padding: 20px;
+    -fx-width: 200px;
 }
 /* GameBoardView */
 /* WonView */

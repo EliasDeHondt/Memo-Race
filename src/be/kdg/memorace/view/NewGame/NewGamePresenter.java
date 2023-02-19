@@ -17,7 +17,6 @@ public class NewGamePresenter {
         this.model = model;
         this.newGameView = newGameView;
         this.addEventHandlers();
-        this.updateView();
     }
     // Methods
     private void addEventHandlers() {
@@ -31,7 +30,8 @@ public class NewGamePresenter {
         });
     }
     private void updateView() {
-        for (int i = 1; i <= 6; i++) {
+        // This four loop is responsible for the six players.
+        for (int i = 1; i <= this.newGameView.getPlayerTxt().length-1; i++) {
             // Takes the player name from the view and puts it in a variable.
             String playerName = this.newGameView.getPlayerName(i).getText();
             // If the variable is not empty, it will be added to the player list.

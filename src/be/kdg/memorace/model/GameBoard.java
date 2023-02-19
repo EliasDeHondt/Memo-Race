@@ -1,7 +1,5 @@
 package be.kdg.memorace.model;
 
-import be.kdg.memorace.model.App.*;
-
 import java.util.*;
 
 /**
@@ -11,17 +9,13 @@ import java.util.*;
 public class GameBoard {
     // Attributes
     private final Path path;
-    private final Pawn pawn;
     private final List<Card> cards;
-    private final List<Player> players;
+    private Memorace memorace;
 
     // Constructors
     public GameBoard() {
         // Makes the path from 1 to 16.
         this.path = new Path();
-
-        // Creates a new pawn.
-        this.pawn = new Pawn();
 
         // Adds 8 pairs of unique cards.
         this.cards = new LinkedList<>();
@@ -55,17 +49,15 @@ public class GameBoard {
         }
         this.cards.clear();
         this.cards.addAll(List.of(k));
-        // List of all players.
-        this.players = new LinkedList<>();
     }
 
     // Methods
 
     public void compare2Cards(Card kaart1, Card kaart2) {
-        for (int i = 0; i < this.players.size(); i++) {
+        for (int i = 0; i < this.memorace.getPlayer().size(); i++) {
             if (kaart1.getType() == kaart2.getType()) {
                 System.out.println(kaart2.getX() + ", " + kaart2.getY());
-                players.get(i).getCards()[i] = kaart1;
+                this.memorace.getPlayer().get(i).getCards()[i] = kaart1;
                 for (Card kaart : cards) {
                     if (kaart1 == kaart) {
                         //this.printSpelerKaarten();
@@ -85,12 +77,6 @@ public class GameBoard {
                 }
             }
         }
-    }
-
-    public void werp() {
-        Die die = new Die();
-        int tempWorp = die.getSide();
-        this.pawn.setPosition(tempWorp);
     }
 
     public List<Card> GetValidCards(int i) {

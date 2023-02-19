@@ -3,8 +3,8 @@ package be.kdg.memorace.model;
 import java.util.Random;
 
 /**
- * Van Elias De Hondt
- * 19/02/2023
+ * Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class Die {
     // Attributes

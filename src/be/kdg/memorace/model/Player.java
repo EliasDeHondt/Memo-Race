@@ -24,11 +24,11 @@ public class Player {
     }
 
     public Card[] getCards() { // Get..
-        if(Cards.length == 0){
+        if(this.Cards.length == 0){
             Card e = new Card();
             e.setType('0');
             return new Card[]{e};
         }
-        else return Cards;
+        else return this.Cards;
     }
 }

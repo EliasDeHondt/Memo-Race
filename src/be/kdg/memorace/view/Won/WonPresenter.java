@@ -1,6 +1,6 @@
 package be.kdg.memorace.view.Won;
 
-import be.kdg.memorace.model.GameBoard;
+import be.kdg.memorace.model.Memorace;
 
 /**
  * Van Elias De Hondt
@@ -8,10 +8,10 @@ import be.kdg.memorace.model.GameBoard;
  */
 public class WonPresenter {
     // Attributes
-    private GameBoard model;
+    private Memorace model;
     private WonView wonView;
     // Constructors
-    public WonPresenter(GameBoard model, WonView wonView) {
+    public WonPresenter(Memorace model, WonView wonView) {
         this.model = model;
         this.wonView = wonView;
         this.addEventHandlers();
