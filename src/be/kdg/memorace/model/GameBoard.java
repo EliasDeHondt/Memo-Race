@@ -9,26 +9,12 @@ import java.util.*;
  * 08/12/2022
  */
 public class GameBoard {
-    private static class Die {
-        private final int side;
-
-        public Die() {
-            final Random dobbelsteen = new Random();
-            this.side = dobbelsteen.nextInt(1, 7);
-        }
-
-        public int getZijde() {
-            return this.side;
-        }
-    }
-
     // Attributes
     private final Path path;
     private final Pawn pawn;
     private final List<Card> cards;
     private final List<Player> players;
     private int playerQuantity;
-    private final Scanner keyboard = new Scanner(System.in);
 
     // Constructors
     public GameBoard() {
@@ -92,7 +78,7 @@ public class GameBoard {
         this.players.add(new Player(name));
     }
 
-    public void vergelijk2kaarten(Card kaart1, Card kaart2) {
+    public void compare2Cards(Card kaart1, Card kaart2) {
         for (int i = 0; i < this.players.size(); i++) {
             if (kaart1.getType() == kaart2.getType()) {
                 System.out.println(kaart2.getX() + ", " + kaart2.getY());
@@ -119,13 +105,12 @@ public class GameBoard {
     }
 
     public void werp() {
-        GameBoard.Die dobbelsteen = new GameBoard.Die();
-        int tempWorp = dobbelsteen.getZijde();
+        Die die = new Die();
+        int tempWorp = die.getSide();
         this.pawn.setPosition(tempWorp);
-
     }
 
-    public List<Card> GetGeldigeKaarten(int i) {
+    public List<Card> GetValidCards(int i) {
         // Gives the card to draw options based on the position.
         List<Card> cards = new ArrayList<>(this.cards.size());
         // Top game board.
@@ -183,7 +168,7 @@ public class GameBoard {
         }
     }
 
-    public Card getEenKaart(int x, int y) {
+    public Card getACard(int x, int y) {
         // Gives a card back using the given x and y.
         for (Card kaart : cards) {
             if (kaart.getY() == y && kaart.getX() == x) {
@@ -193,20 +178,20 @@ public class GameBoard {
         return null;
     }
 
-    public Card draaiGekozenKaart(int option, List<Card> newCards) {
+    public Card turnChosenCard(int option, List<Card> newCards) {
         switch (option) {
             case 1:
-                getEenKaart(newCards.get(0).getX(), newCards.get(0).getY()).turned();
-                return getEenKaart(newCards.get(0).getX(), newCards.get(0).getY());
+                getACard(newCards.get(0).getX(), newCards.get(0).getY()).turned();
+                return getACard(newCards.get(0).getX(), newCards.get(0).getY());
             case 2:
-                getEenKaart(newCards.get(1).getX(), newCards.get(1).getY()).turned();
-                return getEenKaart(newCards.get(1).getX(), newCards.get(1).getY());
+                getACard(newCards.get(1).getX(), newCards.get(1).getY()).turned();
+                return getACard(newCards.get(1).getX(), newCards.get(1).getY());
             case 3:
-                getEenKaart(newCards.get(2).getX(), newCards.get(2).getY()).turned();
-                return getEenKaart(newCards.get(2).getX(), newCards.get(2).getY());
+                getACard(newCards.get(2).getX(), newCards.get(2).getY()).turned();
+                return getACard(newCards.get(2).getX(), newCards.get(2).getY());
             case 4:
-                getEenKaart(newCards.get(3).getX(), newCards.get(3).getY()).turned();
-                return getEenKaart(newCards.get(3).getX(), newCards.get(3).getY());
+                getACard(newCards.get(3).getX(), newCards.get(3).getY()).turned();
+                return getACard(newCards.get(3).getX(), newCards.get(3).getY());
             default:
                 return null;
         }

@@ -28,17 +28,21 @@ public class GameLogView extends BorderPane {
         // Set the text areas to be read-only
         this.startUpLog.setEditable(false);
         this.errorLog.setEditable(false);
+
         // Set TextArea (this.startUpLog) in Left
         setLeft(this.startUpLog);
+
         // Set TextArea (this.errorLog) in Right
         setRight(this.errorLog);
         setPrefSize(600,600);
+
         // Read log in to (this.startUpLog)
         String[] linesStartUp = readLog("resources/log/startUpLog.csv");
         assert linesStartUp != null;
         for (String line : linesStartUp) {
             this.startUpLog.appendText(line + "\n");
         }
+
         // Read log in to (this.errorLog)
         String[] linesError = readLog("resources/log/errorLog.csv");
         assert linesError != null;
