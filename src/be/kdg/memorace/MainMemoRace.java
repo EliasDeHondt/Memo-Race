@@ -1,6 +1,6 @@
 package be.kdg.memorace;
 
-import static be.kdg.memorace.App.FileHandler.writeStartUpLog;
+import static be.kdg.memorace.app.FileHandler.writeStartUpLog;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;

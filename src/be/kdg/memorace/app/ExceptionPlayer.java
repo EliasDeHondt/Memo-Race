@@ -1,4 +1,4 @@
-package be.kdg.memorace.App;
+package be.kdg.memorace.app;
 
 /**
  * Vera Wise & Elias De Hondt

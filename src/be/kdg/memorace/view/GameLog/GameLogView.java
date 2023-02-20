@@ -3,7 +3,7 @@ package be.kdg.memorace.view.GameLog;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 
-import static be.kdg.memorace.App.FileHandler.readLog;
+import static be.kdg.memorace.app.FileHandler.readLog;
 
 /**
  * Van Elias De Hondt

@@ -1,4 +1,4 @@
-package be.kdg.memorace.App;
+package be.kdg.memorace.app;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

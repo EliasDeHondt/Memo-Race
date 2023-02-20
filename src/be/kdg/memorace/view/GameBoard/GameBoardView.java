@@ -1,6 +1,7 @@
 package be.kdg.memorace.view.GameBoard;
 
-import be.kdg.memorace.App.Timer;
+import be.kdg.memorace.app.Timer;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -36,7 +37,7 @@ public class GameBoardView extends BorderPane {
         this.die = new Image[7];
         this.click = new Button("Click");
         this.dieSidesSides = new ImageView(this.die[0]);
-        this.timer = new Timer(this.gameTime); // Set ....
+        this.timer = new Timer(this.gameTime); // Set Game Time to (this.timer)
 
         // Images, Loading the path.
         for (int i = 0; i < 17; i++) {
@@ -58,6 +59,8 @@ public class GameBoardView extends BorderPane {
         BorderPane top = new BorderPane(); // Making new BorderPane (TOP)
         top.setLeft(this.playerName); // Set (this.playerName) on LEFT
         top.setRight(this.gameTime); // Set (this.gameTime) on RIGHT
+        top.setId("background"); // Set CSS background
+        top.setPadding(new Insets(10)); // Set padding for (top)
         this.playerName.setId("top"); // Set CSS (this.playerName)
         this.gameTime.setId("top"); // Set CSS (this.gameTime)
         setTop(top); // set (top) on top in (BorderPane | this. )
@@ -95,8 +98,7 @@ public class GameBoardView extends BorderPane {
         buttom.setLeft(this.dieSidesSides); // Set (this.dieSidesSides) Left in buttom
 
         this.timer.start(); // Start Game Time
-
-
+        buttom.setPadding(new Insets(10)); // Set padding for (buttom)
     }
 
     Button getClick() { // Get..
