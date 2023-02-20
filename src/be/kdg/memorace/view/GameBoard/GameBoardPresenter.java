@@ -22,21 +22,12 @@ public class GameBoardPresenter {
     }
     // Methods
     private void addEventHandlers() {
-        // Get the die images from the view
-        Image[] dieImages = gameBoardView.getDie();
-
-        // Add an action to the ImageView of the die
-        ImageView dieImageView = new ImageView(this.gameBoardView.getPrimaryDieImage());
-
-        dieImageView.setOnMouseClicked(event -> {
-            // Roll the die
+        // Event Click
+        this.gameBoardView.getClick().setOnAction(actionEvent -> {
+            // Roll the dice
             this.model.rollDice();
-            // Get the die
-            int dieSide = this.model.getDie().getSide();
-            // Set new image on action
-            dieImageView.setImage(dieImages[dieSide]);
-            // Update View
-            this.gameBoardView.setPrimaryDieImage(dieImages[dieSide]);
+            //
+            this.gameBoardView.setDieSidesSides(this.model.getDie().getSide());
         });
     }
     private void updateView() {

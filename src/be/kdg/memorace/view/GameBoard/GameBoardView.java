@@ -1,6 +1,7 @@
 package be.kdg.memorace.view.GameBoard;
 
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,7 +18,8 @@ public class GameBoardView extends BorderPane {
     private Image[] path;
     private Image[] cards;
     private Image[] die;
-    private Image primaryDieImage;
+    private Button click;
+    private ImageView dieSidesSides;
     // Constructors
     public GameBoardView() {
         this.initialiseNodes();
@@ -30,7 +32,8 @@ public class GameBoardView extends BorderPane {
         this.path = new Image[18];
         this.cards = new Image[8];
         this.die = new Image[7];
-        this.primaryDieImage = new Image("/die_0.png");
+        this.click = new Button("Click");
+        this.dieSidesSides = new ImageView(this.die[0]);
 
         // Images, Loading the path.
         for (int i = 0; i < 17; i++) {
@@ -83,21 +86,19 @@ public class GameBoardView extends BorderPane {
 
         BorderPane buttom = new BorderPane(); // Making new BorderPane (BUTTOM)
         buttom.setId("background"); // Set CSS background
+        this.click.setId("button");
         setBottom(buttom); // Set (buttom) in Buttom
-        buttom.setCenter(new ImageView(this.primaryDieImage)); // Set (this.die) in Center
+        buttom.setRight(this.click); // Set (this.click) Right in buttom
+        buttom.setLeft(this.dieSidesSides); // Set (this.dieSidesSides) Left in buttom
+    }
 
+    Button getClick() { // Get..
+        return this.click;
+    }
+
+    void setDieSidesSides(int dieSides) { // Set..
+        this.dieSidesSides.setImage(this.die[dieSides]);
 
     }
 
-    Image[] getDie() {
-        return this.die;
-    }
-
-    public void setPrimaryDieImage(Image primaryDieImage) { // Set..
-        this.primaryDieImage = primaryDieImage;
-        this.layoutNodes();
-    }
-    public Image getPrimaryDieImage() { // Get..
-        return primaryDieImage;
-    }
 }
