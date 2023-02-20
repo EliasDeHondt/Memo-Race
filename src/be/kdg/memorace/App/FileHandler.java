@@ -1,4 +1,4 @@
-package be.kdg.memorace.model.App;
+package be.kdg.memorace.App;
 
 import javafx.scene.control.Alert;
 

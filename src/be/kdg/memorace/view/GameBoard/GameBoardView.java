@@ -1,5 +1,6 @@
 package be.kdg.memorace.view.GameBoard;
 
+import be.kdg.memorace.App.Timer;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,6 +21,7 @@ public class GameBoardView extends BorderPane {
     private Image[] die;
     private Button click;
     private ImageView dieSidesSides;
+    private Timer timer;
     // Constructors
     public GameBoardView() {
         this.initialiseNodes();
@@ -27,13 +29,14 @@ public class GameBoardView extends BorderPane {
     }
     // Methods
     public void initialiseNodes() {
-        this.playerName = new Label("(Player Name)"); // <- TEMP
-        this.gameTime = new Label("(Game Time)"); // <- TEMP
+        this.playerName = new Label();
+        this.gameTime = new Label();
         this.path = new Image[18];
         this.cards = new Image[8];
         this.die = new Image[7];
         this.click = new Button("Click");
         this.dieSidesSides = new ImageView(this.die[0]);
+        this.timer = new Timer(this.gameTime); // Set ....
 
         // Images, Loading the path.
         for (int i = 0; i < 17; i++) {
@@ -90,6 +93,10 @@ public class GameBoardView extends BorderPane {
         setBottom(buttom); // Set (buttom) in Buttom
         buttom.setRight(this.click); // Set (this.click) Right in buttom
         buttom.setLeft(this.dieSidesSides); // Set (this.dieSidesSides) Left in buttom
+
+        this.timer.start(); // Start Game Time
+
+
     }
 
     Button getClick() { // Get..
