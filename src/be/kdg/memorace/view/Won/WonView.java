@@ -3,6 +3,10 @@ package be.kdg.memorace.view.Won;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -34,6 +38,10 @@ public class WonView extends GridPane {
         // CSS For (playNewGame) and (viewGameLog)
         this.playerName.setId("labelNSL");
         this.playerScore.setId("labelNSL");
+
+        Media media = new Media(new File("resources/music/won.mp3").toURI().toString()); // set (Media)
+        MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
+        mediaPlayer.play(); // Play media (won.mp3)
     }
     public Label getPlayerName() { // Get..
         return this.playerName;

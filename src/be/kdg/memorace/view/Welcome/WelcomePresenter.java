@@ -5,6 +5,10 @@ import be.kdg.memorace.view.GameLog.GameLogView;
 import be.kdg.memorace.view.NewGame.NewGamePresenter;
 import be.kdg.memorace.view.NewGame.NewGameView;
 import javafx.application.Platform;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -25,6 +29,10 @@ public class WelcomePresenter {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
+            Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
+            MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
+            mediaPlayer.play(); // Play media (click.wav)
+
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
             this.welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
@@ -34,6 +42,10 @@ public class WelcomePresenter {
         }));
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
+            Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
+            MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
+            mediaPlayer.play(); // Play media (click.wav)
+
             GameLogView gameLogView = new GameLogView(); // Making View (GameLogView.class).
             this.welcomeView.getScene().setRoot(gameLogView); // Add (GameLogView.class) to (WelcomeView.class).
             gameLogView.getScene().getWindow().sizeToScene(); // Add new Size.

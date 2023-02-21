@@ -3,6 +3,10 @@ package be.kdg.memorace.view.NewGame;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.GameBoard.GameBoardPresenter;
 import be.kdg.memorace.view.GameBoard.GameBoardView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 /**
  * Van Elias De Hondt
@@ -21,6 +25,10 @@ public class NewGamePresenter {
     // Methods
     private void addEventHandlers() {
         this.newGameView.getStartGame().setOnAction(actionEvent -> {
+            Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
+            MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
+            mediaPlayer.play(); // Play media (click.wav)
+
             GameBoardView gameBoardView = new GameBoardView(); // Making View (NewGameView.class).
             new GameBoardPresenter(this.model, gameBoardView); // Making Presenter (NewGamePresenter.class).
             this.newGameView.getScene().setRoot(gameBoardView); // Add (NewGameView.class) to (WelcomeView.class).

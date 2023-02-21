@@ -21,7 +21,7 @@ public class GameBoardView extends BorderPane {
     private Image[] cards;
     private Image[] die;
     private Button click;
-    private ImageView dieSidesSides;
+    private ImageView dieSides;
     private Timer timer;
     // Constructors
     public GameBoardView() {
@@ -36,7 +36,7 @@ public class GameBoardView extends BorderPane {
         this.cards = new Image[8];
         this.die = new Image[7];
         this.click = new Button("Click");
-        this.dieSidesSides = new ImageView(this.die[0]);
+        this.dieSides = new ImageView(this.die[0]);
         this.timer = new Timer(this.gameTime); // Set Game Time to (this.timer)
 
         // Images, Loading the path.
@@ -95,7 +95,7 @@ public class GameBoardView extends BorderPane {
         this.click.setId("button");
         setBottom(buttom); // Set (buttom) in Buttom
         buttom.setRight(this.click); // Set (this.click) Right in buttom
-        buttom.setLeft(this.dieSidesSides); // Set (this.dieSidesSides) Left in buttom
+        buttom.setLeft(this.dieSides); // Set (this.dieSidesSides) Left in buttom
 
         this.timer.start(); // Start Game Time
         buttom.setPadding(new Insets(10)); // Set padding for (buttom)
@@ -105,8 +105,8 @@ public class GameBoardView extends BorderPane {
         return this.click;
     }
 
-    void setDieSidesSides(int dieSides) { // Set..
-        this.dieSidesSides.setImage(this.die[dieSides]);
+    void setDieSides(int dieSides) { // Set..
+        this.dieSides.setImage(this.die[dieSides]);
 
     }
 

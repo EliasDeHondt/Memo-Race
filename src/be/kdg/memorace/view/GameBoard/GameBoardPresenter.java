@@ -1,10 +1,10 @@
 package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.model.Memorace;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 /**
  * Van Elias De Hondt
@@ -24,10 +24,14 @@ public class GameBoardPresenter {
     private void addEventHandlers() {
         // Event Click
         this.gameBoardView.getClick().setOnAction(actionEvent -> {
+            Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
+            MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
+            mediaPlayer.play(); // Play media (click.wav)
+
             // Roll the dice
             this.model.rollDice();
-            //
-            this.gameBoardView.setDieSidesSides(this.model.getDie().getSide());
+            // Set (model) Die Sides -> Die Sides (gameBoardView)
+            this.gameBoardView.setDieSides(this.model.getDie().getSide());
         });
     }
     private void updateView() {
