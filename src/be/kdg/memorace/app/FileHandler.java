@@ -26,7 +26,7 @@ public class FileHandler {
             alert.setHeaderText(errorMessage);
             alert.setTitle("File Handler ERROR");
             alert.showAndWait();
-            writeErrotLog("resources/log/errorLog.csv", errorMessage); // The file handler error will also be placed in a log.
+            writeErrorLog("resources/log/errorLog.csv", errorMessage); // The file handler error will also be placed in a log.
         }
         return null;
     }
@@ -46,10 +46,10 @@ public class FileHandler {
             alert.setHeaderText(errorMessage);
             alert.setTitle("File Handler ERROR");
             alert.showAndWait();
-            writeErrotLog("resources/log/errorLog.csv", errorMessage); // The file handler error will also be placed in a log.
+            writeErrorLog("resources/log/errorLog.csv", errorMessage); // The file handler error will also be placed in a log.
         }
     }
-    public static void writeErrotLog(String filename, String errorMessage) {
+    public static void writeErrorLog(String filename, String errorMessage) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String timestamp = LocalDateTime.now().format(formatter);
         String[] data = {timestamp, errorMessage};
@@ -61,7 +61,7 @@ public class FileHandler {
             writer.close();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("Our apologies, there seem to be an issue with our file system handler. :-(");
+            alert.setHeaderText("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
             alert.setTitle("File Handler ERROR");
             alert.showAndWait();
         }

@@ -1,9 +1,13 @@
 package be.kdg.memorace.view.GameBoard;
 
+import be.kdg.memorace.app.ExceptionPlayer;
 import be.kdg.memorace.model.Memorace;
+import javafx.scene.control.Alert;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import java.io.File;
+
+import static be.kdg.memorace.app.FileHandler.writeErrorLog;
 
 /**
  * Van Elias De Hondt
@@ -34,6 +38,15 @@ public class GameBoardPresenter {
         });
     }
     private void updateView() {
-        this.gameBoardView.getPlayerName().setText(this.model.getPlayer().get(0).getName()); // Var 0 -> (x) is TEMP TODO
+        try {
+            this.gameBoardView.getPlayerName().setText(this.model.getPlayer().get(0).getName()); // Var 0 -> (x) is TEMP TODO
+        } catch (Exception e) {
+            String errorMessage = "(writeErrorLog) No player names were entered. Please be advised.";
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText(errorMessage);
+            alert.setTitle("Player names ERROR");
+            alert.showAndWait();
+            writeErrorLog("resources/log/errorLog.csv", errorMessage); // The player name error will also be placed in a log.
+        }
     }
 }
