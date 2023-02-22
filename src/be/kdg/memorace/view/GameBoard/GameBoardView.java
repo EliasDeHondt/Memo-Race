@@ -107,7 +107,9 @@ public class GameBoardView extends BorderPane {
 
     void setDieSides(int dieSides) { // Set..
         this.dieSides.setImage(this.die[dieSides]);
-
     }
 
+    public Label getPlayerName() { // Get..
+        return this.playerName;
+    }
 }

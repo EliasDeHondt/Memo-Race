@@ -3,7 +3,6 @@ package be.kdg.memorace.view.GameBoard;
 import be.kdg.memorace.model.Memorace;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-
 import java.io.File;
 
 /**
@@ -19,6 +18,7 @@ public class GameBoardPresenter {
         this.model = model;
         this.gameBoardView = gameBoardView;
         this.addEventHandlers();
+        this.updateView();
     }
     // Methods
     private void addEventHandlers() {
@@ -35,6 +35,6 @@ public class GameBoardPresenter {
         });
     }
     private void updateView() {
-        // TODO
+        this.gameBoardView.getPlayerName().setText(this.model.getPlayer().get(0).getName()); // Var 0 is TEMP TODO
     }
 }

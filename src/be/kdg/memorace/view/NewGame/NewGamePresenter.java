@@ -25,6 +25,8 @@ public class NewGamePresenter {
     // Methods
     private void addEventHandlers() {
         this.newGameView.getStartGame().setOnAction(actionEvent -> {
+            this.updateView();
+
             Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
             MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
             mediaPlayer.play(); // Play media (click.wav)
@@ -34,14 +36,14 @@ public class NewGamePresenter {
             this.newGameView.getScene().setRoot(gameBoardView); // Add (NewGameView.class) to (WelcomeView.class).
             gameBoardView.getScene().getWindow().sizeToScene(); // Add new Size.
             this.newGameView.getCustomStage().setTitle("Memo-Race / Game Bord"); // Making Title (Memo-Race / Game Bord).
-            updateView();
+
         });
     }
     private void updateView() {
         // This four loop is responsible for the six players.
         for (int i = 1; i <= this.newGameView.getPlayerTxt().length-1; i++) {
             // Takes the player name from the view and puts it in a variable.
-            String playerName = this.newGameView.getPlayerName(i).getText();
+            String playerName = this.newGameView.getPlayerName(i-1).getText();
             // If the variable is not empty, it will be added to the player list.
             if (!playerName.isEmpty()) {
                 this.model.setPlayer(playerName);
