@@ -22,7 +22,6 @@ public class GameBoardPresenter {
     }
     // Methods
     private void addEventHandlers() {
-        // Event Click
         this.gameBoardView.getClick().setOnAction(actionEvent -> {
             Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
             MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
@@ -35,6 +34,6 @@ public class GameBoardPresenter {
         });
     }
     private void updateView() {
-        this.gameBoardView.getPlayerName().setText(this.model.getPlayer().get(0).getName()); // Var 0 is TEMP TODO
+        this.gameBoardView.getPlayerName().setText(this.model.getPlayer().get(0).getName()); // Var 0 -> (x) is TEMP TODO
     }
 }

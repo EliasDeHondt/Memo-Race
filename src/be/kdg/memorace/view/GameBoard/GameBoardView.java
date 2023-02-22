@@ -92,7 +92,7 @@ public class GameBoardView extends BorderPane {
 
         BorderPane buttom = new BorderPane(); // Making new BorderPane (BUTTOM)
         buttom.setId("background"); // Set CSS background
-        this.click.setId("button");
+        this.click.setId("button"); // Set CSS button
         setBottom(buttom); // Set (buttom) in Buttom
         buttom.setRight(this.click); // Set (this.click) Right in buttom
         buttom.setLeft(this.dieSides); // Set (this.dieSidesSides) Left in buttom
