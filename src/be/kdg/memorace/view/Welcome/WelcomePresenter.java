@@ -33,11 +33,11 @@ public class WelcomePresenter implements PresenterInterface {
            //clickSound(); // Play sound when you click the button
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
-            new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
             this.welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
             newGameView.getScene().getWindow().sizeToScene(); // Add new Size.
             this.welcomeView.getCustomStage().setTitle("Memo-Race / New Game"); // Making Title (Memo-Race / New Game).
             newGameView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (NewGameView.class)
+            new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
         }));
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
