@@ -37,10 +37,14 @@ public class GameBoardPresenter implements PresenterInterface {
 
             updateView();
         });
-        this.gameBoardView.getCards()[0].setOnMouseClicked(
-                mouseEvent -> {
-                    this.gameBoardView.getCards()[0].setImage(new Image ("/question_mark.png"));
-                });
+        for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
+            int finalI = i;
+            this.gameBoardView.getCards()[i].setOnMouseClicked(
+                    mouseEvent -> {
+                        this.gameBoardView.getCards()[finalI].setImage(new Image ("/question_mark.png"));
+                    });
+        }
+
 
     }
     private void updateView() {

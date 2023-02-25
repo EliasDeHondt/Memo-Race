@@ -40,8 +40,10 @@ public class Memorace {
         if (turn < player.size()) {
             return player.get(turn++);
         }
-        turn = 0;
-        return player.get(turn++);
+        else{
+            turn = 0;
+            return player.get(turn++);
+        }
     }
     public Die getDie() { // Get..
         return this.die;

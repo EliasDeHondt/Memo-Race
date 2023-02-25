@@ -34,7 +34,7 @@ public class GameBoardView extends BorderPane {
         this.playerName = new Label();
         this.gameTime = new Label();
         this.path = new Image[18];
-        this.cards = new ImageView[8];
+        this.cards = new ImageView[16];
         this.die = new Image[7];
         this.dieButton = new Button("dieButton");
         this.dieImg = new ImageView();
@@ -87,16 +87,21 @@ public class GameBoardView extends BorderPane {
             gridGameBoard.add(new ImageView(this.path[teller]),i,5);
             teller--;
         }
-        for (int j = 1; j <= 2; j++) {
+        for (int i = 0; i < 8; i++) {
+            this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
+            this.cards[i+8] = new ImageView(new Image("/card_" + (i+1) + ".png"));
+        }
+
+        //for (int j = 1; j <= 2; j++) {
             for (int i = 0; i < 4; i++) {
-                this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
-                gridGameBoard.add(this.cards[i],i+1,j);
+                gridGameBoard.add(this.cards[i],i+1,1);
+                gridGameBoard.add(this.cards[i+4],i+1,2);
             }
             for (int i = 4; i < 8; i++) {
-                this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
-                gridGameBoard.add(this.cards[i],i-3,j+2);
+                gridGameBoard.add(this.cards[i+4],i-3,3);
+                gridGameBoard.add(this.cards[i+8],i-3,4);
             }
-        }
+        //}
 
         // Set gridGameBoard (GameBoard Layout) Center
         setCenter(gridGameBoard);
