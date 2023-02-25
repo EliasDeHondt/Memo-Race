@@ -29,9 +29,7 @@ public class WelcomePresenter {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-            Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
-            MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
-            mediaPlayer.play(); // Play media (click.wav)
+           clickSound(); // Play sound when you click
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
@@ -42,9 +40,7 @@ public class WelcomePresenter {
         }));
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
-            Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
-            MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
-            mediaPlayer.play(); // Play media (click.wav)
+            clickSound(); // Play sound when you click
 
             GameLogView gameLogView = new GameLogView(); // Making View (GameLogView.class).
             this.welcomeView.getScene().setRoot(gameLogView); // Add (GameLogView.class) to (WelcomeView.class).
@@ -58,5 +54,11 @@ public class WelcomePresenter {
     }
     private void updateView() {
         // TODO
+    }
+
+    void clickSound(){
+        Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
+        MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
+        mediaPlayer.play(); // Play media (click.wav)
     }
 }
