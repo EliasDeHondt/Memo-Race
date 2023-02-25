@@ -152,7 +152,7 @@ public class GameBoardView extends BorderPane {
     public ImageView[] getEmptyCards(){
         return emptyCards;
     }
-    void makeAllCardsNotVisible() {
+    void makeCards() {
         ImageView[] imageView = getEmptyCards();
         int j = 1;
         for (int i = 0; i < 4; i++) {
@@ -166,7 +166,11 @@ public class GameBoardView extends BorderPane {
             gridGameBoard.add(imageView[i+8],i-3,j+3);
         }
     }
-
+    void makeAllCardsNotVisible(){
+        for (int i = 0; i < 16; i++) {
+            this.getEmptyCards()[i].setImage(new Image("/question_mark.png"));
+        }
+    }
     ImageView showCard(){
         return cards[0];
     }

@@ -5,6 +5,8 @@ import be.kdg.memorace.model.Player;
 import be.kdg.memorace.view.PresenterInterface;
 import javafx.scene.image.Image;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 /**
  * Van Elias De Hondt
  * 13/02/2023
@@ -24,36 +26,38 @@ public class GameBoardPresenter implements PresenterInterface {
     private void addEventHandlers() {
         Player player = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(player.getName());
+        this.gameBoardView.makeCards();
 
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
             //clickSound(); // Play sound when you click the button
-
             // Roll the dice
             this.model.getDie().rollDie();
-
             Player player1 = this.model.Turn();
             this.gameBoardView.getPlayerName().setText(player1.getName());
+
+            this.gameBoardView.makeAllCardsNotVisible();
 
             updateView();
         });
 
-        this.gameBoardView.makeAllCardsNotVisible();
-       //this.gameBoardView.addGridPaneCards();
-//        for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
-//            System.out.println(this.gameBoardView.getEmptyCards()[i].getImage().getUrl());
-//        }
+        int timesClicked = 0;
+        AtomicBoolean isClicked = new AtomicBoolean(false);
         for (int i = 0; i < 16; i++) {
             int finalI = i;
-            System.out.println("aaaaa");
+            this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
+                //clickSound(); // Play sound when you click the button
+                this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
+                isClicked.set(true);
+            });
+            System.out.println(timesClicked);
+            if(isClicked.get()){
+                timesClicked++;
+                System.out.println(timesClicked);
+            }
 
-            this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(
-                    mouseEvent -> {
-                        System.out.println("iiiiiii");
-                        //this.gameBoardView.addGridPaneCards();
-                        this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
-                        //this.gameBoardView.addGridPaneCards();
-                        //this.gameBoardView.getCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
-                    });
+//            if(timesClicked >= 2){
+//                break;
+//            }
         }
 
 
@@ -71,7 +75,7 @@ public class GameBoardPresenter implements PresenterInterface {
         // put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
             String naam = String.valueOf((char)(i+65));
-            model.setCards(naam,gameBoardView.getEmptyCards()[i]);
+            model.setCards(naam,gameBoardView.getCards()[i]);
         }
 
     }
