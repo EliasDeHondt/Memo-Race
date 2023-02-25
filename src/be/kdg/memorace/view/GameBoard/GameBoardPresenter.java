@@ -2,6 +2,7 @@ package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.app.ExceptionPlayer;
 import be.kdg.memorace.model.Memorace;
+import be.kdg.memorace.view.PresenterInterface;
 import javafx.scene.control.Alert;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -13,7 +14,7 @@ import static be.kdg.memorace.app.FileHandler.writeErrorLog;
  * Van Elias De Hondt
  * 13/02/2023
  */
-public class GameBoardPresenter {
+public class GameBoardPresenter implements PresenterInterface {
     // Attributes
     private Memorace model;
     private GameBoardView gameBoardView;
@@ -27,10 +28,7 @@ public class GameBoardPresenter {
     // Methods
     private void addEventHandlers() {
         this.gameBoardView.getClick().setOnAction(actionEvent -> {
-            Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
-            MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
-            mediaPlayer.play(); // Play media (click.wav)
-
+            clickSound(); // Play sound when you click the button
             // Roll the dice
             this.model.rollDice();
             // Set (model) Die Sides -> Die Sides (gameBoardView)

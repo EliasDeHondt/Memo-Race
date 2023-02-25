@@ -4,6 +4,7 @@ import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.GameLog.GameLogView;
 import be.kdg.memorace.view.NewGame.NewGamePresenter;
 import be.kdg.memorace.view.NewGame.NewGameView;
+import be.kdg.memorace.view.PresenterInterface;
 import javafx.application.Platform;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -14,7 +15,7 @@ import java.io.File;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class WelcomePresenter {
+public class WelcomePresenter implements PresenterInterface {
     // Attributes
     private Memorace model;
     private WelcomeView welcomeView;
@@ -29,7 +30,7 @@ public class WelcomePresenter {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-           clickSound(); // Play sound when you click
+           clickSound(); // Play sound when you click the button
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
@@ -40,7 +41,7 @@ public class WelcomePresenter {
         }));
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
-            clickSound(); // Play sound when you click
+            clickSound(); // Play sound when you click the button
 
             GameLogView gameLogView = new GameLogView(); // Making View (GameLogView.class).
             this.welcomeView.getScene().setRoot(gameLogView); // Add (GameLogView.class) to (WelcomeView.class).
@@ -54,11 +55,5 @@ public class WelcomePresenter {
     }
     private void updateView() {
         // TODO
-    }
-
-    void clickSound(){
-        Media media = new Media(new File("resources/music/click.wav").toURI().toString()); // set (Media)
-        MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
-        mediaPlayer.play(); // Play media (click.wav)
     }
 }
