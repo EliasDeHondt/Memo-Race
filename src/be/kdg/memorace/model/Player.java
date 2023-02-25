@@ -26,7 +26,7 @@ public class Player {
     public Card[] getCards() { // Get..
         if(this.Cards.length == 0){
             Card e = new Card();
-            e.setType('0');
+            e.setType("0");
             return new Card[]{e};
         }
         else return this.Cards;

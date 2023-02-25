@@ -61,11 +61,11 @@ public class GameBoard {
                 for (Card kaart : cards) {
                     if (kaart1 == kaart) {
                         //this.printSpelerKaarten();
-                        kaart.setType(' ');
+                        kaart.setType(" ");
                     }
                 }
                 for (Card kaart : cards) {
-                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.setType(' ');
+                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.setType(" ");
                 }
                 System.out.println(this); // PrintBoard
             } else {
@@ -136,7 +136,7 @@ public class GameBoard {
             return cards;
         }
     }
-
+/*
     public Card getACard(int x, int y) {
         // Gives a card back using the given x and y.
         for (Card kaart : cards) {
@@ -164,5 +164,5 @@ public class GameBoard {
             default:
                 return null;
         }
-    }
+    }*/
 }

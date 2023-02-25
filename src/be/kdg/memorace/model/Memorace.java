@@ -17,7 +17,7 @@ public class Memorace {
     private Die die;
     private Pawn pawn;
     private int turn;
-    private Map<String, ImageView> cards;
+    private Map<String, Card> cards;
 
     // Constructors
     public Memorace() {
@@ -25,7 +25,7 @@ public class Memorace {
         this.player = new LinkedList<>();  // Creates a new player list.
         this.die = new Die(); // Creates a new die.
         this.pawn = new Pawn(); // Creates a new pawn.
-        this.cards = new HashMap<String, ImageView>();
+        this.cards = new HashMap<String, Card>();
     }
     // Methods
     public void rollDice() {
@@ -49,17 +49,18 @@ public class Memorace {
             return player.get(turn++);
         }
     }
-/*
+
     public Card getACard(int x, int y) {
         // Gives a card back using the given x and y.
-        for (Card kaart : cards) {
-            if (kaart.getY() == y && kaart.getX() == x) {
-                return kaart;
+        for (Card card : cards.values()) {
+            if (card.getY() == y && card.getX() == x) {
+                return card;
             }
         }
         return null;
     }
     public Card turnChosenCard(int option, List<Card> newCards) {
+        newCards.get(0).getX();
         switch (option) {
             case 1:
                 getACard(newCards.get(0).getX(), newCards.get(0).getY()).turned();
@@ -76,17 +77,17 @@ public class Memorace {
             default:
                 return null;
         }
-    }*/
+    }
 
     public Die getDie() { // Get..
         return this.die;
     }
 
-    public void setCards(String s, ImageView iv) {
+    public void setCards(String s, Card iv) {
         this.cards.put(s,iv);
     }
 
-    public Map<String, ImageView> getCards() {
+    public Map<String, Card> getCards() {
         return cards;
     }
 }

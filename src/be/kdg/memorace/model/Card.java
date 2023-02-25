@@ -1,5 +1,6 @@
 package be.kdg.memorace.model;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.Objects;
@@ -9,29 +10,24 @@ import java.util.Random;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class Card  {
+public class Card extends ImageView {
     // Attributes
     private boolean turned;
-    private char type;
+    private String type;
     private int x;
     private int y;
     // Constructors
     public Card() {
         this.turned = false;
         Random random = new Random();
-        switch (random.nextInt(0, 8)) { // Takes a random card [A-H | 0-7].
-            case 0 -> this.type = 'A';
-            case 1 -> this.type = 'B';
-            case 2 -> this.type = 'C';
-            case 3 -> this.type = 'D';
-            case 4 -> this.type = 'E';
-            case 5 -> this.type = 'F';
-            case 6 -> this.type = 'G';
-            case 7 -> this.type = 'H';
-        }
+
+    }
+    public Card(Image image) {
+        super(image);
     }
     // Methods
-    public void setType(char type) { // Set..
+
+    public void setType(String type) {
         this.type = type;
     }
     public void setX(int x) { // Set..
@@ -41,17 +37,17 @@ public class Card  {
         this.y = y;
     }
 
-    public int getX() {
+    public int getCardX() {
         return x;
     }
 
-    public int getY() {
+    public int getCardY() {
         return y;
     }
 
-    public char getType() { // Get..
+    public String getType() { // Get..
         if(this.isTurned()) return this.type;
-        else return 'x';
+        else return "?";
     }
     public void turned() { // If the card is turned over, it will be returned. Set to its default position. Or reversed.
         this.turned = !this.turned;

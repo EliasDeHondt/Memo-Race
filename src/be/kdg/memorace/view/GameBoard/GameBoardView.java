@@ -1,6 +1,7 @@
 package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.app.Timer;
+import be.kdg.memorace.model.Card;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -18,7 +19,7 @@ public class GameBoardView extends BorderPane {
     // Attributes
     private Label playerName, gameTime;
     private Image[] path;
-    private ImageView[] cards;
+    private Card[] cards;
     private Image[] die;
     private Button dieButton;
     private ImageView dieImg;
@@ -34,7 +35,7 @@ public class GameBoardView extends BorderPane {
         this.playerName = new Label();
         this.gameTime = new Label();
         this.path = new Image[18];
-        this.cards = new ImageView[16];
+        this.cards = new Card[16];
         this.die = new Image[7];
         this.dieButton = new Button("dieButton");
         this.dieImg = new ImageView();
@@ -90,8 +91,8 @@ public class GameBoardView extends BorderPane {
 
         // add all card images into the array
         for (int i = 0; i < 8; i++) {
-            this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
-            this.cards[i+8] = new ImageView(new Image("/card_" + (i+1) + ".png"));
+            this.cards[i] = new Card(new Image("/card_" + (i+1) + ".png"));
+            this.cards[i+8] = new Card(new Image("/card_" + (i+1) + ".png"));
         }
         addGridPaneCards(); // set the cards on the gridpane
 
@@ -121,7 +122,7 @@ public class GameBoardView extends BorderPane {
         return this.playerName;
     }
 
-    public ImageView[] getCards() {
+    public Card[] getCards() {
         return cards;
     }
     public ImageView getCard() {
