@@ -29,7 +29,7 @@ public class WelcomeView extends GridPane {
     }
     // Methods
     public void initialiseNodes() {
-        this.logo = new Image("/logo.png");
+        this.logo = new Image("/question_mark.png");
         this.playNewGame = new Button("Play new game");
         this.viewGameLog = new Button("View game log");
         this.quit = new Button("    Quit     ");

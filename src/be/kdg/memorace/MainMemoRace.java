@@ -7,10 +7,7 @@ import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import java.io.File;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -30,7 +27,7 @@ public class MainMemoRace extends Application {
         scene.getStylesheets().add("/style.css"); // CSS
         primaryStage.setScene(scene); // Making stage (scene).
         primaryStage.setResizable(false); // Making Resizable False
-        primaryStage.getIcons().add(new Image("/question_mark.png")); // Making Icon.
+        primaryStage.getIcons().add(new Image("/logo.png")); // Making Icon.
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
 /*

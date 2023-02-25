@@ -12,9 +12,11 @@ public class Memorace {
     private List<Player> player;
     private Die die;
     private Pawn pawn;
+    private int turn;
 
     // Constructors
     public Memorace() {
+        turn=0;
         this.player = new LinkedList<>();  // Creates a new player list.
 
         this.die = new Die(); // Creates a new die.
@@ -34,6 +36,13 @@ public class Memorace {
         return this.player;
     }
 
+    public Player Turn(){
+        if (turn < player.size()) {
+            return player.get(turn++);
+        }
+        turn = 0;
+        return player.get(turn++);
+    }
     public Die getDie() { // Get..
         return this.die;
     }

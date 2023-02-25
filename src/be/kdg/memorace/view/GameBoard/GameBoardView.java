@@ -18,7 +18,7 @@ public class GameBoardView extends BorderPane {
     // Attributes
     private Label playerName, gameTime;
     private Image[] path;
-    private Image[] cards;
+    private ImageView[] cards;
     private Image[] die;
     private Button dieButton;
     private ImageView dieImg;
@@ -33,7 +33,7 @@ public class GameBoardView extends BorderPane {
         this.playerName = new Label();
         this.gameTime = new Label();
         this.path = new Image[18];
-        this.cards = new Image[8];
+        this.cards = new ImageView[8];
         this.die = new Image[7];
         this.dieButton = new Button("dieButton");
         this.dieImg = new ImageView();
@@ -45,8 +45,9 @@ public class GameBoardView extends BorderPane {
         }
 
         // Images, Loading cards.
-        for (int i = 0; i < 8; i++) {
-            this.cards[i] = new Image("/card_" + (i+1) + ".png"); // kan de images niet vinden?
+        this.cards[0] = new ImageView(new Image("/logo.png"));
+        for (int i = 1; i < 8; i++) {
+            this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
         }
 
         // Images, Loading the path.
@@ -86,6 +87,14 @@ public class GameBoardView extends BorderPane {
             gridGameBoard.add(new ImageView(this.path[teller]),i,5);
             teller--;
         }
+        for (int j = 1; j <= 2; j++) {
+            for (int i = 0; i < 4; i++) {
+                gridGameBoard.add(new ImageView(this.cards[i].getImage()),i+1,j);
+            }
+            for (int i = 4; i < 8; i++) {
+                gridGameBoard.add(new ImageView(this.cards[i].getImage()),i-3,j+2);
+            }
+        }
 
         // Set gridGameBoard (GameBoard Layout) Center
         setCenter(gridGameBoard);
@@ -108,11 +117,12 @@ public class GameBoardView extends BorderPane {
     public ImageView getDieImg() {
         return dieImg;
     }
-    void setDieImg(int dieSides) { // Set..
-        this.dieImg.setImage(this.die[dieSides]);
-    }
 
     public Label getPlayerName() { // Get..
         return this.playerName;
+    }
+
+    public ImageView[] getCards() {
+        return cards;
     }
 }

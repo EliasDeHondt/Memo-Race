@@ -1,15 +1,9 @@
 package be.kdg.memorace.view.GameBoard;
 
-import be.kdg.memorace.app.ExceptionPlayer;
 import be.kdg.memorace.model.Memorace;
+import be.kdg.memorace.model.Player;
 import be.kdg.memorace.view.PresenterInterface;
-import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import java.io.File;
-
-import static be.kdg.memorace.app.FileHandler.writeErrorLog;
 
 /**
  * Van Elias De Hondt
@@ -28,15 +22,31 @@ public class GameBoardPresenter implements PresenterInterface {
     }
     // Methods
     private void addEventHandlers() {
+        this.model.Turn();
+        Player player = this.model.Turn();
+        this.gameBoardView.getPlayerName().setText(player.getName());
+
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
             //clickSound(); // Play sound when you click the button
+
             // Roll the dice
             this.model.getDie().rollDie();
-            // Set (model) Die Sides -> Die Sides (gameBoardView)
+
+            Player player1 = this.model.Turn();
+            this.gameBoardView.getPlayerName().setText(player1.getName());
+
             updateView();
         });
+
+        this.gameBoardView.getCards()[0].setOnMouseClicked(
+                mouseEvent -> {
+                    System.out.println("aaaaaaaaaaaa");
+                    this.gameBoardView.getCards()[0].setImage(new Image ("/logo.png"));
+                });
+
     }
     private void updateView() {
+
         int ogen1 = model.getDie().getSide();
         switch (ogen1) {
             case 1 -> gameBoardView.getDieImg().setImage(new Image("/die_1.png"));
@@ -47,5 +57,13 @@ public class GameBoardPresenter implements PresenterInterface {
             case 6 -> gameBoardView.getDieImg().setImage(new Image("/die_6.png"));
         }
 
+    }
+
+    private int turn(){
+        int player = 0;
+        if (player < this.model.getPlayer().size()) {
+            this.gameBoardView.getPlayerName().setText(this.model.getPlayer().get(player).getName());
+        }
+        return ++player;
     }
 }
