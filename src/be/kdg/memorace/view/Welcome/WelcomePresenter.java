@@ -30,7 +30,7 @@ public class WelcomePresenter implements PresenterInterface {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-           //clickSound(); // Play sound when you click the button
+           clickSound(); // Play sound when you click the button
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             this.welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
