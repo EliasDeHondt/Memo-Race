@@ -20,6 +20,7 @@ public class GameBoardView extends BorderPane {
     private Label playerName, gameTime;
     private Image[] path;
     private ImageView[] cards;
+    private ImageView[] emptyCards;
     private Image[] die;
     private Button dieButton;
     private ImageView dieImg;
@@ -36,6 +37,7 @@ public class GameBoardView extends BorderPane {
         this.gameTime = new Label();
         this.path = new Image[18];
         this.cards = new ImageView[16];
+        this.emptyCards = new ImageView[16];
         this.die = new Image[7];
         this.dieButton = new Button("dieButton");
         this.dieImg = new ImageView();
@@ -94,6 +96,10 @@ public class GameBoardView extends BorderPane {
             this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
             this.cards[i+8] = new ImageView(new Image("/card_" + (i+1) + ".png"));
         }
+        for (int i = 0; i < 8; i++) {
+            emptyCards[i] = new ImageView(new Image("/question_mark.png"));
+            emptyCards[i+8] = new ImageView(new Image("/question_mark.png"));
+        }
 
         //makeAllCardsNotVisible();
         //addGridPaneCards(); // set the cards on the gridpane
@@ -144,12 +150,7 @@ public class GameBoardView extends BorderPane {
     }
 
     public ImageView[] getEmptyCards(){
-        ImageView[] imageView = new ImageView[16];
-        for (int i = 0; i < 8; i++) {
-            imageView[i] = new ImageView(new Image("/question_mark.png"));
-            imageView[i+8] = new ImageView(new Image("/question_mark.png"));
-        }
-        return imageView;
+        return emptyCards;
     }
     void makeAllCardsNotVisible() {
         ImageView[] imageView = getEmptyCards();

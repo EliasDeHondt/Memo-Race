@@ -38,19 +38,19 @@ public class GameBoardPresenter implements PresenterInterface {
         });
 
         this.gameBoardView.makeAllCardsNotVisible();
-       // this.gameBoardView.addGridPaneCards();
-        for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
-            System.out.println(this.gameBoardView.getCards()[i].getImage().getUrl());
-        }
-        for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
+       //this.gameBoardView.addGridPaneCards();
+//        for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
+//            System.out.println(this.gameBoardView.getEmptyCards()[i].getImage().getUrl());
+//        }
+        for (int i = 0; i < 16; i++) {
             int finalI = i;
             System.out.println("aaaaa");
 
-            this.gameBoardView.getCards()[finalI].setOnMouseClicked(
+            this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(
                     mouseEvent -> {
                         System.out.println("iiiiiii");
-                        this.gameBoardView.addGridPaneCards();
-                        this.gameBoardView.getCards()[finalI].setImage(new Image("/card_1.png"));
+                        //this.gameBoardView.addGridPaneCards();
+                        this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
                         //this.gameBoardView.addGridPaneCards();
                         //this.gameBoardView.getCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
                     });
@@ -71,7 +71,7 @@ public class GameBoardPresenter implements PresenterInterface {
         // put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
             String naam = String.valueOf((char)(i+65));
-            model.setCards(naam,gameBoardView.getCards()[i]);
+            model.setCards(naam,gameBoardView.getEmptyCards()[i]);
         }
 
     }
