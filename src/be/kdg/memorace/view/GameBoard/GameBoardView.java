@@ -174,4 +174,8 @@ public class GameBoardView extends BorderPane {
     ImageView showCard(){
         return cards[0];
     }
+
+    public GridPane getGridGameBoard() {
+        return gridGameBoard;
+    }
 }

@@ -35,6 +35,7 @@ public class GameBoardPresenter implements PresenterInterface {
             //clickSound(); // Play sound when you click the button
             // Roll the dice
             this.model.getDie().rollDie();
+            this.gameBoardView.getGridGameBoard().setDisable(false);
             Player player1 = this.model.Turn();
             this.gameBoardView.getPlayerName().setText(player1.getName());
 
@@ -44,20 +45,30 @@ public class GameBoardPresenter implements PresenterInterface {
         });
 
         int clicked = 1;
-
+//int[] iarr = {0}; // final not neccessary here if no other array is assigned stringList.forEach(item -> { iarr[0]++; // iarr = {1}; Error if iarr gets other array assigned });
         for (int i = 0; i < 16; i++) {
             int finalI = i;
+            int[] iarr = {0};
             this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
                 //clickSound(); // Play sound when you click the button
                 this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
                 counter();
-                System.out.println(timesClicked);
+                iarr[0]++;
+                //System.out.println(iarr[0]);
+                int a = mouseEvent.getClickCount();
+                if(timesClicked >= 2){
+                    System.out.println("stop");
+                    this.gameBoardView.getGridGameBoard().setDisable(true);
+                    timesClicked = 0;
+                    //this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(null);
+                }
+                //System.out.println(timesClicked);
             });
             //System.out.println(timesClicked);
-            System.out.println("aaaaaaaa");
+            System.out.println(iarr.length);
             //System.out.println(timesClicked);
-            if(timesClicked >= 3){
-                System.out.println("stop");
+            if(iarr[0] >= 2){
+                System.out.println("e");
                 break;
             }
             System.out.println("ffffffff");
