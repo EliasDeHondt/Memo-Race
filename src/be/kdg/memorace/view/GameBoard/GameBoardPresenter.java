@@ -6,6 +6,7 @@ import be.kdg.memorace.view.PresenterInterface;
 import javafx.scene.image.Image;
 
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Van Elias De Hondt
@@ -15,10 +16,12 @@ public class GameBoardPresenter implements PresenterInterface {
     // Attributes
     private Memorace model;
     private GameBoardView gameBoardView;
+    private int timesClicked;
     // Constructors
     public GameBoardPresenter(Memorace model, GameBoardView gameBoardView) {
         this.model = model;
         this.gameBoardView = gameBoardView;
+        this.timesClicked = 0;
         this.addEventHandlers();
         this.updateView();
     }
@@ -40,27 +43,34 @@ public class GameBoardPresenter implements PresenterInterface {
             updateView();
         });
 
-        int timesClicked = 0;
-        AtomicBoolean isClicked = new AtomicBoolean(false);
+        int clicked = 1;
+
         for (int i = 0; i < 16; i++) {
             int finalI = i;
             this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
                 //clickSound(); // Play sound when you click the button
                 this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
-                isClicked.set(true);
-            });
-            System.out.println(timesClicked);
-            if(isClicked.get()){
-                timesClicked++;
+                counter();
                 System.out.println(timesClicked);
+            });
+            //System.out.println(timesClicked);
+            System.out.println("aaaaaaaa");
+            //System.out.println(timesClicked);
+            if(timesClicked >= 3){
+                System.out.println("stop");
+                break;
             }
-
+            System.out.println("ffffffff");
 //            if(timesClicked >= 2){
 //                break;
 //            }
         }
 
 
+    }
+    private int counter(){
+        timesClicked = timesClicked +1;
+        return timesClicked;
     }
     private void updateView() {
         int ogen1 = model.getDie().getSide();
