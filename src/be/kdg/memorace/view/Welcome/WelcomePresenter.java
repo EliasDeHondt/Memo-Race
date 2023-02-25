@@ -30,7 +30,7 @@ public class WelcomePresenter implements PresenterInterface {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-           clickSound(); // Play sound when you click the button
+           //clickSound(); // Play sound when you click the button
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
@@ -41,7 +41,7 @@ public class WelcomePresenter implements PresenterInterface {
         }));
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
-            clickSound(); // Play sound when you click the button
+            //clickSound(); // Play sound when you click the button
 
             GameLogView gameLogView = new GameLogView(); // Making View (GameLogView.class).
             this.welcomeView.getScene().setRoot(gameLogView); // Add (GameLogView.class) to (WelcomeView.class).

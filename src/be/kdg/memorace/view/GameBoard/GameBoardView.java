@@ -20,8 +20,8 @@ public class GameBoardView extends BorderPane {
     private Image[] path;
     private Image[] cards;
     private Image[] die;
-    private Button click;
-    private ImageView dieSides;
+    private Button dieButton;
+    private ImageView dieImg;
     private Timer timer;
     // Constructors
     public GameBoardView() {
@@ -35,8 +35,8 @@ public class GameBoardView extends BorderPane {
         this.path = new Image[18];
         this.cards = new Image[8];
         this.die = new Image[7];
-        this.click = new Button("Click");
-        this.dieSides = new ImageView(this.die[0]);
+        this.dieButton = new Button("dieButton");
+        this.dieImg = new ImageView();
         this.timer = new Timer(this.gameTime); // Set Game Time to (this.timer)
 
         // Images, Loading the path.
@@ -92,21 +92,24 @@ public class GameBoardView extends BorderPane {
 
         BorderPane buttom = new BorderPane(); // Making new BorderPane (BUTTOM)
         buttom.setId("background"); // Set CSS background
-        this.click.setId("button"); // Set CSS button
+        this.dieButton.setId("button"); // Set CSS button
         setBottom(buttom); // Set (buttom) in Buttom
-        buttom.setRight(this.click); // Set (this.click) Right in buttom
-        buttom.setLeft(this.dieSides); // Set (this.dieSidesSides) Left in buttom
+        buttom.setRight(this.dieButton); // Set (this.click) Right in buttom
+        buttom.setLeft(this.dieImg); // Set (this.dieSidesSides) Left in buttom
 
         this.timer.start(); // Start Game Time
         buttom.setPadding(new Insets(10)); // Set padding for (buttom)
     }
 
-    Button getClick() { // Get..
-        return this.click;
+    Button getDieButton() { // Get..
+        return this.dieButton;
     }
 
-    void setDieSides(int dieSides) { // Set..
-        this.dieSides.setImage(this.die[dieSides]);
+    public ImageView getDieImg() {
+        return dieImg;
+    }
+    void setDieImg(int dieSides) { // Set..
+        this.dieImg.setImage(this.die[dieSides]);
     }
 
     public Label getPlayerName() { // Get..

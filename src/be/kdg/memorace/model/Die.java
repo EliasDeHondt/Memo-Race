@@ -8,15 +8,18 @@ import java.util.Random;
  */
 public class Die {
     // Attributes
-    private final int side;
+    private int side;
 
+    private Random random = new Random();
     // Constructors
     public Die() {
-        final Random dobbelsteen = new Random();
-        this.side = dobbelsteen.nextInt(1, 7);
+        rollDie();
     }
     // Methods
     public int getSide() {
         return this.side;
+    }
+    public void rollDie() {
+        this.side = random.nextInt(1, 7);
     }
 }

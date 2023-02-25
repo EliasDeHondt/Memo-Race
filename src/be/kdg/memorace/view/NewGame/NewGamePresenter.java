@@ -28,7 +28,7 @@ public class NewGamePresenter implements PresenterInterface {
         this.newGameView.getStartGame().setOnAction(actionEvent -> {
             this.updateView();
 
-            clickSound(); // Play sound when you click the button
+            //clickSound(); // Play sound when you click the button
 
             GameBoardView gameBoardView = new GameBoardView(); // Making View (NewGameView.class).
             new GameBoardPresenter(this.model, gameBoardView); // Making Presenter (NewGamePresenter.class).
