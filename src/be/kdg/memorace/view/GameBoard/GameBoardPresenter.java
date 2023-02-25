@@ -33,7 +33,6 @@ public class GameBoardPresenter implements PresenterInterface {
             // Roll the dice
             this.model.getDie().rollDie();
             // Set (model) Die Sides -> Die Sides (gameBoardView)
-            //this.gameBoardView.setDieSides(this.model.getDie().getSide());
             updateView();
         });
     }
@@ -48,16 +47,5 @@ public class GameBoardPresenter implements PresenterInterface {
             case 6 -> gameBoardView.getDieImg().setImage(new Image("/die_6.png"));
         }
 
-        try {
-            this.gameBoardView.getPlayerName().setText(this.model.getPlayer().get(0).getName()); // Var 0 -> (x) is TEMP TODO
-
-        } catch (Exception e) {
-            String errorMessage = "(writeErrorLog) No player names were entered. Please be advised.";
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setHeaderText(errorMessage);
-            alert.setTitle("Player names ERROR");
-            alert.showAndWait();
-            writeErrorLog("resources/log/errorLog.csv", errorMessage); // The player name error will also be placed in a log.
-        }
     }
 }

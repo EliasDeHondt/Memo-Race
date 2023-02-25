@@ -103,12 +103,15 @@ public class NewGameView extends GridPane {
     public Button getStartGame() { // Get..
         return this.startGame;
     }
-
     public Stage getCustomStage(){ // Get..
         return this.primaryStage;
     }
 
     public void setCustomStage(Stage primaryStage){ // Set..
         this.primaryStage = primaryStage;
+    }
+
+    public void setPlayerTxt(TextField[] playerTxt) {
+        this.playerTxt = playerTxt;
     }
 }
