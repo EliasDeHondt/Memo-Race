@@ -48,8 +48,32 @@ public class Memorace {
             turn = 0;
             return player.get(turn++);
         }
+    }/*
+    public void compare2Cards(Card kaart1, Card kaart2) {
+        for (int i = 0; i < this.getPlayer().size(); i++) {
+            if (kaart1.getType() == kaart2.getType()) {
+                System.out.println(kaart2.getX() + ", " + kaart2.getY());
+                //this.getPlayer().get(i).getCards()[i] = kaart1;
+                for (Card kaart : cards.values()) {
+                    if (kaart1 == kaart) {
+                        //this.printSpelerKaarten();
+                        kaart.setType(" ");
+                    }
+                }
+                for (Card kaart : cards.values()) {
+                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.setType(" ");
+                }
+                System.out.println(this); // PrintBoard
+            } else {
+                for (Card kaart : cards.values()) {
+                    if (kaart1.getX() == kaart.getX() && kaart1.getY() == kaart.getY()) kaart.turned();
+                }
+                for (Card kaart : cards.values()) {
+                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.turned();
+                }
+            }
+        }
     }
-
     public Card getACard(int x, int y) {
         // Gives a card back using the given x and y.
         for (Card card : cards.values()) {
@@ -63,28 +87,29 @@ public class Memorace {
         newCards.get(0).getX();
         switch (option) {
             case 1:
-                getACard(newCards.get(0).getX(), newCards.get(0).getY()).turned();
-                return getACard(newCards.get(0).getX(), newCards.get(0).getY());
+                getACard(newCards.get(0).getCardX(), newCards.get(0).getCardY()).turned();
+                return getACard(newCards.get(0).getCardX(), newCards.get(0).getCardY());
             case 2:
-                getACard(newCards.get(1).getX(), newCards.get(1).getY()).turned();
-                return getACard(newCards.get(1).getX(), newCards.get(1).getY());
+                getACard(newCards.get(1).getCardX(), newCards.get(1).getCardY()).turned();
+                return getACard(newCards.get(1).getCardX(), newCards.get(1).getCardY());
             case 3:
-                getACard(newCards.get(2).getX(), newCards.get(2).getY()).turned();
-                return getACard(newCards.get(2).getX(), newCards.get(2).getY());
+                getACard(newCards.get(2).getCardX(), newCards.get(2).getCardY()).turned();
+                return getACard(newCards.get(2).getCardX(), newCards.get(2).getCardY());
             case 4:
-                getACard(newCards.get(3).getX(), newCards.get(3).getY()).turned();
-                return getACard(newCards.get(3).getX(), newCards.get(3).getY());
+                getACard(newCards.get(3).getCardX(), newCards.get(3).getCardY()).turned();
+                return getACard(newCards.get(3).getCardX(), newCards.get(3).getCardY());
             default:
                 return null;
         }
     }
-
+*/
     public Die getDie() { // Get..
         return this.die;
     }
 
-    public void setCards(String s, Card iv) {
-        this.cards.put(s,iv);
+    public void setCards(String s, ImageView iv) {
+        Card card = new Card(iv);
+        this.cards.put(s,card);
     }
 
     public Map<String, Card> getCards() {

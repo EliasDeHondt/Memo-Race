@@ -37,11 +37,22 @@ public class GameBoardPresenter implements PresenterInterface {
             updateView();
         });
 
+        this.gameBoardView.makeAllCardsNotVisible();
+       // this.gameBoardView.addGridPaneCards();
+        for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
+            System.out.println(this.gameBoardView.getCards()[i].getImage().getUrl());
+        }
         for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
             int finalI = i;
-            this.gameBoardView.getCards()[i].setOnMouseClicked(
+            System.out.println("aaaaa");
+
+            this.gameBoardView.getCards()[finalI].setOnMouseClicked(
                     mouseEvent -> {
-                        this.gameBoardView.getCards()[finalI].setImage(new Image ("/question_mark.png"));
+                        System.out.println("iiiiiii");
+                        this.gameBoardView.addGridPaneCards();
+                        this.gameBoardView.getCards()[finalI].setImage(new Image("/card_1.png"));
+                        //this.gameBoardView.addGridPaneCards();
+                        //this.gameBoardView.getCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
                     });
         }
 
@@ -62,5 +73,6 @@ public class GameBoardPresenter implements PresenterInterface {
             String naam = String.valueOf((char)(i+65));
             model.setCards(naam,gameBoardView.getCards()[i]);
         }
+
     }
 }

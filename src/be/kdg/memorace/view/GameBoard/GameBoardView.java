@@ -19,7 +19,7 @@ public class GameBoardView extends BorderPane {
     // Attributes
     private Label playerName, gameTime;
     private Image[] path;
-    private Card[] cards;
+    private ImageView[] cards;
     private Image[] die;
     private Button dieButton;
     private ImageView dieImg;
@@ -35,7 +35,7 @@ public class GameBoardView extends BorderPane {
         this.playerName = new Label();
         this.gameTime = new Label();
         this.path = new Image[18];
-        this.cards = new Card[16];
+        this.cards = new ImageView[16];
         this.die = new Image[7];
         this.dieButton = new Button("dieButton");
         this.dieImg = new ImageView();
@@ -91,10 +91,13 @@ public class GameBoardView extends BorderPane {
 
         // add all card images into the array
         for (int i = 0; i < 8; i++) {
-            this.cards[i] = new Card(new Image("/card_" + (i+1) + ".png"));
-            this.cards[i+8] = new Card(new Image("/card_" + (i+1) + ".png"));
+            this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
+            this.cards[i+8] = new ImageView(new Image("/card_" + (i+1) + ".png"));
         }
-        addGridPaneCards(); // set the cards on the gridpane
+
+        //makeAllCardsNotVisible();
+        //addGridPaneCards(); // set the cards on the gridpane
+
 
         // Set gridGameBoard (GameBoard Layout) Center
         setCenter(gridGameBoard);
@@ -122,14 +125,14 @@ public class GameBoardView extends BorderPane {
         return this.playerName;
     }
 
-    public Card[] getCards() {
+    public ImageView[] getCards() {
         return cards;
     }
     public ImageView getCard() {
         return cards[0];
     }
 
-    private void addGridPaneCards(){
+    void addGridPaneCards(){
         for (int i = 0; i < 4; i++) {
             gridGameBoard.add(this.cards[i],i+1,1);
             gridGameBoard.add(this.cards[i+4],i+1,2);
@@ -138,5 +141,32 @@ public class GameBoardView extends BorderPane {
             gridGameBoard.add(this.cards[i+4],i-3,3);
             gridGameBoard.add(this.cards[i+8],i-3,4);
         }
+    }
+
+    public ImageView[] getEmptyCards(){
+        ImageView[] imageView = new ImageView[16];
+        for (int i = 0; i < 8; i++) {
+            imageView[i] = new ImageView(new Image("/question_mark.png"));
+            imageView[i+8] = new ImageView(new Image("/question_mark.png"));
+        }
+        return imageView;
+    }
+    void makeAllCardsNotVisible() {
+        ImageView[] imageView = getEmptyCards();
+        int j = 1;
+        for (int i = 0; i < 4; i++) {
+            //this.getCards()[i].setImage(new Image("/question_mark.png"));
+            gridGameBoard.add(imageView[i],i+1,j);
+            gridGameBoard.add(imageView[i+4],i+1,j+1);
+        }
+        for (int i = 4; i < 8; i++) {
+            //this.getCards()[i].setImage(new Image("/question_mark.png"));
+            gridGameBoard.add(imageView[i+4],i-3,j+2);
+            gridGameBoard.add(imageView[i+8],i-3,j+3);
+        }
+    }
+
+    ImageView showCard(){
+        return cards[0];
     }
 }

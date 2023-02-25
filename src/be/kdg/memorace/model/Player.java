@@ -23,12 +23,12 @@ public class Player {
         return this.Name;
     }
 
-    public Card[] getCards() { // Get..
-        if(this.Cards.length == 0){
-            Card e = new Card();
-            e.setType("0");
-            return new Card[]{e};
-        }
-        else return this.Cards;
-    }
+//    public Card[] getCards() { // Get..
+//        if(this.Cards.length == 0){
+//            Card e = new Card();
+//            e.setType("0");
+//            return new Card[]{e};
+//        }
+//        else return this.Cards;
+//    }
 }

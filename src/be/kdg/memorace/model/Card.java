@@ -10,20 +10,21 @@ import java.util.Random;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class Card extends ImageView {
+public class Card{
     // Attributes
     private boolean turned;
     private String type;
     private int x;
     private int y;
+    private ImageView imageView;
     // Constructors
     public Card() {
-        this.turned = false;
         Random random = new Random();
-
+        this.turned = false;
     }
-    public Card(Image image) {
-        super(image);
+
+    public Card(ImageView imageView) {
+        this.imageView = imageView;
     }
     // Methods
 
@@ -40,11 +41,9 @@ public class Card extends ImageView {
     public int getCardX() {
         return x;
     }
-
     public int getCardY() {
         return y;
     }
-
     public String getType() { // Get..
         if(this.isTurned()) return this.type;
         else return "?";

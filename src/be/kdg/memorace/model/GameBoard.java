@@ -8,6 +8,7 @@ import java.util.*;
  */
 public class GameBoard {
     // Attributes
+    /*
     private final Path path;
     private final List<Card> cards;
     private Memorace memorace;
@@ -136,7 +137,7 @@ public class GameBoard {
             return cards;
         }
     }
-/*
+
     public Card getACard(int x, int y) {
         // Gives a card back using the given x and y.
         for (Card kaart : cards) {
