@@ -87,21 +87,13 @@ public class GameBoardView extends BorderPane {
             gridGameBoard.add(new ImageView(this.path[teller]),i,5);
             teller--;
         }
+
+        // add all card images into the array
         for (int i = 0; i < 8; i++) {
             this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
             this.cards[i+8] = new ImageView(new Image("/card_" + (i+1) + ".png"));
         }
-
-        //for (int j = 1; j <= 2; j++) {
-            for (int i = 0; i < 4; i++) {
-                gridGameBoard.add(this.cards[i],i+1,1);
-                gridGameBoard.add(this.cards[i+4],i+1,2);
-            }
-            for (int i = 4; i < 8; i++) {
-                gridGameBoard.add(this.cards[i+4],i-3,3);
-                gridGameBoard.add(this.cards[i+8],i-3,4);
-            }
-        //}
+        addGridPaneCards(); // set the cards on the gridpane
 
         // Set gridGameBoard (GameBoard Layout) Center
         setCenter(gridGameBoard);
@@ -134,5 +126,16 @@ public class GameBoardView extends BorderPane {
     }
     public ImageView getCard() {
         return cards[0];
+    }
+
+    private void addGridPaneCards(){
+        for (int i = 0; i < 4; i++) {
+            gridGameBoard.add(this.cards[i],i+1,1);
+            gridGameBoard.add(this.cards[i+4],i+1,2);
+        }
+        for (int i = 4; i < 8; i++) {
+            gridGameBoard.add(this.cards[i+4],i-3,3);
+            gridGameBoard.add(this.cards[i+8],i-3,4);
+        }
     }
 }

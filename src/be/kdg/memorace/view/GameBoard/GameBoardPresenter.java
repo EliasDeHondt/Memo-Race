@@ -22,7 +22,6 @@ public class GameBoardPresenter implements PresenterInterface {
     }
     // Methods
     private void addEventHandlers() {
-        this.model.Turn();
         Player player = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(player.getName());
 
@@ -37,6 +36,7 @@ public class GameBoardPresenter implements PresenterInterface {
 
             updateView();
         });
+
         for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
             int finalI = i;
             this.gameBoardView.getCards()[i].setOnMouseClicked(
@@ -48,7 +48,6 @@ public class GameBoardPresenter implements PresenterInterface {
 
     }
     private void updateView() {
-
         int ogen1 = model.getDie().getSide();
         switch (ogen1) {
             case 1 -> gameBoardView.getDieImg().setImage(new Image("/die_1.png"));
@@ -58,14 +57,10 @@ public class GameBoardPresenter implements PresenterInterface {
             case 5 -> gameBoardView.getDieImg().setImage(new Image("/die_5.png"));
             case 6 -> gameBoardView.getDieImg().setImage(new Image("/die_6.png"));
         }
-
-    }
-
-    private int turn(){
-        int player = 0;
-        if (player < this.model.getPlayer().size()) {
-            this.gameBoardView.getPlayerName().setText(this.model.getPlayer().get(player).getName());
+        // put the cards and an unique name for each in a map
+        for (int i = 0; i < 16; i++) {
+            String naam = String.valueOf((char)(i+65));
+            model.setCards(naam,gameBoardView.getCards()[i]);
         }
-        return ++player;
     }
 }
