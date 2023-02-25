@@ -45,7 +45,7 @@ public class GameBoardView extends BorderPane {
         }
 
         // Images, Loading cards.
-        this.cards[0] = new ImageView(new Image("/logo.png"));
+        this.cards[0] = new ImageView(new Image("/question_mark.png"));
         for (int i = 1; i < 8; i++) {
             this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
         }
