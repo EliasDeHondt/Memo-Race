@@ -18,7 +18,7 @@ import javafx.scene.layout.GridPane;
 public class GameBoardView extends BorderPane {
     // Attributes
     private Label playerName, gameTime;
-    private Image[] path;
+    private ImageView[] path;
     private ImageView[] cards;
     private ImageView[] emptyCards;
     private Image[] die;
@@ -35,7 +35,7 @@ public class GameBoardView extends BorderPane {
     public void initialiseNodes() {
         this.playerName = new Label();
         this.gameTime = new Label();
-        this.path = new Image[18];
+        this.path = new ImageView[18];
         this.cards = new ImageView[16];
         this.emptyCards = new ImageView[16];
         this.die = new Image[7];
@@ -47,7 +47,7 @@ public class GameBoardView extends BorderPane {
         setAlignment(gridGameBoard, Pos.CENTER); // Set (gridGameBoard) on CENTER.
         // Images, Loading the path.
         for (int i = 0; i < 17; i++) {
-            this.path[i] = new Image("/path_" + i + ".png");
+            this.path[i] = new ImageView(new Image("/path_" + i + ".png"));
         }
 
         // Images, Loading cards.
@@ -72,24 +72,6 @@ public class GameBoardView extends BorderPane {
         this.gameTime.setId("top"); // Set CSS (this.gameTime)
         setTop(top); // set (top) on top in (BorderPane | this. )
 
-        // Set row 0. Example -> gridGameBoard.add(new ImageView(this.path1),1,0);
-        for (int i = 0; i < 5; i++) {
-            gridGameBoard.add(new ImageView(this.path[i]),i,0);
-        }
-
-        // Set row 1, 2, 3, 4. Example -> gridGameBoard.add(new ImageView(this.path16),0,1);
-        int p1 = 16, p2 = 5;
-        for (int i = 1; i < 5; i++) {
-            gridGameBoard.add(new ImageView(this.path[p1--]),0,i);
-            gridGameBoard.add(new ImageView(this.path[p2++]),5,i);
-        }
-
-        // Set row 5. Example -> gridGameBoard.add(new ImageView(this.path12),1,5);
-        int teller = 12;
-        for (int i = 1; i < 5; i++) {
-            gridGameBoard.add(new ImageView(this.path[teller]),i,5);
-            teller--;
-        }
 
         // add all card images into the array
         for (int i = 0; i < 8; i++) {
@@ -119,7 +101,7 @@ public class GameBoardView extends BorderPane {
         buttom.setPadding(new Insets(10)); // Set padding for (buttom)
     }
 
-    Button getDieButton() { // Get..
+    Button getDieButton() {
         return this.dieButton;
     }
 
@@ -127,15 +109,12 @@ public class GameBoardView extends BorderPane {
         return dieImg;
     }
 
-    public Label getPlayerName() { // Get..
+    public Label getPlayerName() {
         return this.playerName;
     }
 
     public ImageView[] getCards() {
         return cards;
-    }
-    public ImageView getCard() {
-        return cards[0];
     }
 
     void addGridPaneCards(){
@@ -171,11 +150,35 @@ public class GameBoardView extends BorderPane {
             this.getEmptyCards()[i].setImage(new Image("/question_mark.png"));
         }
     }
-    ImageView showCard(){
-        return cards[0];
-    }
 
+    void makePath(){
+        // Set row 0. Example -> gridGameBoard.add(new ImageView(this.path1),1,0);
+        for (int i = 0; i < 5; i++) {
+            gridGameBoard.add(this.path[i],i,0);
+        }
+
+        // Set row 1, 2, 3, 4. Example -> gridGameBoard.add(new ImageView(this.path16),0,1);
+        int p1 = 16, p2 = 5;
+        for (int i = 1; i < 5; i++) {
+            gridGameBoard.add(this.path[p1--],0,i);
+            gridGameBoard.add(this.path[p2++],5,i);
+        }
+
+        // Set row 5. Example -> gridGameBoard.add(new ImageView(this.path12),1,5);
+        int teller = 12;
+        for (int i = 1; i < 5; i++) {
+            gridGameBoard.add(this.path[teller],i,5);
+            teller--;
+        }
+    }
     public GridPane getGridGameBoard() {
         return gridGameBoard;
+    }
+
+    public void showPawn(int position){
+        this.path[position].setImage(new Image("/pawn_1.png"));
+    }
+    public void returnPosition(int position){
+        this.path[position].setImage(new Image("/path_" + position + ".png"));
     }
 }

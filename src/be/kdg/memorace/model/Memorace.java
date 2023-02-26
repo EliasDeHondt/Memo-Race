@@ -28,9 +28,10 @@ public class Memorace {
         this.cards = new HashMap<String, Card>();
     }
     // Methods
-    public void rollDice() {
-        int side = die.getSide();
-        this.pawn.setPosition(side);
+
+    public void setPawnPosition(){
+        die.rollDie();
+        this.pawn.setPosition(die.getSide());
     }
     public void setPlayer(String playerName) { // Set..
         this.player.add(new Player(playerName));
@@ -48,7 +49,8 @@ public class Memorace {
             turn = 0;
             return player.get(turn++);
         }
-    }/*
+    }
+    /*
     public void compare2Cards(Card kaart1, Card kaart2) {
         for (int i = 0; i < this.getPlayer().size(); i++) {
             if (kaart1.getType() == kaart2.getType()) {
@@ -110,6 +112,10 @@ public class Memorace {
     public void setCards(String s, ImageView iv) {
         Card card = new Card(iv);
         this.cards.put(s,card);
+    }
+
+    public Pawn getPawn() {
+        return pawn;
     }
 
     public Map<String, Card> getCards() {

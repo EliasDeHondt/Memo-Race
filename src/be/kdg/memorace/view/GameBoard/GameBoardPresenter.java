@@ -29,12 +29,18 @@ public class GameBoardPresenter implements PresenterInterface {
     private void addEventHandlers() {
         Player player = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(player.getName());
+        this.gameBoardView.makePath();
         this.gameBoardView.makeCards();
 
+        int lastPawnPos = 0;
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
             //clickSound(); // Play sound when you click the button
-            // Roll the dice
-            this.model.getDie().rollDie();
+            this.gameBoardView.returnPosition(this.model.getPawn().getPosition());
+            // Roll the dice and place the pawn
+            this.model.setPawnPosition();
+            System.out.println(this.model.getPawn().getPosition()); //juist
+            this.gameBoardView.showPawn(this.model.getPawn().getPosition());
+
             this.gameBoardView.getGridGameBoard().setDisable(false);
             
             Player player1 = this.model.Turn();
@@ -44,20 +50,43 @@ public class GameBoardPresenter implements PresenterInterface {
 
             updateView();
         });
+        //lastPawnPos = this.model.getPawn().getPosition();
 
         for (int i = 0; i < 16; i++) {
             int finalI = i;
-            this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
-                //clickSound(); // Play sound when you click the button
-                this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
-                counter();
-                if(timesClicked >= 2){
-                    this.gameBoardView.getGridGameBoard().setDisable(true);
-                    timesClicked = 0;
-                }
-            });
+            // Only click row/column of Die number
+            if(i < 4){
+                this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
+                    //clickSound(); // Play sound when you click the button
+                    this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
+
+                    // Only 2 cards can be clicked at a time
+                    //limitCards();
+                });
+            }
+
         }
 
+    }
+
+    private int firstCard(){
+        model.getPlayer();
+        switch (this.model.getDie().getSide()){
+            case 1: return 4;
+            case 2: return 4;
+            case 3: return 4;
+            case 4: return 1;
+            case 5: return 4;
+            case 6: return 1;
+            default: return 0;
+        }
+    }
+    private void limitCards(){
+        counter();
+        if(timesClicked >= 2){
+            this.gameBoardView.getGridGameBoard().setDisable(true);
+            timesClicked = 0;
+        }
     }
     private int counter(){
         timesClicked = timesClicked +1;
