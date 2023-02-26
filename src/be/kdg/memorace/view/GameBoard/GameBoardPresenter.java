@@ -29,22 +29,30 @@ public class GameBoardPresenter implements PresenterInterface {
     private void addEventHandlers() {
         Player player = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(player.getName());
+        this.model.setPawnPosition(model.currentPlayer(player));
+        System.out.println("pw ;" + this.model.getPawn(model.currentPlayer(player)).getPosition());
+        this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(player)).getPosition(),model.currentPlayer(player));
+
         this.gameBoardView.makePath();
         this.gameBoardView.makeCards();
 
         int lastPawnPos = 0;
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
             //clickSound(); // Play sound when you click the button
-            this.gameBoardView.returnPosition(this.model.getPawn().getPosition());
+            this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(player)).getPosition());
             // Roll the dice and place the pawn
-            this.model.setPawnPosition();
-            System.out.println(this.model.getPawn().getPosition()); //juist
-            this.gameBoardView.showPawn(this.model.getPawn().getPosition());
+            //System.out.println(model.currentPlayer(player1));
+
+            ///System.out.println(this.model.getPawn().getPosition()); //juist
+            //if(model.getPlayer.)
+            //this.gameBoardView.showPawn(this.model.getPawn().getPosition(),model.currentPlayer(player1));
 
             this.gameBoardView.getGridGameBoard().setDisable(false);
             
             Player player1 = this.model.Turn();
             this.gameBoardView.getPlayerName().setText(player1.getName());
+            this.model.setPawnPosition(model.currentPlayer(player1));
+            this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(player)).getPosition(),model.currentPlayer(player1));
 
             this.gameBoardView.makeAllCardsNotVisible();
 
@@ -55,7 +63,7 @@ public class GameBoardPresenter implements PresenterInterface {
         for (int i = 0; i < 16; i++) {
             int finalI = i;
             // Only click row/column of Die number
-            if(i < 4){
+            //if(i < 4){
                 this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
                     //clickSound(); // Play sound when you click the button
                     this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
@@ -63,7 +71,7 @@ public class GameBoardPresenter implements PresenterInterface {
                     // Only 2 cards can be clicked at a time
                     //limitCards();
                 });
-            }
+            //}
 
         }
 
@@ -93,15 +101,9 @@ public class GameBoardPresenter implements PresenterInterface {
         return timesClicked;
     }
     private void updateView() {
-        int ogen1 = model.getDie().getSide();
-        switch (ogen1) {
-            case 1 -> gameBoardView.getDieImg().setImage(new Image("/die_1.png"));
-            case 2 -> gameBoardView.getDieImg().setImage(new Image("/die_2.png"));
-            case 3 -> gameBoardView.getDieImg().setImage(new Image("/die_3.png"));
-            case 4 -> gameBoardView.getDieImg().setImage(new Image("/die_4.png"));
-            case 5 -> gameBoardView.getDieImg().setImage(new Image("/die_5.png"));
-            case 6 -> gameBoardView.getDieImg().setImage(new Image("/die_6.png"));
-        }
+        int ogen = model.getDie().getSide();
+        gameBoardView.showDie(ogen);
+
         // put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
             String naam = String.valueOf((char)(i+65));

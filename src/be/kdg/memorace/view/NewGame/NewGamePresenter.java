@@ -74,6 +74,7 @@ public class NewGamePresenter implements PresenterInterface {
                 // If the variable is not empty, it will be added to the player list.
                 if (!playerName.isEmpty()) {
                     this.model.setPlayer(playerName);
+                    this.model.setPawn();
                 }
             }
             if (this.model.getPlayer().size() < 2) {

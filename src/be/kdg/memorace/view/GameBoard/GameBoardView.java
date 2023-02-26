@@ -175,10 +175,20 @@ public class GameBoardView extends BorderPane {
         return gridGameBoard;
     }
 
-    public void showPawn(int position){
-        this.path[position].setImage(new Image("/pawn_1.png"));
+    public void showPawn(int position,int player){
+        this.path[position].setImage(new Image("/pawn_" + player + ".png"));
     }
     public void returnPosition(int position){
         this.path[position].setImage(new Image("/path_" + position + ".png"));
+    }
+    void showDie(int ogen){
+        switch (ogen) {
+            case 1 -> getDieImg().setImage(new Image("/die_1.png"));
+            case 2 -> getDieImg().setImage(new Image("/die_2.png"));
+            case 3 -> getDieImg().setImage(new Image("/die_3.png"));
+            case 4 -> getDieImg().setImage(new Image("/die_4.png"));
+            case 5 -> getDieImg().setImage(new Image("/die_5.png"));
+            case 6 -> getDieImg().setImage(new Image("/die_6.png"));
+        }
     }
 }
