@@ -30,7 +30,7 @@ public class GameBoardPresenter implements PresenterInterface {
         Player player = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(player.getName());
         this.model.setPawnPosition(model.currentPlayer(player));
-        System.out.println("pw ;" + this.model.getPawn(model.currentPlayer(player)).getPosition());
+        System.out.println(player);
         this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(player)).getPosition(),model.currentPlayer(player));
 
         this.gameBoardView.makePath();
@@ -53,6 +53,7 @@ public class GameBoardPresenter implements PresenterInterface {
             this.gameBoardView.getPlayerName().setText(player1.getName());
             this.model.setPawnPosition(model.currentPlayer(player1));
             this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(player)).getPosition(),model.currentPlayer(player1));
+            System.out.println(player1);
 
             this.gameBoardView.makeAllCardsNotVisible();
 

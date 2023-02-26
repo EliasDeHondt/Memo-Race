@@ -32,7 +32,6 @@ public class Memorace {
     public void setPawnPosition(int player){
         die.rollDie();
         this.pawns.get(player).setPosition(die.getSide());
-        System.out.println("d ;" + die.getSide());
         System.out.println("p ;" + player);
     }
     public void setPlayer(String playerName) { // Set..
@@ -58,9 +57,10 @@ public class Memorace {
     }
     public int currentPlayer(Player p){
         int current = 1;
-        for (int i = 1; i < getPlayer().size(); i++) {
+        for (int i = 0; i < getPlayer().size(); i++) {
             if(p.getName().equals(getPlayer().get(i).getName())){
                 current = i;
+                //System.out.println(current);
             }
         }
         return current;

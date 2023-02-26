@@ -176,7 +176,7 @@ public class GameBoardView extends BorderPane {
     }
 
     public void showPawn(int position,int player){
-        this.path[position].setImage(new Image("/pawn_" + player + ".png"));
+        this.path[position].setImage(new Image("/pawn_" + (player+1) + ".png"));
     }
     public void returnPosition(int position){
         this.path[position].setImage(new Image("/path_" + position + ".png"));
