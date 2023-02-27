@@ -30,7 +30,6 @@ public class Memorace {
     // Methods
 
     public void setPawnPosition(int player){
-        die.rollDie();
         this.pawns.get(player).setPosition(die.getSide());
         System.out.println("p ;" + player);
     }
