@@ -3,6 +3,7 @@ package be.kdg.memorace.view.GameBoard;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
 import be.kdg.memorace.view.PresenterInterface;
+import javafx.scene.image.Image;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -22,6 +23,7 @@ public class GameBoardPresenter implements PresenterInterface {
         this.timesClicked = 0;
         this.addEventHandlers();
         this.updateView();
+        this.gameBoardView.getDieImg().setImage(new Image("/die_0.png"));
     }
     // Methods
     private void addEventHandlers() {
