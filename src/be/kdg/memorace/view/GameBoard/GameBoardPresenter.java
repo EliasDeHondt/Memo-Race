@@ -29,16 +29,19 @@ public class GameBoardPresenter implements PresenterInterface {
     private void addEventHandlers() {
         this.gameBoardView.makePath();
         this.gameBoardView.makeCards();
+//        Player p = play();
+//        this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(p)).getPosition());
 
         int lastPawnPos = 0;
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
             //clickSound(); // Play sound when you click the button
             //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(player)).getPosition());
+            //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(p)).getPosition());
             //System.out.println("player 1");
             // Roll the dice and place the pawn
             //System.out.println(model.currentPlayer(player1));
-            Player player1 = this.model.Turn();
-            play(player1);
+            play();
+            //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(p1)).getPosition());
             //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(player1)).getPosition());
 
             ///System.out.println(this.model.getPawn().getPosition()); //juist
@@ -78,14 +81,13 @@ public class GameBoardPresenter implements PresenterInterface {
 
     }
 
-    private Player play(Player p){
-        this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(p)).getPosition());
-        p = this.model.Turn();
+    private void play(){
+        Player p = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(p.getName());
         this.model.getDie().rollDie();
         this.model.setPawnPosition(model.currentPlayer(p));
         this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(p)).getPosition(),model.currentPlayer(p));
-        return this.model.Turn();
+
     }
     private int firstCard(){
         model.getPlayer();
