@@ -36,11 +36,12 @@ public class GameBoardPresenter implements PresenterInterface {
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
             //clickSound(); // Play sound when you click the button
             //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(player)).getPosition());
-            //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(p)).getPosition());
             //System.out.println("player 1");
             // Roll the dice and place the pawn
             //System.out.println(model.currentPlayer(player1));
-            play();
+            Player p = play();
+            //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(p)).getPosition());
+
             //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(p1)).getPosition());
             //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(player1)).getPosition());
 
@@ -81,13 +82,15 @@ public class GameBoardPresenter implements PresenterInterface {
 
     }
 
-    private void play(){
+    private Player play(){
         Player p = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(p.getName());
         this.model.getDie().rollDie();
         this.model.setPawnPosition(model.currentPlayer(p));
+        this.gameBoardView.returnPosition();
         this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(p)).getPosition(),model.currentPlayer(p));
 
+        return p;
     }
     private int firstCard(){
         model.getPlayer();

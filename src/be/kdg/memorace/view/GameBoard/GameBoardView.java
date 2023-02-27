@@ -178,8 +178,10 @@ public class GameBoardView extends BorderPane {
     public void showPawn(int position,int player){
         this.path[position].setImage(new Image("/pawn_" + (player+1) + ".png"));
     }
-    public void returnPosition(int position){
-        this.path[position].setImage(new Image("/path_" + position + ".png"));
+    public void returnPosition(){
+        for (int i = 0; i < 17; i++) {
+            this.path[i].setImage(new Image("/path_" + i + ".png"));
+        }
     }
     void showDie(int ogen){
         switch (ogen) {
