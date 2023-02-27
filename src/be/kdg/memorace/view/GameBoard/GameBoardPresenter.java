@@ -29,36 +29,14 @@ public class GameBoardPresenter implements PresenterInterface {
     private void addEventHandlers() {
         this.gameBoardView.makePath();
         this.gameBoardView.makeCards();
-//        Player p = play();
-//        this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(p)).getPosition());
 
-        int lastPawnPos = 0;
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
             //clickSound(); // Play sound when you click the button
-            //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(player)).getPosition());
-            //System.out.println("player 1");
+
             // Roll the dice and place the pawn
-            //System.out.println(model.currentPlayer(player1));
-            Player p = play();
-            //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(p)).getPosition());
-
-            //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(p1)).getPosition());
-            //this.gameBoardView.returnPosition(this.model.getPawn(model.currentPlayer(player1)).getPosition());
-
-            ///System.out.println(this.model.getPawn().getPosition()); //juist
-            //if(model.getPlayer.)
-            //this.gameBoardView.showPawn(this.model.getPawn().getPosition(),model.currentPlayer(player1));
+            play();
 
             this.gameBoardView.getGridGameBoard().setDisable(false);
-
-            //player1 = this.model.Turn();
-            //System.out.println("player 2");
-
-//            this.gameBoardView.getPlayerName().setText(player1.getName());
-//            this.model.getDie().rollDie();
-//            this.model.setPawnPosition(model.currentPlayer(player1));
-//            this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(player1)).getPosition(),model.currentPlayer(player1));
-//
             this.gameBoardView.makeAllCardsNotVisible();
 
             updateView();
@@ -82,15 +60,13 @@ public class GameBoardPresenter implements PresenterInterface {
 
     }
 
-    private Player play(){
+    private void play(){
         Player p = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(p.getName());
         this.model.getDie().rollDie();
         this.model.setPawnPosition(model.currentPlayer(p));
         this.gameBoardView.returnPosition();
         this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(p)).getPosition(),model.currentPlayer(p));
-
-        return p;
     }
     private int firstCard(){
         model.getPlayer();
