@@ -3,10 +3,8 @@ package be.kdg.memorace.view.GameBoard;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
 import be.kdg.memorace.view.PresenterInterface;
-import javafx.scene.image.Image;
 
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Van Elias De Hondt
@@ -30,6 +28,11 @@ public class GameBoardPresenter implements PresenterInterface {
         this.gameBoardView.makePath();
         this.gameBoardView.makeCards();
 
+        //boolean a = false;
+        //do {
+            //chooseCard();
+        //}while (!a);
+
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
             //clickSound(); // Play sound when you click the button
 
@@ -41,6 +44,8 @@ public class GameBoardPresenter implements PresenterInterface {
 
             updateView();
         });
+
+
         //lastPawnPos = this.model.getPawn().getPosition();
 
         for (int i = 0; i < 16; i++) {
@@ -59,7 +64,55 @@ public class GameBoardPresenter implements PresenterInterface {
         }
 
     }
+    private void chooseCard(){
+        AtomicBoolean a = new AtomicBoolean(false);
+        for (int i = 0; i < 16; i++) {
+            int finalI = i;
+            AtomicBoolean d = new AtomicBoolean(false);
+            // Only click row/column of Die number
+            //if(i < 4){
+            this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
+                //clickSound(); // Play sound when you click the button
+                //Make the image visible
+                this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
 
+                // Only 2 cards can be clicked at a time
+                //limitCards();
+
+                if(timesClicked < 2){
+                    this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
+                        //clickSound(); // Play sound when you click the button
+
+                        // Roll the dice and place the pawn
+                        play();
+
+                        this.gameBoardView.getGridGameBoard().setDisable(false);
+                        this.gameBoardView.makeAllCardsNotVisible();
+
+                        updateView();
+                    });
+                }
+
+
+//                System.out.println(a.get());
+//                a.set(true);
+//                System.out.println(a.get());
+//                boolean e = true;
+//                return e;
+            });
+            //}
+
+
+//            if(d.get()){
+//                return d.get();
+//            }
+
+        }
+//        System.out.println(a.get());
+//        return d.get();
+       // return true;
+        System.out.println("last: " + a.get());
+    }
     private void play(){
         Player p = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(p.getName());
