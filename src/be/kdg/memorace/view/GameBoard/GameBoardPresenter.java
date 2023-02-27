@@ -27,13 +27,6 @@ public class GameBoardPresenter implements PresenterInterface {
     }
     // Methods
     private void addEventHandlers() {
-        //Player player = this.model.Turn();
-        //this.gameBoardView.getPlayerName().setText(player.getName());
-        //this.model.getDie().rollDie();
-        //this.model.setPawnPosition(model.currentPlayer(player));
-        //System.out.println(player);
-        //this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(player)).getPosition(),model.currentPlayer(player));
-
         this.gameBoardView.makePath();
         this.gameBoardView.makeCards();
 
