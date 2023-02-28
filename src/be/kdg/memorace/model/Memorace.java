@@ -30,7 +30,7 @@ public class Memorace {
     // Methods
 
     public void setPawnPosition(int player){
-        this.pawns.get(player).setPosition(die.getSide());
+        this.pawns.get(player).setPosition(this.die.getSide());
         System.out.println("p ;" + player);
     }
     public void setPlayer(String playerName) { // Set..
@@ -38,7 +38,7 @@ public class Memorace {
     }
 
     public void setPawn() {
-        pawns.add(new Pawn());
+        this.pawns.add(new Pawn());
     }
 
     public List<Player> getPlayer() { // Get..
@@ -46,18 +46,18 @@ public class Memorace {
     }
 
     public Player Turn(){
-        if (turn < player.size()) {
-            return player.get(turn++);
+        if (this.turn < this.player.size()) {
+            return this.player.get(this.turn++);
         }
         else{
-            turn = 0;
-            return player.get(turn++);
+            this.turn = 0;
+            return this.player.get(this.turn++);
         }
     }
-    public int currentPlayer(Player p){
+    public int currentPlayer(Player playe){
         int current = 1;
         for (int i = 0; i < getPlayer().size(); i++) {
-            if(p.getName().equals(getPlayer().get(i).getName())){
+            if(playe.getName().equals(getPlayer().get(i).getName())){
                 current = i;
                 //System.out.println(current);
             }
@@ -128,11 +128,11 @@ public class Memorace {
         this.cards.put(s,card);
     }
 
-    public Pawn getPawn(int p) {
-        return pawns.get(p);
+    public Pawn getPawn(int pawn) {
+        return this.pawns.get(pawn);
     }
 
     public Map<String, Card> getCards() {
-        return cards;
+        return this.cards;
     }
 }

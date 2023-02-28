@@ -36,7 +36,7 @@ public class MainMemoRace extends Application {
         mediaPlayer.setVolume(0.5); // Set volume to 50%
         mediaPlayer.play(); // Play media (introductionMusic.wav)
 */
-        writeStartUpLog("startUpLog.txt", "Startup Time"); // Set log
+        writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
         primaryStage.show(); // Show Stage.
     }
 }

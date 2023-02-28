@@ -1,8 +1,6 @@
 package be.kdg.memorace.model;
 
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.util.Objects;
 import java.util.Random;
 
@@ -18,16 +16,10 @@ public class Card{
     private int y;
     private ImageView imageView;
     // Constructors
-    public Card() {
-        Random random = new Random();
-        this.turned = false;
-    }
-
     public Card(ImageView imageView) {
         this.imageView = imageView;
     }
     // Methods
-
     public void setType(String type) {
         this.type = type;
     }

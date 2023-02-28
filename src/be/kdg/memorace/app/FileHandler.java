@@ -26,7 +26,7 @@ public class FileHandler {
             alert.setHeaderText(errorMessage);
             alert.setTitle("File Handler ERROR");
             alert.showAndWait();
-            writeErrorLog("errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
+            writeErrorLog("resources/log/errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
         }
         return null;
     }
@@ -46,7 +46,7 @@ public class FileHandler {
             alert.setHeaderText(errorMessage);
             alert.setTitle("File Handler ERROR");
             alert.showAndWait();
-            writeErrorLog("errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
+            writeErrorLog("resources/log/errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
         }
     }
     public static void writeErrorLog(String filename, String errorMessage) {

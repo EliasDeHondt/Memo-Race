@@ -36,14 +36,14 @@ public class GameLogView extends BorderPane {
         setPrefSize(600,600);
 
         // Read log in to (this.startUpLog)
-        String[] linesStartUp = readLog("startUpLog.txt");
+        String[] linesStartUp = readLog("resources/log/startUpLog.txt");
         assert linesStartUp != null;
         for (String line : linesStartUp) {
             this.startUpLog.appendText(line + "\n");
         }
 
         // Read log in to (this.errorLog)
-        String[] linesError = readLog("errorLog.txt");
+        String[] linesError = readLog("resources/log/errorLog.txt");
         assert linesError != null;
         for (String line : linesError) {
             this.errorLog.appendText(line + "\n");
