@@ -1,19 +1,10 @@
 package be.kdg.memorace.view.NewGame;
 
-import be.kdg.memorace.app.ExceptionPlayer;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.GameBoard.GameBoardPresenter;
 import be.kdg.memorace.view.GameBoard.GameBoardView;
 import be.kdg.memorace.view.PresenterInterface;
-import javafx.application.Platform;
 import javafx.scene.control.Alert;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
-import java.io.File;
-import java.util.Arrays;
 
 import static be.kdg.memorace.app.FileHandler.writeErrorLog;
 
@@ -86,7 +77,7 @@ public class NewGamePresenter implements PresenterInterface {
             alert.setHeaderText(errorMessage);
             alert.setTitle("Player names ERROR");
             alert.showAndWait();
-            writeErrorLog("resources/log/errorLog.csv", errorMessage); // The player name error will also be placed in a log.
+            writeErrorLog("errorLog.txt", errorMessage); // The player name error will also be placed in a log.
         }
     }
 }

@@ -7,11 +7,7 @@ import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-
-import java.io.File;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -40,7 +36,7 @@ public class MainMemoRace extends Application {
         mediaPlayer.setVolume(0.5); // Set volume to 50%
         mediaPlayer.play(); // Play media (introductionMusic.wav)
 */
-        writeStartUpLog("resources/log/startUpLog.csv", "Startup Time"); // Set log
+        writeStartUpLog("startUpLog.txt", "Startup Time"); // Set log
         primaryStage.show(); // Show Stage.
     }
 }
