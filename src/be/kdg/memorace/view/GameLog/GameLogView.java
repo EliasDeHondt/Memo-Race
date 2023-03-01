@@ -1,5 +1,8 @@
 package be.kdg.memorace.view.GameLog;
 
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 
@@ -11,6 +14,7 @@ import static be.kdg.memorace.app.FileHandler.readLog;
  */
 public class GameLogView extends BorderPane {
     // Attributes
+    private Menu miBack;
     private TextArea startUpLog;
     private TextArea errorLog;
     // Constructors
@@ -24,6 +28,11 @@ public class GameLogView extends BorderPane {
         this.errorLog = new TextArea();
     }
     public void layoutNodes() {
+        // Menu opbouwen:
+        this.miBack = new Menu("Back");
+        MenuBar menuBar = new MenuBar(this.miBack);
+        this.setTop(menuBar);
+
         // Set the text areas to be read-only
         this.startUpLog.setEditable(false);
         this.errorLog.setEditable(false);

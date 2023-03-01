@@ -3,6 +3,8 @@ package be.kdg.memorace.view.GameBoard;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
 import be.kdg.memorace.view.PresenterInterface;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 
 import java.util.concurrent.atomic.AtomicBoolean;
