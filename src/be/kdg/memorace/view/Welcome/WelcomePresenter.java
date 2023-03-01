@@ -1,13 +1,20 @@
 package be.kdg.memorace.view.Welcome;
 
 import be.kdg.memorace.model.Memorace;
+import be.kdg.memorace.view.About.AboutPresenter;
+import be.kdg.memorace.view.About.AboutView;
+import be.kdg.memorace.view.GameLog.GameLogPresenter;
 import be.kdg.memorace.view.GameLog.GameLogView;
 import be.kdg.memorace.view.NewGame.NewGamePresenter;
 import be.kdg.memorace.view.NewGame.NewGameView;
 import be.kdg.memorace.view.PresenterInterface;
 import javafx.application.Platform;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.File;
 
@@ -24,7 +31,6 @@ public class WelcomePresenter implements PresenterInterface {
         this.model = model;
         this.welcomeView = welcomeView;
         this.addEventHandlers();
-        this.updateView();
     }
     // Methods
     private void addEventHandlers() {
@@ -47,13 +53,27 @@ public class WelcomePresenter implements PresenterInterface {
             this.welcomeView.getScene().setRoot(gameLogView); // Add (GameLogView.class) to (WelcomeView.class).
             gameLogView.getScene().getWindow().sizeToScene(); // Add new Size.
             this.welcomeView.getCustomStage().setTitle("Memo-Race / Game Log"); // Making Title (Memo-Race / Game Log).
+            gameLogView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (GameLogView.class)
+            new GameLogPresenter(model, gameLogView); // Making Presenter (GameLogPresenter.class).
         }));
-        // Action-> [Exit Game] (getQuit)
-        this.welcomeView.getQuit().setOnAction((e -> {
+        this.welcomeView.getAbout().setOnAction(event -> {
+            //clickSound(); // Play sound when you click the button
+
+            AboutView aboutView = new AboutView();
+            new AboutPresenter(model, aboutView);
+            Stage aboutStage = new Stage();
+            aboutStage.initOwner(this.welcomeView.getScene().getWindow());
+            aboutStage.initModality(Modality.APPLICATION_MODAL); // Gebonden venster!
+            Scene scene = new Scene(aboutView); // New scene
+            scene.getStylesheets().add("/style.css"); // CSS
+            aboutStage.setScene(scene); // Set new stage
+            aboutStage.getIcons().add(new Image("/logo.png")); // Making Icon.
+            aboutStage.setTitle("Memo-Race / About"); // Making Title.
+            aboutStage.showAndWait();
+        });
+        // Action-> [Exit Game] (getExit)
+        this.welcomeView.getExit().setOnAction((e -> {
             Platform.exit(); // exit
         }));
-    }
-    private void updateView() {
-        // TODO
     }
 }

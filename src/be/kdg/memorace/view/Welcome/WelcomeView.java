@@ -20,7 +20,8 @@ public class WelcomeView extends GridPane {
     private Image logo;
     private Button playNewGame;
     private Button viewGameLog;
-    private Button quit;
+    private Button about;
+    private Button exit;
     private Stage primaryStage;
     // Constructors
     public WelcomeView() {
@@ -32,7 +33,8 @@ public class WelcomeView extends GridPane {
         this.logo = new Image("/question_mark.png");
         this.playNewGame = new Button("Play new game");
         this.viewGameLog = new Button("View game log");
-        this.quit = new Button("    Quit     ");
+        this.about = new Button("    About    ");
+        this.exit = new Button("    Exit     ");
     }
     public void layoutNodes() {
         // Set Padding (20)
@@ -44,13 +46,15 @@ public class WelcomeView extends GridPane {
         this.add(top,1,0);
         this.add(this.playNewGame,1,1);
         this.add(this.viewGameLog,1,2);
-        this.add(this.quit,1,3);
+        this.add(this.about,1,3);
+        this.add(this.exit,1,4);
         // Set Vgap to 10
         this.setVgap(30);
-        // CSS For (playNewGame) and (viewGameLog) and (quit) and (this)
+        // CSS For (playNewGame), (viewGameLog), (about), (quit) and (this)
         this.playNewGame.setId("button");
         this.viewGameLog.setId("button");
-        this.quit.setId("button");
+        this.about.setId("button");
+        this.exit.setId("button");
         this.setId("pane");
         // Causes all Node to appear with a delay.
         FadeTransition ft = new FadeTransition(Duration.millis(3000), this);
@@ -64,8 +68,11 @@ public class WelcomeView extends GridPane {
     public Button getViewGameLog() { // Get..
         return this.viewGameLog;
     }
-    public Button getQuit() { // Get..
-        return this.quit;
+    public Button getAbout() {
+        return this.about;
+    }
+    public Button getExit() { // Get..
+        return this.exit;
     }
     public void setCustomStage(Stage primaryStage){ // Set..
         this.primaryStage = primaryStage;
