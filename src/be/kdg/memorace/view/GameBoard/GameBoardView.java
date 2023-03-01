@@ -39,7 +39,7 @@ public class GameBoardView extends BorderPane {
         this.cards = new ImageView[16];
         this.emptyCards = new ImageView[16];
         this.die = new Image[7];
-        this.dieButton = new Button("dieButton");
+        this.dieButton = new Button("roll");
         this.dieImg = new ImageView();
         this.timer = new Timer(this.gameTime); // Set Game Time to (this.timer)
         this.gridGameBoard = new GridPane(); // Making new GridPane (CENTER)
