@@ -11,6 +11,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
+import java.util.List;
+
 /**
  * Van Elias De Hondt
  * 13/02/2023
@@ -191,6 +193,12 @@ public class GameBoardView extends BorderPane {
             case 4 -> getDieImg().setImage(new Image("/die_4.png"));
             case 5 -> getDieImg().setImage(new Image("/die_5.png"));
             case 6 -> getDieImg().setImage(new Image("/die_6.png"));
+        }
+    }
+    void showValidCards(List<Integer> newC){
+        for (Integer i: newC) {
+            this.getEmptyCards()[i].setImage(null);
+            //this.getEmptyCards()[i].
         }
     }
 }

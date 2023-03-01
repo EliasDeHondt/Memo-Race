@@ -2,10 +2,8 @@ package be.kdg.memorace.model;
 
 import javafx.scene.image.ImageView;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -17,7 +15,7 @@ public class Memorace {
     private Die die;
     private List<Pawn> pawns;
     private int turn;
-    private Map<String, Card> cards;
+    private Map<Integer, Card> cards;
 
     // Constructors
     public Memorace() {
@@ -25,13 +23,13 @@ public class Memorace {
         this.player = new LinkedList<>();  // Creates a new player list.
         this.die = new Die(); // Creates a new die.
         this.pawns = new LinkedList<>(); // Creates a new pawn.
-        this.cards = new HashMap<String, Card>();
+        this.cards = new HashMap<Integer, Card>();
     }
     // Methods
 
     public void setPawnPosition(int player){
         this.pawns.get(player).setPosition(this.die.getSide());
-        System.out.println("p ;" + player);
+        //System.out.println("p ;" + player);
     }
     public void setPlayer(String playerName) { // Set..
         this.player.add(new Player(playerName));
@@ -54,6 +52,9 @@ public class Memorace {
             return this.player.get(this.turn++);
         }
     }
+    public int getPlayerID(){
+        return this.turn;
+    }
     public int currentPlayer(Player playe){
         int current = 1;
         for (int i = 0; i < getPlayer().size(); i++) {
@@ -63,6 +64,66 @@ public class Memorace {
             }
         }
         return current;
+    }
+    public List<Integer> GetValidCardsIDs(int i) {
+        // Gives the card to draw options based on the position.
+//TODO verticaal werkt niet, horizontaal wel
+        List<Integer> newCards = new ArrayList<>(this.cards.size());
+        //String[] a = this.cards.keySet().toArray(new String[this.cards.size()]);
+        // Top game board.
+        System.out.println("i = " + i);
+        if (i >= 0 && i <= 4) {
+            newCards.add((i));
+            newCards.add((i - 1 + 4));
+            newCards.add((i - 1 + 8));
+            newCards.add((i - 1 + 12));
+            return newCards;
+        }
+        // Right game board.
+        else if (i >= 5 && i <= 8) {
+            switch (i) {
+                case 5 -> i = 0;
+                case 6 -> i = 4;
+                case 7 -> i = 8;
+                case 8 -> i = 12;
+                default -> i = 0;
+            }
+            newCards.add((i));
+            newCards.add((i + 1));
+            newCards.add((i + 2));
+            newCards.add((i + 3));
+            return newCards;
+        }
+        // Bottom game board.
+        else if (i >= 9 && i <= 12) {
+            switch (i) {
+                case 9 -> i = 12;
+                case 10 -> i = 13;
+                case 11 -> i = 14;
+                case 12 -> i = 15;
+                default -> i = 0;
+            }
+            newCards.add((i));
+            newCards.add((i - 4));
+            newCards.add((i - 8));
+            newCards.add((i - 12));
+            return newCards;
+        }
+        // Left game board.
+        else { //(i >= 13 && i <= 16)
+            switch (i) {
+                case 13 -> i = 12;
+                case 14 -> i = 8;
+                case 15 -> i = 4;
+                case 16 -> i = 0;
+                default -> i = 0;
+            }
+            newCards.add((i));
+            newCards.add((i + 1));
+            newCards.add((i + 2));
+            newCards.add((i + 3));
+            return newCards;
+        }
     }
     /*
     public void compare2Cards(Card kaart1, Card kaart2) {
@@ -123,16 +184,16 @@ public class Memorace {
         return this.die;
     }
 
-    public void setCards(String s, ImageView iv) {
+    public void setCards(int i, ImageView iv) {
         Card card = new Card(iv);
-        this.cards.put(s,card);
+        this.cards.put(i,card);
     }
 
     public Pawn getPawn(int pawn) {
         return this.pawns.get(pawn);
     }
 
-    public Map<String, Card> getCards() {
-        return this.cards;
+    public Map<Integer, Card> getCards() {
+        return cards;
     }
 }

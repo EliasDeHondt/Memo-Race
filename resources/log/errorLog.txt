@@ -8,4 +8,5 @@
 2023-02-25 10:46:55 (writeErrorLog) No player names were entered. Please be advised.
 2023-02-25 10:46:57 (writeErrorLog) No player names were entered. Please be advised.
 2023-02-25 10:49:00 (writeErrorLog) No player names were entered. Please be advised.
-2023-02-25 10:49:44 (writeErrorLog) No player names were entered. Please be advised.
+2023-02-25 10:49:44 (writeErrorLog) No player names were entered. Please be advised.2023-03-01 14:12:38 (readLog) Our apologies, there seem to be an issue with our file system handler. :-(
+2023-03-01 14:12:45 (readLog) Our apologies, there seem to be an issue with our file system handler. :-(

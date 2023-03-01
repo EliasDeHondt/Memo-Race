@@ -1,5 +1,6 @@
 package be.kdg.memorace.view.GameBoard;
 
+import be.kdg.memorace.model.Card;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
 import be.kdg.memorace.view.PresenterInterface;
@@ -7,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -46,6 +48,8 @@ public class GameBoardPresenter implements PresenterInterface {
             this.gameBoardView.getGridGameBoard().setDisable(false);
             this.gameBoardView.makeAllCardsNotVisible();
 
+            cardStuff();
+
             updateView();
         });
 
@@ -67,6 +71,11 @@ public class GameBoardPresenter implements PresenterInterface {
 
         }
 
+    }
+    private void cardStuff(){
+        List<Integer> newC = model.GetValidCardsIDs(model.getPawn(model.getPlayerID()-1).getPosition());
+        System.out.println(newC);
+        gameBoardView.showValidCards(newC);
     }
     private void chooseCard(){
         AtomicBoolean a = new AtomicBoolean(false);
@@ -154,8 +163,9 @@ public class GameBoardPresenter implements PresenterInterface {
 
         // put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
-            String naam = String.valueOf((char)(i+65));
-            model.setCards(naam,gameBoardView.getCards()[i]);
+            //String naam = String.valueOf((char)(i+65));
+            //String naam = String.valueOf(i);
+            model.setCards(i,gameBoardView.getCards()[i]);
         }
 
     }
