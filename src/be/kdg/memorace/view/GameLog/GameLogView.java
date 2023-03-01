@@ -5,6 +5,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import static be.kdg.memorace.app.FileHandler.readLog;
 
@@ -14,9 +15,11 @@ import static be.kdg.memorace.app.FileHandler.readLog;
  */
 public class GameLogView extends BorderPane {
     // Attributes
-    private Menu miBack;
+    private MenuItem miBack;
+    private MenuItem miExit;
     private TextArea startUpLog;
     private TextArea errorLog;
+    private Stage primaryStage;
     // Constructors
     public GameLogView() {
         this.initialiseNodes();
@@ -28,9 +31,14 @@ public class GameLogView extends BorderPane {
         this.errorLog = new TextArea();
     }
     public void layoutNodes() {
+
+
         // Menu opbouwen:
-        this.miBack = new Menu("Back");
-        MenuBar menuBar = new MenuBar(this.miBack);
+        this.miBack = new MenuItem("Back");
+        this.miExit = new MenuItem("Exit");
+        Menu menu = new Menu("Help");
+        menu.getItems().addAll(this.miBack,this.miExit);
+        MenuBar menuBar = new MenuBar(menu);
         this.setTop(menuBar);
 
         // Set the text areas to be read-only
@@ -57,5 +65,18 @@ public class GameLogView extends BorderPane {
         for (String line : linesError) {
             this.errorLog.appendText(line + "\n");
         }
+    }
+
+    MenuItem getMiBack() { // Get..
+        return this.miBack;
+    }
+    MenuItem getMiExit() { // Get..
+        return this.miExit;
+    }
+    public void setCustomStage(Stage primaryStage){ // Set..
+        this.primaryStage = primaryStage;
+    }
+    public Stage getCustomStage(){ // Get..
+        return this.primaryStage;
     }
 }
