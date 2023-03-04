@@ -2,7 +2,6 @@ package be.kdg.memorace.model;
 
 import javafx.scene.image.ImageView;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -11,7 +10,7 @@ import java.util.*;
  */
 public class Memorace {
     // Attributes
-    private List<Player> player;
+    private final List<Player> players;
     private Die die;
     private List<Pawn> pawns;
     private int turn;
@@ -20,7 +19,7 @@ public class Memorace {
     // Constructors
     public Memorace() {
         this.turn = 0;
-        this.player = new LinkedList<>();  // Creates a new player list.
+        this.players = new LinkedList<>();  // Creates a new player list.
         this.die = new Die(); // Creates a new die.
         this.pawns = new LinkedList<>(); // Creates a new pawn.
         this.cards = new HashMap<Integer, Card>();
@@ -32,24 +31,24 @@ public class Memorace {
         //System.out.println("p ;" + player);
     }
     public void setPlayer(String playerName) { // Set..
-        this.player.add(new Player(playerName));
+        this.players.add(new Player(playerName));
     }
 
     public void setPawn() {
         this.pawns.add(new Pawn());
     }
 
-    public List<Player> getPlayer() { // Get..
-        return this.player;
+    public List<Player> getplayers() { // Get..
+        return this.players;
     }
 
     public Player Turn(){
-        if (this.turn < this.player.size()) {
-            return this.player.get(this.turn++);
+        if (this.turn < this.players.size()) {
+            return this.players.get(this.turn++);
         }
         else{
             this.turn = 0;
-            return this.player.get(this.turn++);
+            return this.players.get(this.turn++);
         }
     }
     public int getPlayerID(){
@@ -57,8 +56,8 @@ public class Memorace {
     }
     public int currentPlayer(Player playe){
         int current = 1;
-        for (int i = 0; i < getPlayer().size(); i++) {
-            if(playe.getName().equals(getPlayer().get(i).getName())){
+        for (int i = 0; i < getplayers().size(); i++) {
+            if(playe.getName().equals(getplayers().get(i).getName())){
                 current = i;
                 //System.out.println(current);
             }

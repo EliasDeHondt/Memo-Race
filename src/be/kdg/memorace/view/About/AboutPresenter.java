@@ -8,8 +8,8 @@ import be.kdg.memorace.model.Memorace;
  */
 public class AboutPresenter {
     // Attributes
-    private Memorace model;
-    private AboutView aboutView;
+    private final Memorace model;
+    private final AboutView aboutView;
     // Constructors
     public AboutPresenter(Memorace model, AboutView aboutView) {
         this.model = model;

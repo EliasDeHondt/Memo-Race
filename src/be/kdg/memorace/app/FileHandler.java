@@ -1,7 +1,9 @@
 package be.kdg.memorace.app;
 
+import be.kdg.memorace.model.Player;
 import javafx.scene.control.Alert;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -62,6 +64,31 @@ public class FileHandler {
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
+            alert.setTitle("File Handler ERROR");
+            alert.showAndWait();
+        }
+    }
+    public static void writePlayersLog(String filename, List<Player> players) {
+        try {
+            FileWriter writer = new FileWriter(filename, true);
+            File file = new File(filename); // Temp file
+            boolean fileExists = file.exists(); // Check if the file already exists
+            if (!fileExists) { // Check if the file already exists
+                writer.append("name,score\n"); // Add name columns
+            }
+            for (Player player : players) {
+                String name = player.getName();
+                String score = String.valueOf(player.getScore());
+                writer.append(name);
+                writer.append(",");
+                writer.append(score);
+                writer.append("\n");
+            }
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("(writePlayersLog) Our apologies, there seem to be an issue with our file system handler. :-(");
             alert.setTitle("File Handler ERROR");
             alert.showAndWait();
         }

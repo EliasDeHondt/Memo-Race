@@ -14,8 +14,8 @@ import static be.kdg.memorace.app.FileHandler.writeErrorLog;
  */
 public class NewGamePresenter implements PresenterInterface {
     // Attributes
-    private Memorace model;
-    private NewGameView newGameView;
+    private final Memorace model;
+    private final NewGameView newGameView;
     // Constructors
     public NewGamePresenter(Memorace model, NewGameView newGameView) {
         this.model = model;
@@ -24,21 +24,11 @@ public class NewGamePresenter implements PresenterInterface {
     }
     // Methods
     private void addEventHandlers() {
-//        // This four loop is responsible for the six players.
-//        for (int i = 1; i <= this.newGameView.getPlayerTxt().length-1; i++) {
-//            // Takes the player name from the view and puts it in a variable.
-//            String playerName = this.newGameView.getPlayerName(i-1).getText();
-//            // If the variable is not empty, it will be added to the player list.
-//            if (!playerName.isEmpty()) {
-//                this.model.setPlayer(playerName);
-//                //a++;
-//            }
-//        }
-
-
+        // Start Game
         this.newGameView.getStartGame().setOnAction(actionEvent -> {
+            //clickSound(); // Play sound when you click the button
             this.updateView();
-            if (this.model.getPlayer().size() < 2) {
+            if (this.model.getplayers().size() < 2) {
                 NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
                 this.newGameView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
                 newGameView.getScene().getWindow().sizeToScene(); // Add new Size.
@@ -46,13 +36,13 @@ public class NewGamePresenter implements PresenterInterface {
                 newGameView.setCustomStage(this.newGameView.getCustomStage());  // Send primaryStage to (NewGameView.class)
                 new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
             }
-            //clickSound(); // Play sound when you click the button
 
             GameBoardView gameBoardView = new GameBoardView(); // Making View (NewGameView.class).
             new GameBoardPresenter(this.model, gameBoardView); // Making Presenter (NewGamePresenter.class).
             this.newGameView.getScene().setRoot(gameBoardView); // Add (NewGameView.class) to (WelcomeView.class).
             gameBoardView.getScene().getWindow().sizeToScene(); // Add new Size.
             this.newGameView.getCustomStage().setTitle("Memo-Race / Game Bord"); // Making Title (Memo-Race / Game Bord).
+
 
         });
     }
@@ -68,7 +58,7 @@ public class NewGamePresenter implements PresenterInterface {
                     this.model.setPawn();
                 }
             }
-            if (this.model.getPlayer().size() < 2) {
+            if (this.model.getplayers().size() < 2) {
                 throw new Exception();
             }
         } catch (Exception e) {
@@ -77,7 +67,7 @@ public class NewGamePresenter implements PresenterInterface {
             alert.setHeaderText(errorMessage);
             alert.setTitle("Player names ERROR");
             alert.showAndWait();
-            writeErrorLog("errorLog.txt", errorMessage); // The player name error will also be placed in a log.
+            writeErrorLog("resources/log/errorLog.txt", errorMessage); // The player name error will also be placed in a log.
         }
     }
 }

@@ -4,8 +4,6 @@ import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 
 /**
  * Van Elias De Hondt
@@ -13,16 +11,14 @@ import javafx.event.EventHandler;
  */
 public class GameLogPresenter {
     // Attributes
-    private Memorace model;
-    private GameLogView gameLogView;
+    private final Memorace model;
+    private final GameLogView gameLogView;
     // Constructors
     public GameLogPresenter(Memorace model, GameLogView gameLogView) {
         this.model = model;
         this.gameLogView = gameLogView;
         this.addEventHandlers();
-        this.updateView();
     }
-
     // Methods
     private void addEventHandlers() {
         this.gameLogView.getMiBack().setOnAction(actionEvent -> {
@@ -37,10 +33,6 @@ public class GameLogPresenter {
         this.gameLogView.getMiExit().setOnAction((e -> {
             Platform.exit(); // exit
         }));
-
-    }
-    private void updateView() {
-
     }
 }
 

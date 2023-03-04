@@ -24,8 +24,8 @@ import java.io.File;
  */
 public class WelcomePresenter implements PresenterInterface {
     // Attributes
-    private Memorace model;
-    private WelcomeView welcomeView;
+    private final Memorace model;
+    private final WelcomeView welcomeView;
     // Constructors
     public WelcomePresenter(Memorace model, WelcomeView welcomeView) {
         this.model = model;

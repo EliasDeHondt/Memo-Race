@@ -1,11 +1,8 @@
 package be.kdg.memorace.view.GameBoard;
 
-import be.kdg.memorace.model.Card;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
 import be.kdg.memorace.view.PresenterInterface;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 
 import java.util.List;
@@ -135,7 +132,7 @@ public class GameBoardPresenter implements PresenterInterface {
         this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(p)).getPosition(),model.currentPlayer(p));
     }
     private int firstCard(){
-        model.getPlayer();
+        this.model.getplayers();
         switch (this.model.getDie().getSide()){
             case 1: return 4;
             case 2: return 4;

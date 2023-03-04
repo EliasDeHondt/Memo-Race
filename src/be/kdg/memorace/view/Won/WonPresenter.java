@@ -1,6 +1,7 @@
 package be.kdg.memorace.view.Won;
 
 import be.kdg.memorace.model.Memorace;
+import static be.kdg.memorace.app.FileHandler.writePlayersLog;
 
 /**
  * Van Elias De Hondt
@@ -8,8 +9,8 @@ import be.kdg.memorace.model.Memorace;
  */
 public class WonPresenter {
     // Attributes
-    private Memorace model;
-    private WonView wonView;
+    private final Memorace model;
+    private final WonView wonView;
     // Constructors
     public WonPresenter(Memorace model, WonView wonView) {
         this.model = model;
@@ -19,7 +20,7 @@ public class WonPresenter {
     }
     // Methods
     private void addEventHandlers() {
-        // TODO
+        writePlayersLog("resources/log/playerLog.csv", this.model.getplayers());
     }
     private void updateView() {
         // TODO
