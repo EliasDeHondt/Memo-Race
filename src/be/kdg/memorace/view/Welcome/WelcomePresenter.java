@@ -56,6 +56,7 @@ public class WelcomePresenter implements PresenterInterface {
             gameLogView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (GameLogView.class)
             new GameLogPresenter(model, gameLogView); // Making Presenter (GameLogPresenter.class).
         }));
+        // Action-> [About] (getAbout)
         this.welcomeView.getAbout().setOnAction(event -> {
             //clickSound(); // Play sound when you click the button
 
@@ -73,6 +74,7 @@ public class WelcomePresenter implements PresenterInterface {
         });
         // Action-> [Exit Game] (getExit)
         this.welcomeView.getExit().setOnAction((e -> {
+            //clickSound(); // Play sound when you click the button
             Platform.exit(); // exit
         }));
     }

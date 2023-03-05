@@ -2,6 +2,7 @@ package be.kdg.memorace;
 
 import static be.kdg.memorace.app.FileHandler.writeStartUpLog;
 import be.kdg.memorace.model.Memorace;
+import be.kdg.memorace.view.PresenterInterface;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Application;
@@ -13,7 +14,7 @@ import javafx.stage.Stage;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class MainMemoRace extends Application {
+public class MainMemoRace extends Application implements PresenterInterface {
     // Methods
     public static void main(String[] args) { // Main
         Application.launch(args);
@@ -30,12 +31,7 @@ public class MainMemoRace extends Application {
         primaryStage.getIcons().add(new Image("/logo.png")); // Making Icon.
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
-/*
-        Media media = new Media(new File("resources/music/introductionMusic.wav").toURI().toString()); // set (Media)
-        MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
-        mediaPlayer.setVolume(0.5); // Set volume to 50%
-        mediaPlayer.play(); // Play media (introductionMusic.wav)
-*/
+        // gameMusic();// Play game Music
         writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
         primaryStage.show(); // Show Stage.
     }

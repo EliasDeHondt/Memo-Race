@@ -4,6 +4,9 @@ import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.GameBoard.GameBoardPresenter;
 import be.kdg.memorace.view.GameBoard.GameBoardView;
 import be.kdg.memorace.view.PresenterInterface;
+import be.kdg.memorace.view.Welcome.WelcomePresenter;
+import be.kdg.memorace.view.Welcome.WelcomeView;
+import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
 import static be.kdg.memorace.app.FileHandler.writeErrorLog;
@@ -24,7 +27,25 @@ public class NewGamePresenter implements PresenterInterface {
     }
     // Methods
     private void addEventHandlers() {
-        // Start Game
+        // Action-> [Back (welcomeView)] (getMiBack)
+        this.newGameView.getMiBack().setOnAction(actionEvent -> {
+            //clickSound(); // Play sound when you click the button
+
+            WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
+            this.newGameView.getScene().setRoot(welcomeView); // Add (WelcomeView.class) to (GameLogView.class).
+            welcomeView.getScene().getWindow().sizeToScene(); // Add new Size.
+            this.newGameView.getCustomStage().setTitle("Memo-Race / Welcome"); // Making Title (Memo-Race / Welcome).
+            welcomeView.setCustomStage(this.newGameView.getCustomStage());  // Send primaryStage to (WelcomeView.class)
+            new WelcomePresenter(model, welcomeView); // Making Presenter (WelcomePresenter.class).
+        });
+        // Action-> [Exit Game] (getMiExit)
+        this.newGameView.getMiExit().setOnAction((e -> {
+            //clickSound(); // Play sound when you click the button
+
+            Platform.exit(); // exit
+        }));
+
+        // Action-> [Start Game] (getStartGame)
         this.newGameView.getStartGame().setOnAction(actionEvent -> {
             //clickSound(); // Play sound when you click the button
             this.updateView();

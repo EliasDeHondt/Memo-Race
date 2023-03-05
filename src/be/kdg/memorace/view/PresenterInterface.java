@@ -17,4 +17,10 @@ public interface PresenterInterface {
         MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
         mediaPlayer.play(); // Play media (click.wav)
     }
+    default void gameMusic() {
+        Media media = new Media(new File("resources/music/introductionMusic.wav").toURI().toString()); // set (Media)
+        MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
+        mediaPlayer.setVolume(0.5); // Set volume to 50%
+        mediaPlayer.play(); // Play media (introductionMusic.wav)
+    }
 }

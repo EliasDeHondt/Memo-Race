@@ -20,6 +20,7 @@ public class WelcomeView extends GridPane {
     private Image logo;
     private Button playNewGame;
     private Button viewGameLog;
+    private Button settings;
     private Button about;
     private Button exit;
     private Stage primaryStage;
@@ -33,6 +34,7 @@ public class WelcomeView extends GridPane {
         this.logo = new Image("/question_mark.png");
         this.playNewGame = new Button("Play new game");
         this.viewGameLog = new Button("View game log");
+        this.settings = new Button("  Settings   ");
         this.about = new Button("    About    ");
         this.exit = new Button("    Exit     ");
     }
@@ -46,13 +48,15 @@ public class WelcomeView extends GridPane {
         this.add(top,1,0);
         this.add(this.playNewGame,1,1);
         this.add(this.viewGameLog,1,2);
-        this.add(this.about,1,3);
-        this.add(this.exit,1,4);
+        this.add(this.settings,1,3);
+        this.add(this.about,1,4);
+        this.add(this.exit,1,5);
         // Set Vgap to 10
         this.setVgap(30);
         // CSS For (playNewGame), (viewGameLog), (about), (quit) and (this)
         this.playNewGame.setId("button");
         this.viewGameLog.setId("button");
+        this.settings.setId("button");
         this.about.setId("button");
         this.exit.setId("button");
         this.setId("pane");
@@ -68,7 +72,10 @@ public class WelcomeView extends GridPane {
     public Button getViewGameLog() { // Get..
         return this.viewGameLog;
     }
-    public Button getAbout() {
+    public Button getSettings() { // Get..
+        return this.settings;
+    }
+    public Button getAbout() { // Get..
         return this.about;
     }
     public Button getExit() { // Get..

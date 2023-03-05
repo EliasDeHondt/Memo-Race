@@ -77,8 +77,8 @@ public class GameBoardView extends BorderPane {
 
         // add all card images into the array
         for (int i = 0; i < 8; i++) {
-            this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
-            this.cards[i+8] = new ImageView(new Image("/card_" + (i+1) + ".png"));
+            this.cards[i] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
+            this.cards[i+8] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
         }
         for (int i = 0; i < 8; i++) {
             emptyCards[i] = new ImageView(new Image("/question_mark.png"));

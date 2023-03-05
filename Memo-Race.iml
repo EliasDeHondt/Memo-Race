@@ -33,6 +33,9 @@
       <sourceFolder url="file://$MODULE_DIR$/resources/fonts" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/resources/images/card" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/resources/music" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/resources/images/card/fruit" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/resources/images/card/meme" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/resources/images/card/teacher" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

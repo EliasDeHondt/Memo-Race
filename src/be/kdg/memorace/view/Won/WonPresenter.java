@@ -16,13 +16,9 @@ public class WonPresenter {
         this.model = model;
         this.wonView = wonView;
         this.addEventHandlers();
-        this.updateView();
     }
     // Methods
     private void addEventHandlers() {
         writePlayersLog("resources/log/playerLog.csv", this.model.getplayers());
-    }
-    private void updateView() {
-        // TODO
     }
 }
