@@ -2,6 +2,8 @@ package be.kdg.memorace.view.About;
 
 import be.kdg.memorace.model.Memorace;
 
+import static be.kdg.memorace.app.MusicHandler.clickSound;
+
 /**
  * Van Elias De Hondt
  * 1/03/2023
@@ -18,6 +20,9 @@ public class AboutPresenter {
     }
     // Methods
     private void addEventHandlers() {
-        this.aboutView.getOk().setOnAction(event -> this.aboutView.getScene().getWindow().hide());
+        this.aboutView.getOk().setOnAction(event -> {
+            clickSound(); // Play sound when you click the button
+            this.aboutView.getScene().getWindow().hide();
+        });
     }
 }

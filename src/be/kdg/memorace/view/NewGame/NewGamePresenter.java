@@ -3,19 +3,19 @@ package be.kdg.memorace.view.NewGame;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.GameBoard.GameBoardPresenter;
 import be.kdg.memorace.view.GameBoard.GameBoardView;
-import be.kdg.memorace.view.PresenterInterface;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
 import static be.kdg.memorace.app.FileHandler.writeErrorLog;
+import static be.kdg.memorace.app.MusicHandler.clickSound;
 
 /**
  * Van Elias De Hondt
  * 13/02/2023
  */
-public class NewGamePresenter implements PresenterInterface {
+public class NewGamePresenter {
     // Attributes
     private final Memorace model;
     private final NewGameView newGameView;
@@ -29,7 +29,7 @@ public class NewGamePresenter implements PresenterInterface {
     private void addEventHandlers() {
         // Action-> [Back (welcomeView)] (getMiBack)
         this.newGameView.getMiBack().setOnAction(actionEvent -> {
-            //clickSound(); // Play sound when you click the button
+            clickSound(); // Play sound when you click the button
 
             WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
             this.newGameView.getScene().setRoot(welcomeView); // Add (WelcomeView.class) to (GameLogView.class).
@@ -40,14 +40,14 @@ public class NewGamePresenter implements PresenterInterface {
         });
         // Action-> [Exit Game] (getMiExit)
         this.newGameView.getMiExit().setOnAction((e -> {
-            //clickSound(); // Play sound when you click the button
+            clickSound(); // Play sound when you click the button
 
             Platform.exit(); // exit
         }));
 
         // Action-> [Start Game] (getStartGame)
         this.newGameView.getStartGame().setOnAction(actionEvent -> {
-            //clickSound(); // Play sound when you click the button
+            clickSound(); // Play sound when you click the button
             this.updateView();
             if (this.model.getplayers().size() < 2) {
                 NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).

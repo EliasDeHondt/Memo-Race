@@ -7,22 +7,22 @@ import be.kdg.memorace.view.GameLog.GameLogPresenter;
 import be.kdg.memorace.view.GameLog.GameLogView;
 import be.kdg.memorace.view.NewGame.NewGamePresenter;
 import be.kdg.memorace.view.NewGame.NewGameView;
-import be.kdg.memorace.view.PresenterInterface;
+import be.kdg.memorace.view.Settings.SettingsPresenter;
+import be.kdg.memorace.view.Settings.SettingsView;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
+
+import static be.kdg.memorace.app.MusicHandler.clickSound;
 
 /**
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class WelcomePresenter implements PresenterInterface {
+public class WelcomePresenter {
     // Attributes
     private final Memorace model;
     private final WelcomeView welcomeView;
@@ -36,7 +36,7 @@ public class WelcomePresenter implements PresenterInterface {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-           //clickSound(); // Play sound when you click the button
+           clickSound(); // Play sound when you click the button
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             this.welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
@@ -45,9 +45,10 @@ public class WelcomePresenter implements PresenterInterface {
             newGameView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (NewGameView.class)
             new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
         }));
+
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
-            //clickSound(); // Play sound when you click the button
+            clickSound(); // Play sound when you click the button
 
             GameLogView gameLogView = new GameLogView(); // Making View (GameLogView.class).
             this.welcomeView.getScene().setRoot(gameLogView); // Add (GameLogView.class) to (WelcomeView.class).
@@ -56,9 +57,22 @@ public class WelcomePresenter implements PresenterInterface {
             gameLogView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (GameLogView.class)
             new GameLogPresenter(model, gameLogView); // Making Presenter (GameLogPresenter.class).
         }));
+
+        // Action-> [Settings] (getSettings)
+        this.welcomeView.getSettings().setOnAction((e -> {
+            clickSound(); // Play sound when you click the button
+
+            SettingsView settingsView = new SettingsView(); // Making View (SettingsView.class).
+            this.welcomeView.getScene().setRoot(settingsView); // Add (SettingsView.class) to (WelcomeView.class).
+            settingsView.getScene().getWindow().sizeToScene(); // Add new Size.
+            this.welcomeView.getCustomStage().setTitle("Memo-Race / Settings"); // Making Title (Memo-Race / Game Log).
+            settingsView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (SettingsView.class)
+            new SettingsPresenter(model, settingsView); // Making Presenter (GameLogPresenter.class).
+        }));
+
         // Action-> [About] (getAbout)
         this.welcomeView.getAbout().setOnAction(event -> {
-            //clickSound(); // Play sound when you click the button
+            clickSound(); // Play sound when you click the button
 
             AboutView aboutView = new AboutView();
             new AboutPresenter(model, aboutView);
@@ -72,9 +86,10 @@ public class WelcomePresenter implements PresenterInterface {
             aboutStage.setTitle("Memo-Race / About"); // Making Title.
             aboutStage.showAndWait();
         });
+
         // Action-> [Exit Game] (getExit)
         this.welcomeView.getExit().setOnAction((e -> {
-            //clickSound(); // Play sound when you click the button
+            clickSound(); // Play sound when you click the button
             Platform.exit(); // exit
         }));
     }

@@ -1,8 +1,8 @@
 package be.kdg.memorace;
 
 import static be.kdg.memorace.app.FileHandler.writeStartUpLog;
+import static be.kdg.memorace.app.MusicHandler.gameMusic;
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.PresenterInterface;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Application;
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class MainMemoRace extends Application implements PresenterInterface {
+public class MainMemoRace extends Application {
     // Methods
     public static void main(String[] args) { // Main
         Application.launch(args);
@@ -31,7 +31,7 @@ public class MainMemoRace extends Application implements PresenterInterface {
         primaryStage.getIcons().add(new Image("/logo.png")); // Making Icon.
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
-        // gameMusic();// Play game Music
+        gameMusic();// Play game Music
         writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
         primaryStage.show(); // Show Stage.
     }

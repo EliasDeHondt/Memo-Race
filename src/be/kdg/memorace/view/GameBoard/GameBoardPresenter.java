@@ -2,17 +2,18 @@ package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
-import be.kdg.memorace.view.PresenterInterface;
 import javafx.scene.image.Image;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import static be.kdg.memorace.app.MusicHandler.clickSound;
+
 /**
  * Van Elias De Hondt
  * 13/02/2023
  */
-public class GameBoardPresenter implements PresenterInterface {
+public class GameBoardPresenter {
     // Attributes
     private Memorace model;
     private GameBoardView gameBoardView;
@@ -37,7 +38,7 @@ public class GameBoardPresenter implements PresenterInterface {
         //}while (!a);
 
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
-            //clickSound(); // Play sound when you click the button
+            clickSound(); // Play sound when you click the button
 
             // Roll the dice and place the pawn
             play();
