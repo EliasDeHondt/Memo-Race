@@ -43,10 +43,10 @@ public class WonView extends GridPane {
         MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
         mediaPlayer.play(); // Play media (won.mp3)
     }
-    public Label getPlayerName() { // Get..
+    Label getPlayerName() { // Get..
         return this.playerName;
     }
-    public Label getPlayerScore() { // Get..
+    Label getPlayerScore() { // Get..
         return this.playerScore;
     }
 }

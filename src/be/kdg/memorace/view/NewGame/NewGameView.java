@@ -106,27 +106,24 @@ public class NewGameView extends BorderPane {
         }
         this.startGame.setId("button");
     }
-    public MenuItem getMiBack() { // Get..
+    MenuItem getMiBack() { // Get..
         return this.miBack;
     }
-    public MenuItem getMiExit() { // Get..
+    MenuItem getMiExit() { // Get..
         return this.miExit;
     }
-    public TextField getPlayerName(int index) { // Get..
+    TextField getPlayerName(int index) { // Get..
         return this.playerTxt[index];
     }
-
-    public TextField[] getPlayerTxt() { // Get..
+    TextField[] getPlayerTxt() { // Get..
         return this.playerTxt;
     }
-
-    public Button getStartGame() { // Get..
+    Button getStartGame() { // Get..
         return this.startGame;
     }
     public Stage getCustomStage(){ // Get..
         return this.primaryStage;
     }
-
     public void setCustomStage(Stage primaryStage){ // Set..
         this.primaryStage = primaryStage;
     }

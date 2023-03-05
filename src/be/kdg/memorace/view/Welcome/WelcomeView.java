@@ -66,19 +66,19 @@ public class WelcomeView extends GridPane {
         ft.setToValue(1);
         ft.play();
     }
-    public Button getPlayNewGame() { // Get..
+    Button getPlayNewGame() { // Get..
         return this.playNewGame;
     }
-    public Button getViewGameLog() { // Get..
+    Button getViewGameLog() { // Get..
         return this.viewGameLog;
     }
-    public Button getSettings() { // Get..
+    Button getSettings() { // Get..
         return this.settings;
     }
-    public Button getAbout() { // Get..
+    Button getAbout() { // Get..
         return this.about;
     }
-    public Button getExit() { // Get..
+    Button getExit() { // Get..
         return this.exit;
     }
     public void setCustomStage(Stage primaryStage){ // Set..

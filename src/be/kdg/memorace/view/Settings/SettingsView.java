@@ -85,22 +85,22 @@ public class SettingsView extends BorderPane {
 
         setCenter(settingsLayout);
     }
-    public MenuItem getMiBack() { // Get..
+    MenuItem getMiBack() { // Get..
         return this.miBack;
     }
-    public MenuItem getMiExit() { // Get..
+    MenuItem getMiExit() { // Get..
         return this.miExit;
     }
-    public Slider getBackgroundSoundS() { // Get..
+    Slider getBackgroundSoundS() { // Get..
         return this.backgroundSoundS;
     }
-    public Slider getButtonSoundS() { // Get..
+    Slider getButtonSoundS() { // Get..
         return this.buttonSoundS;
     }
-    public ComboBox<String> getTheme() { // Get..
+    ComboBox<String> getTheme() { // Get..
         return this.themeC;
     }
-    public Button getSave() { // Get..
+    Button getSave() { // Get..
         return this.save;
     }
     public void setCustomStage(Stage primaryStage){ // Set..
