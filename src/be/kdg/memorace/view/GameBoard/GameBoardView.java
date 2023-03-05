@@ -1,7 +1,6 @@
 package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.app.Timer;
-import be.kdg.memorace.model.Card;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -29,9 +28,9 @@ public class GameBoardView extends BorderPane {
     private Timer timer;
     private GridPane gridGameBoard;
     // Constructors
-    public GameBoardView() {
+    public GameBoardView(String cardTheme) { // Receives the theme of the cards as an extra.
         this.initialiseNodes();
-        this.layoutNodes();
+        this.layoutNodes(cardTheme);
     }
     // Methods
     public void initialiseNodes() {
@@ -64,7 +63,7 @@ public class GameBoardView extends BorderPane {
         }
 
     }
-    public void layoutNodes() {
+    public void layoutNodes(String cardTheme) {
         BorderPane top = new BorderPane(); // Making new BorderPane (TOP)
         top.setLeft(this.playerName); // Set (this.playerName) on LEFT
         top.setRight(this.gameTime); // Set (this.gameTime) on RIGHT
@@ -72,17 +71,32 @@ public class GameBoardView extends BorderPane {
         top.setPadding(new Insets(10)); // Set padding for (top)
         this.playerName.setId("top"); // Set CSS (this.playerName)
         this.gameTime.setId("top"); // Set CSS (this.gameTime)
-        setTop(top); // set (top) on top in (BorderPane | this. )
+        this.setTop(top); // set (top) on top in (BorderPane | this. )
 
 
-        // add all card images into the array
-        for (int i = 0; i < 8; i++) {
-            this.cards[i] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
-            this.cards[i+8] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
+
+        // Initializing the correct cards related to the theme.
+        if (cardTheme == null || cardTheme.equals("Meme Theme") ) {
+            for (int i = 0; i < 8; i++) { // Add all card images into the array
+                this.cards[i] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
+                this.cards[i+8] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
+            }
+        } else if (cardTheme.equals("Fruit Theme")) {
+            for (int i = 0; i < 8; i++) { // Add all card images into the array
+                this.cards[i] = new ImageView(new Image("/fruit_card_" + (i+1) + ".png"));
+                this.cards[i+8] = new ImageView(new Image("/fruit_card_" + (i+1) + ".png"));
+            }
+        } else if (cardTheme.equals("Teacher Theme")) {
+            for (int i = 0; i < 8; i++) { // Add all card images into the array
+                this.cards[i] = new ImageView(new Image("/teacher_card_" + (i + 1) + ".png"));
+                this.cards[i + 8] = new ImageView(new Image("/teacher_card_" + (i + 1) + ".png"));
+            }
         }
+
+        // Add all card images into the array
         for (int i = 0; i < 8; i++) {
-            emptyCards[i] = new ImageView(new Image("/question_mark.png"));
-            emptyCards[i+8] = new ImageView(new Image("/question_mark.png"));
+            this.emptyCards[i] = new ImageView(new Image("/question_mark.png"));
+            this.emptyCards[i+8] = new ImageView(new Image("/question_mark.png"));
         }
 
         //makeAllCardsNotVisible();
@@ -90,7 +104,7 @@ public class GameBoardView extends BorderPane {
 
 
         // Set gridGameBoard (GameBoard Layout) Center
-        setCenter(gridGameBoard);
+        setCenter(this.gridGameBoard);
 
         BorderPane buttom = new BorderPane(); // Making new BorderPane (BUTTOM)
         buttom.setId("background"); // Set CSS background
@@ -108,7 +122,7 @@ public class GameBoardView extends BorderPane {
     }
 
     public ImageView getDieImg() {
-        return dieImg;
+        return this.dieImg;
     }
 
     public Label getPlayerName() {
@@ -116,7 +130,7 @@ public class GameBoardView extends BorderPane {
     }
 
     public ImageView[] getCards() {
-        return cards;
+        return this.cards;
     }
 
     void addGridPaneCards(){

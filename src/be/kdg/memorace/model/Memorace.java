@@ -15,6 +15,7 @@ public class Memorace {
     private List<Pawn> pawns;
     private int turn;
     private Map<Integer, Card> cards;
+    private String cardTheme;
 
     // Constructors
     public Memorace() {
@@ -182,17 +183,17 @@ public class Memorace {
     public Die getDie() { // Get..
         return this.die;
     }
-
     public void setCards(int i, ImageView iv) {
         Card card = new Card(iv);
         this.cards.put(i,card);
     }
-
     public Pawn getPawn(int pawn) {
         return this.pawns.get(pawn);
     }
-
-    public Map<Integer, Card> getCards() {
-        return cards;
+    public void setCardTheme(String cardTheme) { // Set..
+        this.cardTheme = cardTheme;
+    }
+    public String getCardTheme() { // Get..
+        return this.cardTheme;
     }
 }

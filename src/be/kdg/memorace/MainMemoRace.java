@@ -21,7 +21,7 @@ public class MainMemoRace extends Application {
     }
     @Override
     public void start(Stage primaryStage) { // Start
-        Memorace model = new Memorace(); // Making Model(GameBoard.class).
+        Memorace model = new Memorace(); // Making Model(Memorace.class).
         WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
         new WelcomePresenter(model, welcomeView); // Making Presenter (WelcomePresenter.class).
         Scene scene = new Scene(welcomeView); // Making Scene.

@@ -1,6 +1,6 @@
 package be.kdg.memorace.view.Settings;
 
-import be.kdg.memorace.app.MusicHandler;
+
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
@@ -55,7 +55,8 @@ public class SettingsPresenter {
             // Pass the values to the MusicHandler methods
             // TODO
 
-
+            // Pass the values to the Memorace Class
+            this.model.setCardTheme(cardTheme);
 
             WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
             this.settingsView.getScene().setRoot(welcomeView); // Add (WelcomeView.class) to (GameLogView.class).

@@ -58,7 +58,7 @@ public class NewGamePresenter {
                 new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
             }
 
-            GameBoardView gameBoardView = new GameBoardView(); // Making View (NewGameView.class).
+            GameBoardView gameBoardView = new GameBoardView(this.model.getCardTheme()); // Making View (NewGameView.class) and specify the theme for the cards.
             new GameBoardPresenter(this.model, gameBoardView); // Making Presenter (NewGamePresenter.class).
             this.newGameView.getScene().setRoot(gameBoardView); // Add (NewGameView.class) to (WelcomeView.class).
             gameBoardView.getScene().getWindow().sizeToScene(); // Add new Size.
