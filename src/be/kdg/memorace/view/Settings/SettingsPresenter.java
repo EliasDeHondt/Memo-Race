@@ -1,5 +1,6 @@
 package be.kdg.memorace.view.Settings;
 
+import be.kdg.memorace.app.MusicHandler;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
@@ -46,7 +47,15 @@ public class SettingsPresenter {
         this.settingsView.getSave().setOnAction((e -> {
             clickSound(); // Play sound when you click the button
 
+            // Get the values of backgroundSoundS and buttonSoundS
+            double volumeBackground = this.settingsView.getBackgroundSoundS().getValue();
+            double volumeButton = this.settingsView.getButtonSoundS().getValue();
+            String cardTheme = this.settingsView.getTheme().getValue();
+
+            // Pass the values to the MusicHandler methods
             // TODO
+
+
 
             WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
             this.settingsView.getScene().setRoot(welcomeView); // Add (WelcomeView.class) to (GameLogView.class).
@@ -55,6 +64,5 @@ public class SettingsPresenter {
             welcomeView.setCustomStage(this.settingsView.getCustomStage());  // Send primaryStage to (WelcomeView.class)
             new WelcomePresenter(model, welcomeView); // Making Presenter (WelcomePresenter.class).
         }));
-
     }
 }

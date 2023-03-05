@@ -33,12 +33,25 @@ public class SettingsView extends BorderPane {
     public void initialiseNodes() {
         this.miBack = new MenuItem("Back");
         this.miExit = new MenuItem("Exit");
+
         this.backgroundSoundS = new Slider(0, 100, 50);
+        this.backgroundSoundS.setShowTickLabels(true);
+        this.backgroundSoundS.setShowTickMarks(true);
+        this.backgroundSoundS.setMajorTickUnit(10);
+        this.backgroundSoundS.setMinorTickCount(0);
+        this.backgroundSoundS.setSnapToTicks(true);
+
         this.buttonSoundS = new Slider(0, 100, 50);
+        this.buttonSoundS.setShowTickLabels(true);
+        this.buttonSoundS.setShowTickMarks(true);
+        this.buttonSoundS.setMajorTickUnit(10);
+        this.buttonSoundS.setMinorTickCount(0);
+        this.buttonSoundS.setSnapToTicks(true);
+
         this.themeC = new ComboBox<>();
         this.backgroundSoundL = new Label("Background Sound Volume");
         this.buttonSoundL = new Label("Button Sound Volume");
-        this.themeL = new Label("Theme");
+        this.themeL = new Label("Card Theme");
         this.save = new Button("Save");
     }
     public void layoutNodes() {
