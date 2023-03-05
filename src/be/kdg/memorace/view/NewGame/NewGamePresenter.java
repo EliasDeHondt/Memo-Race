@@ -29,7 +29,7 @@ public class NewGamePresenter {
     private void addEventHandlers() {
         // Action-> [Back (welcomeView)] (getMiBack)
         this.newGameView.getMiBack().setOnAction(actionEvent -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
             this.newGameView.getScene().setRoot(welcomeView); // Add (WelcomeView.class) to (GameLogView.class).
@@ -40,14 +40,14 @@ public class NewGamePresenter {
         });
         // Action-> [Exit Game] (getMiExit)
         this.newGameView.getMiExit().setOnAction((e -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             Platform.exit(); // exit
         }));
 
         // Action-> [Start Game] (getStartGame)
         this.newGameView.getStartGame().setOnAction(actionEvent -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
             this.updateView();
             if (this.model.getplayers().size() < 2) {
                 NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).

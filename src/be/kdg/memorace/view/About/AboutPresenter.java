@@ -21,7 +21,7 @@ public class AboutPresenter {
     // Methods
     private void addEventHandlers() {
         this.aboutView.getOk().setOnAction(event -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
             this.aboutView.getScene().getWindow().hide();
         });
     }

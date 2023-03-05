@@ -31,7 +31,7 @@ public class MainMemoRace extends Application {
         primaryStage.getIcons().add(new Image("/logo.png")); // Making Icon.
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
-        gameMusic();// Play game Music
+        gameMusic(0.5);// Play game Music
         writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
         primaryStage.show(); // Show Stage.
     }

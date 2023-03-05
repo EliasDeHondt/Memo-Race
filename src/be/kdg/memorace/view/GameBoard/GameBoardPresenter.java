@@ -38,7 +38,7 @@ public class GameBoardPresenter {
         //}while (!a);
 
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             // Roll the dice and place the pawn
             play();

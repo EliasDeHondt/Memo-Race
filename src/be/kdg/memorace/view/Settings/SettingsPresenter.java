@@ -7,6 +7,7 @@ import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Platform;
 
 import static be.kdg.memorace.app.MusicHandler.clickSound;
+import static be.kdg.memorace.app.MusicHandler.gameMusic;
 
 /**
  * Van Elias De Hondt
@@ -26,7 +27,7 @@ public class SettingsPresenter {
     private void addEventHandlers() {
         // Action-> [Back (welcomeView)] (getMiBack)
         this.settingsView.getMiBack().setOnAction(actionEvent -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
             this.settingsView.getScene().setRoot(welcomeView); // Add (WelcomeView.class) to (GameLogView.class).
@@ -38,14 +39,14 @@ public class SettingsPresenter {
 
         // Action-> [Exit Game] (getMiExit)
         this.settingsView.getMiExit().setOnAction((e -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             Platform.exit(); // exit
         }));
 
         // Action-> [Save] (getSaveButton)
         this.settingsView.getSave().setOnAction((e -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             // Get the values of backgroundSoundS and buttonSoundS
             double volumeBackground = this.settingsView.getBackgroundSoundS().getValue();
@@ -53,7 +54,8 @@ public class SettingsPresenter {
             String cardTheme = this.settingsView.getTheme().getValue();
 
             // Pass the values to the MusicHandler methods
-            // TODO
+            this.model.setVolumeBackground(volumeBackground);
+            this.model.setVolumeButton(volumeButton); // TODO
 
             // Pass the values to the Memorace Class
             this.model.setCardTheme(cardTheme);

@@ -36,7 +36,7 @@ public class WelcomePresenter {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-           clickSound(); // Play sound when you click the button
+           clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             this.welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
@@ -48,7 +48,7 @@ public class WelcomePresenter {
 
         // Action-> [View Game Log] (getViewGameLog)
         this.welcomeView.getViewGameLog().setOnAction((e -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             GameLogView gameLogView = new GameLogView(); // Making View (GameLogView.class).
             this.welcomeView.getScene().setRoot(gameLogView); // Add (GameLogView.class) to (WelcomeView.class).
@@ -60,7 +60,7 @@ public class WelcomePresenter {
 
         // Action-> [Settings] (getSettings)
         this.welcomeView.getSettings().setOnAction((e -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             SettingsView settingsView = new SettingsView(); // Making View (SettingsView.class).
             this.welcomeView.getScene().setRoot(settingsView); // Add (SettingsView.class) to (WelcomeView.class).
@@ -72,7 +72,7 @@ public class WelcomePresenter {
 
         // Action-> [About] (getAbout)
         this.welcomeView.getAbout().setOnAction(event -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             AboutView aboutView = new AboutView();
             new AboutPresenter(model, aboutView);
@@ -89,7 +89,7 @@ public class WelcomePresenter {
 
         // Action-> [Exit Game] (getExit)
         this.welcomeView.getExit().setOnAction((e -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
             Platform.exit(); // exit
         }));
     }

@@ -15,6 +15,8 @@ public class Memorace {
     private List<Pawn> pawns;
     private int turn;
     private Map<Integer, Card> cards;
+    private double volumeBackground;
+    private double volumeButton;
     private String cardTheme;
 
     // Constructors
@@ -24,9 +26,10 @@ public class Memorace {
         this.die = new Die(); // Creates a new die.
         this.pawns = new LinkedList<>(); // Creates a new pawn.
         this.cards = new HashMap<Integer, Card>();
+        this.volumeBackground = 0.5; // default 50%
+        this.volumeButton = 1.0; // default 100%
     }
     // Methods
-
     public void setPawnPosition(int player){
         this.pawns.get(player).setPosition(this.die.getSide());
         //System.out.println("p ;" + player);
@@ -183,15 +186,27 @@ public class Memorace {
     public Die getDie() { // Get..
         return this.die;
     }
+    public Pawn getPawn(int pawn) {
+        return this.pawns.get(pawn);
+    }
     public void setCards(int i, ImageView iv) {
         Card card = new Card(iv);
         this.cards.put(i,card);
     }
-    public Pawn getPawn(int pawn) {
-        return this.pawns.get(pawn);
+    public void setVolumeBackground(double volumeBackground) { // Set..
+        this.volumeBackground = volumeBackground;
+    }
+    public void setVolumeButton(double volumeButton) { // Set..
+        this.volumeButton = volumeButton;
     }
     public void setCardTheme(String cardTheme) { // Set..
         this.cardTheme = cardTheme;
+    }
+    public double getVolumeBackground() { // Get..
+        return this.volumeBackground;
+    }
+    public double getVolumeButton() { // Get..
+        return this.volumeButton;
     }
     public String getCardTheme() { // Get..
         return this.cardTheme;

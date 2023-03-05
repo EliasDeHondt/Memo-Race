@@ -25,7 +25,7 @@ public class GameLogPresenter {
     private void addEventHandlers() {
         // Action-> [Back (welcomeView)] (getMiBack)
         this.gameLogView.getMiBack().setOnAction(actionEvent -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
             this.gameLogView.getScene().setRoot(welcomeView); // Add (WelcomeView.class) to (GameLogView.class).
@@ -37,7 +37,7 @@ public class GameLogPresenter {
 
         // Action-> [Exit Game] (getMiExit)
         this.gameLogView.getMiExit().setOnAction((e -> {
-            clickSound(); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             Platform.exit(); // exit
         }));
