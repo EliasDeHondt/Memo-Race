@@ -75,8 +75,8 @@ public class Memorace {
         //String[] a = this.cards.keySet().toArray(new String[this.cards.size()]);
         // Top game board.
         System.out.println("i = " + i);
-        if (i >= 0 && i <= 4) {
-            newCards.add((i));
+        if (i > 0 && i <= 4) {
+            newCards.add((i- 1));
             newCards.add((i - 1 + 4));
             newCards.add((i - 1 + 8));
             newCards.add((i - 1 + 12));
@@ -100,16 +100,16 @@ public class Memorace {
         // Bottom game board.
         else if (i >= 9 && i <= 12) {
             switch (i) {
-                case 9 -> i = 12;
-                case 10 -> i = 13;
-                case 11 -> i = 14;
-                case 12 -> i = 15;
+                case 9 -> i = 4;
+                case 10 -> i = 3;
+                case 11 -> i = 2;
+                case 12 -> i = 1;
                 default -> i = 0;
             }
-            newCards.add((i));
-            newCards.add((i - 4));
-            newCards.add((i - 8));
-            newCards.add((i - 12));
+            newCards.add((i- 1));
+            newCards.add((i - 1 + 4));
+            newCards.add((i - 1 + 8));
+            newCards.add((i - 1 + 12));
             return newCards;
         }
         // Left game board.
