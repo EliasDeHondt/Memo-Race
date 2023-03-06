@@ -1,0 +1,13 @@
+---Error Log---
+2023-02-22 18:31:04 (writeErrorLog) No player names were entered. Please be advised.
+2023-02-22 18:32:19 (writeErrorLog) No player names were entered. Please be advised.
+2023-02-25 10:28:54 (writeErrorLog) No player names were entered. Please be advised.
+2023-02-25 10:28:58 (writeErrorLog) No player names were entered. Please be advised.
+2023-02-25 10:28:59 (writeErrorLog) No player names were entered. Please be advised.
+2023-02-25 10:46:51 (writeErrorLog) No player names were entered. Please be advised.
+2023-02-25 10:46:55 (writeErrorLog) No player names were entered. Please be advised.
+2023-02-25 10:46:57 (writeErrorLog) No player names were entered. Please be advised.
+2023-02-25 10:49:00 (writeErrorLog) No player names were entered. Please be advised.
+2023-03-01 14:12:45 (readLog) Our apologies, there seem to be an issue with our file system handler. :-(
+2023-03-04 20:51:39 (writeErrorLog) No player names were entered. Please be advised.
+2023-03-04 20:52:15 (writeErrorLog) No player names were entered. Please be advised.
