@@ -1,0 +1,171 @@
+Index: out/production/Memo-Race/startUpLog.csv
+===================================================================
+diff --git a/out/production/Memo-Race/startUpLog.csv b/out/production/Memo-Race/startUpLog.csv
+deleted file mode 100644
+--- a/out/production/Memo-Race/startUpLog.csv	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
++++ /dev/null	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
+@@ -1,22 +0,0 @@
+----Start Up Log---
+-2023-02-16 20:16:58 Startup Time
+-2023-02-16 20:20:53 Startup Time
+-2023-02-16 20:22:49 Startup Time
+-2023-02-16 20:23:18 Startup Time
+-2023-02-16 20:24:11 Startup Time
+-2023-02-16 20:24:48 Startup Time
+-2023-02-16 20:30:03 Startup Time
+-2023-02-16 20:32:09 Startup Time
+-2023-02-16 20:33:49 Startup Time
+-2023-02-16 20:36:24 Startup Time
+-2023-02-17 10:35:19 Startup Time
+-2023-02-17 10:36:21 Startup Time
+-2023-02-17 10:52:09 Startup Time
+-2023-02-17 11:05:56 Startup Time
+-2023-02-17 11:07:06 Startup Time
+-2023-02-17 11:07:27 Startup Time
+-2023-02-17 11:32:46 Startup Time
+-2023-02-19 16:23:50 Startup Time
+-2023-02-19 16:24:09 Startup Time
+-2023-02-19 16:38:43 Startup Time
+-2023-02-28 20:20:09 Startup Time
+\ No newline at end of file
+Index: out/production/Memo-Race/resources/log/startUpLog.csv
+===================================================================
+diff --git a/out/production/Memo-Race/resources/log/startUpLog.csv b/out/production/Memo-Race/resources/log/startUpLog.csv
+deleted file mode 100644
+--- a/out/production/Memo-Race/resources/log/startUpLog.csv	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
++++ /dev/null	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
+@@ -1,22 +0,0 @@
+----Start Up Log---
+-2023-02-16 20:16:58 Startup Time
+-2023-02-16 20:20:53 Startup Time
+-2023-02-16 20:22:49 Startup Time
+-2023-02-16 20:23:18 Startup Time
+-2023-02-16 20:24:11 Startup Time
+-2023-02-16 20:24:48 Startup Time
+-2023-02-16 20:30:03 Startup Time
+-2023-02-16 20:32:09 Startup Time
+-2023-02-16 20:33:49 Startup Time
+-2023-02-16 20:36:24 Startup Time
+-2023-02-17 10:35:19 Startup Time
+-2023-02-17 10:36:21 Startup Time
+-2023-02-17 10:52:09 Startup Time
+-2023-02-17 11:05:56 Startup Time
+-2023-02-17 11:07:06 Startup Time
+-2023-02-17 11:07:27 Startup Time
+-2023-02-17 11:32:46 Startup Time
+-2023-02-19 16:23:50 Startup Time
+-2023-02-19 16:24:09 Startup Time
+-2023-02-19 16:38:43 Startup Time
+-2023-02-28 20:20:09 Startup Time
+\ No newline at end of file
+Index: out/production/Memo-Race/errorLog.csv
+===================================================================
+diff --git a/out/production/Memo-Race/errorLog.csv b/out/production/Memo-Race/errorLog.csv
+deleted file mode 100644
+--- a/out/production/Memo-Race/errorLog.csv	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
++++ /dev/null	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
+@@ -1,11 +0,0 @@
+----Error Log---
+-2023-02-22 18:31:04 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-22 18:32:19 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:28:54 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:28:58 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:28:59 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:46:51 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:46:55 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:46:57 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:49:00 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:49:44 (writeErrorLog) No player names were entered. Please be advised.
+\ No newline at end of file
+Index: out/production/Memo-Race/resources/log/errorLog.csv
+===================================================================
+diff --git a/out/production/Memo-Race/resources/log/errorLog.csv b/out/production/Memo-Race/resources/log/errorLog.csv
+deleted file mode 100644
+--- a/out/production/Memo-Race/resources/log/errorLog.csv	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
++++ /dev/null	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
+@@ -1,11 +0,0 @@
+----Error Log---
+-2023-02-22 18:31:04 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-22 18:32:19 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:28:54 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:28:58 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:28:59 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:46:51 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:46:55 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:46:57 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:49:00 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:49:44 (writeErrorLog) No player names were entered. Please be advised.
+\ No newline at end of file
+Index: out/production/Memo-Race/log/errorLog.csv
+===================================================================
+diff --git a/out/production/Memo-Race/log/errorLog.csv b/out/production/Memo-Race/log/errorLog.csv
+deleted file mode 100644
+--- a/out/production/Memo-Race/log/errorLog.csv	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
++++ /dev/null	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
+@@ -1,11 +0,0 @@
+----Error Log---
+-2023-02-22 18:31:04 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-22 18:32:19 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:28:54 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:28:58 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:28:59 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:46:51 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:46:55 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:46:57 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:49:00 (writeErrorLog) No player names were entered. Please be advised.
+-2023-02-25 10:49:44 (writeErrorLog) No player names were entered. Please be advised.
+\ No newline at end of file
+Index: out/production/Memo-Race/log/startUpLog.csv
+===================================================================
+diff --git a/out/production/Memo-Race/log/startUpLog.csv b/out/production/Memo-Race/log/startUpLog.csv
+deleted file mode 100644
+--- a/out/production/Memo-Race/log/startUpLog.csv	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
++++ /dev/null	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
+@@ -1,22 +0,0 @@
+----Start Up Log---
+-2023-02-16 20:16:58 Startup Time
+-2023-02-16 20:20:53 Startup Time
+-2023-02-16 20:22:49 Startup Time
+-2023-02-16 20:23:18 Startup Time
+-2023-02-16 20:24:11 Startup Time
+-2023-02-16 20:24:48 Startup Time
+-2023-02-16 20:30:03 Startup Time
+-2023-02-16 20:32:09 Startup Time
+-2023-02-16 20:33:49 Startup Time
+-2023-02-16 20:36:24 Startup Time
+-2023-02-17 10:35:19 Startup Time
+-2023-02-17 10:36:21 Startup Time
+-2023-02-17 10:52:09 Startup Time
+-2023-02-17 11:05:56 Startup Time
+-2023-02-17 11:07:06 Startup Time
+-2023-02-17 11:07:27 Startup Time
+-2023-02-17 11:32:46 Startup Time
+-2023-02-19 16:23:50 Startup Time
+-2023-02-19 16:24:09 Startup Time
+-2023-02-19 16:38:43 Startup Time
+-2023-02-28 20:20:09 Startup Time
+\ No newline at end of file
+Index: resources/log/startUpLog.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>---Start Up Log---\r\n2023-02-16 20:16:58 Startup Time\r\n2023-02-16 20:20:53 Startup Time\r\n2023-02-16 20:22:49 Startup Time\r\n2023-02-16 20:23:18 Startup Time\r\n2023-02-16 20:24:11 Startup Time\r\n2023-02-16 20:24:48 Startup Time\r\n2023-02-16 20:30:03 Startup Time\r\n2023-02-16 20:32:09 Startup Time\r\n2023-02-16 20:33:49 Startup Time\r\n2023-02-16 20:36:24 Startup Time\r\n2023-02-17 10:35:19 Startup Time\r\n2023-02-17 10:36:21 Startup Time\r\n2023-02-17 10:52:09 Startup Time\r\n2023-02-17 11:05:56 Startup Time\r\n2023-02-17 11:07:06 Startup Time\r\n2023-02-17 11:07:27 Startup Time\r\n2023-02-17 11:32:46 Startup Time\r\n2023-02-19 16:23:50 Startup Time\r\n2023-02-19 16:24:09 Startup Time\r\n2023-02-19 16:38:43 Startup Time\r\n2023-02-28 20:20:09 Startup Time
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/resources/log/startUpLog.txt b/resources/log/startUpLog.txt
+--- a/resources/log/startUpLog.txt	(revision 2c0919a71bcf8b5a713230a5c1c76c79d099b2b0)
++++ b/resources/log/startUpLog.txt	(date 1677673529108)
+@@ -19,4 +19,11 @@
+ 2023-02-19 16:23:50 Startup Time
+ 2023-02-19 16:24:09 Startup Time
+ 2023-02-19 16:38:43 Startup Time
+-2023-02-28 20:20:09 Startup Time
+\ No newline at end of file
++2023-02-28 20:20:09 Startup Time
++2023-02-28 20:53:05 Startup Time
++2023-02-28 20:53:28 Startup Time
++2023-02-28 20:53:46 Startup Time
++2023-02-28 20:54:13 Startup Time
++2023-02-28 20:54:27 Startup Time
++2023-03-01 13:24:19 Startup Time
++2023-03-01 13:25:29 Startup Time

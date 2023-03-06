@@ -1,0 +1,44 @@
+<changelist name="Uncommitted_changes_before_Update_at_1_03_2023_13_32_[Changes]" date="1677673971690" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_03_2023_13_32_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 1/03/2023 13:32 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/memorace/app/FileHandler.class" />
+    <option name="AFTER_PATH" value="out/production/Memo-Race/be/kdg/memorace/app/FileHandler.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_03_2023_13_32_[Changes]/FileHandler.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/memorace/view/GameLog/GameLogView.class" />
+    <option name="AFTER_PATH" value="out/production/Memo-Race/be/kdg/memorace/view/GameLog/GameLogView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_03_2023_13_32_[Changes]/GameLogView.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/memorace/MainMemoRace.class" />
+    <option name="AFTER_PATH" value="out/production/Memo-Race/be/kdg/memorace/MainMemoRace.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_03_2023_13_32_[Changes]/MainMemoRace.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Memo-Race/resources/images/die/die_0.png" />
+    <option name="AFTER_PATH" value="out/production/Memo-Race/resources/images/die/die_0.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_03_2023_13_32_[Changes]/die_0.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Memo-Race/be/kdg/memorace/view/NewGame/NewGamePresenter.class" />
+    <option name="AFTER_PATH" value="out/production/Memo-Race/be/kdg/memorace/view/NewGame/NewGamePresenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_03_2023_13_32_[Changes]/NewGamePresenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Memo-Race/die_0.png" />
+    <option name="AFTER_PATH" value="out/production/Memo-Race/die_0.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_03_2023_13_32_[Changes]/die_01.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Memo-Race/die/die_0.png" />
+    <option name="AFTER_PATH" value="out/production/Memo-Race/die/die_0.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_03_2023_13_32_[Changes]/die_02.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Memo-Race/images/die/die_0.png" />
+    <option name="AFTER_PATH" value="out/production/Memo-Race/images/die/die_0.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_03_2023_13_32_[Changes]/die_03.png" />
+  </binary>
+</changelist>
