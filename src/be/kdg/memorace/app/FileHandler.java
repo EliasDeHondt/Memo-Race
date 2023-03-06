@@ -36,12 +36,10 @@ public class FileHandler {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String timestamp = LocalDateTime.now().format(formatter);
         String[] data = {timestamp, message};
-        try {
-            FileWriter writer = new FileWriter(filename, true);
+        try (FileWriter writer = new FileWriter(filename, true)) { // writer.close();
             writer.append(String.join(" ", data));
             writer.append("\n");
             writer.flush();
-            writer.close();
         } catch (IOException e) {
             String errorMessage = "(writeStartUpLog) Our apologies, there seem to be an issue with our file system handler. :-(";
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -55,12 +53,10 @@ public class FileHandler {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String timestamp = LocalDateTime.now().format(formatter);
         String[] data = {timestamp, errorMessage};
-        try {
-            FileWriter writer = new FileWriter(filename, true);
+        try (FileWriter writer = new FileWriter(filename, true)) { // writer.close();
             writer.append(String.join(" ", data));
             writer.append("\n");
             writer.flush();
-            writer.close();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
@@ -69,8 +65,7 @@ public class FileHandler {
         }
     }
     public static void writePlayersLog(String filename, List<Player> players) {
-        try {
-            FileWriter writer = new FileWriter(filename, true);
+        try (FileWriter writer = new FileWriter(filename, true)) { // writer.close();
             File file = new File(filename); // Temp file
             boolean fileExists = file.exists(); // Check if the file already exists
             if (!fileExists) { // Check if the file already exists
@@ -85,7 +80,6 @@ public class FileHandler {
                 writer.append("\n");
             }
             writer.flush();
-            writer.close();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("(writePlayersLog) Our apologies, there seem to be an issue with our file system handler. :-(");
