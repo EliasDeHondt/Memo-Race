@@ -23,8 +23,8 @@ public class WonView extends GridPane {
     }
     // Methods
     public void initialiseNodes() {
-        this.playerName = new Label("(Player Name) Won."); // <- TEMP
-        this.playerScore = new Label("(Player Score)"); // <- TEMP
+        this.playerName = new Label();
+        this.playerScore = new Label();
     }
     public void layoutNodes() {
         // Set Padding (20)
