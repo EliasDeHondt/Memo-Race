@@ -187,8 +187,24 @@ public class GameBoardView extends BorderPane {
     public void showValidCards(List<Integer> newC){
         for (Integer i: newC) {
             this.getEmptyCards()[i].setImage(null);
-            //this.getEmptyCards()[i].
         }
+    }
+    public ImageView[] getValidCards(List<Integer> newC){
+        ImageView[] nC = new ImageView[4];
+        int j = 0;
+        for (Integer i: newC) {
+            nC[j++] = this.getEmptyCards()[i];
+            //this.getEmptyCards()[i].setImage(null);
+        }
+        return nC;
+    }
+    public int[] getC(List<Integer> newC){
+        int[] ints = new int[4];
+        int j = 0;
+        for (Integer i: newC) {
+            ints[j++] = i;
+        }
+        return ints;
     }
     Button getDieButton() { // Get..
         return this.dieButton;

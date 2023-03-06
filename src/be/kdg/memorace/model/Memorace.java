@@ -70,7 +70,6 @@ public class Memorace {
     }
     public List<Integer> GetValidCardsIDs(int i) {
         // Gives the card to draw options based on the position.
-//TODO verticaal werkt niet, horizontaal wel
         List<Integer> newCards = new ArrayList<>(this.cards.size());
         //String[] a = this.cards.keySet().toArray(new String[this.cards.size()]);
         // Top game board.

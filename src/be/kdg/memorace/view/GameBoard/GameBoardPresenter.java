@@ -3,7 +3,9 @@ package be.kdg.memorace.view.GameBoard;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -46,34 +48,60 @@ public class GameBoardPresenter {
             this.gameBoardView.getGridGameBoard().setDisable(false);
             this.gameBoardView.makeAllCardsNotVisible();
 
-            firstTurn();
-
-            updateView();
-        });
-
-
-        //lastPawnPos = this.model.getPawn().getPosition();
-
-        for (int i = 0; i < 16; i++) {
-            int finalI = i;
-            // Only click row/column of Die number
-            //if(i < 4){
+            List<Integer> ints = firstTurnA();
+            System.out.println("ints: " + ints);
+            for (int i: ints) {
+                int finalI = i;
                 this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
                     //clickSound(); // Play sound when you click the button
                     this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
-
+                    System.out.println("fi : " + finalI);
+                    //firstTurnA();
                     // Only 2 cards can be clicked at a time
-                    //limitCards();
+                    limitCards();
+                   // ints.clear();
+                    if(counter() == 2){
+                        for (int in: ints) {
+                            this.gameBoardView.getEmptyCards()[ints.get(in)].setDisable(true);
+                        }
+                        ints.clear();/////////////
+                        System.out.println(ints);
+                    }
                 });
-            //}
+            }
+            updateView();
 
-        }
+            //System.out.println(ints);
+        });
+
+        //int[] ints = this.gameBoardView.getC(model.GetValidCardsIDs(model.getPawn(model.getPlayerID()-1).getPosition()));
+        ///System.out.println(ints);
+
+//        for (int i = 0; i < 16; i++) {
+//            int finalI = i;
+//            // Only click row/column of Die number
+//            //if(i < 4){
+//                this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
+//                    //clickSound(); // Play sound when you click the button
+//                    this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
+//
+//                    // Only 2 cards can be clicked at a time
+//                    //limitCards();
+//                });
+//            //}
+//
+//        }
 
     }
     private void firstTurn(){
         List<Integer> newC = model.GetValidCardsIDs(model.getPawn(model.getPlayerID()-1).getPosition());
-        System.out.println(newC);
+        System.out.println(newC); // klopt!
         gameBoardView.showValidCards(newC);
+    }
+    private List<Integer> firstTurnA(){
+        List<Integer> newC = model.GetValidCardsIDs(model.getPawn(model.getPlayerID()-1).getPosition());
+        System.out.println(newC);
+        return newC;
     }
     private void chooseCard(){
         AtomicBoolean a = new AtomicBoolean(false);
