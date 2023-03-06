@@ -46,7 +46,7 @@ public class GameBoardPresenter {
             this.gameBoardView.getGridGameBoard().setDisable(false);
             this.gameBoardView.makeAllCardsNotVisible();
 
-            cardStuff();
+            firstTurn();
 
             updateView();
         });
@@ -70,7 +70,7 @@ public class GameBoardPresenter {
         }
 
     }
-    private void cardStuff(){
+    private void firstTurn(){
         List<Integer> newC = model.GetValidCardsIDs(model.getPawn(model.getPlayerID()-1).getPosition());
         System.out.println(newC);
         gameBoardView.showValidCards(newC);
