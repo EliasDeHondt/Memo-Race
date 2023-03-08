@@ -3,9 +3,7 @@ package be.kdg.memorace.view.GameBoard;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -20,6 +18,7 @@ public class GameBoardPresenter {
     private Memorace model;
     private GameBoardView gameBoardView;
     private int timesClicked;
+    private boolean firstClick;
     // Constructors
     public GameBoardPresenter(Memorace model, GameBoardView gameBoardView) {
         this.model = model;
@@ -45,21 +44,34 @@ public class GameBoardPresenter {
 
             List<Integer> ints = firstTurnA();
             System.out.println("ints: " + ints);
+            firstClick = false;
             for (int i = 0; i< gameBoardView.getCards().length;i++) {
                 int finalI = i;
-                this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
-                    //clickSound(); // Play sound when you click the button
+                if(firstClick == false){
+                    this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
+                        //clickSound(); // Play sound when you click the button
 
-                    for (int j: ints) {
-                        if(finalI == j){
-                            this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
+                        //while(b == false) {
+                        for (int j : ints) {
+                            if (finalI == j) {
+                                this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
+                                firstClick = true;
+                                System.out.println("firsts: " + firstClick);
+                            }
                         }
-                    }
-                    // Only 2 cards can be clicked at a time
-                    limitCards();
-                });
+                        //}
+                        // Only 2 cards can be clicked at a time
+                        //limitCards();//////
+                    });
+                }
 
+                //System.out.println(firstClick);
+                else if(firstClick == true){
+                    this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(e -> this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage()));
+                    System.out.println("2");
+                }
             }
+            System.out.println(firstClick);
             updateView();
         });
     }
