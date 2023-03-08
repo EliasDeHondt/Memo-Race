@@ -19,7 +19,6 @@ public class MusicHandler {
         MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = mediaPlayer
         mediaPlayer.setVolume(volumeBackground); // Set volume to default 50%
         mediaPlayer.play(); // Play media (introductionMusic.wav)
-
  */
     }
 
