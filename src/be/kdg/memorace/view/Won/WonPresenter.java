@@ -1,6 +1,10 @@
 package be.kdg.memorace.view.Won;
 
 import be.kdg.memorace.model.Memorace;
+import javafx.scene.control.Alert;
+
+import java.io.IOException;
+
 import static be.kdg.memorace.app.FileHandler.writePlayersLog;
 
 /**
@@ -20,6 +24,14 @@ public class WonPresenter {
 
     // Methods
     private void addEventHandlers() {
-        writePlayersLog("resources/log/playerLog.csv", this.model.getplayers());
+        try {
+            writePlayersLog("resources/log/playerLog.csv", this.model.getplayers());
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("(writePlayersLog) Our apologies, there seem to be an issue with our file system handler. :-(");
+            alert.setTitle("File Handler ERROR");
+            alert.showAndWait();
+        }
+
     }
 }

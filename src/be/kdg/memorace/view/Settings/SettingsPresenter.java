@@ -56,7 +56,7 @@ public class SettingsPresenter {
 
             // Pass the values to the MusicHandler methods
             this.model.setVolumeBackground(volumeBackground);
-            this.model.setVolumeButton(volumeButton); // TODO
+            this.model.setVolumeButton(volumeButton);
 
             // Pass the values to the Memorace Class
             this.model.setCardTheme(cardTheme);

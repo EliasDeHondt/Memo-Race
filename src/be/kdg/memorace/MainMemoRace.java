@@ -1,5 +1,6 @@
 package be.kdg.memorace;
 
+import static be.kdg.memorace.app.FileHandler.writeErrorLog;
 import static be.kdg.memorace.app.FileHandler.writeStartUpLog;
 import static be.kdg.memorace.app.MusicHandler.gameMusic;
 import be.kdg.memorace.model.Memorace;
@@ -7,8 +8,10 @@ import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import java.io.IOException;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -21,7 +24,7 @@ public class MainMemoRace extends Application {
         Application.launch(args);
     }
     @Override
-    public void start(Stage primaryStage) { // Start
+    public void start(Stage primaryStage) throws IOException { // Start
         Memorace model = new Memorace(); // Making Model(Memorace.class).
         WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
         new WelcomePresenter(model, welcomeView); // Making Presenter (WelcomePresenter.class).
@@ -33,7 +36,16 @@ public class MainMemoRace extends Application {
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
         gameMusic(0.5);// Play game Music
-        writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
+        try  { // writer.close();
+            writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
+        } catch (IOException e) {
+            String errorMessage = "(writeStartUpLog) Our apologies, there seem to be an issue with our file system handler. :-(";
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(errorMessage);
+            alert.setTitle("File Handler ERROR");
+            alert.showAndWait();
+            writeErrorLog("resources/log/errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
+        }
         primaryStage.show(); // Show Stage.
     }
 }

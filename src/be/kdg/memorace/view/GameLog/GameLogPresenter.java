@@ -4,7 +4,12 @@ import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
+import java.io.IOException;
+
+import static be.kdg.memorace.app.FileHandler.readLog;
+import static be.kdg.memorace.app.FileHandler.writeErrorLog;
 import static be.kdg.memorace.app.MusicHandler.clickSound;
 
 /**
@@ -20,6 +25,36 @@ public class GameLogPresenter {
         this.model = model;
         this.gameLogView = gameLogView;
         this.addEventHandlers();
+
+        try {
+            // Read log in to (this.startUpLog)
+            String[] linesStartUp = readLog("resources/log/startUpLog.txt");
+            for (String line : linesStartUp) {
+                this.gameLogView.getStartUpLog().appendText(line + "\n");
+            }
+
+            // Read log in to (this.errorLog)
+            String[] linesError = readLog("resources/log/errorLog.txt");
+            for (String line : linesError) {
+                this.gameLogView.getErrorLog().appendText(line + "\n");
+            }
+
+        } catch (IOException e1) {
+            String errorMessage = "(readLog) Our apologies, there seem to be an issue with our file system handler. :-(";
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setHeaderText(errorMessage);
+            alert1.setTitle("File Handler ERROR");
+            alert1.showAndWait();
+            try {
+                writeErrorLog("resources/log/errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
+            } catch (IOException e2) {
+                Alert alert2 = new Alert(Alert.AlertType.ERROR);
+                alert2.setHeaderText("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
+                alert2.setTitle("File Handler ERROR");
+                alert2.showAndWait();
+            }
+        }
+
     }
 
     // Methods

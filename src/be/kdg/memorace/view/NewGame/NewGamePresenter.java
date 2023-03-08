@@ -8,6 +8,8 @@ import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
+import java.io.IOException;
+
 import static be.kdg.memorace.app.FileHandler.writeErrorLog;
 import static be.kdg.memorace.app.MusicHandler.clickSound;
 
@@ -83,13 +85,21 @@ public class NewGamePresenter {
             if (this.model.getplayers().size() < 2) {
                 throw new Exception();
             }
-        } catch (Exception e) {
+        } catch (Exception e1) {
             String errorMessage = "(writeErrorLog) No player names were entered. Please be advised.";
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setHeaderText(errorMessage);
-            alert.setTitle("Player names ERROR");
-            alert.showAndWait();
-            writeErrorLog("resources/log/errorLog.txt", errorMessage); // The player name error will also be placed in a log.
+            Alert alert1 = new Alert(Alert.AlertType.WARNING);
+            alert1.setHeaderText(errorMessage);
+            alert1.setTitle("Player names ERROR");
+            alert1.showAndWait();
+            try {
+                writeErrorLog("resources/log/errorLog.txt", errorMessage); // The player name error will also be placed in a log.
+            } catch (IOException e2) {
+                Alert alert2 = new Alert(Alert.AlertType.ERROR);
+                alert2.setHeaderText("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
+                alert2.setTitle("File Handler ERROR");
+                alert2.showAndWait();
+            }
+
         }
     }
 }
