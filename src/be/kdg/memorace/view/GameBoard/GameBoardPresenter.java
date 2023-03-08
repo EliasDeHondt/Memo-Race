@@ -4,6 +4,7 @@ import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
 import javafx.scene.image.Image;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -57,20 +58,46 @@ public class GameBoardPresenter {
                             if (finalI == j) {
                                 this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
                                 firstClick = true;
+                                limitCards(); // Only 2 cards can be clicked at a time
                                 System.out.println("firsts: " + firstClick);
                             }
                         }
                         //}
-                        // Only 2 cards can be clicked at a time
-                        //limitCards();//////
+
+                        //////
                     });
                 }
-
                 //System.out.println(firstClick);
-                else if(firstClick == true){
-                    this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(e -> this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage()));
-                    System.out.println("2");
+
+            }
+//            int[] k = {1, 5, 9, 13};
+//            int[] j = {0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16};
+//            int[] l = new int[12];
+//            How to add to array l the elements of array j without the elements of k?
+            List<Integer> otherInts = new ArrayList<>();
+            //int[] l = new int[12];
+            int lIndex = 0;
+            for (int i = 0; i < gameBoardView.getCards().length+1; i++) {
+                boolean isInK = false;
+                for (int x : ints) {
+                    if (i == x) {
+                        isInK = true;
+                        break;
+                    }
                 }
+                if (!isInK) {
+                    otherInts.add(i);
+                    lIndex++;
+                }
+            }
+            System.out.println(otherInts);
+            for (int i = 0; i<otherInts.size();i++) {
+                int finalI = i;
+                //if(firstClick == true){
+                    this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(e -> this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage()));
+                    //limitCards();
+                    System.out.println("pos: " + finalI);
+                //}
             }
             System.out.println(firstClick);
             updateView();
@@ -157,7 +184,7 @@ public class GameBoardPresenter {
     }
     private void limitCards(){
         counter();
-        if(timesClicked >= 1){
+        if(timesClicked >= 2){
             this.gameBoardView.getGridGameBoard().setDisable(true);
             timesClicked = 0;
         }
