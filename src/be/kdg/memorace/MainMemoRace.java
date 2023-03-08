@@ -1,14 +1,17 @@
 package be.kdg.memorace;
 
-import static be.kdg.memorace.app.FileHandler.writeStartUpLog;
-import static be.kdg.memorace.app.MusicHandler.gameMusic;
+import static be.kdg.memorace.model.FileHandler.writeErrorLog;
+import static be.kdg.memorace.model.FileHandler.writeStartUpLog;
+import static be.kdg.memorace.model.MusicHandler.gameMusic;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import java.io.IOException;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -33,7 +36,24 @@ public class MainMemoRace extends Application {
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
         gameMusic(0.5);// Play game Music
-        writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
+
+        try  {
+            writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
+        } catch (IOException e1) {
+            String errorMessage = "(writeStartUpLog) Our apologies, there seem to be an issue with our file system handler. :-(";
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setHeaderText(errorMessage);
+            alert1.setTitle("File Handler ERROR");
+            alert1.showAndWait();
+            try {
+                writeErrorLog("resources/log/errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
+            } catch (IOException e2) {
+                Alert alert2 = new Alert(Alert.AlertType.ERROR);
+                alert2.setHeaderText("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
+                alert2.setTitle("File Handler ERROR");
+                alert2.showAndWait();
+            }
+        }
         primaryStage.show(); // Show Stage.
     }
 }

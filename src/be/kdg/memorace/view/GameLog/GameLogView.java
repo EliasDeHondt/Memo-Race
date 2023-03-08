@@ -7,8 +7,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import static be.kdg.memorace.app.FileHandler.readLog;
-
 /**
  * Van Elias De Hondt
  * 15/02/2023
@@ -50,20 +48,6 @@ public class GameLogView extends BorderPane {
         // Set TextArea (this.errorLog) in Right
         setRight(this.errorLog);
         setPrefSize(600,600);
-
-        // Read log in to (this.startUpLog)
-        String[] linesStartUp = readLog("resources/log/startUpLog.txt");
-        assert linesStartUp != null;
-        for (String line : linesStartUp) {
-            this.startUpLog.appendText(line + "\n");
-        }
-
-        // Read log in to (this.errorLog)
-        String[] linesError = readLog("resources/log/errorLog.txt");
-        assert linesError != null;
-        for (String line : linesError) {
-            this.errorLog.appendText(line + "\n");
-        }
     }
 
     MenuItem getMiBack() { // Get..
@@ -77,5 +61,11 @@ public class GameLogView extends BorderPane {
     }
     public Stage getCustomStage(){ // Get..
         return this.primaryStage;
+    }
+    TextArea getStartUpLog() { // Get
+        return this.startUpLog;
+    }
+    TextArea getErrorLog() { // Get
+        return this.errorLog;
     }
 }

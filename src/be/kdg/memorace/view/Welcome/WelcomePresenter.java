@@ -16,7 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
-import static be.kdg.memorace.app.MusicHandler.clickSound;
+import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
  * Vera Wise & Elias De Hondt
