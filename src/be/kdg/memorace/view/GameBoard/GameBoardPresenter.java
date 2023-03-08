@@ -50,27 +50,35 @@ public class GameBoardPresenter {
 
             List<Integer> ints = firstTurnA();
             System.out.println("ints: " + ints);
-            for (int i: ints) {
+            for (int i = 0; i< gameBoardView.getCards().length;i++) {
                 int finalI = i;
                 this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
                     //clickSound(); // Play sound when you click the button
-                    this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
                     System.out.println("fi : " + finalI);
+                    System.out.println("llafjlkajl : " + ints);
+                    for (int j: ints) {
+                        if(finalI == j){
+                            this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
+                        }
+                    }
+
                     //firstTurnA();
                     // Only 2 cards can be clicked at a time
-                    limitCards();
-                   // ints.clear();
-                    if(counter() == 2){
-                        for (int in: ints) {
-                            this.gameBoardView.getEmptyCards()[ints.get(in)].setDisable(true);
-                        }
-                        ints.clear();/////////////
-                        System.out.println(ints);
-                    }
+                    //limitCards();
+//                   // ints.clear();
+//                    if(counter() == 2){
+//                        for (int in: ints) {
+//                            this.gameBoardView.getEmptyCards()[ints.get(in)].setDisable(true);
+//                        }
+//                        ints.clear();/////////////
+//                        System.out.println("ints end: " + ints);
+//                    }
+//                    mouseEvent.consume();
                 });
+
             }
             updateView();
-
+            //this.gameBoardView.getGridGameBoard().setDisable(true);
             //System.out.println(ints);
         });
 
