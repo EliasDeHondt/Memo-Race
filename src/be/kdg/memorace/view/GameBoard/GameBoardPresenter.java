@@ -64,7 +64,7 @@ public class GameBoardPresenter {
 
                     //firstTurnA();
                     // Only 2 cards can be clicked at a time
-                    //limitCards();
+                    limitCards();
 //                   // ints.clear();
 //                    if(counter() == 2){
 //                        for (int in: ints) {
@@ -182,7 +182,7 @@ public class GameBoardPresenter {
     }
     private void limitCards(){
         counter();
-        if(timesClicked >= 2){
+        if(timesClicked >= 1){
             this.gameBoardView.getGridGameBoard().setDisable(true);
             timesClicked = 0;
         }
