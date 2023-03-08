@@ -29,6 +29,7 @@ public class WelcomeView extends GridPane {
         this.initialiseNodes();
         this.layoutNodes();
     }
+
     // Methods
     public void initialiseNodes() {
         this.logo = new Image("/question_mark.png");

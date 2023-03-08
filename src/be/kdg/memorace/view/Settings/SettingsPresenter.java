@@ -23,6 +23,7 @@ public class SettingsPresenter {
         this.settingsView = settingsView;
         this.addEventHandlers();
     }
+
     // Methods
     private void addEventHandlers() {
         // Action-> [Back (welcomeView)] (getMiBack)

@@ -17,6 +17,7 @@ import java.util.List;
  * 8/12/2022
  */
 public class FileHandler {
+
     // Methods
     public static String[] readLog(String url) { // Read
         try {

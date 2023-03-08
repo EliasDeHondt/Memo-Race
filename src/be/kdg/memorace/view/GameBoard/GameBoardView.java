@@ -32,6 +32,7 @@ public class GameBoardView extends BorderPane {
         this.initialiseNodes();
         this.layoutNodes(cardTheme);
     }
+
     // Methods
     public void initialiseNodes() {
         this.playerName = new Label();

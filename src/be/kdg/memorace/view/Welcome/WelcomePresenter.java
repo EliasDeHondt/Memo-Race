@@ -32,6 +32,7 @@ public class WelcomePresenter {
         this.welcomeView = welcomeView;
         this.addEventHandlers();
     }
+
     // Methods
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)

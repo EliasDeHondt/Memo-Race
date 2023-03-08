@@ -57,6 +57,7 @@ public class AboutView extends BorderPane {
         BorderPane.setMargin(this.ok, new Insets(10, 0, 0, 0));
         setBottom(this.ok);
     }
+
     Button getOk() {
         return this.ok;
     }

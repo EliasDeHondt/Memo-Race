@@ -25,6 +25,7 @@ public class NewGamePresenter {
         this.newGameView = newGameView;
         this.addEventHandlers();
     }
+
     // Methods
     private void addEventHandlers() {
         // Action-> [Back (welcomeView)] (getMiBack)

@@ -21,6 +21,7 @@ public class WonView extends GridPane {
         this.initialiseNodes();
         this.layoutNodes();
     }
+
     // Methods
     public void initialiseNodes() {
         this.playerName = new Label();

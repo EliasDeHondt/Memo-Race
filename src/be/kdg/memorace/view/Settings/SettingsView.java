@@ -29,6 +29,7 @@ public class SettingsView extends BorderPane {
         this.initialiseNodes();
         this.layoutNodes();
     }
+
     // Methods
     public void initialiseNodes() {
         this.miBack = new MenuItem("Back");

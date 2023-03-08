@@ -15,6 +15,7 @@ import javafx.stage.Stage;
  * 08/12/2022
  */
 public class MainMemoRace extends Application {
+
     // Methods
     public static void main(String[] args) { // Main
         Application.launch(args);

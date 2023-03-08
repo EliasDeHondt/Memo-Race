@@ -29,6 +29,7 @@ public class Memorace {
         this.volumeBackground = 0.5; // default 50%
         this.volumeButton = 1.0; // default 100%
     }
+
     // Methods
     public void setPawnPosition(int player){
         this.pawns.get(player).setPosition(this.die.getSide());

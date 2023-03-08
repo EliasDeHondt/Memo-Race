@@ -21,6 +21,7 @@ public class GameLogPresenter {
         this.gameLogView = gameLogView;
         this.addEventHandlers();
     }
+
     // Methods
     private void addEventHandlers() {
         // Action-> [Back (welcomeView)] (getMiBack)

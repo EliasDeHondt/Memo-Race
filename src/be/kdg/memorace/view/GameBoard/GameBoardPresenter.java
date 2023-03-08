@@ -28,6 +28,7 @@ public class GameBoardPresenter {
         this.updateView();
         this.gameBoardView.getDieImg().setImage(new Image("/die_0.png"));
     }
+
     // Methods
     private void addEventHandlers() {
         this.gameBoardView.makePath();

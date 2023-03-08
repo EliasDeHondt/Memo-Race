@@ -32,6 +32,7 @@ public class NewGameView extends BorderPane {
         this.initialiseNodes();
         this.layoutNodes();
     }
+
     // Methods
     public void initialiseNodes() {
         this.miBack = new MenuItem("Back");

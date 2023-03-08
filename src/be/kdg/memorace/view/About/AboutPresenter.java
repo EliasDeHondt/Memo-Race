@@ -18,6 +18,7 @@ public class AboutPresenter {
         this.aboutView = aboutView;
         this.addEventHandlers();
     }
+
     // Methods
     private void addEventHandlers() {
         this.aboutView.getOk().setOnAction(event -> {
