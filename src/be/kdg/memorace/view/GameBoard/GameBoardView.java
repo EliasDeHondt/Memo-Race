@@ -23,7 +23,7 @@ public class GameBoardView extends BorderPane {
     private ImageView[] cards;
     private ImageView[] emptyCards;
     private Image[] die;
-    private Button dieButton;
+    private Button rollButton;
     private ImageView dieImg;
     private Timer timer;
     private GridPane gridGameBoard;
@@ -40,7 +40,7 @@ public class GameBoardView extends BorderPane {
         this.cards = new ImageView[16];
         this.emptyCards = new ImageView[16];
         this.die = new Image[7];
-        this.dieButton = new Button("roll");
+        this.rollButton = new Button("roll");
         this.dieImg = new ImageView();
         this.timer = new Timer(this.gameTime); // Set Game Time to (this.timer)
         this.gridGameBoard = new GridPane(); // Making new GridPane (CENTER)
@@ -106,9 +106,9 @@ public class GameBoardView extends BorderPane {
 
         BorderPane buttom = new BorderPane(); // Making new BorderPane (BUTTOM)
         buttom.setId("background"); // Set CSS background
-        this.dieButton.setId("button"); // Set CSS button
+        this.rollButton.setId("button"); // Set CSS button
         setBottom(buttom); // Set (buttom) in Buttom
-        buttom.setRight(this.dieButton); // Set (this.click) Right in buttom
+        buttom.setRight(this.rollButton); // Set (this.click) Right in buttom
         buttom.setLeft(this.dieImg); // Set (this.dieSidesSides) Left in buttom
 
         this.timer.start(); // Start Game Time
@@ -206,8 +206,8 @@ public class GameBoardView extends BorderPane {
         }
         return ints;
     }
-    Button getDieButton() { // Get..
-        return this.dieButton;
+    Button getRollButton() { // Get..
+        return this.rollButton;
     }
     ImageView getDieImg() { // Get..
         return this.dieImg;

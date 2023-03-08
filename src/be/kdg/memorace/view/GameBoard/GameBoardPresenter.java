@@ -34,7 +34,7 @@ public class GameBoardPresenter {
         this.gameBoardView.makePath();
         this.gameBoardView.makeCards();
 
-        this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
+        this.gameBoardView.getRollButton().setOnAction(actionEvent -> {
             clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             // Roll the dice and place the pawn
@@ -89,7 +89,7 @@ public class GameBoardPresenter {
                 //limitCards();
 
                 if(timesClicked < 2){
-                    this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
+                    this.gameBoardView.getRollButton().setOnAction(actionEvent -> {
                         //clickSound(); // Play sound when you click the button
 
                         // Roll the dice and place the pawn
