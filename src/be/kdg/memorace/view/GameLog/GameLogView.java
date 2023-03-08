@@ -7,8 +7,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import static be.kdg.memorace.app.FileHandler.readLog;
-
 /**
  * Van Elias De Hondt
  * 15/02/2023

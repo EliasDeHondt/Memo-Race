@@ -6,8 +6,7 @@ import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;
 import javafx.application.Platform;
 
-import static be.kdg.memorace.app.MusicHandler.clickSound;
-import static be.kdg.memorace.app.MusicHandler.gameMusic;
+import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
  * Van Elias De Hondt

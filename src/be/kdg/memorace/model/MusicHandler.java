@@ -1,4 +1,4 @@
-package be.kdg.memorace.app;
+package be.kdg.memorace.model;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;

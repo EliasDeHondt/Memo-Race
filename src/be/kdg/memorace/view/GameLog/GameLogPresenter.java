@@ -8,9 +8,9 @@ import javafx.scene.control.Alert;
 
 import java.io.IOException;
 
-import static be.kdg.memorace.app.FileHandler.readLog;
-import static be.kdg.memorace.app.FileHandler.writeErrorLog;
-import static be.kdg.memorace.app.MusicHandler.clickSound;
+import static be.kdg.memorace.model.FileHandler.readLog;
+import static be.kdg.memorace.model.FileHandler.writeErrorLog;
+import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
  * Van Elias De Hondt

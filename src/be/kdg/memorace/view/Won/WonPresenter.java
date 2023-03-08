@@ -5,7 +5,7 @@ import javafx.scene.control.Alert;
 
 import java.io.IOException;
 
-import static be.kdg.memorace.app.FileHandler.writePlayersLog;
+import static be.kdg.memorace.model.FileHandler.writePlayersLog;
 
 /**
  * Van Elias De Hondt

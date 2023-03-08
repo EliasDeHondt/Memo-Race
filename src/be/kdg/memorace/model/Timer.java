@@ -1,4 +1,4 @@
-package be.kdg.memorace.app;
+package be.kdg.memorace.model;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -32,9 +32,5 @@ public class Timer {
     public void start() {
         this.startTime = System.currentTimeMillis();
         this.timeline.play();
-    }
-
-    public void stop() {
-        this.timeline.stop();
     }
 }

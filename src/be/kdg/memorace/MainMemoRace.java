@@ -1,8 +1,8 @@
 package be.kdg.memorace;
 
-import static be.kdg.memorace.app.FileHandler.writeErrorLog;
-import static be.kdg.memorace.app.FileHandler.writeStartUpLog;
-import static be.kdg.memorace.app.MusicHandler.gameMusic;
+import static be.kdg.memorace.model.FileHandler.writeErrorLog;
+import static be.kdg.memorace.model.FileHandler.writeStartUpLog;
+import static be.kdg.memorace.model.MusicHandler.gameMusic;
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.WelcomePresenter;
 import be.kdg.memorace.view.Welcome.WelcomeView;

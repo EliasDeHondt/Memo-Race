@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static be.kdg.memorace.app.MusicHandler.clickSound;
+import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
  * Van Elias De Hondt
