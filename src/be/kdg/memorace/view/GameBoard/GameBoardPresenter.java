@@ -34,11 +34,6 @@ public class GameBoardPresenter {
         this.gameBoardView.makePath();
         this.gameBoardView.makeCards();
 
-        //boolean a = false;
-        //do {
-            //chooseCard();
-        //}while (!a);
-
         this.gameBoardView.getDieButton().setOnAction(actionEvent -> {
             clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
@@ -54,52 +49,19 @@ public class GameBoardPresenter {
                 int finalI = i;
                 this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
                     //clickSound(); // Play sound when you click the button
-                    System.out.println("fi : " + finalI);
-                    System.out.println("llafjlkajl : " + ints);
+
                     for (int j: ints) {
                         if(finalI == j){
                             this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
                         }
                     }
-
-                    //firstTurnA();
                     // Only 2 cards can be clicked at a time
                     limitCards();
-//                   // ints.clear();
-//                    if(counter() == 2){
-//                        for (int in: ints) {
-//                            this.gameBoardView.getEmptyCards()[ints.get(in)].setDisable(true);
-//                        }
-//                        ints.clear();/////////////
-//                        System.out.println("ints end: " + ints);
-//                    }
-//                    mouseEvent.consume();
                 });
 
             }
             updateView();
-            //this.gameBoardView.getGridGameBoard().setDisable(true);
-            //System.out.println(ints);
         });
-
-        //int[] ints = this.gameBoardView.getC(model.GetValidCardsIDs(model.getPawn(model.getPlayerID()-1).getPosition()));
-        ///System.out.println(ints);
-
-//        for (int i = 0; i < 16; i++) {
-//            int finalI = i;
-//            // Only click row/column of Die number
-//            //if(i < 4){
-//                this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
-//                    //clickSound(); // Play sound when you click the button
-//                    this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
-//
-//                    // Only 2 cards can be clicked at a time
-//                    //limitCards();
-//                });
-//            //}
-//
-//        }
-
     }
     private void firstTurn(){
         List<Integer> newC = model.GetValidCardsIDs(model.getPawn(model.getPlayerID()-1).getPosition());
