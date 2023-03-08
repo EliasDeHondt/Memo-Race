@@ -24,7 +24,7 @@ public class MainMemoRace extends Application {
         Application.launch(args);
     }
     @Override
-    public void start(Stage primaryStage) throws IOException { // Start
+    public void start(Stage primaryStage) { // Start
         Memorace model = new Memorace(); // Making Model(Memorace.class).
         WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
         new WelcomePresenter(model, welcomeView); // Making Presenter (WelcomePresenter.class).
@@ -36,15 +36,23 @@ public class MainMemoRace extends Application {
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
         gameMusic(0.5);// Play game Music
-        try  { // writer.close();
+
+        try  {
             writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
-        } catch (IOException e) {
+        } catch (IOException e1) {
             String errorMessage = "(writeStartUpLog) Our apologies, there seem to be an issue with our file system handler. :-(";
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(errorMessage);
-            alert.setTitle("File Handler ERROR");
-            alert.showAndWait();
-            writeErrorLog("resources/log/errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setHeaderText(errorMessage);
+            alert1.setTitle("File Handler ERROR");
+            alert1.showAndWait();
+            try {
+                writeErrorLog("resources/log/errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
+            } catch (IOException e2) {
+                Alert alert2 = new Alert(Alert.AlertType.ERROR);
+                alert2.setHeaderText("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
+                alert2.setTitle("File Handler ERROR");
+                alert2.showAndWait();
+            }
         }
         primaryStage.show(); // Show Stage.
     }
