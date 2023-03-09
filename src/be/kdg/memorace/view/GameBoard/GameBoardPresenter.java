@@ -43,38 +43,95 @@ public class GameBoardPresenter {
 
             this.gameBoardView.getGridGameBoard().setDisable(false);
             this.gameBoardView.makeAllCardsNotVisible();
+/*
+            ImageView[] imageViews = new ImageView[numImages];
+            boolean[] clicked = new boolean[numImages];
+
+            for (int i = 0; i < numImages; i++) {
+                ImageView imageView = new ImageView(new Image("your-image-file.png"));
+                imageView.setOnMouseClicked(event -> {
+                    if (!clicked[i]) {
+                        // handle the mouse click event here
+                        System.out.println("Image " + i + " clicked!");
+                        clicked[i] = true;
+                    }
+                });
+                imageViews[i] = imageView;
+            }
+*/
+            boolean[] clicked = new boolean[4];
+            final boolean[] fullCardClicked = {false};
 
             List<Integer> ints = firstTurnA();
             System.out.println("ints: " + ints);
             firstClick = false;
-            for (int i = 0; i< gameBoardView.getCards().length;i++) {
+            boolean b = first(ints);
+
+            /*for (int i = 0; i< gameBoardView.getCards().length;i++) {
                 int finalI = i;
-                if(firstClick == false){
+                //if(!clicked[0] && !fullCardClicked[0]) {
                     this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
                         //clickSound(); // Play sound when you click the button
 
-                        //while(b == false) {
                         for (int j : ints) {
                             if (finalI == j) {
                                 this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
                                 firstClick = true;
-                                limitCards(); // Only 2 cards can be clicked at a time
+                                //limitCards(); // Only 2 cards can be clicked at a time
                                 System.out.println("firsts: " + firstClick);
+                                clicked[0] = true;
+
                             }
                         }
-                        //}
 
                         //////
                     });
-                }
+               // }
                 //System.out.println(firstClick);
 
+            }*/
+
+            List<Integer> otherInts = new ArrayList<>();
+            //int[] l = new int[12];
+            int lIndex = 0;
+            for (int i = 0; i < gameBoardView.getCards().length+1; i++) {
+                boolean isInK = false;
+                for (int x : ints) {
+                    if (i == x) {
+                        isInK = true;
+                        break;
+                    }
+                }
+                if (!isInK) {
+                    otherInts.add(i);
+                    lIndex++;
+                }
             }
+            System.out.println("clicked " + clicked[0]);
+            if(b){
+                System.out.println("faddaf: " + firstClick);
+                for (int i = 0; i<otherInts.size();i++) {
+                    int finalI = i;
+                    if (clicked[0] && !fullCardClicked[0]) {
+                        this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(e -> {
+                            this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
+                            clicked[0] = false;
+                            fullCardClicked[0] = true;
+                        });
+
+                    }
+            }
+
+                //limitCards();
+                ///System.out.println("pos: " + finalI);
+                //}
+            }
+
 //            int[] k = {1, 5, 9, 13};
 //            int[] j = {0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16};
 //            int[] l = new int[12];
 //            How to add to array l the elements of array j without the elements of k?
-            List<Integer> otherInts = new ArrayList<>();
+           /* List<Integer> otherInts = new ArrayList<>();
             //int[] l = new int[12];
             int lIndex = 0;
             for (int i = 0; i < gameBoardView.getCards().length+1; i++) {
@@ -94,12 +151,12 @@ public class GameBoardPresenter {
             for (int i = 0; i<otherInts.size();i++) {
                 int finalI = i;
                 //if(firstClick == true){
-                    this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(e -> this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage()));
+                    //this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(e -> this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage()));
                     //limitCards();
                     System.out.println("pos: " + finalI);
                 //}
             }
-            System.out.println(firstClick);
+            System.out.println(firstClick);*/
             updateView();
         });
     }
@@ -112,6 +169,33 @@ public class GameBoardPresenter {
         List<Integer> newC = model.GetValidCardsIDs(model.getPawn(model.getPlayerID()-1).getPosition());
         System.out.println(newC);
         return newC;
+    }
+    private boolean first(List<Integer> ints){
+        for (int i = 0; i< gameBoardView.getCards().length;i++) {
+            int finalI = i;
+            //if(!clicked[0] && !fullCardClicked[0]) {
+            this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
+                //clickSound(); // Play sound when you click the button
+
+                for (int j : ints) {
+                    if (finalI == j) {
+                        this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
+                        firstClick = true;
+                        //limitCards(); // Only 2 cards can be clicked at a time
+                        System.out.println("firsts: " + firstClick);
+
+                    }
+                }
+
+                //////
+            });
+            // }
+            //System.out.println(firstClick);
+            if(firstClick){
+                return true;
+            }
+        }
+        return false;
     }
     private void chooseCard(){
         AtomicBoolean a = new AtomicBoolean(false);
