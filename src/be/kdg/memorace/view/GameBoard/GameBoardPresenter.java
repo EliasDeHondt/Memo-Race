@@ -2,7 +2,9 @@ package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
+import javafx.event.EventHandler;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,29 +69,31 @@ public class GameBoardPresenter {
             firstClick = false;
             boolean b = first(ints);
 
-            /*for (int i = 0; i< gameBoardView.getCards().length;i++) {
+            for (int i = 0; i< gameBoardView.getCards().length;i++) {
                 int finalI = i;
                 //if(!clicked[0] && !fullCardClicked[0]) {
-                    this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
-                        //clickSound(); // Play sound when you click the button
+                    this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent mouseEvent) {
+                            //clickSound(); // Play sound when you click the button
 
-                        for (int j : ints) {
-                            if (finalI == j) {
-                                this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
-                                firstClick = true;
-                                //limitCards(); // Only 2 cards can be clicked at a time
-                                System.out.println("firsts: " + firstClick);
-                                clicked[0] = true;
+                            for (int j : ints) {
+                                if (finalI == j) {
+                                    gameBoardView.getEmptyCards()[finalI].setImage(gameBoardView.getCards()[finalI].getImage());
+                                    firstClick = true;
+                                    //limitCards(); // Only 2 cards can be clicked at a time
+                                    System.out.println("firsts: " + firstClick);
+                                    clicked[0] = true;
 
+                                }
                             }
                         }
-
                         //////
                     });
                // }
                 //System.out.println(firstClick);
 
-            }*/
+            }
 
             List<Integer> otherInts = new ArrayList<>();
             //int[] l = new int[12];
@@ -108,7 +112,7 @@ public class GameBoardPresenter {
                 }
             }
             System.out.println("clicked " + clicked[0]);
-            if(b){
+            if(firstClick){
                 System.out.println("faddaf: " + firstClick);
                 for (int i = 0; i<otherInts.size();i++) {
                     int finalI = i;
