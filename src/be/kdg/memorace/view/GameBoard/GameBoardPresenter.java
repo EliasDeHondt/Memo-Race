@@ -217,7 +217,7 @@ public class GameBoardPresenter {
         }
     }
     private int counter(){
-        timesClicked = timesClicked +1;
+        timesClicked = timesClicked + 1;
         return timesClicked;
     }
     private void updateView() {
@@ -230,6 +230,5 @@ public class GameBoardPresenter {
             //String naam = String.valueOf(i);
             model.setCards(i,gameBoardView.getCards()[i]);
         }
-
     }
 }
