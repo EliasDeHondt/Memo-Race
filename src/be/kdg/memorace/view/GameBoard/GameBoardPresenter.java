@@ -45,33 +45,30 @@ public class GameBoardPresenter {
 
             this.gameBoardView.getGridGameBoard().setDisable(false);
             this.gameBoardView.makeAllCardsNotVisible();
-/*
-            ImageView[] imageViews = new ImageView[numImages];
-            boolean[] clicked = new boolean[numImages];
 
-            for (int i = 0; i < numImages; i++) {
-                ImageView imageView = new ImageView(new Image("your-image-file.png"));
-                imageView.setOnMouseClicked(event -> {
-                    if (!clicked[i]) {
-                        // handle the mouse click event here
-                        System.out.println("Image " + i + " clicked!");
-                        clicked[i] = true;
-                    }
-                });
-                imageViews[i] = imageView;
-            }
-*/
             boolean[] clicked = new boolean[4];
             final boolean[] fullCardClicked = {false};
 
             List<Integer> ints = firstTurnA();
             System.out.println("ints: " + ints);
             firstClick = false;
-            boolean b = first(ints);
-
+            List<Integer> otherInts = new ArrayList<>();
+            int lIndex = 0;
+            for (int i = 0; i < gameBoardView.getCards().length+1; i++) {
+                boolean isInK = false;
+                for (int x : ints) {
+                    if (i == x) {
+                        isInK = true;
+                        break;
+                    }
+                }
+                if (!isInK) {
+                    otherInts.add(i);
+                    lIndex++;
+                }
+            }
             for (int i = 0; i< gameBoardView.getCards().length;i++) {
                 int finalI = i;
-                //if(!clicked[0] && !fullCardClicked[0]) {
                     this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent mouseEvent) {
@@ -81,20 +78,30 @@ public class GameBoardPresenter {
                                 if (finalI == j) {
                                     gameBoardView.getEmptyCards()[finalI].setImage(gameBoardView.getCards()[finalI].getImage());
                                     firstClick = true;
-                                    //limitCards(); // Only 2 cards can be clicked at a time
                                     System.out.println("firsts: " + firstClick);
                                     clicked[0] = true;
 
                                 }
                             }
+                            System.out.println(clicked[0]);
+                            if(clicked[0] == true){
+                                for (int i = 0; i<otherInts.size();i++) {
+                                    int finalI = i;
+                                    if (clicked[0] && !fullCardClicked[0]) {
+                                        gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(e -> {
+                                            gameBoardView.getEmptyCards()[finalI].setImage(gameBoardView.getCards()[finalI].getImage());
+                                            limitCards();// Only 2 cards can be clicked at a time
+                                            clicked[0] = false;
+                                            fullCardClicked[0] = true;
+                                        });
+
+                                    }
+                                }
+                            }
                         }
-                        //////
                     });
-               // }
-                //System.out.println(firstClick);
-
             }
-
+            /*
             List<Integer> otherInts = new ArrayList<>();
             //int[] l = new int[12];
             int lIndex = 0;
@@ -272,7 +279,7 @@ public class GameBoardPresenter {
     }
     private void limitCards(){
         counter();
-        if(timesClicked >= 2){
+        if(timesClicked >= 1){
             this.gameBoardView.getGridGameBoard().setDisable(true);
             timesClicked = 0;
         }
