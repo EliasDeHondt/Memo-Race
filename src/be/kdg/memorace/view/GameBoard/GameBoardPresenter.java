@@ -7,11 +7,13 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import static be.kdg.memorace.model.MusicHandler.clickSound;
@@ -72,6 +74,7 @@ public class GameBoardPresenter {
             for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
                 int finalI = i;
                 this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    ImageView imageView1;
                     @Override
                     public void handle(MouseEvent mouseEvent) {
 
@@ -83,7 +86,7 @@ public class GameBoardPresenter {
                                 firstClick = true;
                                 System.out.println("firsts: " + firstClick);
                                 clicked[0] = true;
-
+                                imageView1 = gameBoardView.getEmptyCards()[finalI];
                             }
                         }
                         System.out.println(clicked[0]);
@@ -94,6 +97,14 @@ public class GameBoardPresenter {
                                     gameBoardView.getEmptyCards()[finalI1].setImage(gameBoardView.getCards()[finalI1].getImage());
                                     limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false;
+                                    ImageView imageView2 = gameBoardView.getEmptyCards()[finalI1];
+                                    System.out.println("imageView1: " + imageView1.getImage().getUrl());
+                                    System.out.println("imageView2: " + imageView2.getImage().getUrl());
+                                    if (Objects.equals(imageView1.getImage().getUrl(), imageView2.getImage().getUrl())) {
+                                        System.out.println("The images are the same.");
+                                    } else {
+                                        System.out.println("The images are different.");
+                                    }
                                     gameBoardView.getRollButton().setDisable(false);
                                 });
                             }
