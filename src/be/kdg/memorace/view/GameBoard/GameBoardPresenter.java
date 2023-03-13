@@ -5,7 +5,9 @@ import be.kdg.memorace.model.Player;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.EventHandler;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
@@ -63,72 +65,42 @@ public class GameBoardPresenter {
             this.gameBoardView.makeAllCardsNotVisible();
 
             boolean[] clicked = new boolean[4];
-            final boolean[] fullCardClicked = {false};
 
-            List<Integer> ints = firstTurnA();
-            List<Integer> otherInts = secondTurn(ints);
+            List<Integer> ints = this.model.GetValidCardsIDs(this.model.getPawn(this.model.getPlayerID()-1).getPosition());
             firstClick = false;
 
             for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
                 int finalI = i;
-                this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
+                this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
 
-                    //clickSound(); // Play sound when you click the button
+                        //clickSound(); // Play sound when you click the button
 
-                    for (int j : ints) {
-                        if (finalI == j) {
-                            this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
-                            firstClick = true;
-                            System.out.println("firsts: " + firstClick);
-                            clicked[0] = true;
+                        for (int j : ints) {
+                            if (finalI == j) {
+                                gameBoardView.getEmptyCards()[finalI].setImage(gameBoardView.getCards()[finalI].getImage());
+                                firstClick = true;
+                                System.out.println("firsts: " + firstClick);
+                                clicked[0] = true;
 
+                            }
                         }
-                    }
-                    System.out.println(clicked[0]);
-
-                    if(clicked[0]){
-                        for (int i1 = 0; i1 <otherInts.size(); i1++) {
-                            int finalI1 = i1;
-                            if (clicked[0] && !fullCardClicked[0]) {
+                        System.out.println(clicked[0]);
+                        if(clicked[0]){
+                            for (int i1 = 0; i1 < gameBoardView.getCards().length; i1++) {
+                                int finalI1 = i1;
                                 gameBoardView.getEmptyCards()[finalI1].setOnMouseClicked(e -> {
                                     gameBoardView.getEmptyCards()[finalI1].setImage(gameBoardView.getCards()[finalI1].getImage());
                                     limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false;
-                                    fullCardClicked[0] = true;
                                 });
-
                             }
-                        }
-                    }
+                        }}
                 });
             }
             updateView();
         });
-    }
-
-    private List<Integer> firstTurnA(){
-        List<Integer> newC = this.model.GetValidCardsIDs(this.model.getPawn(this.model.getPlayerID()-1).getPosition());
-        System.out.println(newC);
-        return newC;
-    }
-
-    private List<Integer> secondTurn(List<Integer> ints){
-        List<Integer> otherInts = new ArrayList<>();
-        int lIndex = 0;
-        for (int i = 0; i < this.gameBoardView.getCards().length+1; i++) {
-            boolean isInK = false;
-            for (int x : ints) {
-                if (i == x) {
-                    isInK = true;
-                    break;
-                }
-            }
-            if (!isInK) {
-                otherInts.add(i);
-                lIndex++;
-            }
-        }
-        return otherInts;
     }
     private boolean first(List<Integer> ints){
         for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
@@ -204,7 +176,7 @@ public class GameBoardPresenter {
         }
 //        System.out.println(a.get());
 //        return d.get();
-       // return true;
+        // return true;
         System.out.println("last: " + a.get());
     }
 
