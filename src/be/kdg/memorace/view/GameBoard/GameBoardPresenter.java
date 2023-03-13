@@ -98,13 +98,7 @@ public class GameBoardPresenter {
                                     limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false;
                                     ImageView imageView2 = gameBoardView.getEmptyCards()[finalI1];
-                                    System.out.println("imageView1: " + imageView1.getImage().getUrl());
-                                    System.out.println("imageView2: " + imageView2.getImage().getUrl());
-                                    if (Objects.equals(imageView1.getImage().getUrl(), imageView2.getImage().getUrl())) {
-                                        System.out.println("The images are the same.");
-                                    } else {
-                                        System.out.println("The images are different.");
-                                    }
+                                    model.compare2Cards(imageView1,imageView2);
                                     gameBoardView.getRollButton().setDisable(false);
                                 });
                             }
@@ -114,84 +108,6 @@ public class GameBoardPresenter {
             updateView();
         });
     }
-    private boolean first(List<Integer> ints){
-        for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
-            int finalI = i;
-            //if(!clicked[0] && !fullCardClicked[0]) {
-            this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
-                //clickSound(); // Play sound when you click the button
-
-                for (int j : ints) {
-                    if (finalI == j) {
-                        this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
-                        firstClick = true;
-                        //limitCards(); // Only 2 cards can be clicked at a time
-                        System.out.println("firsts: " + firstClick);
-
-                    }
-                }
-
-                //////
-            });
-            // }
-            //System.out.println(firstClick);
-            if(firstClick){
-                return true;
-            }
-        }
-        return false;
-    }
-    private void chooseCard(){
-        AtomicBoolean a = new AtomicBoolean(false);
-        for (int i = 0; i < 16; i++) {
-            int finalI = i;
-
-            // AtomicBoolean d = new AtomicBoolean(false);
-
-            // Only click row/column of Die number
-            //if(i < 4){
-            this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
-                //clickSound(); // Play sound when you click the button
-                //Make the image visible
-                this.gameBoardView.getEmptyCards()[finalI].setImage(this.gameBoardView.getCards()[finalI].getImage());
-
-
-                //limitCards(); // Only 2 cards can be clicked at a time
-
-                if(timesClicked < 2){
-                    this.gameBoardView.getRollButton().setOnAction(actionEvent -> {
-                        //clickSound(); // Play sound when you click the button
-
-                        this.play(); // Roll the dice and place the pawn
-
-                        this.gameBoardView.getGridGameBoard().setDisable(false);
-                        this.gameBoardView.makeAllCardsNotVisible();
-
-                        this.updateView();
-                    });
-                }
-
-
-//                System.out.println(a.get());
-//                a.set(true);
-//                System.out.println(a.get());
-//                boolean e = true;
-//                return e;
-            });
-            //}
-
-
-//            if(d.get()){
-//                return d.get();
-//            }
-
-        }
-//        System.out.println(a.get());
-//        return d.get();
-        // return true;
-        System.out.println("last: " + a.get());
-    }
-
     private void play() {
         Player player = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(player.getName());
@@ -199,15 +115,6 @@ public class GameBoardPresenter {
         this.model.setPawnPosition(this.model.currentPlayer(player));
         this.gameBoardView.returnPosition();
         this.gameBoardView.showPawn(this.model.getPawn(this.model.currentPlayer(player)).getPosition(), this.model.currentPlayer(player));
-    }
-
-    private int firstCard() {
-        this.model.getplayers();
-        return switch (this.model.getDie().getSide()) {
-            case 1, 2, 3, 5 -> 4;
-            case 4, 6 -> 1;
-            default -> 0;
-        };
     }
 
     private void limitCards() {
@@ -224,8 +131,6 @@ public class GameBoardPresenter {
 
         // put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
-            //String naam = String.valueOf((char)(i+65));
-            //String naam = String.valueOf(i);
             this.model.setCards(i,this.gameBoardView.getCards()[i]);
         }
     }

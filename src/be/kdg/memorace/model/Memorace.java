@@ -45,6 +45,16 @@ public class Memorace {
         }
         return current;
     }
+    public boolean compare2Cards(ImageView imageView1,ImageView imageView2){
+        Card card1 = new Card(imageView1);
+        Card card2 = new Card(imageView2);
+
+        if (card1.equals(card2)) {
+            System.out.println("yaaay");
+            return true;
+        } else return false;
+    }
+    //if (imageView1.getImage().getUrl().equals(imageView2.getImage().getUrl())) {
     public List<Integer> GetValidCardsIDs(int i) {
         // Gives the card to draw options based on the position.
         List<Integer> newCards = new ArrayList<>(this.cards.size());

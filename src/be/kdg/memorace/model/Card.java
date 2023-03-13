@@ -1,6 +1,8 @@
 package be.kdg.memorace.model;
 
 import javafx.scene.image.*;
+
+import java.util.Comparator;
 import java.util.Objects;
 import java.util.Random;
 
@@ -8,7 +10,7 @@ import java.util.Random;
  * Vera Wise & Elias De Hondt
  * 08/12/2022
  */
-public class Card{
+public class Card implements Comparator<Card> {
     // Attributes
     private ImageView type;
     // Constructors
@@ -21,16 +23,15 @@ public class Card{
         return type;
     }
 
-    public void setType(ImageView type) {
-        this.type = type;
+    @Override
+    public int compare(Card o1, Card o2) {
+        return o1.getType().getImage().getUrl().compareTo(o2.getType().getImage().getUrl());
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
         Card card = (Card) o;
-        return Objects.equals(type, card.type);
+        return this.getType().getImage().getUrl().compareTo(card.getType().getImage().getUrl()) == 0;
     }
 
     @Override
