@@ -57,7 +57,7 @@ public class GameBoardPresenter {
 
         this.gameBoardView.getRollButton().setOnAction(actionEvent -> {
             clickSound(this.model.getVolumeButton()); // Play sound when you click the button
-
+            this.gameBoardView.getRollButton().setDisable(true);
 
             this.play(); // Roll the dice and place the pawn
 
@@ -94,6 +94,7 @@ public class GameBoardPresenter {
                                     gameBoardView.getEmptyCards()[finalI1].setImage(gameBoardView.getCards()[finalI1].getImage());
                                     limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false;
+                                    gameBoardView.getRollButton().setDisable(false);
                                 });
                             }
                         }}
