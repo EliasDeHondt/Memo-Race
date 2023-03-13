@@ -54,6 +54,9 @@ public class Memorace {
             return true;
         } else return false;
     }
+    public void addCardToPlayer(ImageView imageView){
+        //players.get(0)
+    }
     //if (imageView1.getImage().getUrl().equals(imageView2.getImage().getUrl())) {
     public List<Integer> GetValidCardsIDs(int i) {
         // Gives the card to draw options based on the position.

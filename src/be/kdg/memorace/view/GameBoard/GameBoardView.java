@@ -138,7 +138,9 @@ public class GameBoardView extends BorderPane {
     }
     public void makeAllCardsNotVisible() {
         for (int i = 0; i < 16; i++) {
-            this.getEmptyCards()[i].setImage(new Image("/question_mark.png"));
+            if(this.getEmptyCards()[i].getImage() != null){
+                this.getEmptyCards()[i].setImage(new Image("/question_mark.png"));
+            }
         }
     }
 
