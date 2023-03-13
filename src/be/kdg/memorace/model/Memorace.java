@@ -18,6 +18,7 @@ public class Memorace {
     private double volumeBackground;
     private double volumeButton;
     private String cardTheme;
+    private Timer timer;
 
     // Constructors
     public Memorace() {
@@ -28,6 +29,7 @@ public class Memorace {
         this.cards = new HashMap<Integer, Card>();
         this.volumeBackground = 0.5; // default 50%
         this.volumeButton = 1.0; // default 100%
+        this.timer = new Timer();
     }
 
     // Methods
@@ -210,5 +212,8 @@ public class Memorace {
     }
     public String getCardTheme() { // Get..
         return this.cardTheme;
+    }
+    public Timer getTimer() { // Get..
+        return this.timer;
     }
 }

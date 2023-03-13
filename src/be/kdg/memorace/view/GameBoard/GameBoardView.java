@@ -1,6 +1,5 @@
 package be.kdg.memorace.view.GameBoard;
 
-import be.kdg.memorace.model.Timer; // I have not found an alternative
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -25,7 +24,7 @@ public class GameBoardView extends BorderPane {
     private Image[] die;
     private Button rollButton;
     private ImageView dieImg;
-    private Timer timer;
+//    private Timer timer;
     private GridPane gridGameBoard;
     // Constructors
     public GameBoardView(String cardTheme) { // Receives the theme of the cards as an extra.
@@ -43,7 +42,7 @@ public class GameBoardView extends BorderPane {
         this.die = new Image[7];
         this.rollButton = new Button("roll");
         this.dieImg = new ImageView();
-        this.timer = new Timer(this.gameTime); // Set Game Time to (this.timer)
+//        this.timer = new Timer(this.gameTime); // Set Game Time to (this.timer)
         this.gridGameBoard = new GridPane(); // Making new GridPane (CENTER)
         this.gridGameBoard.setId("background"); // Set CSS background
         setAlignment(gridGameBoard, Pos.CENTER); // Set (gridGameBoard) on CENTER.
@@ -112,7 +111,7 @@ public class GameBoardView extends BorderPane {
         buttom.setRight(this.rollButton); // Set (this.click) Right in buttom
         buttom.setLeft(this.dieImg); // Set (this.dieSidesSides) Left in buttom
 
-        this.timer.start(); // Start Game Time
+//        this.timer.start(); // Start Game Time
         buttom.setPadding(new Insets(10)); // Set padding for (buttom)
     }
     public void addGridPaneCards(){
@@ -224,5 +223,8 @@ public class GameBoardView extends BorderPane {
     }
     ImageView[] getEmptyCards(){ // Get..
         return emptyCards;
+    }
+    Label getGameTime() { // Get..
+        return this.gameTime;
     }
 }

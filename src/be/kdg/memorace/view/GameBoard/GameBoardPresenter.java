@@ -2,9 +2,11 @@ package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
-import javafx.event.EventHandler;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +20,11 @@ import static be.kdg.memorace.model.MusicHandler.clickSound;
  */
 public class GameBoardPresenter {
     // Attributes
-    private Memorace model;
-    private GameBoardView gameBoardView;
+    private final Memorace model;
+    private final GameBoardView gameBoardView;
     private int timesClicked;
     private boolean firstClick;
+    private Timeline stopwatchTimeline;
     // Constructors
     public GameBoardPresenter(Memorace model, GameBoardView gameBoardView) {
         this.model = model;
@@ -30,9 +33,26 @@ public class GameBoardPresenter {
         this.addEventHandlers();
         this.updateView();
         this.gameBoardView.getDieImg().setImage(new Image("/die_0.png"));
+        this.setupTimeline();
+        this.stopwatchTimeline.play();
+    }
+    // Methods
+    private void setupTimeline() {
+        stopwatchTimeline = new Timeline();
+        stopwatchTimeline.setCycleCount(Animation.INDEFINITE);
+        updateClockSpeed();
     }
 
-    // Methods
+    private void updateClockSpeed() {
+        stopwatchTimeline.getKeyFrames().clear();
+        stopwatchTimeline.getKeyFrames().add(new KeyFrame(
+                Duration.millis(this.model.getTimer().getTickDurationMillis()), event -> {
+            this.model.getTimer().tick();
+            updateView();
+        }));
+    }
+
+
     private void addEventHandlers() {
         this.gameBoardView.makePath();
         this.gameBoardView.makeCards();
@@ -218,14 +238,16 @@ public class GameBoardPresenter {
         return timesClicked;
     }
     private void updateView() {
-        int ogen = model.getDie().getSide();
-        gameBoardView.showDie(ogen);
+        int ogen = this.model.getDie().getSide();
+        this.gameBoardView.showDie(ogen);
 
         // put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
             //String naam = String.valueOf((char)(i+65));
             //String naam = String.valueOf(i);
-            model.setCards(i,gameBoardView.getCards()[i]);
+            this.model.setCards(i,this.gameBoardView.getCards()[i]);
         }
+
+        this.gameBoardView.getGameTime().setText(String.format("%02d:%02d:%02d",this.model.getTimer().getHours(),this.model.getTimer().getMinutes(),this.model.getTimer().getSeconds()));
     }
 }
