@@ -24,7 +24,6 @@ public class GameBoardView extends BorderPane {
     private Image[] die;
     private Button rollButton;
     private ImageView dieImg;
-//    private Timer timer;
     private GridPane gridGameBoard;
     // Constructors
     public GameBoardView(String cardTheme) { // Receives the theme of the cards as an extra.
@@ -42,10 +41,10 @@ public class GameBoardView extends BorderPane {
         this.die = new Image[7];
         this.rollButton = new Button("roll");
         this.dieImg = new ImageView();
-//        this.timer = new Timer(this.gameTime); // Set Game Time to (this.timer)
         this.gridGameBoard = new GridPane(); // Making new GridPane (CENTER)
         this.gridGameBoard.setId("background"); // Set CSS background
         setAlignment(gridGameBoard, Pos.CENTER); // Set (gridGameBoard) on CENTER.
+
         // Images, Loading the path.
         for (int i = 0; i < 17; i++) {
             this.path[i] = new ImageView(new Image("/path_" + i + ".png"));
@@ -110,11 +109,9 @@ public class GameBoardView extends BorderPane {
         setBottom(buttom); // Set (buttom) in Buttom
         buttom.setRight(this.rollButton); // Set (this.click) Right in buttom
         buttom.setLeft(this.dieImg); // Set (this.dieSidesSides) Left in buttom
-
-//        this.timer.start(); // Start Game Time
         buttom.setPadding(new Insets(10)); // Set padding for (buttom)
     }
-    public void addGridPaneCards(){
+    public void addGridPaneCards() {
         for (int i = 0; i < 4; i++) {
             gridGameBoard.add(this.cards[i],i+1,1);
             gridGameBoard.add(this.cards[i+4],i+1,2);
@@ -139,13 +136,13 @@ public class GameBoardView extends BorderPane {
             gridGameBoard.add(imageView[i+8],i-3,j+3);
         }
     }
-    public void makeAllCardsNotVisible(){
+    public void makeAllCardsNotVisible() {
         for (int i = 0; i < 16; i++) {
             this.getEmptyCards()[i].setImage(new Image("/question_mark.png"));
         }
     }
 
-    public void makePath(){
+    public void makePath() {
         // Set row 0. Example -> gridGameBoard.add(new ImageView(this.path1),1,0);
         for (int i = 0; i < 5; i++) {
             gridGameBoard.add(this.path[i],i,0);
@@ -166,30 +163,30 @@ public class GameBoardView extends BorderPane {
         }
     }
 
-    public void showPawn(int position,int player){
+    public void showPawn(int position,int player) {
         this.path[position].setImage(new Image("/pawn_" + (player+1) + ".png"));
     }
-    public void returnPosition(){
+    public void returnPosition() {
         for (int i = 0; i < 17; i++) {
             this.path[i].setImage(new Image("/path_" + i + ".png"));
         }
     }
-    public void showDie(int ogen){
-        switch (ogen) {
-            case 1 -> getDieImg().setImage(new Image("/die_1.png"));
-            case 2 -> getDieImg().setImage(new Image("/die_2.png"));
-            case 3 -> getDieImg().setImage(new Image("/die_3.png"));
-            case 4 -> getDieImg().setImage(new Image("/die_4.png"));
-            case 5 -> getDieImg().setImage(new Image("/die_5.png"));
-            case 6 -> getDieImg().setImage(new Image("/die_6.png"));
+    public void showDie(int side) {
+        switch (side) {
+            case 1 -> this.getDieImg().setImage(new Image("/die_1.png"));
+            case 2 -> this.getDieImg().setImage(new Image("/die_2.png"));
+            case 3 -> this.getDieImg().setImage(new Image("/die_3.png"));
+            case 4 -> this.getDieImg().setImage(new Image("/die_4.png"));
+            case 5 -> this.getDieImg().setImage(new Image("/die_5.png"));
+            case 6 -> this.getDieImg().setImage(new Image("/die_6.png"));
         }
     }
-    public void showValidCards(List<Integer> newC){
+    public void showValidCards(List<Integer> newC) {
         for (Integer i: newC) {
             this.getEmptyCards()[i].setImage(null);
         }
     }
-    public ImageView[] getValidCards(List<Integer> newC){
+    public ImageView[] getValidCards(List<Integer> newC) {
         ImageView[] nC = new ImageView[4];
         int j = 0;
         for (Integer i: newC) {
@@ -198,7 +195,7 @@ public class GameBoardView extends BorderPane {
         }
         return nC;
     }
-    public int[] getC(List<Integer> newC){
+    public int[] getC(List<Integer> newC) {
         int[] ints = new int[4];
         int j = 0;
         for (Integer i: newC) {

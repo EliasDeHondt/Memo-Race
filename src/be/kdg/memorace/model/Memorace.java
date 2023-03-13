@@ -1,7 +1,6 @@
 package be.kdg.memorace.model;
 
 import javafx.scene.image.ImageView;
-
 import java.util.*;
 
 /**
@@ -11,62 +10,37 @@ import java.util.*;
 public class Memorace {
     // Attributes
     private final List<Player> players;
-    private Die die;
-    private List<Pawn> pawns;
+    private final Die die;
+    private final List<Pawn> pawns;
     private int turn;
-    private Map<Integer, Card> cards;
+    private final Map<Integer, Card> cards;
     private double volumeBackground;
     private double volumeButton;
     private String cardTheme;
-    private Timer timer;
-
+    private final Timer timer;
     // Constructors
     public Memorace() {
         this.turn = 0;
         this.players = new LinkedList<>();  // Creates a new player list.
         this.die = new Die(); // Creates a new die.
         this.pawns = new LinkedList<>(); // Creates a new pawn.
-        this.cards = new HashMap<Integer, Card>();
+        this.cards = new HashMap<>();
         this.volumeBackground = 0.5; // default 50%
         this.volumeButton = 1.0; // default 100%
-        this.timer = new Timer();
+        this.timer = new Timer(); // Set timer
     }
-
     // Methods
-    public void setPawnPosition(int player){
-        this.pawns.get(player).setPosition(this.die.getSide());
-        //System.out.println("p ;" + player);
-    }
-    public void setPlayer(String playerName) { // Set..
-        this.players.add(new Player(playerName));
-    }
-
-    public void setPawn() {
-        this.pawns.add(new Pawn());
-    }
-
-    public List<Player> getplayers() { // Get..
-        return this.players;
-    }
-
-    public Player Turn(){
-        if (this.turn < this.players.size()) {
-            return this.players.get(this.turn++);
-        }
-        else{
+    public Player Turn() {
+        if (this.turn >= this.players.size()) {
             this.turn = 0;
-            return this.players.get(this.turn++);
         }
+        return this.players.get(this.turn++);
     }
-    public int getPlayerID(){
-        return this.turn;
-    }
-    public int currentPlayer(Player playe){
+    public int currentPlayer(Player playe) {
         int current = 1;
         for (int i = 0; i < getplayers().size(); i++) {
             if(playe.getName().equals(getplayers().get(i).getName())){
                 current = i;
-                //System.out.println(current);
             }
         }
         return current;
@@ -130,61 +104,6 @@ public class Memorace {
             return newCards;
         }
     }
-    /*
-    public void compare2Cards(Card kaart1, Card kaart2) {
-        for (int i = 0; i < this.getPlayer().size(); i++) {
-            if (kaart1.getType() == kaart2.getType()) {
-                System.out.println(kaart2.getX() + ", " + kaart2.getY());
-                //this.getPlayer().get(i).getCards()[i] = kaart1;
-                for (Card kaart : cards.values()) {
-                    if (kaart1 == kaart) {
-                        //this.printSpelerKaarten();
-                        kaart.setType(" ");
-                    }
-                }
-                for (Card kaart : cards.values()) {
-                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.setType(" ");
-                }
-                System.out.println(this); // PrintBoard
-            } else {
-                for (Card kaart : cards.values()) {
-                    if (kaart1.getX() == kaart.getX() && kaart1.getY() == kaart.getY()) kaart.turned();
-                }
-                for (Card kaart : cards.values()) {
-                    if (kaart2.getX() == kaart.getX() && kaart2.getY() == kaart.getY()) kaart.turned();
-                }
-            }
-        }
-    }
-    public Card getACard(int x, int y) {
-        // Gives a card back using the given x and y.
-        for (Card card : cards.values()) {
-            if (card.getY() == y && card.getX() == x) {
-                return card;
-            }
-        }
-        return null;
-    }
-    public Card turnChosenCard(int option, List<Card> newCards) {
-        newCards.get(0).getX();
-        switch (option) {
-            case 1:
-                getACard(newCards.get(0).getCardX(), newCards.get(0).getCardY()).turned();
-                return getACard(newCards.get(0).getCardX(), newCards.get(0).getCardY());
-            case 2:
-                getACard(newCards.get(1).getCardX(), newCards.get(1).getCardY()).turned();
-                return getACard(newCards.get(1).getCardX(), newCards.get(1).getCardY());
-            case 3:
-                getACard(newCards.get(2).getCardX(), newCards.get(2).getCardY()).turned();
-                return getACard(newCards.get(2).getCardX(), newCards.get(2).getCardY());
-            case 4:
-                getACard(newCards.get(3).getCardX(), newCards.get(3).getCardY()).turned();
-                return getACard(newCards.get(3).getCardX(), newCards.get(3).getCardY());
-            default:
-                return null;
-        }
-    }
-*/
     public Die getDie() { // Get..
         return this.die;
     }
@@ -215,5 +134,20 @@ public class Memorace {
     }
     public Timer getTimer() { // Get..
         return this.timer;
+    }
+    public void setPawnPosition(int player) { // Set..
+        this.pawns.get(player).setPosition(this.die.getSide());
+    }
+    public void setPlayer(String playerName) { // Set..
+        this.players.add(new Player(playerName));
+    }
+    public void setPawn() { // Set..
+        this.pawns.add(new Pawn());
+    }
+    public List<Player> getplayers() { // Get..
+        return this.players;
+    }
+    public int getPlayerID() { // Get..
+        return this.turn;
     }
 }

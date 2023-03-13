@@ -6,16 +6,18 @@ package be.kdg.memorace.model;
  */
 
 public class Timer {
+    // Attributes
     private static final int DURATION = 1000;
     private int hours;
     private int minutes;
     private int seconds;
-    private final int tickDurationMillis;
-
+    // Constructors
     public Timer() {
-        this.tickDurationMillis = DURATION;
+        this.hours = 0;
+        this.minutes = 0;
+        this.seconds = 0;
     }
-
+    // Methods
     public void tick() {
         this.seconds++;
         if (this.seconds == 60) {
@@ -27,18 +29,16 @@ public class Timer {
             }
         }
     }
-
     public int getHours() { // Get..
-        return hours;
+        return this.hours;
     }
     public int getMinutes() { // Get..
-        return minutes;
+        return this.minutes;
     }
     public int getSeconds() { // Get..
-        return seconds;
+        return this.seconds;
     }
-    public int getTickDurationMillis() { // Get..
-        return tickDurationMillis;
+    public int getDuration() { // Get..
+        return DURATION;
     }
-
 }

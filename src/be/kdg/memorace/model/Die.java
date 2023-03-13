@@ -9,14 +9,14 @@ import java.util.Random;
 public class Die {
     // Attributes
     private int side;
-
-    private Random random = new Random();
+    private final Random random = new Random();
     // Constructors
     public Die() {
-        rollDie();
+        this.side = 0;
+        this.rollDie();
     }
     // Methods
-    public int getSide() {
+    public int getSide() { // Get..
         return this.side;
     }
     public void rollDie() {

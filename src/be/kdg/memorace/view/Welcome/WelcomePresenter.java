@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 
 
 import static be.kdg.memorace.model.MusicHandler.clickSound;
+import static be.kdg.memorace.model.MusicHandler.gameMusic;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -31,6 +32,7 @@ public class WelcomePresenter {
         this.model = model;
         this.welcomeView = welcomeView;
         this.addEventHandlers();
+        gameMusic(this.model.getVolumeBackground());// Play game Music
     }
 
     // Methods

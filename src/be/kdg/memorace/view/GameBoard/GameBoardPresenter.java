@@ -46,7 +46,7 @@ public class GameBoardPresenter {
     private void updateClockSpeed() {
         stopwatchTimeline.getKeyFrames().clear();
         stopwatchTimeline.getKeyFrames().add(new KeyFrame(
-                Duration.millis(this.model.getTimer().getTickDurationMillis()), event -> {
+                Duration.millis(this.model.getTimer().getDuration()), event -> {
             this.model.getTimer().tick();
             updateView();
         }));
@@ -206,7 +206,7 @@ public class GameBoardPresenter {
        // return true;
         System.out.println("last: " + a.get());
     }
-    private void play(){
+    private void play() {
         Player p = this.model.Turn();
         this.gameBoardView.getPlayerName().setText(p.getName());
         this.model.getDie().rollDie();
@@ -214,32 +214,28 @@ public class GameBoardPresenter {
         this.gameBoardView.returnPosition();
         this.gameBoardView.showPawn(this.model.getPawn(model.currentPlayer(p)).getPosition(),model.currentPlayer(p));
     }
-    private int firstCard(){
+    private int firstCard() {
         this.model.getplayers();
-        switch (this.model.getDie().getSide()){
-            case 1: return 4;
-            case 2: return 4;
-            case 3: return 4;
-            case 4: return 1;
-            case 5: return 4;
-            case 6: return 1;
-            default: return 0;
-        }
+        return switch (this.model.getDie().getSide()) {
+            case 1, 2, 3, 5 -> 4;
+            case 4, 6 -> 1;
+            default -> 0;
+        };
     }
-    private void limitCards(){
+    private void limitCards() {
         counter();
         if(timesClicked >= 1){
             this.gameBoardView.getGridGameBoard().setDisable(true);
             timesClicked = 0;
         }
     }
-    private int counter(){
+    private int counter() {
         timesClicked = timesClicked + 1;
         return timesClicked;
     }
     private void updateView() {
-        int ogen = this.model.getDie().getSide();
-        this.gameBoardView.showDie(ogen);
+        int side = this.model.getDie().getSide();
+        this.gameBoardView.showDie(side);
 
         // put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
@@ -248,6 +244,7 @@ public class GameBoardPresenter {
             this.model.setCards(i,this.gameBoardView.getCards()[i]);
         }
 
-        this.gameBoardView.getGameTime().setText(String.format("%02d:%02d:%02d",this.model.getTimer().getHours(),this.model.getTimer().getMinutes(),this.model.getTimer().getSeconds()));
+        this.gameBoardView.getGameTime().setText(String.format("%02d:%02d:%02d",
+                this.model.getTimer().getHours(),this.model.getTimer().getMinutes(),this.model.getTimer().getSeconds()));
     }
 }
