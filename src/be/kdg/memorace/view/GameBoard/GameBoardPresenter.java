@@ -98,7 +98,10 @@ public class GameBoardPresenter {
                                     limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false;
                                     ImageView imageView2 = gameBoardView.getEmptyCards()[finalI1];
-                                    model.compare2Cards(imageView1,imageView2);
+                                    if(model.compare2Cards(imageView1,imageView2)){
+                                        gameBoardView.takeCard(finalI);
+                                        gameBoardView.takeCard(finalI1);
+                                    }
                                     gameBoardView.getRollButton().setDisable(false);
                                 });
                             }

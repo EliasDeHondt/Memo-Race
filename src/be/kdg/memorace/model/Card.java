@@ -13,7 +13,12 @@ import java.util.Random;
 public class Card implements Comparator<Card> {
     // Attributes
     private ImageView type;
+    private int ID;
     // Constructors
+    public Card(int id,ImageView imageView) {
+        this.ID = id;
+        this.type = imageView;
+    }
     public Card(ImageView imageView) {
         this.type = imageView;
     }

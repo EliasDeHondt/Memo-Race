@@ -121,7 +121,7 @@ public class Memorace {
         return this.pawns.get(pawn);
     }
     public void setCards(int i, ImageView iv) {
-        Card card = new Card(iv);
+        Card card = new Card(i,iv);
         this.cards.put(i,card);
     }
     public void setVolumeBackground(double volumeBackground) { // Set..

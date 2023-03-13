@@ -181,6 +181,10 @@ public class GameBoardView extends BorderPane {
             case 6 -> this.getDieImg().setImage(new Image("/die_6.png"));
         }
     }
+    public void takeCard(int position){
+        this.getCards()[position].setImage(null);
+        this.getEmptyCards()[position].setImage(null);
+    }
     public void showValidCards(List<Integer> newC) {
         for (Integer i: newC) {
             this.getEmptyCards()[i].setImage(null);
