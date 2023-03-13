@@ -1,6 +1,6 @@
 package be.kdg.memorace.view.GameBoard;
 
-import be.kdg.memorace.model.Timer;
+import be.kdg.memorace.model.Timer; // I have not found an alternative
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

@@ -55,33 +55,30 @@ public class GameBoardPresenter {
 
             for (int i = 0; i< gameBoardView.getCards().length;i++) {
                 int finalI = i;
-                    this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(new EventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(MouseEvent mouseEvent) {
-                            //clickSound(); // Play sound when you click the button
+                    this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(mouseEvent -> {
+                        //clickSound(); // Play sound when you click the button
 
-                            for (int j : ints) {
-                                if (finalI == j) {
-                                    gameBoardView.getEmptyCards()[finalI].setImage(gameBoardView.getCards()[finalI].getImage());
-                                    firstClick = true;
-                                    System.out.println("firsts: " + firstClick);
-                                    clicked[0] = true;
+                        for (int j : ints) {
+                            if (finalI == j) {
+                                gameBoardView.getEmptyCards()[finalI].setImage(gameBoardView.getCards()[finalI].getImage());
+                                firstClick = true;
+                                System.out.println("firsts: " + firstClick);
+                                clicked[0] = true;
 
-                                }
                             }
-                            System.out.println(clicked[0]);
-                            if(clicked[0]){
-                                for (int i = 0; i<otherInts.size();i++) {
-                                    int finalI = i;
-                                    if (clicked[0] && !fullCardClicked[0]) {
-                                        gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(e -> {
-                                            gameBoardView.getEmptyCards()[finalI].setImage(gameBoardView.getCards()[finalI].getImage());
-                                            limitCards();// Only 2 cards can be clicked at a time
-                                            clicked[0] = false;
-                                            fullCardClicked[0] = true;
-                                        });
+                        }
+                        System.out.println(clicked[0]);
+                        if(clicked[0]){
+                            for (int i1 = 0; i1 <otherInts.size(); i1++) {
+                                int finalI1 = i1;
+                                if (clicked[0] && !fullCardClicked[0]) {
+                                    gameBoardView.getEmptyCards()[finalI1].setOnMouseClicked(e -> {
+                                        gameBoardView.getEmptyCards()[finalI1].setImage(gameBoardView.getCards()[finalI1].getImage());
+                                        limitCards();// Only 2 cards can be clicked at a time
+                                        clicked[0] = false;
+                                        fullCardClicked[0] = true;
+                                    });
 
-                                    }
                                 }
                             }
                         }
