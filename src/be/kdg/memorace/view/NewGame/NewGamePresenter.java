@@ -1,20 +1,15 @@
 package be.kdg.memorace.view.NewGame;
-
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.GameBoard.GameBoardPresenter;
-import be.kdg.memorace.view.GameBoard.GameBoardView;
-import be.kdg.memorace.view.Welcome.WelcomePresenter;
-import be.kdg.memorace.view.Welcome.WelcomeView;
+import be.kdg.memorace.view.GameBoard.*;
+import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
-
 import java.io.IOException;
-
 import static be.kdg.memorace.model.FileHandler.writeErrorLog;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 13/02/2023
  */
 public class NewGamePresenter {

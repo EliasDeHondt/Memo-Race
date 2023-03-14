@@ -1,7 +1,5 @@
 package be.kdg.memorace.model;
-
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Vera Wise & Elias De Hondt

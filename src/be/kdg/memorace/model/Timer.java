@@ -1,7 +1,7 @@
 package be.kdg.memorace.model;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 20/02/2023
  */
 

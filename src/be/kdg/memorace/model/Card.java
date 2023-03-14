@@ -1,10 +1,7 @@
 package be.kdg.memorace.model;
-
 import javafx.scene.image.*;
-
 import java.util.Comparator;
 import java.util.Objects;
-import java.util.Random;
 
 /**
  * Vera Wise & Elias De Hondt

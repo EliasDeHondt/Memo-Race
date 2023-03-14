@@ -1,19 +1,13 @@
 package be.kdg.memorace.view.GameBoard;
-
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
+import javafx.geometry.*;
+import javafx.scene.control.*;
+import javafx.scene.image.*;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
-
 import java.util.List;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 13/02/2023
  */
 public class GameBoardView extends BorderPane {
@@ -52,13 +46,7 @@ public class GameBoardView extends BorderPane {
             this.path[i] = new ImageView(new Image("/path_" + i + ".png"));
         }
 
-        // Images, Loading cards.
-//        this.cards[0] = new ImageView(new Image("/question_mark.png"));
-//        for (int i = 1; i < 8; i++) {
-//            this.cards[i] = new ImageView(new Image("/card_" + (i+1) + ".png"));
-//        }
-
-        // Images, Loading the path.
+        // Images, Loading the die.
         for (int i = 0; i < 7; i++) {
             this.die[i] = new Image("/die_" + i + ".png");
         }
@@ -98,10 +86,6 @@ public class GameBoardView extends BorderPane {
             this.emptyCards[i+8] = new ImageView(new Image("/question_mark.png"));
         }
 
-        //makeAllCardsNotVisible();
-        //addGridPaneCards(); // set the cards on the gridpane
-
-
         // Set gridGameBoard (GameBoard Layout) Center
         setCenter(this.gridGameBoard);
 
@@ -128,12 +112,10 @@ public class GameBoardView extends BorderPane {
         ImageView[] imageView = getEmptyCards();
         int j = 1;
         for (int i = 0; i < 4; i++) {
-            //this.getCards()[i].setImage(new Image("/question_mark.png"));
             gridGameBoard.add(imageView[i],i+1,j);
             gridGameBoard.add(imageView[i+4],i+1,j+1);
         }
         for (int i = 4; i < 8; i++) {
-            //this.getCards()[i].setImage(new Image("/question_mark.png"));
             gridGameBoard.add(imageView[i+4],i-3,j+2);
             gridGameBoard.add(imageView[i+8],i-3,j+3);
         }
@@ -199,7 +181,6 @@ public class GameBoardView extends BorderPane {
         int j = 0;
         for (Integer i: newC) {
             nC[j++] = this.getEmptyCards()[i];
-            //this.getEmptyCards()[i].setImage(null);
         }
         return nC;
     }

@@ -1,24 +1,16 @@
 package be.kdg.memorace.view.GameBoard;
-
-import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.model.Player;
-import be.kdg.memorace.view.Won.WonPresenter;
-import be.kdg.memorace.view.Won.WonView;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+import be.kdg.memorace.model.*;
+import be.kdg.memorace.view.Won.*;
+import javafx.animation.*;
 import javafx.event.EventHandler;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
-
 import java.util.List;
-
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 13/02/2023
  */
 public class GameBoardPresenter {
@@ -87,8 +79,8 @@ public class GameBoardPresenter {
                 }
             }
             if(counter >= 4){
-                this.gameBoardView.getRollButton().setDisable(false); //je mag opnieuw gooien
-                // De beurt blijft bij de speler:
+                this.gameBoardView.getRollButton().setDisable(false); //You can roll the die again
+                //The turn doesnt change
                 throwAgain = true;
             }
 

@@ -1,10 +1,7 @@
 package be.kdg.memorace;
-
-import static be.kdg.memorace.model.FileHandler.writeErrorLog;
-import static be.kdg.memorace.model.FileHandler.writeStartUpLog;
+import static be.kdg.memorace.model.FileHandler.*;
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.Welcome.WelcomePresenter;
-import be.kdg.memorace.view.Welcome.WelcomeView;
+import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;

@@ -1,19 +1,14 @@
 package be.kdg.memorace.view.Won;
-
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.Welcome.WelcomePresenter;
-import be.kdg.memorace.view.Welcome.WelcomeView;
+import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
-
 import java.io.IOException;
-
 import static be.kdg.memorace.model.FileHandler.writePlayersLog;
-import static be.kdg.memorace.model.MusicHandler.clickSound;
-import static be.kdg.memorace.model.MusicHandler.wonMusic;
+import static be.kdg.memorace.model.MusicHandler.*;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 13/02/2023
  */
 public class WonPresenter {

@@ -1,14 +1,10 @@
 package be.kdg.memorace.view.GameLog;
-
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 15/02/2023
  */
 public class GameLogView extends BorderPane {

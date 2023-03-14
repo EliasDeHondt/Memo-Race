@@ -1,15 +1,11 @@
 package be.kdg.memorace.view.Settings;
-
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+import javafx.geometry.*;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 5/03/2023
  */
 public class SettingsView extends BorderPane {

@@ -1,7 +1,5 @@
 package be.kdg.memorace.model;
-
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * Vera Wise & Elias De Hondt
@@ -43,16 +41,4 @@ public class Player {
         return "player " + getName();
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Player player = (Player) o;
-//        return Name.equals(player.Name);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(Name);
-//    }
 }

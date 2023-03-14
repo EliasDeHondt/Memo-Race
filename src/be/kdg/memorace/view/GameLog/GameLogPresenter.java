@@ -1,19 +1,14 @@
 package be.kdg.memorace.view.GameLog;
-
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.Welcome.WelcomePresenter;
-import be.kdg.memorace.view.Welcome.WelcomeView;
+import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
-
 import java.io.IOException;
-
-import static be.kdg.memorace.model.FileHandler.readLog;
-import static be.kdg.memorace.model.FileHandler.writeErrorLog;
+import static be.kdg.memorace.model.FileHandler.*;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 1/03/2023
  */
 public class GameLogPresenter {

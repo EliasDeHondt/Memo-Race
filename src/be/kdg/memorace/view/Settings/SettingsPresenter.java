@@ -1,15 +1,11 @@
 package be.kdg.memorace.view.Settings;
-
-
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.Welcome.WelcomePresenter;
-import be.kdg.memorace.view.Welcome.WelcomeView;
+import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Platform;
-
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 5/03/2023
  */
 public class SettingsPresenter {

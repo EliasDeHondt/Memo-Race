@@ -1,5 +1,4 @@
 package be.kdg.memorace.model;
-
 import java.util.Random;
 
 /**

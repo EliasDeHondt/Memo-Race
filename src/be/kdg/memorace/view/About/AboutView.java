@@ -1,13 +1,10 @@
 package be.kdg.memorace.view.About;
-
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
+import javafx.geometry.*;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 1/03/2023
  */
 public class AboutView extends BorderPane {

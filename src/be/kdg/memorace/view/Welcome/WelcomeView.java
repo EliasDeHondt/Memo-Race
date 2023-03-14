@@ -1,13 +1,9 @@
 package be.kdg.memorace.view.Welcome;
-
 import javafx.animation.FadeTransition;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+import javafx.geometry.*;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.*;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -85,7 +81,7 @@ public class WelcomeView extends GridPane {
     public void setCustomStage(Stage primaryStage){ // Set..
         this.primaryStage = primaryStage;
     }
-    public Stage getCustomStage(){ // Get..
+    public Stage getCustomStage(){
         return this.primaryStage;
     }
 }

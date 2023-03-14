@@ -1,23 +1,15 @@
 package be.kdg.memorace.view.Welcome;
-
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.About.AboutPresenter;
-import be.kdg.memorace.view.About.AboutView;
-import be.kdg.memorace.view.GameLog.GameLogPresenter;
-import be.kdg.memorace.view.GameLog.GameLogView;
-import be.kdg.memorace.view.NewGame.NewGamePresenter;
-import be.kdg.memorace.view.NewGame.NewGameView;
-import be.kdg.memorace.view.Settings.SettingsPresenter;
-import be.kdg.memorace.view.Settings.SettingsView;
+import be.kdg.memorace.view.About.*;
+import be.kdg.memorace.view.GameLog.*;
+import be.kdg.memorace.view.NewGame.*;
+import be.kdg.memorace.view.Settings.*;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-
-import static be.kdg.memorace.model.MusicHandler.clickSound;
-import static be.kdg.memorace.model.MusicHandler.gameMusic;
+import static be.kdg.memorace.model.MusicHandler.*;
 
 /**
  * Vera Wise & Elias De Hondt

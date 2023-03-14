@@ -1,5 +1,4 @@
 package be.kdg.memorace.model;
-
 import javafx.scene.image.ImageView;
 import java.util.*;
 
@@ -61,8 +60,6 @@ public class Memorace {
         Player player = players.get(playerID);
         Card card = new Card(imageView);
         player.getCards().add(card);
-
-        //System.out.println(players.get(playerID) + player.getCards().get(0).getType().getImage().getUrl());
     }
     public Player winner(){
         Player winner = players.get(0);
@@ -76,7 +73,6 @@ public class Memorace {
     public List<Integer> GetValidCardsIDs(int i) {
         // Gives the card to draw options based on the position.
         List<Integer> newCards = new ArrayList<>(this.cards.size());
-        //String[] a = this.cards.keySet().toArray(new String[this.cards.size()]);
         // Top game board.
         System.out.println("i = " + i);
         if (i > 0 && i <= 4) {
@@ -117,7 +113,7 @@ public class Memorace {
             return newCards;
         }
         // Left game board.
-        else { //(i >= 13 && i <= 16)
+        else { // so (i >= 13 && i <= 16)
             switch (i) {
                 case 13 -> i = 12;
                 case 14 -> i = 8;
@@ -132,13 +128,13 @@ public class Memorace {
             return newCards;
         }
     }
-    public Die getDie() { // Get..
+    public Die getDie() {
         return this.die;
     }
-    public Pawn getPawn(int pawn) { // Get..
+    public Pawn getPawn(int pawn) {
         return this.pawns.get(pawn);
     }
-    public void setCards(int i, ImageView iv) { // Set..
+    public void setCards(int i, ImageView iv) {
         Card card = new Card(i,iv);
         this.cards.put(i,card);
     }

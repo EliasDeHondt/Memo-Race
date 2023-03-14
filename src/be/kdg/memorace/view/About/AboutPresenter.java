@@ -1,11 +1,9 @@
 package be.kdg.memorace.view.About;
-
 import be.kdg.memorace.model.Memorace;
-
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
- * Van Elias De Hondt
+ * Vera Wise & Elias De Hondt
  * 1/03/2023
  */
 public class AboutPresenter {

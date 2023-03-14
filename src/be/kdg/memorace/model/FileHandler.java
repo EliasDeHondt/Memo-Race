@@ -1,13 +1,6 @@
 package be.kdg.memorace.model;
-
-import be.kdg.memorace.model.Player;
-import javafx.scene.control.Alert;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.*;
+import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
