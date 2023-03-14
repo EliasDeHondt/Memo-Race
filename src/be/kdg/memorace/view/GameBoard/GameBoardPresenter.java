@@ -66,12 +66,13 @@ public class GameBoardPresenter {
         this.gameBoardView.getRollButton().setOnAction(actionEvent -> {
             clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
+            //If there are no cards left on the board:
             if(checkIfAllNull(gameBoardView.getEmptyCards())){
                 WonView wonView = new WonView(); // Making View (NewGameView.class).
                 this.gameBoardView.getScene().setRoot(wonView); // Add (NewGameView.class) to (WelcomeView.class).
                 wonView.getScene().getWindow().sizeToScene(); // Add new Size.
-                //this.gameBoardView.getCustomStage().setTitle("Memo-Race / New Game"); // Making Title (Memo-Race / New Game).
-                //wonView.setCustomStage(this.gameBoardView.getCustomStage());  // Send primaryStage to (NewGameView.class)
+                this.gameBoardView.getCustomStage().setTitle("Memo-Race / Won"); // Making Title (Memo-Race / New Game).
+                wonView.setCustomStage(this.gameBoardView.getCustomStage());  // Send primaryStage to (NewGameView.class)
                 new WonPresenter(model, wonView); // Making Presenter (NewGamePresenter.class).
             }
 

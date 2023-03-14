@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 
 import java.io.File;
 
@@ -16,6 +17,7 @@ public class WonView extends GridPane {
     // Attributes
     private Label playerName;
     private Label playerScore;
+    private Stage primaryStage;
     // Constructors
     public WonView() {
         this.initialiseNodes();
@@ -51,5 +53,12 @@ public class WonView extends GridPane {
     }
     Label getPlayerScore() { // Get..
         return this.playerScore;
+    }
+    public Stage getCustomStage() {
+        return primaryStage;
+    }
+
+    public void setCustomStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
     }
 }

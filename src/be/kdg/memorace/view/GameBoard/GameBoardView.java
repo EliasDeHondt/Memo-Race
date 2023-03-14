@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class GameBoardView extends BorderPane {
     private Button rollButton;
     private ImageView dieImg;
     private GridPane gridGameBoard;
+    private Stage primaryStage;
     // Constructors
     public GameBoardView(String cardTheme) { // Receives the theme of the cards as an extra.
         this.initialiseNodes();
@@ -229,5 +231,13 @@ public class GameBoardView extends BorderPane {
     }
     Label getGameTime() { // Get..
         return this.gameTime;
+    }
+
+    public Stage getCustomStage() {
+        return primaryStage;
+    }
+
+    public void setCustomStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
     }
 }
