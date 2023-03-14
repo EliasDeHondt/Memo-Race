@@ -36,10 +36,13 @@ public class Memorace {
         }
         return this.players.get(this.turn++);
     }
-    public int currentPlayer(Player playe) {
+    public Player DontTurn() {
+        return this.players.get(getPlayerID()-1);
+    }
+    public int currentPlayer(Player player) {
         int current = 1;
         for (int i = 0; i < getplayers().size(); i++) {
-            if(playe.getName().equals(getplayers().get(i).getName())){
+            if(player.getName().equals(getplayers().get(i).getName())){
                 current = i;
             }
         }

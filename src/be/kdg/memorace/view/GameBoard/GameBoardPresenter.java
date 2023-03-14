@@ -28,13 +28,14 @@ public class GameBoardPresenter {
     private final Memorace model;
     private final GameBoardView gameBoardView;
     private int timesClicked;
-    private boolean firstClick;
+    private boolean aaaaaaaaaaaaaaaaaaa;
     private Timeline stopwatchTimeline;
     // Constructors
     public GameBoardPresenter(Memorace model, GameBoardView gameBoardView) {
         this.model = model;
         this.gameBoardView = gameBoardView;
         this.timesClicked = 0;
+        this.aaaaaaaaaaaaaaaaaaa = false;
         this.addEventHandlers();
         this.updateView();
         this.gameBoardView.getDieImg().setImage(new Image("/die_0.png"));
@@ -61,8 +62,8 @@ public class GameBoardPresenter {
         this.gameBoardView.getRollButton().setOnAction(actionEvent -> {
             clickSound(this.model.getVolumeButton()); // Play sound when you click the button
             this.gameBoardView.getRollButton().setDisable(true);
-
-            this.play(); // Roll the dice and place the pawn
+            this.play(aaaaaaaaaaaaaaaaaaa); // Roll the dice and place the pawn
+            aaaaaaaaaaaaaaaaaaa = false;
 
             this.gameBoardView.getGridGameBoard().setDisable(false);
             this.gameBoardView.makeAllCardsNotVisible();
@@ -78,6 +79,8 @@ public class GameBoardPresenter {
             }
             if(counter >= 4){
                 this.gameBoardView.getRollButton().setDisable(false); //je mag opnieuw gooien
+                //de beurt blijft bij de speler:
+                aaaaaaaaaaaaaaaaaaa = true;
             }
 
             for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
@@ -86,7 +89,6 @@ public class GameBoardPresenter {
                     ImageView imageView1;
                     @Override
                     public void handle(MouseEvent mouseEvent) {
-
                         //clickSound(); // Play sound when you click the button
 
                         for (int j : ints) {
@@ -119,8 +121,9 @@ public class GameBoardPresenter {
             updateView();
         });
     }
-    private void play() {
-        Player player = this.model.Turn();
+    private void play(boolean b) {
+        Player player = b ? model.DontTurn() : this.model.Turn();
+
         this.gameBoardView.getPlayerName().setText(player.getName());
         this.model.getDie().rollDie();
         this.model.setPawnPosition(this.model.currentPlayer(player));
@@ -144,13 +147,5 @@ public class GameBoardPresenter {
         for (int i = 0; i < 16; i++) {
             this.model.setCards(i,this.gameBoardView.getCards()[i]);
         }
-    }
-    public static boolean checkIfAllNull(List<Integer> ints) {
-        for (Integer i : ints) {
-            if (i != null) {
-                return false;
-            }
-        }
-        return true;
     }
 }
