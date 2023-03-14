@@ -10,6 +10,7 @@ import java.io.IOException;
 
 import static be.kdg.memorace.model.FileHandler.writePlayersLog;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
+import static be.kdg.memorace.model.MusicHandler.wonMusic;
 
 /**
  * Van Elias De Hondt
@@ -24,6 +25,7 @@ public class WonPresenter {
         this.model = model;
         this.wonView = wonView;
         this.addEventHandlers();
+        wonMusic(1.0);
     }
 
     // Methods
@@ -47,10 +49,8 @@ public class WonPresenter {
             Platform.exit(); // exit
         }));
 
-//        this.wonView.getPlayerName().setText(this.model.winner().getName());
-//        this.wonView.getPlayerScore().setText(String.format("%d",this.model.winner().getScore()));
-        this.wonView.getPlayerName().setText("TEST--------------");
-        this.wonView.getPlayerScore().setText("TEST--------------");
+        this.wonView.getPlayerName().setText(String.format("Name: %s", this.model.winner().getName()));
+        this.wonView.getPlayerScore().setText(String.format("Score: %d",this.model.winner().getScore()));
 
 
         try {

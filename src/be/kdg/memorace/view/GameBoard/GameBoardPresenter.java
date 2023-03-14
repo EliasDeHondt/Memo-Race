@@ -26,14 +26,14 @@ public class GameBoardPresenter {
     private final Memorace model;
     private final GameBoardView gameBoardView;
     private int timesClicked;
-    private boolean aaaaaaaaaaaaaaaaaaa;
+    private boolean throwAgain;
     private Timeline stopwatchTimeline;
     // Constructors
     public GameBoardPresenter(Memorace model, GameBoardView gameBoardView) {
         this.model = model;
         this.gameBoardView = gameBoardView;
         this.timesClicked = 0;
-        this.aaaaaaaaaaaaaaaaaaa = false;
+        this.throwAgain = false;
         this.addEventHandlers();
         this.updateView();
         this.gameBoardView.getDieImg().setImage(new Image("/die_0.png"));
@@ -71,8 +71,8 @@ public class GameBoardPresenter {
             }
 
             this.gameBoardView.getRollButton().setDisable(true);
-            this.play(aaaaaaaaaaaaaaaaaaa); // Roll the dice and place the pawn
-            aaaaaaaaaaaaaaaaaaa = false;
+            this.play(throwAgain); // Roll the dice and place the pawn
+            throwAgain = false;
 
             this.gameBoardView.getGridGameBoard().setDisable(false);
             this.gameBoardView.makeAllCardsNotVisible();
@@ -88,17 +88,18 @@ public class GameBoardPresenter {
             }
             if(counter >= 4){
                 this.gameBoardView.getRollButton().setDisable(false); //je mag opnieuw gooien
-                //de beurt blijft bij de speler:
-                aaaaaaaaaaaaaaaaaaa = true;
+                // De beurt blijft bij de speler:
+                throwAgain = true;
             }
 
             for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
                 int finalI = i;
-                this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                this.gameBoardView.getEmptyCards()[finalI].setOnMouseClicked(new EventHandler<>() {
                     ImageView imageView1;
+
                     @Override
                     public void handle(MouseEvent mouseEvent) {
-                        //clickSound(); // Play sound when you click the button
+                        clickSound(model.getVolumeButton()); // Play sound when you click the button
 
                         for (int j : ints) {
                             if (finalI == j) {
@@ -108,7 +109,7 @@ public class GameBoardPresenter {
                             }
                         }
                         System.out.println(clicked[0]);
-                        if(clicked[0]){
+                        if (clicked[0]) {
                             for (int i1 = 0; i1 < gameBoardView.getCards().length; i1++) {
                                 int finalI1 = i1;
                                 gameBoardView.getEmptyCards()[finalI1].setOnMouseClicked(e -> {
@@ -116,15 +117,16 @@ public class GameBoardPresenter {
                                     limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false;
                                     ImageView imageView2 = gameBoardView.getEmptyCards()[finalI1];
-                                    if(model.compare2Cards(imageView1,imageView2)){
-                                        model.addCardToPlayer(model.getPlayerID()-1,imageView1);
+                                    if (model.compare2Cards(imageView1, imageView2)) {
+                                        model.addCardToPlayer(model.getPlayerID() - 1, imageView1);
                                         gameBoardView.takeCard(finalI);
                                         gameBoardView.takeCard(finalI1);
                                     }
                                     gameBoardView.getRollButton().setDisable(false);
                                 });
                             }
-                        }}
+                        }
+                    }
                 });
             }
             updateView();

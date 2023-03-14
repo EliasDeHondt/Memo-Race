@@ -1,6 +1,7 @@
 package be.kdg.memorace.view.Won;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -66,12 +67,10 @@ public class WonView extends BorderPane {
 
         // CSS For (playNewGame) and (viewGameLog)
         this.playerName.setId("labelNSL");
+        this.playerName.setAlignment(Pos.CENTER);
         this.playerScore.setId("labelNSL");
+        this.playerScore.setAlignment(Pos.CENTER);
         this.setId("pane");
-
-        Media media = new Media(new File("resources/music/won.wav").toURI().toString()); // set (Media)
-        MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
-        mediaPlayer.play(); // Play media (won.mp3)
 
     }
     MenuItem getMiBack() { // Get
