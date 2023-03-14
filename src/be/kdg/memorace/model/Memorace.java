@@ -64,6 +64,15 @@ public class Memorace {
 
         //System.out.println(players.get(playerID) + player.getCards().get(0).getType().getImage().getUrl());
     }
+    public Player winner(){
+        Player winner = players.get(0);
+        for (Player p: players) {
+            if(winner.getScore() < p.getScore()){
+                winner = p;
+            }
+        }
+        return winner;
+    }
     public List<Integer> GetValidCardsIDs(int i) {
         // Gives the card to draw options based on the position.
         List<Integer> newCards = new ArrayList<>(this.cards.size());
