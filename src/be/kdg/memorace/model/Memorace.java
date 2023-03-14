@@ -54,10 +54,12 @@ public class Memorace {
             return true;
         } else return false;
     }
-    public void addCardToPlayer(ImageView imageView){
-        //players.get(0)
+    public void addCardToPlayer(int playerID, ImageView imageView){
+        Player player = players.get(playerID);
+        Card card = new Card(imageView);
+        player.getCards().add(card);
+        //System.out.println(players.get(playerID) + player.getCards().get(0).getType().getImage().getUrl());
     }
-    //if (imageView1.getImage().getUrl().equals(imageView2.getImage().getUrl())) {
     public List<Integer> GetValidCardsIDs(int i) {
         // Gives the card to draw options based on the position.
         List<Integer> newCards = new ArrayList<>(this.cards.size());

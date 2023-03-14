@@ -99,6 +99,7 @@ public class GameBoardPresenter {
                                     clicked[0] = false;
                                     ImageView imageView2 = gameBoardView.getEmptyCards()[finalI1];
                                     if(model.compare2Cards(imageView1,imageView2)){
+                                        model.addCardToPlayer(model.getPlayerID()-1,imageView1);
                                         gameBoardView.takeCard(finalI);
                                         gameBoardView.takeCard(finalI1);
                                     }
