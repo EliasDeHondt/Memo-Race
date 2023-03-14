@@ -58,6 +58,7 @@ public class Memorace {
         Player player = players.get(playerID);
         Card card = new Card(imageView);
         player.getCards().add(card);
+
         //System.out.println(players.get(playerID) + player.getCards().get(0).getType().getImage().getUrl());
     }
     public List<Integer> GetValidCardsIDs(int i) {

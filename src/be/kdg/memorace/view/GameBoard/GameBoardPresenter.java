@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -69,7 +70,15 @@ public class GameBoardPresenter {
             boolean[] clicked = new boolean[4];
 
             List<Integer> ints = this.model.GetValidCardsIDs(this.model.getPawn(this.model.getPlayerID()-1).getPosition());
-            firstClick = false;
+            int counter = 0;
+            for (Integer i : ints) {
+                if(gameBoardView.getEmptyCards()[i].getImage() == null){
+                    counter++;
+                }
+            }
+            if(counter >= 4){
+                this.gameBoardView.getRollButton().setDisable(false); //je mag opnieuw gooien
+            }
 
             for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
                 int finalI = i;
@@ -83,8 +92,6 @@ public class GameBoardPresenter {
                         for (int j : ints) {
                             if (finalI == j) {
                                 gameBoardView.getEmptyCards()[finalI].setImage(gameBoardView.getCards()[finalI].getImage());
-                                firstClick = true;
-                                System.out.println("firsts: " + firstClick);
                                 clicked[0] = true;
                                 imageView1 = gameBoardView.getEmptyCards()[finalI];
                             }
@@ -137,5 +144,13 @@ public class GameBoardPresenter {
         for (int i = 0; i < 16; i++) {
             this.model.setCards(i,this.gameBoardView.getCards()[i]);
         }
+    }
+    public static boolean checkIfAllNull(List<Integer> ints) {
+        for (Integer i : ints) {
+            if (i != null) {
+                return false;
+            }
+        }
+        return true;
     }
 }
