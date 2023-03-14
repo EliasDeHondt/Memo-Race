@@ -26,4 +26,12 @@ public class MusicHandler {
         mediaPlayer.setVolume(volumeButton); // Set volume to default 100%
         mediaPlayer.play(); // Play media (click.wav)
     }
+
+    public static void wonMusic(double volumeWon) {
+
+        Media media = new Media(new File("resources/music/won.wav").toURI().toString()); // set (Media)
+        MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
+        mediaPlayer.setVolume(volumeWon); // Set volume to default 100%
+        mediaPlayer.play(); // Play media (won.wav)
+    }
 }
