@@ -42,6 +42,7 @@ public class WelcomePresenter {
            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
+            newGameView.setCustomStage(welcomeView.getCustomStage());
             this.welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
             newGameView.getScene().getWindow().sizeToScene(); // Add new Size.
             this.welcomeView.getCustomStage().setTitle("Memo-Race / New Game"); // Making Title (Memo-Race / New Game).
