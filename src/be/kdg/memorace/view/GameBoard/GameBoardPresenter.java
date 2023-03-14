@@ -2,6 +2,10 @@ package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
+import be.kdg.memorace.view.NewGame.NewGamePresenter;
+import be.kdg.memorace.view.NewGame.NewGameView;
+import be.kdg.memorace.view.Won.WonPresenter;
+import be.kdg.memorace.view.Won.WonView;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -61,6 +65,16 @@ public class GameBoardPresenter {
 
         this.gameBoardView.getRollButton().setOnAction(actionEvent -> {
             clickSound(this.model.getVolumeButton()); // Play sound when you click the button
+
+            if(checkIfAllNull(gameBoardView.getEmptyCards())){
+                WonView wonView = new WonView(); // Making View (NewGameView.class).
+                this.gameBoardView.getScene().setRoot(wonView); // Add (NewGameView.class) to (WelcomeView.class).
+                wonView.getScene().getWindow().sizeToScene(); // Add new Size.
+                //this.gameBoardView.getCustomStage().setTitle("Memo-Race / New Game"); // Making Title (Memo-Race / New Game).
+                //wonView.setCustomStage(this.gameBoardView.getCustomStage());  // Send primaryStage to (NewGameView.class)
+                new WonPresenter(model, wonView); // Making Presenter (NewGamePresenter.class).
+            }
+
             this.gameBoardView.getRollButton().setDisable(true);
             this.play(aaaaaaaaaaaaaaaaaaa); // Roll the dice and place the pawn
             aaaaaaaaaaaaaaaaaaa = false;
@@ -147,5 +161,13 @@ public class GameBoardPresenter {
         for (int i = 0; i < 16; i++) {
             this.model.setCards(i,this.gameBoardView.getCards()[i]);
         }
+    }
+    public static boolean checkIfAllNull(ImageView[] imageViews) {
+        for (ImageView i : imageViews) {
+            if (i.getImage() != null) {
+                return false;
+            }
+        }
+        return true;
     }
 }

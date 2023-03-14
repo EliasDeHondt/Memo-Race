@@ -39,10 +39,12 @@ public class WonView extends GridPane {
         // CSS For (playNewGame) and (viewGameLog)
         this.playerName.setId("labelNSL");
         this.playerScore.setId("labelNSL");
-
+/*
         Media media = new Media(new File("resources/music/won.mp3").toURI().toString()); // set (Media)
         MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
         mediaPlayer.play(); // Play media (won.mp3)
+
+ */
     }
     Label getPlayerName() { // Get..
         return this.playerName;
