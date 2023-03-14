@@ -2,8 +2,6 @@ package be.kdg.memorace.view.GameBoard;
 
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.Player;
-import be.kdg.memorace.view.NewGame.NewGamePresenter;
-import be.kdg.memorace.view.NewGame.NewGameView;
 import be.kdg.memorace.view.Won.WonPresenter;
 import be.kdg.memorace.view.Won.WonView;
 import javafx.animation.Animation;
@@ -15,11 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 

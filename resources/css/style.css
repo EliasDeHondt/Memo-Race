@@ -63,9 +63,9 @@
 /* WonView */
 #labelNSL {
     -fx-font-family: 'VT323', monospace;
-    -fx-font-size: 28px;
+    -fx-font-size: 32px;
     -fx-color: #FFFFFF;
-    -fx-padding: 20px;
+    -fx-padding: 25px;
     -fx-width: 200px;
 }
 /* WonView */

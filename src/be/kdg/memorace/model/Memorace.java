@@ -66,9 +66,9 @@ public class Memorace {
     }
     public Player winner(){
         Player winner = players.get(0);
-        for (Player p: players) {
-            if(winner.getScore() < p.getScore()){
-                winner = p;
+        for (Player player: players) {
+            if(winner.getScore() < player.getScore()){
+                winner = player;
             }
         }
         return winner;
@@ -135,10 +135,10 @@ public class Memorace {
     public Die getDie() { // Get..
         return this.die;
     }
-    public Pawn getPawn(int pawn) {
+    public Pawn getPawn(int pawn) { // Get..
         return this.pawns.get(pawn);
     }
-    public void setCards(int i, ImageView iv) {
+    public void setCards(int i, ImageView iv) { // Set..
         Card card = new Card(i,iv);
         this.cards.put(i,card);
     }

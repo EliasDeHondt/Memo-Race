@@ -232,12 +232,10 @@ public class GameBoardView extends BorderPane {
     Label getGameTime() { // Get..
         return this.gameTime;
     }
-
-    public Stage getCustomStage() {
+    public Stage getCustomStage() { // Get..
         return primaryStage;
     }
-
-    public void setCustomStage(Stage primaryStage) {
+    public void setCustomStage(Stage primaryStage) { // Set..
         this.primaryStage = primaryStage;
     }
 }
