@@ -52,9 +52,7 @@ public class Memorace {
         Card card1 = new Card(imageView1);
         Card card2 = new Card(imageView2);
 
-        if (card1.equals(card2)) {
-            return true;
-        } else return false;
+        return card1.equals(card2);
     }
     public void addCardToPlayer(int playerID, ImageView imageView){
         Player player = players.get(playerID);
@@ -136,6 +134,11 @@ public class Memorace {
     public void setCards(int i, ImageView iv) {
         Card card = new Card(i,iv);
         this.cards.put(i,card);
+    }
+    public void shuffleCards(){
+        List<Integer> list = new ArrayList<>(this.cards.keySet());
+        Collections.shuffle(list);
+
     }
     public void setVolumeBackground(double volumeBackground) { // Set..
         this.volumeBackground = volumeBackground;
