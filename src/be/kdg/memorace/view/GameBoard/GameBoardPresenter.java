@@ -32,7 +32,10 @@ public class GameBoardPresenter {
         this.gameBoardView.getDieImg().setImage(new Image("/die_0.png"));
         this.setupTimeline();
         this.stopwatchTimeline.play();
-        gameBoardView.shuffleCards();
+//        ImageView[] shuffledCards = gameBoardView.shuffleCards();
+//        for (int i = 0; i < gameBoardView.getCards().length; i++) {
+//            gameBoardView.getCards()[i] = shuffledCards[i];
+//        }
     }
     // Methods
     private void setupTimeline() {
@@ -72,7 +75,7 @@ public class GameBoardPresenter {
             throwAgain = false;
 
             this.gameBoardView.getGridGameBoard().setDisable(false);
-            this.gameBoardView.makeAllCardsNotVisible();
+           // this.gameBoardView.makeAllCardsNotVisible();
 
             boolean[] clicked = new boolean[1];
 
