@@ -32,10 +32,6 @@ public class GameBoardPresenter {
         this.gameBoardView.getDieImg().setImage(new Image("/die_0.png"));
         this.setupTimeline();
         this.stopwatchTimeline.play();
-//        ImageView[] shuffledCards = gameBoardView.shuffleCards();
-//        for (int i = 0; i < gameBoardView.getCards().length; i++) {
-//            gameBoardView.getCards()[i] = shuffledCards[i];
-//        }
     }
     // Methods
     private void setupTimeline() {
@@ -75,7 +71,7 @@ public class GameBoardPresenter {
             throwAgain = false;
 
             this.gameBoardView.getGridGameBoard().setDisable(false);
-           // this.gameBoardView.makeAllCardsNotVisible();
+            this.gameBoardView.makeAllCardsNotVisible();
 
             boolean[] clicked = new boolean[1];
 
@@ -118,7 +114,7 @@ public class GameBoardPresenter {
                                 gameBoardView.getUnknownCards()[finalI1].setOnMouseClicked(e -> {
                                     gameBoardView.getUnknownCards()[finalI1].setImage(gameBoardView.getCards()[finalI1].getImage());
 
-                                    //limitCards();// Only 2 cards can be clicked at a time
+                                    limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false;
                                     ImageView secondCard = gameBoardView.getUnknownCards()[finalI1];
                                     if (model.compare2Cards(firstCard, secondCard)) { //compare if the 2 clicked cards are the same

@@ -87,44 +87,13 @@ public class GameBoardView extends BorderPane {
                 this.cards[i + 8] = new ImageView(new Image("/teacher_card_" + (i + 1) + ".png"));
             }
         }
-        Random random = new Random();
-        int[] shuffleArray =  {0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
-        ImageView[] tempCards = this.cards;
-        ImageView[] newCards = new ImageView[16];
-        for (int i = 0; i < tempCards.length; i++) {
-            System.out.println(i + ": " + tempCards[i].getImage().getUrl());
-        }       // int shuffleVal = random.nextInt(16);
-
-        for(int i = shuffleArray.length - 1; i >= 0; --i) {
-            int j = random.nextInt(i + 1);
-            int temp = shuffleArray[i];
-            shuffleArray[i] = shuffleArray[j];
-            shuffleArray[j] = temp;
-        }
-
-        for (int i = 0; i < shuffleArray.length; i++) {
-            System.out.println(i + ": " + shuffleArray[i]);
-        }
-        for(int i = 0; i < this.cards.length; i++) {
-            System.out.println(i + ": " + this.cards[shuffleArray[i]].getImage().getUrl());
-            //this.cards[shuffleArray[i]].setImage(cards[i].getImage());
-            newCards[i] = this.cards[shuffleArray[i]];
-        }
-        System.out.println("===============");
-        for (int i = 0; i < newCards.length; i++) {
-            System.out.println(i + ":: " + newCards[i].getImage().getUrl());
-        }
-        this.cards = newCards;
+        this.cards = shuffleCards();
 
         // Add all card images into the array
         for (int i = 0; i < 8; i++) {
             this.unknownCards[i] = new ImageView(new Image("/question_mark.png"));
             this.unknownCards[i+8] = new ImageView(new Image("/question_mark.png"));
         }
-//        for (int i = 0; i < 8; i++) { // Add all card images into the array
-//            this.unknownCards[i] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
-//            this.unknownCards[i+8] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
-//        }
 
         // Set gridGameBoard (GameBoard Layout) Center
         setCenter(this.gridGameBoard);
@@ -238,6 +207,7 @@ public class GameBoardView extends BorderPane {
         Random random = new Random();
         int[] shuffleArray =  {0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
         ImageView[] tempCards = this.cards;
+        ImageView[] newCards = new ImageView[16];
         for (int i = 0; i < tempCards.length; i++) {
             System.out.println(i + ": " + tempCards[i].getImage().getUrl());
         }       // int shuffleVal = random.nextInt(16);
@@ -254,9 +224,14 @@ public class GameBoardView extends BorderPane {
         }
         for(int i = 0; i < this.cards.length; i++) {
             System.out.println(i + ": " + this.cards[shuffleArray[i]].getImage().getUrl());
-            this.cards[shuffleArray[i]].setImage(tempCards[i].getImage());
+            //this.cards[shuffleArray[i]].setImage(cards[i].getImage());
+            newCards[i] = this.cards[shuffleArray[i]];
         }
-        return cards;
+        System.out.println("===============");
+        for (int i = 0; i < newCards.length; i++) {
+            System.out.println(i + ":: " + newCards[i].getImage().getUrl());
+        }
+        return newCards;
     }
     Button getRollButton() { // Get..
         return this.rollButton;
