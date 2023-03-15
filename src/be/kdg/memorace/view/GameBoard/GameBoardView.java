@@ -216,6 +216,7 @@ public class GameBoardView extends BorderPane {
         for (int i = shuffleVal; i < shuffleArray.length - 1; i++) {
             shuffleArray[i] = shuffleArray[i + 1];
         }
+
     }
     Button getRollButton() { // Get..
         return this.rollButton;
