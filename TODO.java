@@ -1,11 +1,19 @@
 /**
- * Vera Wise & Elias De Hondt
- * 8/12/2022
+ * @author Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 // =====================================================================================================================
-// Canvas KdG   Link = https://canvas.kdg.be/courses/37158/pages/afspraken-en-deadlines?module_item_id=663060
-// Github       Link = https://github.com/EliasDeHondt/Memo-Race
-// Google Docs  Link = https://docs.google.com/spreadsheets/d/199y9TW0weDEmgGD8Iv0UWyqQnMW8zF_RrBZ8XB4lQBc/edit#gid=0
+/*
+ * Canvas KdG
+ * @see https://canvas.kdg.be/courses/37158/pages/afspraken-en-deadlines?module_item_id=663060
+ *
+ * Github
+ * @see https://github.com/EliasDeHondt/Memo-Race
+ *
+ * Google Docs
+ * @see https://docs.google.com/spreadsheets/d/199y9TW0weDEmgGD8Iv0UWyqQnMW8zF_RrBZ8XB4lQBc/edit#gid=0
+ * 08/12/2022
+ */
 // =====================================================================================================================
 // TODO: - Voorzie een startscherm waar je de namen van de spelers kan ingeven.
 //       - Elke speler kan een avatar kiezen of zelf een foto toevoegen.
@@ -22,7 +30,7 @@
 //       - Maak visueel zichtbaar welke speler aan de beurt is.
 // =====================================================================================================================
 // SPELBESCHRIJVING
-/**
+/*
  * MemoRace is een variant op memory, maar een dobbelsteen zorgt voor een extra dimensie. Het
  * spel leert kinderen dezelfde vaardigheden als Memory en de dobbelsteen bevorderd het tellen.
  * Een pion loopt op een pad met in elk vak een verschillende afbeelding rond een speelveld. In het
@@ -38,7 +46,7 @@
  */
 // =====================================================================================================================
 // SPELVERLOOP
-/**
+/*
  * Er wordt om de beurt gespeeld. Het spel beslist random in welke
  * volgorde de spelers mogen spelen. De pion start op “go”. De eerste
  * speler werpt de dobbelsteen en zet de pion evenveel vakken (groene
