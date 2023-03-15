@@ -16,12 +16,14 @@ public class GameBoardView extends BorderPane {
     private Label playerName, gameTime;
     private ImageView[] path;
     private ImageView[] cards;
-    private ImageView[] emptyCards;
+    private ImageView[] unknownCards;
     private Image[] die;
     private Button rollButton;
     private ImageView dieImg;
     private GridPane gridGameBoard;
     private Stage primaryStage;
+    private Label instructions;
+    private Label score;
     // Constructors
     public GameBoardView(String cardTheme) { // Receives the theme of the cards as an extra.
         this.initialiseNodes();
@@ -34,11 +36,13 @@ public class GameBoardView extends BorderPane {
         this.gameTime = new Label();
         this.path = new ImageView[18];
         this.cards = new ImageView[16];
-        this.emptyCards = new ImageView[16];
+        this.unknownCards = new ImageView[16];
         this.die = new Image[7];
         this.rollButton = new Button("roll");
         this.dieImg = new ImageView();
         this.gridGameBoard = new GridPane(); // Making new GridPane (CENTER)
+        this.instructions = new Label("Roll the die.");
+        this.score = new Label();
         this.gridGameBoard.setId("background"); // Set CSS background
         setAlignment(gridGameBoard, Pos.CENTER); // Set (gridGameBoard) on CENTER.
 
@@ -61,6 +65,8 @@ public class GameBoardView extends BorderPane {
         top.setPadding(new Insets(10)); // Set padding for (top)
         this.playerName.setId("top"); // Set CSS (this.playerName)
         this.gameTime.setId("top"); // Set CSS (this.gameTime)
+        this.score.setId("button");
+        top.setCenter(this.score);
         this.setTop(top); // set (top) on top in (BorderPane | this. )
 
         // Initializing the correct cards related to the theme.
@@ -83,20 +89,22 @@ public class GameBoardView extends BorderPane {
 
         // Add all card images into the array
         for (int i = 0; i < 8; i++) {
-            this.emptyCards[i] = new ImageView(new Image("/question_mark.png"));
-            this.emptyCards[i+8] = new ImageView(new Image("/question_mark.png"));
+            this.unknownCards[i] = new ImageView(new Image("/question_mark.png"));
+            this.unknownCards[i+8] = new ImageView(new Image("/question_mark.png"));
         }
 
         // Set gridGameBoard (GameBoard Layout) Center
         setCenter(this.gridGameBoard);
 
-        BorderPane buttom = new BorderPane(); // Making new BorderPane (BUTTOM)
-        buttom.setId("background"); // Set CSS background
+        BorderPane bottom = new BorderPane(); // Making new BorderPane (BOTTOM)
+        bottom.setId("background"); // Set CSS background
         this.rollButton.setId("button"); // Set CSS button
-        setBottom(buttom); // Set (buttom) in Buttom
-        buttom.setRight(this.rollButton); // Set (this.click) Right in buttom
-        buttom.setLeft(this.dieImg); // Set (this.dieSidesSides) Left in buttom
-        buttom.setPadding(new Insets(10)); // Set padding for (buttom)
+        setBottom(bottom); // Set (buttom) in Buttom
+        bottom.setRight(this.rollButton); // Set (this.click) Right in buttom
+        bottom.setLeft(this.dieImg); // Set (this.dieSidesSides) Left in buttom
+        this.instructions.setId("instructionButton");
+        bottom.setCenter(this.instructions);
+        bottom.setPadding(new Insets(10)); // Set padding for (buttom)
     }
     public void addGridPaneCards() {
         for (int i = 0; i < 4; i++) {
@@ -110,7 +118,7 @@ public class GameBoardView extends BorderPane {
     }
 
     public void makeCards() {
-        ImageView[] imageView = getEmptyCards();
+        ImageView[] imageView = getUnknownCards();
         int j = 1;
         for (int i = 0; i < 4; i++) {
             gridGameBoard.add(imageView[i],i+1,j);
@@ -123,8 +131,8 @@ public class GameBoardView extends BorderPane {
     }
     public void makeAllCardsNotVisible() {
         for (int i = 0; i < 16; i++) {
-            if(this.getEmptyCards()[i].getImage() != null){
-                this.getEmptyCards()[i].setImage(new Image("/question_mark.png"));
+            if(this.getUnknownCards()[i].getImage() != null){
+                this.getUnknownCards()[i].setImage(new Image("/question_mark.png"));
             }
         }
     }
@@ -170,18 +178,18 @@ public class GameBoardView extends BorderPane {
     }
     public void takeCard(int position){
         this.getCards()[position].setImage(null);
-        this.getEmptyCards()[position].setImage(null);
+        this.getUnknownCards()[position].setImage(null);
     }
     public void showValidCards(List<Integer> newC) {
         for (Integer i: newC) {
-            this.getEmptyCards()[i].setImage(null);
+            this.getUnknownCards()[i].setImage(null);
         }
     }
     public ImageView[] getValidCards(List<Integer> newC) {
         ImageView[] nC = new ImageView[4];
         int j = 0;
         for (Integer i: newC) {
-            nC[j++] = this.getEmptyCards()[i];
+            nC[j++] = this.getUnknownCards()[i];
         }
         return nC;
     }
@@ -208,8 +216,8 @@ public class GameBoardView extends BorderPane {
     GridPane getGridGameBoard() { // Get..
         return gridGameBoard;
     }
-    ImageView[] getEmptyCards(){ // Get..
-        return emptyCards;
+    ImageView[] getUnknownCards(){ // Get..
+        return unknownCards;
     }
     Label getGameTime() { // Get..
         return this.gameTime;
@@ -219,5 +227,13 @@ public class GameBoardView extends BorderPane {
     }
     public void setCustomStage(Stage primaryStage) { // Set..
         this.primaryStage = primaryStage;
+    }
+
+    public Label getInstructions() {
+        return instructions;
+    }
+
+    public Label getScore() {
+        return score;
     }
 }
