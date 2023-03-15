@@ -115,7 +115,7 @@ public class GameBoardPresenter {
                                 gameBoardView.getUnknownCards()[finalI1].setOnMouseClicked(e -> {
                                     gameBoardView.getUnknownCards()[finalI1].setImage(gameBoardView.getCards()[finalI1].getImage());
 
-                                    limitCards();// Only 2 cards can be clicked at a time
+                                    //limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false;
                                     ImageView secondCard = gameBoardView.getUnknownCards()[finalI1];
                                     if (model.compare2Cards(firstCard, secondCard)) { //compare if the 2 clicked cards are the same

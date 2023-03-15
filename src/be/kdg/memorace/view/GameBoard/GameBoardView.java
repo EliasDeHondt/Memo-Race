@@ -209,19 +209,20 @@ public class GameBoardView extends BorderPane {
     public void shuffleCards(){
         Random random = new Random();
         int[] shuffleArray =  {0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
-        int shuffleVal = random.nextInt(shuffleArray.length);
+       // int shuffleVal = random.nextInt(16);
 
-        // Retrieve the value at the random index
-        int randomInt = shuffleArray[shuffleVal];
+        for(int i = shuffleArray.length - 1; i >= 0; --i) {
+            int j = random.nextInt(i + 1);
+            int temp = shuffleArray[i];
+            shuffleArray[i] = shuffleArray[j];
+            shuffleArray[j] = temp;
+        }
 
-
-        for (int i = 0; i < this.cards.length-1; i++) {
-            this.cards[i].setImage(this.cards[shuffleArray[randomInt]].getImage());
-            // Remove the element at the random index
-            int[] newInts = new int[shuffleArray.length - 1];
-            System.arraycopy(shuffleArray, 0, newInts, 0, shuffleVal);
-            System.arraycopy(shuffleArray, shuffleVal + 1, newInts, shuffleVal, shuffleArray.length - shuffleVal - 1);
-            shuffleArray = newInts;
+        for (int i = 0; i < shuffleArray.length; i++) {
+            System.out.println(i + ": " + shuffleArray[i]);
+        }
+        for(int i = 0; i < this.cards.length; ++i) {
+            this.cards[i].setImage(this.cards[shuffleArray[i]].getImage());
         }
     }
     Button getRollButton() { // Get..
