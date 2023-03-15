@@ -4,8 +4,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 
 /**
- * @author Vera Wise & Elias De Hondt
- * 08/12/2022
+ * <p> @author Vera Wise </p>
+ * <p> @author Elias De Hondt </p>
+ * <p> 08/12/2022 </p>
  */
 public class AboutView extends BorderPane {
     // Attributes

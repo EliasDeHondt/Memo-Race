@@ -6,8 +6,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
- * @author Vera Wise & Elias De Hondt
- * 08/12/2022
+ * <p> @author Vera Wise </p>
+ * <p> @author Elias De Hondt </p>
+ * <p> 08/12/2022 </p>
  */
 public class FileHandler {
     // Methods
@@ -37,9 +38,11 @@ public class FileHandler {
         FileWriter writer = new FileWriter(filename, true);
         File file = new File(filename); // Temp file
         boolean fileExists = file.exists(); // Check if the file already exists
+
         if (!fileExists) { // Check if the file already exists
             writer.append("name,score\n"); // Add name columns
         }
+
         for (Player player : players) {
             String name = player.getName();
             String score = String.valueOf(player.getScore());

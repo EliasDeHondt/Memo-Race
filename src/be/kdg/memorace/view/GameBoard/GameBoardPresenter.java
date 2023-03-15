@@ -10,8 +10,9 @@ import java.util.List;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
- * @author Vera Wise & Elias De Hondt
- * 08/12/2022
+ * <p> @author Vera Wise </p>
+ * <p> @author Elias De Hondt </p>
+ * <p> 08/12/2022 </p>
  */
 public class GameBoardPresenter {
     // Attributes
@@ -100,7 +101,6 @@ public class GameBoardPresenter {
                                 imageView1 = gameBoardView.getEmptyCards()[finalI];
                             }
                         }
-                        System.out.println(clicked[0]);
                         if (clicked[0]) {
                             for (int i1 = 0; i1 < gameBoardView.getCards().length; i1++) {
                                 int finalI1 = i1;

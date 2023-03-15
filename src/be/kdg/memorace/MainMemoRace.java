@@ -4,14 +4,14 @@ import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * @author Vera Wise & Elias De Hondt
- * 08/12/2022
+ * <p> @author Vera Wise </p>
+ * <p> @author Elias De Hondt </p>
+ * <p> 08/12/2022 </p>
  */
 public class MainMemoRace extends Application {
     // Methods
@@ -19,7 +19,7 @@ public class MainMemoRace extends Application {
         Application.launch(args);
     }
     @Override
-    public void start(Stage primaryStage) { // Start
+    public void start(Stage primaryStage) throws IOException { // Start
         Memorace model = new Memorace(); // Making Model(Memorace.class).
         WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
         new WelcomePresenter(model, welcomeView); // Making Presenter (WelcomePresenter.class).
@@ -31,23 +31,8 @@ public class MainMemoRace extends Application {
         primaryStage.setTitle("Memo-Race / Welcome"); // Making Title.
         welcomeView.setCustomStage(primaryStage); // Send primaryStage to (WelcomeView.class)
 
-        try  {
-            writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
-        } catch (IOException e1) {
-            String errorMessage = "(writeStartUpLog) Our apologies, there seem to be an issue with our file system handler. :-(";
-            Alert alert1 = new Alert(Alert.AlertType.ERROR);
-            alert1.setHeaderText(errorMessage);
-            alert1.setTitle("File Handler ERROR");
-            alert1.showAndWait();
-            try {
-                writeErrorLog("resources/log/errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
-            } catch (IOException e2) {
-                Alert alert2 = new Alert(Alert.AlertType.ERROR);
-                alert2.setHeaderText("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
-                alert2.setTitle("File Handler ERROR");
-                alert2.showAndWait();
-            }
-        }
+        writeStartUpLog("resources/log/startUpLog.txt", "Startup Time"); // Set log
+
         primaryStage.show(); // Show Stage.
     }
 }

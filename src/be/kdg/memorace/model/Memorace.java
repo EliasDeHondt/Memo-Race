@@ -3,8 +3,9 @@ import javafx.scene.image.ImageView;
 import java.util.*;
 
 /**
- * @author Vera Wise & Elias De Hondt
- * 08/12/2022
+ * <p> @author Vera Wise </p>
+ * <p> @author Elias De Hondt </p>
+ * <p> 08/12/2022 </p>
  */
 public class Memorace {
     // Attributes
@@ -52,7 +53,6 @@ public class Memorace {
         Card card2 = new Card(imageView2);
 
         if (card1.equals(card2)) {
-            System.out.println("yaaay");
             return true;
         } else return false;
     }
@@ -74,7 +74,6 @@ public class Memorace {
         // Gives the card to draw options based on the position.
         List<Integer> newCards = new ArrayList<>(this.cards.size());
         // Top game board.
-        System.out.println("i = " + i);
         if (i > 0 && i <= 4) {
             newCards.add((i- 1));
             newCards.add((i - 1 + 4));

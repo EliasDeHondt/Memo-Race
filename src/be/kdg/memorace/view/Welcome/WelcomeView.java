@@ -8,8 +8,9 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
- * @author Vera Wise & Elias De Hondt
- * 08/12/2022
+ * <p> @author Vera Wise </p>
+ * <p> @author Elias De Hondt </p>
+ * <p> 08/12/2022 </p>
  */
 public class WelcomeView extends GridPane {
     // Attributes

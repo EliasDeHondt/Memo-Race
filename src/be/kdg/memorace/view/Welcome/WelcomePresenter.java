@@ -1,5 +1,6 @@
 package be.kdg.memorace.view.Welcome;
 import be.kdg.memorace.model.Memorace;
+import be.kdg.memorace.model.MusicHandler;
 import be.kdg.memorace.view.About.*;
 import be.kdg.memorace.view.GameLog.*;
 import be.kdg.memorace.view.NewGame.*;
@@ -12,19 +13,23 @@ import javafx.stage.Stage;
 import static be.kdg.memorace.model.MusicHandler.*;
 
 /**
- * @author Vera Wise & Elias De Hondt
- * 08/12/2022
+ * <p> @author Vera Wise </p>
+ * <p> @author Elias De Hondt </p>
+ * <p> 08/12/2022 </p>
  */
 public class WelcomePresenter {
     // Attributes
     private final Memorace model;
     private final WelcomeView welcomeView;
+    private MusicHandler musicHandler;
     // Constructors
     public WelcomePresenter(Memorace model, WelcomeView welcomeView) {
         this.model = model;
         this.welcomeView = welcomeView;
         this.addEventHandlers();
-        gameMusic(this.model.getVolumeBackground());// Play game Music
+
+//        this.musicHandler
+        // gameMusic(this.model.getVolumeBackground());// Play game Music
     }
 
     // Methods
