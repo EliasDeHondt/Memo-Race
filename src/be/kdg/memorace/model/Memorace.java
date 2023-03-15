@@ -141,11 +141,7 @@ public class Memorace {
         Card card = new Card(i,iv);
         this.cards.put(i,card);
     }
-    public void shuffleCards(){
-        List<Integer> list = new ArrayList<>(this.cards.keySet());
-        Collections.shuffle(list);
 
-    }
     public void setVolumeBackground(double volumeBackground) { // Set..
         this.volumeBackground = volumeBackground;
     }

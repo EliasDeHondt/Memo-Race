@@ -72,7 +72,7 @@ public class GameBoardPresenter {
             throwAgain = false;
 
             this.gameBoardView.getGridGameBoard().setDisable(false);
-            //this.gameBoardView.makeAllCardsNotVisible();
+            this.gameBoardView.makeAllCardsNotVisible();
 
             boolean[] clicked = new boolean[1];
 

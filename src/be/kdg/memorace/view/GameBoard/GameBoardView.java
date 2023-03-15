@@ -89,14 +89,14 @@ public class GameBoardView extends BorderPane {
         }
 
         // Add all card images into the array
-//        for (int i = 0; i < 8; i++) {
-//            this.unknownCards[i] = new ImageView(new Image("/question_mark.png"));
-//            this.unknownCards[i+8] = new ImageView(new Image("/question_mark.png"));
-//        }
-        for (int i = 0; i < 8; i++) { // Add all card images into the array
-            this.unknownCards[i] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
-            this.unknownCards[i+8] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
+        for (int i = 0; i < 8; i++) {
+            this.unknownCards[i] = new ImageView(new Image("/question_mark.png"));
+            this.unknownCards[i+8] = new ImageView(new Image("/question_mark.png"));
         }
+//        for (int i = 0; i < 8; i++) { // Add all card images into the array
+//            this.unknownCards[i] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
+//            this.unknownCards[i+8] = new ImageView(new Image("/meme_card_" + (i+1) + ".png"));
+//        }
 
         // Set gridGameBoard (GameBoard Layout) Center
         setCenter(this.gridGameBoard);
@@ -209,12 +209,14 @@ public class GameBoardView extends BorderPane {
     public void shuffleCards(){
         Random random = new Random();
         int[] shuffleArray =  {0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
-        int shuffleVal = random.nextInt(15);
-        for (int i = 0; i < this.cards.length-1; i++) {
-            this.cards[i].setImage(this.cards[shuffleArray[shuffleVal]].getImage());
+        for (int i = shuffleArray.length - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1);
+            int temp = shuffleArray[i];
+            shuffleArray[i] = shuffleArray[j];
+            shuffleArray[j] = temp;
         }
-        for (int i = shuffleVal; i < shuffleArray.length - 1; i++) {
-            shuffleArray[i] = shuffleArray[i + 1];
+        for (int i = 0; i < this.cards.length; i++) {
+            this.cards[i].setImage(this.cards[shuffleArray[i]].getImage());
         }
 
     }
