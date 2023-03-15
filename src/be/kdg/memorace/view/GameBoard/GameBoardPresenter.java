@@ -63,6 +63,9 @@ public class GameBoardPresenter {
                 new WonPresenter(model, wonView); // Making Presenter (NewGamePresenter.class).
             }
 
+            // Change instruction for the player
+            this.gameBoardView.getInstructions().setText("Choose 1 card from the row \nor column your pawn is in.");
+
             this.gameBoardView.getRollButton().setDisable(true);
             this.play(throwAgain); // Roll the dice and place the pawn
             throwAgain = false;
@@ -70,19 +73,18 @@ public class GameBoardPresenter {
             this.gameBoardView.getGridGameBoard().setDisable(false);
             this.gameBoardView.makeAllCardsNotVisible();
 
-            boolean[] clicked = new boolean[4];
+            boolean[] clicked = new boolean[1];
 
-            List<Integer> ints = this.model.GetValidCardsIDs(this.model.getPawn(this.model.getPlayerID()-1).getPosition());
+            List<Integer> validCardsFirstTurn = this.model.GetValidCardsIDs(this.model.getPawn(this.model.getPlayerID()-1).getPosition());
             int counter = 0;
-            for (Integer i : ints) {
+            for (Integer i : validCardsFirstTurn) {
                 if(gameBoardView.getEmptyCards()[i].getImage() == null){
                     counter++;
                 }
             }
             if(counter >= 4){
                 this.gameBoardView.getRollButton().setDisable(false); //You can roll the die again
-                //The turn doesnt change
-                throwAgain = true;
+                throwAgain = true;//The turn doesn't change
             }
 
             for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
@@ -93,8 +95,10 @@ public class GameBoardPresenter {
                     @Override
                     public void handle(MouseEvent mouseEvent) {
                         clickSound(model.getVolumeButton()); // Play sound when you click the button
+                        // Change instruction for the player
+                        gameBoardView.getInstructions().setText("Choose the 2nd card \nfrom all the cards.");
 
-                        for (int j : ints) {
+                        for (int j : validCardsFirstTurn) {
                             if (finalI == j) {
                                 gameBoardView.getEmptyCards()[finalI].setImage(gameBoardView.getCards()[finalI].getImage());
                                 clicked[0] = true;
@@ -106,6 +110,7 @@ public class GameBoardPresenter {
                                 int finalI1 = i1;
                                 gameBoardView.getEmptyCards()[finalI1].setOnMouseClicked(e -> {
                                     gameBoardView.getEmptyCards()[finalI1].setImage(gameBoardView.getCards()[finalI1].getImage());
+
                                     limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false;
                                     ImageView imageView2 = gameBoardView.getEmptyCards()[finalI1];
@@ -115,6 +120,8 @@ public class GameBoardPresenter {
                                         gameBoardView.takeCard(finalI1);
                                     }
                                     gameBoardView.getRollButton().setDisable(false);
+                                    // Change instruction for the player
+                                    gameBoardView.getInstructions().setText("The next player can \nroll the die again.");
                                 });
                             }
                         }
@@ -128,6 +135,7 @@ public class GameBoardPresenter {
         Player player = b ? model.DontTurn() : this.model.Turn();
 
         this.gameBoardView.getPlayerName().setText(player.getName());
+        this.gameBoardView.getScore().setText(String.valueOf(player.getScore()));// Show the score of the player
         this.model.getDie().rollDie();
         this.model.setPawnPosition(this.model.currentPlayer(player));
         this.gameBoardView.returnPosition();

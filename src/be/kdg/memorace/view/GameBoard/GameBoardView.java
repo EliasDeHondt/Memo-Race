@@ -22,6 +22,8 @@ public class GameBoardView extends BorderPane {
     private ImageView dieImg;
     private GridPane gridGameBoard;
     private Stage primaryStage;
+    private Label instructions;
+    private Label score;
     // Constructors
     public GameBoardView(String cardTheme) { // Receives the theme of the cards as an extra.
         this.initialiseNodes();
@@ -39,6 +41,8 @@ public class GameBoardView extends BorderPane {
         this.rollButton = new Button("roll");
         this.dieImg = new ImageView();
         this.gridGameBoard = new GridPane(); // Making new GridPane (CENTER)
+        this.instructions = new Label("Roll the die.");
+        this.score = new Label();
         this.gridGameBoard.setId("background"); // Set CSS background
         setAlignment(gridGameBoard, Pos.CENTER); // Set (gridGameBoard) on CENTER.
 
@@ -61,6 +65,8 @@ public class GameBoardView extends BorderPane {
         top.setPadding(new Insets(10)); // Set padding for (top)
         this.playerName.setId("top"); // Set CSS (this.playerName)
         this.gameTime.setId("top"); // Set CSS (this.gameTime)
+        this.score.setId("button");
+        top.setCenter(this.score);
         this.setTop(top); // set (top) on top in (BorderPane | this. )
 
         // Initializing the correct cards related to the theme.
@@ -90,13 +96,15 @@ public class GameBoardView extends BorderPane {
         // Set gridGameBoard (GameBoard Layout) Center
         setCenter(this.gridGameBoard);
 
-        BorderPane buttom = new BorderPane(); // Making new BorderPane (BUTTOM)
-        buttom.setId("background"); // Set CSS background
+        BorderPane bottom = new BorderPane(); // Making new BorderPane (BOTTOM)
+        bottom.setId("background"); // Set CSS background
         this.rollButton.setId("button"); // Set CSS button
-        setBottom(buttom); // Set (buttom) in Buttom
-        buttom.setRight(this.rollButton); // Set (this.click) Right in buttom
-        buttom.setLeft(this.dieImg); // Set (this.dieSidesSides) Left in buttom
-        buttom.setPadding(new Insets(10)); // Set padding for (buttom)
+        setBottom(bottom); // Set (buttom) in Buttom
+        bottom.setRight(this.rollButton); // Set (this.click) Right in buttom
+        bottom.setLeft(this.dieImg); // Set (this.dieSidesSides) Left in buttom
+        this.instructions.setId("instructionButton");
+        bottom.setCenter(this.instructions);
+        bottom.setPadding(new Insets(10)); // Set padding for (buttom)
     }
     public void addGridPaneCards() {
         for (int i = 0; i < 4; i++) {
@@ -219,5 +227,13 @@ public class GameBoardView extends BorderPane {
     }
     public void setCustomStage(Stage primaryStage) { // Set..
         this.primaryStage = primaryStage;
+    }
+
+    public Label getInstructions() {
+        return instructions;
+    }
+
+    public Label getScore() {
+        return score;
     }
 }
