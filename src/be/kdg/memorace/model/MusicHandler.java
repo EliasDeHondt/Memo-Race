@@ -3,8 +3,8 @@ import javafx.scene.media.*;
 import java.io.File;
 
 /**
- * Van Elias De Hondt
- * 5/03/2023
+ * @author Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class MusicHandler {
     // Methods

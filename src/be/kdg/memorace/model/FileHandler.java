@@ -6,8 +6,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
- * Vera Wise & Elias De Hondt
- * 8/12/2022
+ * @author Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class FileHandler {
     // Methods

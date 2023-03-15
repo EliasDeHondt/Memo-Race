@@ -8,8 +8,8 @@ import static be.kdg.memorace.model.FileHandler.writePlayersLog;
 import static be.kdg.memorace.model.MusicHandler.*;
 
 /**
- * Vera Wise & Elias De Hondt
- * 13/02/2023
+ * @author Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class WonPresenter {
     // Attributes

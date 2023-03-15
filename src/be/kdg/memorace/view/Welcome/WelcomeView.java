@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
- * Vera Wise & Elias De Hondt
+ * @author Vera Wise & Elias De Hondt
  * 08/12/2022
  */
 public class WelcomeView extends GridPane {

@@ -9,8 +9,8 @@ import static be.kdg.memorace.model.FileHandler.writeErrorLog;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
- * Vera Wise & Elias De Hondt
- * 13/02/2023
+ * @author Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class NewGamePresenter {
     // Attributes

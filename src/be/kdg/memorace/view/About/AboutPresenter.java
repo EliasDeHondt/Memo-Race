@@ -3,8 +3,8 @@ import be.kdg.memorace.model.Memorace;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
- * Vera Wise & Elias De Hondt
- * 1/03/2023
+ * @author Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class AboutPresenter {
     // Attributes

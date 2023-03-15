@@ -3,11 +3,10 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
-import javafx.scene.media.*;
 import javafx.stage.Stage;
 
 /**
- * Vera Wise & Elias De Hondt
+ * @author Vera Wise & Elias De Hondt
  * 08/12/2022
  */
 public class WonView extends BorderPane {

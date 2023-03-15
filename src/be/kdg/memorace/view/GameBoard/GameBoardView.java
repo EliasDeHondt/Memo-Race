@@ -7,8 +7,8 @@ import javafx.stage.Stage;
 import java.util.List;
 
 /**
- * Vera Wise & Elias De Hondt
- * 13/02/2023
+ * @author Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class GameBoardView extends BorderPane {
     // Attributes

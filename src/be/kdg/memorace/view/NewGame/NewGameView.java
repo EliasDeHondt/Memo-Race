@@ -6,7 +6,7 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 /**
- * Vera Wise & Elias De Hondt
+ * @author Vera Wise & Elias De Hondt
  * 08/12/2022
  */
 public class NewGameView extends BorderPane {

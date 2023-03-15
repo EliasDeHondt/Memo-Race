@@ -5,8 +5,8 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 /**
- * Vera Wise & Elias De Hondt
- * 5/03/2023
+ * @author Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 public class SettingsView extends BorderPane {
     // Attributes

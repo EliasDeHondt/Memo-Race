@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import static be.kdg.memorace.model.MusicHandler.*;
 
 /**
- * Vera Wise & Elias De Hondt
+ * @author Vera Wise & Elias De Hondt
  * 08/12/2022
  */
 public class WelcomePresenter {

@@ -3,7 +3,7 @@ import javafx.scene.image.ImageView;
 import java.util.*;
 
 /**
- * Vera Wise & Elias De Hondt
+ * @author Vera Wise & Elias De Hondt
  * 08/12/2022
  */
 public class Memorace {

@@ -1,8 +1,8 @@
 package be.kdg.memorace.model;
 
 /**
- * Vera Wise & Elias De Hondt
- * 20/02/2023
+ * @author Vera Wise & Elias De Hondt
+ * 08/12/2022
  */
 
 public class Timer {
