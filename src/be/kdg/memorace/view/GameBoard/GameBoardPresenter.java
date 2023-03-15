@@ -53,7 +53,7 @@ public class GameBoardPresenter {
         this.gameBoardView.getRollButton().setOnAction(actionEvent -> {
             clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
-            //If there are no cards left on the board:
+            // If there are no cards left on the board:
             if(checkIfAllNull(gameBoardView.getEmptyCards())){
                 WonView wonView = new WonView(); // Making View (NewGameView.class).
                 this.gameBoardView.getScene().setRoot(wonView); // Add (NewGameView.class) to (WelcomeView.class).

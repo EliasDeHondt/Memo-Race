@@ -17,3 +17,9 @@
 2023-03-13 23:38:34 (writeErrorLog) No player names were entered. Please be advised.
 2023-03-15 15:35:31 (writeErrorLog) No player names were entered. Please be advised.
 2023-03-15 15:36:24 (writeErrorLog) No player names were entered. Please be advised.
+2023-03-15 16:05:17 (writeErrorLog) No player names were entered. Please be advised.
+2023-03-15 16:18:25 (writeErrorLog) No player names were entered. Please be advised.
+2023-03-15 16:19:06 (writeErrorLog) No player names were entered. Please be advised.
+2023-03-15 16:19:09 (writeErrorLog) No player names were entered. Please be advised.
+2023-03-15 16:19:10 (writeErrorLog) No player names were entered. Please be advised.
+2023-03-15 16:19:11 (writeErrorLog) No player names were entered. Please be advised.

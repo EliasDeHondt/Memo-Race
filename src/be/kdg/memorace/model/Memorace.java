@@ -18,6 +18,7 @@ public class Memorace {
     private double volumeButton;
     private String cardTheme;
     private final Timer timer;
+    private final MusicHandler musicHandler;
     // Constructors
     public Memorace() {
         this.turn = 0;
@@ -25,8 +26,13 @@ public class Memorace {
         this.die = new Die(); // Creates a new die.
         this.pawns = new LinkedList<>(); // Creates a new pawn.
         this.cards = new HashMap<>();
+
         this.volumeBackground = 0.5; // default 50%
         this.volumeButton = 1.0; // default 100%
+
+        this.musicHandler = new MusicHandler();
+        this.musicHandler.gameMusic(this.volumeButton); // Play game Music (default 100%)
+
         this.timer = new Timer(); // Set timer
     }
     // Methods
@@ -172,5 +178,8 @@ public class Memorace {
     }
     public int getPlayerID() { // Get..
         return this.turn;
+    }
+    public MusicHandler getMusicHandler() {
+        return this.musicHandler;
     }
 }

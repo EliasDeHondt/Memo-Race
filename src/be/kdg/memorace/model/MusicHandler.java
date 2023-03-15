@@ -8,13 +8,15 @@ import java.io.File;
  * <p> 08/12/2022 </p>
  */
 public class MusicHandler {
+    private MediaPlayer backgroundMusic;
     // Methods
     public void gameMusic(double volumeBackground) {
 
         Media media = new Media(new File("resources/music/introductionMusic.wav").toURI().toString()); // set (Media)
-        MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = mediaPlayer
-        mediaPlayer.setVolume(volumeBackground); // Set volume to default 50%
-        mediaPlayer.play(); // Play media (introductionMusic.wav)
+        this.backgroundMusic = new MediaPlayer(media); // Set media to new (MediaPlayer) = mediaPlayer
+        this.backgroundMusic.setVolume(volumeBackground); // Set volume to default 50%
+        this.backgroundMusic.play();
+
     }
 
     public static void clickSound(double volumeButton) { // Play sound when you click the button
@@ -31,5 +33,9 @@ public class MusicHandler {
         MediaPlayer mediaPlayer = new MediaPlayer(media); // Set media to new (MediaPlayer) = player
         mediaPlayer.setVolume(volumeWon); // Set volume to default 100%
         mediaPlayer.play(); // Play media (won.wav)
+    }
+
+    public MediaPlayer getBackgroundMusic() {
+        return this.backgroundMusic;
     }
 }

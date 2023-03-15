@@ -51,6 +51,9 @@ public class SettingsPresenter {
             String cardTheme = this.settingsView.getTheme().getValue();
 
             // Pass the values to the MusicHandler methods
+
+            this.model.getMusicHandler().getBackgroundMusic().setVolume(volumeBackground);
+
             this.model.setVolumeBackground(volumeBackground);
             this.model.setVolumeButton(volumeButton);
 

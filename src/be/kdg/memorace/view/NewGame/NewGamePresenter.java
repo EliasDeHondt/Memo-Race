@@ -60,11 +60,13 @@ public class NewGamePresenter {
             GameBoardView gameBoardView = new GameBoardView(this.model.getCardTheme()); // Making View (NewGameView.class) and specify the theme for the cards.
             gameBoardView.setCustomStage(newGameView.getCustomStage());
             new GameBoardPresenter(this.model, gameBoardView); // Making Presenter (NewGamePresenter.class).
-            this.newGameView.getScene().setRoot(gameBoardView); // Add (NewGameView.class) to (WelcomeView.class).
-            gameBoardView.getScene().getWindow().sizeToScene(); // Add new Size.
-            this.newGameView.getCustomStage().setTitle("Memo-Race / Game Bord"); // Making Title (Memo-Race / Game Bord).
 
+            if (newGameView.getScene() != null) { // If no names are entered then null
 
+                this.newGameView.getScene().setRoot(gameBoardView); // Add (NewGameView.class) to (WelcomeView.class).
+                gameBoardView.getScene().getWindow().sizeToScene(); // Add new Size.
+                this.newGameView.getCustomStage().setTitle("Memo-Race / Game Bord"); // Making Title (Memo-Race / Game Bord).
+            }
         });
     }
     private void updateView() {
@@ -96,7 +98,6 @@ public class NewGamePresenter {
                 alert2.setTitle("File Handler ERROR");
                 alert2.showAndWait();
             }
-
         }
     }
 }

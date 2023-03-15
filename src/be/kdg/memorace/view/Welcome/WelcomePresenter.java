@@ -8,6 +8,7 @@ import be.kdg.memorace.view.Settings.*;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import static be.kdg.memorace.model.MusicHandler.*;
@@ -21,15 +22,12 @@ public class WelcomePresenter {
     // Attributes
     private final Memorace model;
     private final WelcomeView welcomeView;
-    private MusicHandler musicHandler;
     // Constructors
     public WelcomePresenter(Memorace model, WelcomeView welcomeView) {
         this.model = model;
         this.welcomeView = welcomeView;
         this.addEventHandlers();
 
-//        this.musicHandler
-        // gameMusic(this.model.getVolumeBackground());// Play game Music
     }
 
     // Methods

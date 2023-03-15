@@ -21,6 +21,8 @@ public class WonPresenter {
         this.model = model;
         this.wonView = wonView;
         this.addEventHandlers();
+
+        this.model.getMusicHandler().getBackgroundMusic().pause();
         wonMusic(1.0);
     }
 
