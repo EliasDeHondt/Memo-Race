@@ -182,35 +182,11 @@ public class GameBoardView extends BorderPane {
         this.getCards()[position].setImage(null);
         this.getUnknownCards()[position].setImage(null);
     }
-    public void showValidCards(List<Integer> newC) {
-        for (Integer i: newC) {
-            this.getUnknownCards()[i].setImage(null);
-        }
-    }
-    public ImageView[] getValidCards(List<Integer> newC) {
-        ImageView[] nC = new ImageView[4];
-        int j = 0;
-        for (Integer i: newC) {
-            nC[j++] = this.getUnknownCards()[i];
-        }
-        return nC;
-    }
-    public int[] getC(List<Integer> newC) {
-        int[] ints = new int[4];
-        int j = 0;
-        for (Integer i: newC) {
-            ints[j++] = i;
-        }
-        return ints;
-    }
+
     public ImageView[] shuffleCards(){
         Random random = new Random();
         int[] shuffleArray =  {0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
-        ImageView[] tempCards = this.cards;
         ImageView[] newCards = new ImageView[16];
-        for (int i = 0; i < tempCards.length; i++) {
-            System.out.println(i + ": " + tempCards[i].getImage().getUrl());
-        }       // int shuffleVal = random.nextInt(16);
 
         for(int i = shuffleArray.length - 1; i >= 0; --i) {
             int j = random.nextInt(i + 1);
@@ -219,18 +195,10 @@ public class GameBoardView extends BorderPane {
             shuffleArray[j] = temp;
         }
 
-        for (int i = 0; i < shuffleArray.length; i++) {
-            System.out.println(i + ": " + shuffleArray[i]);
-        }
         for(int i = 0; i < this.cards.length; i++) {
-            System.out.println(i + ": " + this.cards[shuffleArray[i]].getImage().getUrl());
-            //this.cards[shuffleArray[i]].setImage(cards[i].getImage());
             newCards[i] = this.cards[shuffleArray[i]];
         }
-        System.out.println("===============");
-        for (int i = 0; i < newCards.length; i++) {
-            System.out.println(i + ":: " + newCards[i].getImage().getUrl());
-        }
+
         return newCards;
     }
     Button getRollButton() { // Get..
