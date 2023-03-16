@@ -1,9 +1,12 @@
 package be.kdg.memorace.view.Won;
+
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
+
 import java.io.IOException;
+
 import static be.kdg.memorace.model.FileHandler.writePlayersLog;
 import static be.kdg.memorace.model.MusicHandler.*;
 
@@ -16,6 +19,7 @@ public class WonPresenter {
     // Attributes
     private final Memorace model;
     private final WonView wonView;
+
     // Constructors
     public WonPresenter(Memorace model, WonView wonView) {
         this.model = model;
@@ -48,7 +52,7 @@ public class WonPresenter {
         }));
 
         this.wonView.getPlayerName().setText(String.format("Name: %s", this.model.winner().getName()));
-        this.wonView.getPlayerScore().setText(String.format("Score: %d",this.model.winner().getScore()));
+        this.wonView.getPlayerScore().setText(String.format("Score: %d", this.model.winner().getScore()));
 
 
         try {

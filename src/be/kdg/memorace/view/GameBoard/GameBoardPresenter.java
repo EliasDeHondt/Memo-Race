@@ -1,4 +1,5 @@
 package be.kdg.memorace.view.GameBoard;
+
 import be.kdg.memorace.model.*;
 import be.kdg.memorace.view.Won.*;
 import javafx.animation.*;
@@ -6,10 +7,15 @@ import javafx.event.EventHandler;
 import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
+
 import java.util.List;
+
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
+ * This class is responsible for the interactions between the game logicand this., and updates the view accordingly.
+ * It implements the interactions of the GameBoardView with the Memorace model.
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022
@@ -22,6 +28,13 @@ public class GameBoardPresenter {
     private boolean throwAgain;
     private Timeline stopwatchTimeline;
     // Constructors
+
+    /**
+     * Constructs a new GameBoardPresenter object, initializes the game view and adds the necessary event handlers.
+     *
+     * @param model         the model containing the game's logic
+     * @param gameBoardView the view displaying the game board
+     */
     public GameBoardPresenter(Memorace model, GameBoardView gameBoardView) {
         this.model = model;
         this.gameBoardView = gameBoardView;
@@ -34,6 +47,12 @@ public class GameBoardPresenter {
         this.stopwatchTimeline.play();
     }
     // Methods
+
+    /**
+     * Sets up the timeline used for the game timer.
+     * Creates a new Timeline object, sets its cycle count to indefinite,
+     * and adds a key frame to update the game time label in the view according to the model timer.
+     */
     private void setupTimeline() {
         this.stopwatchTimeline = new Timeline();
         this.stopwatchTimeline.setCycleCount(Animation.INDEFINITE);
@@ -42,10 +61,17 @@ public class GameBoardPresenter {
         this.stopwatchTimeline.getKeyFrames().add(new KeyFrame(Duration.millis(this.model.getTimer().getDuration()), event -> {
             this.model.getTimer().tick();
             this.gameBoardView.getGameTime().setText(String.format("%02d:%02d:%02d",
-                    this.model.getTimer().getHours(),this.model.getTimer().getMinutes(),this.model.getTimer().getSeconds()));
+                    this.model.getTimer().getHours(), this.model.getTimer().getMinutes(), this.model.getTimer().getSeconds()));
         }));
     }
 
+    /**
+     * Adds event handlers to the view.
+     * Calls the view's makePath and makeCards methods to create the game board and cards,
+     * sets the roll button's OnAction event handler to roll the die and place the pawn,
+     * and sets the OnMouseClicked event handlers for the unknown cards to reveal cards
+     * and update the view accordingly.
+     */
     private void addEventHandlers() {
         this.gameBoardView.makePath();
         this.gameBoardView.makeCards();
@@ -54,7 +80,7 @@ public class GameBoardPresenter {
             clickSound(this.model.getVolumeButton()); // Play sound when you click the button
 
             // If there are no cards left on the board:
-            if(checkIfAllNull(gameBoardView.getUnknownCards())){
+            if (checkIfAllNull(gameBoardView.getUnknownCards())) {
                 WonView wonView = new WonView(); // Making View (NewGameView.class).
                 this.gameBoardView.getScene().setRoot(wonView); // Add (NewGameView.class) to (WelcomeView.class).
                 wonView.getScene().getWindow().sizeToScene(); // Add new Size.
@@ -75,14 +101,14 @@ public class GameBoardPresenter {
 
             boolean[] clicked = new boolean[1];
 
-            List<Integer> validCardsFirstTurn = this.model.GetValidCardsIDs(this.model.getPawn(this.model.getPlayerID()-1).getPosition());
+            List<Integer> validCardsFirstTurn = this.model.GetValidCardsIDs(this.model.getPawn(this.model.getPlayerID() - 1).getPosition());
             int counter = 0;
             for (Integer i : validCardsFirstTurn) {
-                if(gameBoardView.getUnknownCards()[i].getImage() == null){
+                if (gameBoardView.getUnknownCards()[i].getImage() == null) {
                     counter++;
                 }
             }
-            if(counter >= 4){
+            if (counter >= 4) {
                 this.gameBoardView.getRollButton().setDisable(false); //You can roll the die again
                 throwAgain = true; //The turn doesn't change
             }
@@ -135,6 +161,12 @@ public class GameBoardPresenter {
             updateView();
         });
     }
+
+    /**
+     * Plays the game by setting the current player, updating the view, and rolling the die.
+     *
+     * @param b a boolean indicating whether it's the current player's turn or not
+     */
     private void play(boolean b) {
         Player player = b ? model.DontTurn() : this.model.Turn();
 
@@ -146,14 +178,20 @@ public class GameBoardPresenter {
         this.gameBoardView.showPawn(this.model.getPawn(this.model.currentPlayer(player)).getPosition(), this.model.currentPlayer(player));
     }
 
+    /**
+     * Limits the number of times a player can click on a card.
+     */
     private void limitCards() {
         this.timesClicked++;
-        if(this.timesClicked >= 1){
+        if (this.timesClicked >= 1) {
             this.gameBoardView.getGridGameBoard().setDisable(true);
             this.timesClicked = 0;
         }
     }
 
+    /**
+     * Updates the view by showing the current side of the die and setting the cards in the model.
+     */
     private void updateView() {
         int side = this.model.getDie().getSide();
         this.gameBoardView.showDie(side);
@@ -163,6 +201,13 @@ public class GameBoardPresenter {
             this.model.setCards(i, this.gameBoardView.getCards()[i]);
         }
     }
+
+    /**
+     * Checks if all image views in an array are null.
+     *
+     * @param imageViews an array of ImageView objects to check
+     * @return a boolean indicating whether all ImageView objects in the array are null or not
+     */
     public static boolean checkIfAllNull(ImageView[] imageViews) {
         for (ImageView i : imageViews) {
             if (i.getImage() != null) {

@@ -1,11 +1,14 @@
 package be.kdg.memorace;
+
 import static be.kdg.memorace.model.FileHandler.*;
+
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 /**
@@ -18,6 +21,7 @@ public class MainMemoRace extends Application {
     public static void main(String[] args) { // Main
         Application.launch(args);
     }
+
     @Override
     public void start(Stage primaryStage) throws IOException { // Start
         Memorace model = new Memorace(); // Making Model(Memorace.class).

@@ -1,4 +1,5 @@
 package be.kdg.memorace.view.Won;
+
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
@@ -17,11 +18,13 @@ public class WonView extends BorderPane {
     private Label playerName;
     private Label playerScore;
     private Stage primaryStage;
+
     // Constructors
     public WonView() {
         this.initialiseNodes();
         this.layoutNodes();
     }
+
     // Methods
     public void initialiseNodes() {
         this.miBack = new MenuItem("Back");
@@ -30,10 +33,11 @@ public class WonView extends BorderPane {
         this.playerName = new Label();
         this.playerScore = new Label();
     }
+
     public void layoutNodes() {
         // Menu opbouwen:
         Menu menu = new Menu("Help");
-        menu.getItems().addAll(this.miBack,this.miExit);
+        menu.getItems().addAll(this.miBack, this.miExit);
         MenuBar menuBar = new MenuBar(menu);
 
         this.setTop(menuBar);
@@ -48,10 +52,9 @@ public class WonView extends BorderPane {
         this.setBottom(gridPane);
 
 
-
         // Add (playNewGame) and (viewGameLog) in to (GridPane)
-        gridPane.add(this.playerName,0,0);
-        gridPane.add(this.playerScore,0,1);
+        gridPane.add(this.playerName, 0, 0);
+        gridPane.add(this.playerScore, 0, 1);
 
         // Set Hgap and Vgap to 10
         gridPane.setHgap(10);
@@ -65,21 +68,27 @@ public class WonView extends BorderPane {
         this.setId("pane");
 
     }
+
     MenuItem getMiBack() { // Get
         return this.miBack;
     }
+
     MenuItem getMiExit() { // Get
         return this.miExit;
     }
+
     Label getPlayerName() { // Get..
         return this.playerName;
     }
+
     Label getPlayerScore() { // Get..
         return this.playerScore;
     }
+
     public Stage getCustomStage() { // Get..
         return primaryStage;
     }
+
     public void setCustomStage(Stage primaryStage) { // Set..
         this.primaryStage = primaryStage;
     }

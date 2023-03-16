@@ -1,4 +1,5 @@
 package be.kdg.memorace.view.About;
+
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
@@ -12,11 +13,13 @@ public class AboutView extends BorderPane {
     // Attributes
     private TextArea data;
     private Button ok;
+
     // Constructors
     public AboutView() {
         this.initialiseNodes();
         this.layoutNodes();
     }
+
     // Methods
     private void initialiseNodes() {
         this.ok = new Button("Ok");

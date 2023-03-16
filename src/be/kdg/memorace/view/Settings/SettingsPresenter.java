@@ -1,7 +1,9 @@
 package be.kdg.memorace.view.Settings;
+
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Platform;
+
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
@@ -13,6 +15,7 @@ public class SettingsPresenter {
     // Attributes
     private final Memorace model;
     private final SettingsView settingsView;
+
     // Constructors
     public SettingsPresenter(Memorace model, SettingsView settingsView) {
         this.model = model;

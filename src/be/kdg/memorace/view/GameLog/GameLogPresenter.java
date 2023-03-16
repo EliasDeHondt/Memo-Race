@@ -1,9 +1,12 @@
 package be.kdg.memorace.view.GameLog;
+
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
+
 import java.io.IOException;
+
 import static be.kdg.memorace.model.FileHandler.*;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
@@ -16,6 +19,7 @@ public class GameLogPresenter {
     // Attributes
     private final Memorace model;
     private final GameLogView gameLogView;
+
     // Constructors
     public GameLogPresenter(Memorace model, GameLogView gameLogView) {
         this.model = model;
@@ -75,4 +79,3 @@ public class GameLogPresenter {
         }));
     }
 }
-

@@ -1,4 +1,5 @@
 package be.kdg.memorace.view.Settings;
+
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -21,6 +22,7 @@ public class SettingsView extends BorderPane {
     private Label themeL;
     private Button save;
     private Stage primaryStage;
+
     // Constructors
     public SettingsView() {
         this.initialiseNodes();
@@ -52,10 +54,11 @@ public class SettingsView extends BorderPane {
         this.themeL = new Label("Card Theme");
         this.save = new Button("Save");
     }
+
     public void layoutNodes() {
         // Menu opbouwen:
         Menu menu = new Menu("Help");
-        menu.getItems().addAll(this.miBack,this.miExit);
+        menu.getItems().addAll(this.miBack, this.miExit);
         MenuBar menuBar = new MenuBar(menu);
         this.setTop(menuBar);
 
@@ -83,28 +86,36 @@ public class SettingsView extends BorderPane {
 
         setCenter(settingsLayout);
     }
+
     MenuItem getMiBack() { // Get..
         return this.miBack;
     }
+
     MenuItem getMiExit() { // Get..
         return this.miExit;
     }
+
     Slider getBackgroundSoundS() { // Get..
         return this.backgroundSoundS;
     }
+
     Slider getButtonSoundS() { // Get..
         return this.buttonSoundS;
     }
+
     ComboBox<String> getTheme() { // Get..
         return this.themeC;
     }
+
     Button getSave() { // Get..
         return this.save;
     }
-    public void setCustomStage(Stage primaryStage){ // Set..
+
+    public void setCustomStage(Stage primaryStage) { // Set..
         this.primaryStage = primaryStage;
     }
-    public Stage getCustomStage(){ // Get..
+
+    public Stage getCustomStage() { // Get..
         return this.primaryStage;
     }
 }

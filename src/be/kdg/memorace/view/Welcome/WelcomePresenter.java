@@ -1,4 +1,5 @@
 package be.kdg.memorace.view.Welcome;
+
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.model.MusicHandler;
 import be.kdg.memorace.view.About.*;
@@ -11,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 import static be.kdg.memorace.model.MusicHandler.*;
 
 /**
@@ -22,6 +24,7 @@ public class WelcomePresenter {
     // Attributes
     private final Memorace model;
     private final WelcomeView welcomeView;
+
     // Constructors
     public WelcomePresenter(Memorace model, WelcomeView welcomeView) {
         this.model = model;
@@ -34,7 +37,7 @@ public class WelcomePresenter {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-           clickSound(this.model.getVolumeButton()); // Play sound when you click the button.
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button.
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             this.welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).

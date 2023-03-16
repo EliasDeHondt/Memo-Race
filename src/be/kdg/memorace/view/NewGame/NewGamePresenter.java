@@ -1,10 +1,13 @@
 package be.kdg.memorace.view.NewGame;
+
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.GameBoard.*;
 import be.kdg.memorace.view.Welcome.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
+
 import java.io.IOException;
+
 import static be.kdg.memorace.model.FileHandler.writeErrorLog;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
@@ -17,6 +20,7 @@ public class NewGamePresenter {
     // Attributes
     private final Memorace model;
     private final NewGameView newGameView;
+
     // Constructors
     public NewGamePresenter(Memorace model, NewGameView newGameView) {
         this.model = model;
@@ -69,12 +73,13 @@ public class NewGamePresenter {
             }
         });
     }
+
     private void updateView() {
         try {
             // This four loop is responsible for the six players.
-            for (int i = 1; i <= this.newGameView.getPlayerTxt().length-1; i++) {
+            for (int i = 1; i <= this.newGameView.getPlayerTxt().length - 1; i++) {
                 // Takes the player name from the view and puts it in a variable.
-                String playerName = this.newGameView.getPlayerName(i-1).getText();
+                String playerName = this.newGameView.getPlayerName(i - 1).getText();
                 // If the variable is not empty, it will be added to the player list.
                 if (!playerName.isEmpty()) {
                     this.model.setPlayer(playerName);
@@ -101,14 +106,3 @@ public class NewGamePresenter {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-

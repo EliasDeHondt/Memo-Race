@@ -1,4 +1,5 @@
 package be.kdg.memorace.view.Welcome;
+
 import be.kdg.memorace.model.MusicHandler;
 import javafx.animation.FadeTransition;
 import javafx.geometry.*;
@@ -23,6 +24,7 @@ public class WelcomeView extends GridPane {
     private Button about;
     private Button exit;
     private Stage primaryStage;
+
     // Constructors
     public WelcomeView() {
         this.initialiseNodes();
@@ -38,6 +40,7 @@ public class WelcomeView extends GridPane {
         this.about = new Button("    About    ");
         this.exit = new Button("    Exit     ");
     }
+
     public void layoutNodes() {
         // Set Padding (20)
         setPadding(new Insets(60));
@@ -45,12 +48,12 @@ public class WelcomeView extends GridPane {
         VBox top = new VBox(new ImageView(this.logo));
         top.setAlignment(Pos.CENTER);
         // Add (top), (playNewGame), (viewGameLog) and (quit) in to (GridPane)
-        this.add(top,1,0);
-        this.add(this.playNewGame,1,1);
-        this.add(this.viewGameLog,1,2);
-        this.add(this.settings,1,3);
-        this.add(this.about,1,4);
-        this.add(this.exit,1,5);
+        this.add(top, 1, 0);
+        this.add(this.playNewGame, 1, 1);
+        this.add(this.viewGameLog, 1, 2);
+        this.add(this.settings, 1, 3);
+        this.add(this.about, 1, 4);
+        this.add(this.exit, 1, 5);
         // Set Vgap to 10
         this.setVgap(30);
         // CSS For (playNewGame), (viewGameLog), (about), (quit) and (this)
@@ -66,25 +69,32 @@ public class WelcomeView extends GridPane {
         ft.setToValue(1);
         ft.play();
     }
+
     Button getPlayNewGame() { // Get..
         return this.playNewGame;
     }
+
     Button getViewGameLog() { // Get..
         return this.viewGameLog;
     }
+
     Button getSettings() { // Get..
         return this.settings;
     }
+
     Button getAbout() { // Get..
         return this.about;
     }
+
     Button getExit() { // Get..
         return this.exit;
     }
-    public void setCustomStage(Stage primaryStage){ // Set..
+
+    public void setCustomStage(Stage primaryStage) { // Set..
         this.primaryStage = primaryStage;
     }
-    public Stage getCustomStage(){
+
+    public Stage getCustomStage() {
         return this.primaryStage;
     }
 }
