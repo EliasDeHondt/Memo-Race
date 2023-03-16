@@ -101,7 +101,7 @@ public class GameBoardPresenter {
 
             boolean[] clicked = new boolean[1];
 
-            List<Integer> validCardsFirstTurn = this.model.GetValidCardsIDs(this.model.getPawn(this.model.getPlayerID() - 1).getPosition());
+            List<Integer> validCardsFirstTurn = this.model.getValidCardsIDs(this.model.getPawn(this.model.getPlayerID() - 1).getPosition());
             int counter = 0;
             for (Integer i : validCardsFirstTurn) {
                 if (gameBoardView.getUnknownCards()[i].getImage() == null) {
@@ -168,7 +168,7 @@ public class GameBoardPresenter {
      * @param b a boolean indicating whether it's the current player's turn or not
      */
     private void play(boolean b) {
-        Player player = b ? model.DontTurn() : this.model.Turn();
+        Player player = b ? model.dontTurn() : this.model.turn();
 
         this.gameBoardView.getPlayerName().setText(player.getName());
         this.gameBoardView.getScore().setText(String.valueOf(player.getScore()));// Show the score of the player

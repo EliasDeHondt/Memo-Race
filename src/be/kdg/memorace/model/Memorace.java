@@ -20,7 +20,7 @@ public class Memorace {
     private final Die die;
     private final List<Pawn> pawns;
     private int turn;
-    private final Map<Integer, Card> cards;
+    private final List<Card> cards;
     private double volumeBackground;
     private double volumeButton;
     private String cardTheme;
@@ -40,8 +40,8 @@ public class Memorace {
         this.turn = 0;
         this.players = new LinkedList<>();  // Creates a new player list.
         this.die = new Die(); // Creates a new die.
-        this.pawns = new LinkedList<>(); // Creates a new pawn.
-        this.cards = new HashMap<>();
+        this.pawns = new LinkedList<>(); // Creates new pawn list.
+        this.cards = new LinkedList<>(); // Creates new card list.
 
         this.volumeBackground = 0.5; // default 50%
         this.volumeButton = 1.0; // default 100%
@@ -59,7 +59,7 @@ public class Memorace {
      *
      * @return The current player whose turn it is.
      */
-    public Player Turn() {
+    public Player turn() {
         if (this.turn >= this.players.size()) {
             this.turn = 0;
         }
@@ -71,7 +71,7 @@ public class Memorace {
      *
      * @return The player who is not currently taking their turn.
      */
-    public Player DontTurn() {
+    public Player dontTurn() {
         return this.players.get(getPlayerID() - 1);
     }
 
@@ -138,7 +138,7 @@ public class Memorace {
      * @param i The position on the game board
      * @return List of valid card IDs
      */
-    public List<Integer> GetValidCardsIDs(int i) {
+    public List<Integer> getValidCardsIDs(int i) {
         // Gives the card to draw options based on the position.
         List<Integer> newCards = new ArrayList<>(this.cards.size());
         // Top game board.
@@ -223,7 +223,7 @@ public class Memorace {
      */
     public void setCards(int i, ImageView imageView) {
         Card card = new Card(i, imageView);
-        this.cards.put(i, card);
+        this.cards.add(card);
     }
 
     /**
