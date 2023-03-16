@@ -34,13 +34,13 @@ public class WelcomePresenter {
     private void addEventHandlers() {
         // Action-> [Play New Game] (getPlayNewGame)
         this.welcomeView.getPlayNewGame().setOnAction((e -> {
-           clickSound(this.model.getVolumeButton()); // Play sound when you click the button
+           clickSound(this.model.getVolumeButton()); // Play sound when you click the button.
 
             NewGameView newGameView = new NewGameView(); // Making View (NewGameView.class).
             this.welcomeView.getScene().setRoot(newGameView); // Add (NewGameView.class) to (WelcomeView.class).
             newGameView.getScene().getWindow().sizeToScene(); // Add new Size.
             this.welcomeView.getCustomStage().setTitle("Memo-Race / New Game"); // Making Title (Memo-Race / New Game).
-            newGameView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (NewGameView.class)
+            newGameView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (NewGameView.class).
             new NewGamePresenter(model, newGameView); // Making Presenter (NewGamePresenter.class).
         }));
 
@@ -52,25 +52,25 @@ public class WelcomePresenter {
             this.welcomeView.getScene().setRoot(gameLogView); // Add (GameLogView.class) to (WelcomeView.class).
             gameLogView.getScene().getWindow().sizeToScene(); // Add new Size.
             this.welcomeView.getCustomStage().setTitle("Memo-Race / Game Log"); // Making Title (Memo-Race / Game Log).
-            gameLogView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (GameLogView.class)
+            gameLogView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (GameLogView.class).
             new GameLogPresenter(model, gameLogView); // Making Presenter (GameLogPresenter.class).
         }));
 
         // Action-> [Settings] (getSettings)
         this.welcomeView.getSettings().setOnAction((e -> {
-            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button.
 
             SettingsView settingsView = new SettingsView(); // Making View (SettingsView.class).
             this.welcomeView.getScene().setRoot(settingsView); // Add (SettingsView.class) to (WelcomeView.class).
             settingsView.getScene().getWindow().sizeToScene(); // Add new Size.
             this.welcomeView.getCustomStage().setTitle("Memo-Race / Settings"); // Making Title (Memo-Race / Game Log).
-            settingsView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (SettingsView.class)
+            settingsView.setCustomStage(this.welcomeView.getCustomStage());  // Send primaryStage to (SettingsView.class).
             new SettingsPresenter(model, settingsView); // Making Presenter (GameLogPresenter.class).
         }));
 
         // Action-> [About] (getAbout)
         this.welcomeView.getAbout().setOnAction(event -> {
-            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button.
 
             AboutView aboutView = new AboutView();
             new AboutPresenter(model, aboutView);
@@ -87,7 +87,7 @@ public class WelcomePresenter {
 
         // Action-> [Exit Game] (getExit)
         this.welcomeView.getExit().setOnAction((e -> {
-            clickSound(this.model.getVolumeButton()); // Play sound when you click the button
+            clickSound(this.model.getVolumeButton()); // Play sound when you click the button.
             Platform.exit(); // exit
         }));
     }
