@@ -1,6 +1,7 @@
 /**
- * @author Vera Wise & Elias De Hondt
- * 08/12/2022
+ * @author Vera Wise
+ * @author Elias De Hondt
+ * @since 08/12/2022
  */
 // =====================================================================================================================
 /*
@@ -12,7 +13,7 @@
  *
  * Google Docs
  * @see https://docs.google.com/spreadsheets/d/199y9TW0weDEmgGD8Iv0UWyqQnMW8zF_RrBZ8XB4lQBc/edit#gid=0
- * 08/12/2022
+ * 
  */
 // =====================================================================================================================
 // TODO: - Voorzie een startscherm waar je de namen van de spelers kan ingeven.

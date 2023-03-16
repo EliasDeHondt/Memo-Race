@@ -14,9 +14,9 @@ import javafx.stage.Stage;
 import static be.kdg.memorace.model.MusicHandler.*;
 
 /**
- * <p> @author Vera Wise </p>
- * <p> @author Elias De Hondt </p>
- * <p> 08/12/2022 </p>
+ * @author Vera Wise
+ * @author Elias De Hondt
+ * @since 08/12/2022
  */
 public class WelcomePresenter {
     // Attributes

@@ -10,9 +10,9 @@ import java.util.List;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
- * <p> @author Vera Wise </p>
- * <p> @author Elias De Hondt </p>
- * <p> 08/12/2022 </p>
+ * @author Vera Wise
+ * @author Elias De Hondt
+ * @since 08/12/2022
  */
 public class GameBoardPresenter {
     // Attributes
@@ -160,7 +160,7 @@ public class GameBoardPresenter {
 
         // put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
-            this.model.setCards(i,this.gameBoardView.getCards()[i]);
+            this.model.setCards(i, this.gameBoardView.getCards()[i]);
         }
     }
     public static boolean checkIfAllNull(ImageView[] imageViews) {

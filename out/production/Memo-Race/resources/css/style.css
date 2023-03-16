@@ -1,0 +1,89 @@
+/*
+ * Van Elias De Hondt
+ * Van Vera Wise
+*/
+/* VT323 Font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/* VT323 Font */
+/* [Everything] */
+#button {
+    -fx-font-family: 'VT323', monospace;
+    -fx-background-color: #00A2E8;
+    -fx-font-size: 28px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-width: 200px;
+}
+/* [Everything] */
+
+/* WelcomeView | NewGameView */
+#pane {
+    -fx-background-image: url("game_background.gif");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1000 1000;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+/* WelcomeView | NewGameView */
+/* WelcomeView */
+/* WelcomeView */
+/* NewGameView */
+#playerX {
+    -fx-font-family: 'VT323', monospace;
+    -fx-font-size: 23px;
+    -fx-color: #FFFFFF;
+    -fx-background-color: rgba(0, 162, 232, 0.71);
+    -fx-padding: 5px;
+    -fx-width: 15px;
+
+}
+#howManyPlayers {
+    -fx-font-family: 'VT323', monospace;
+    -fx-font-size: 26px;
+    -fx-color: #FFFFFF;
+    -fx-background-color: rgba(0, 162, 232, 0.71);
+    -fx-padding: 10px;
+    -fx-width: 200px;
+
+}
+/* NewGameView */
+/* GameBoardView */
+#background {
+    -fx-background-color: #000000;
+}
+#top {
+    -fx-font-family: 'VT323', monospace;
+    -fx-background-color: #00A2E8;
+    -fx-font-size: 28px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-width: 200px;
+}
+#instructionButton {
+    -fx-font-family: 'VT323', monospace;
+    -fx-background-color: #00A2E8;
+    -fx-font-size: 20px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 10px;
+    -fx-width: 200px;
+}
+/* GameBoardView */
+/* WonView */
+#labelNSL {
+    -fx-font-family: 'VT323', monospace;
+    -fx-font-size: 32px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 25px;
+    -fx-width: 200px;
+}
+/* WonView */
+/* AboutView */
+#buttonOK {
+    -fx-font-family: 'VT323', monospace;
+    -fx-background-color: #00A2E8;
+    -fx-font-size: 20px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 10px;
+    -fx-width: 200px;
+}
+/* AboutView */

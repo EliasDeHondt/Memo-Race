@@ -4,9 +4,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
- * <p> @author Vera Wise </p>
- * <p> @author Elias De Hondt </p>
- * <p> 08/12/2022 </p>
+ * @author Vera Wise
+ * @author Elias De Hondt
+ * @since 08/12/2022
  */
 public class GameLogView extends BorderPane {
     // Attributes
