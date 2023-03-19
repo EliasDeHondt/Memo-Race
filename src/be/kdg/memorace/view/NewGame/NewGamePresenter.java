@@ -77,13 +77,32 @@ public class NewGamePresenter {
     private void updateView() {
         try {
 
+            int count = 0;
+
+            // Loop through each element of the array
+            for (int i = 1; i <= this.newGameView.getPlayerTxt().length - 1; i++) {
+
+                // If the current element is not empty, increment the counter
+                if (!this.newGameView.getPlayerName(i - 1).getText().trim().isEmpty()) {
+                    count++;
+                }
+            }
+
+            // Check if the count is greater than or equal to 2
+            if (count < 2) {
+                throw new Exception();
+            }
+
+
+            // Check if at least two players are present
+            if (this.newGameView.getPlayerTxt().length < 2) {
+                throw new Exception();
+            }
+
             // This four loop is responsible for the six players.
             for (int i = 1; i <= this.newGameView.getPlayerTxt().length - 1; i++) {
 
-                // Check if at least two players are present
-                if (this.newGameView.getPlayerTxt().length < 2) {
-                    throw new Exception();
-                }
+
 
                 // Check if each player name only contains alphabetical characters or is empty
                 if(!this.newGameView.getPlayerName(i - 1).getText().matches("[a-zA-Z]*")) {

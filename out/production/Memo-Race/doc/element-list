@@ -1,0 +1,9 @@
+be.kdg.memorace
+be.kdg.memorace.model
+be.kdg.memorace.view.About
+be.kdg.memorace.view.GameBoard
+be.kdg.memorace.view.GameLog
+be.kdg.memorace.view.NewGame
+be.kdg.memorace.view.Settings
+be.kdg.memorace.view.Welcome
+be.kdg.memorace.view.Won
