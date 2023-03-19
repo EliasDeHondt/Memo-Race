@@ -94,11 +94,6 @@ public class NewGamePresenter {
             }
 
 
-            // Check if at least two players are present
-            if (this.newGameView.getPlayerTxt().length < 2) {
-                throw new Exception();
-            }
-
             // This four loop is responsible for the six players.
             for (int i = 1; i <= this.newGameView.getPlayerTxt().length - 1; i++) {
 
