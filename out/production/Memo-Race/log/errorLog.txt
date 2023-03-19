@@ -23,3 +23,13 @@
 2023-03-15 16:19:09 (writeErrorLog) No player names were entered. Please be advised.
 2023-03-15 16:19:10 (writeErrorLog) No player names were entered. Please be advised.
 2023-03-15 16:19:11 (writeErrorLog) No player names were entered. Please be advised.
+2023-03-19 16:28:16 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-19 16:39:53 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-19 16:40:03 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-19 16:40:18 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-19 16:40:23 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-19 16:40:48 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-19 16:41:20 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-19 16:41:38 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-19 16:42:43 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-19 16:44:11 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.

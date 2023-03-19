@@ -76,21 +76,37 @@ public class NewGamePresenter {
 
     private void updateView() {
         try {
+
             // This four loop is responsible for the six players.
             for (int i = 1; i <= this.newGameView.getPlayerTxt().length - 1; i++) {
+
+                // Check if at least two players are present
+                if (this.newGameView.getPlayerTxt().length < 2) {
+                    throw new Exception();
+                }
+
+                // Check if each player name only contains alphabetical characters or is empty
+                if(!this.newGameView.getPlayerName(i - 1).getText().matches("[a-zA-Z]*")) {
+                    throw new Exception();
+                }
+
+
+                // Checks if the length of the player's name entered greater than 20 characters.
+                if (this.newGameView.getPlayerName(i - 1).getText().length() > 20) {
+                    throw new Exception();
+                }
+
                 // Takes the player name from the view and puts it in a variable.
                 String playerName = this.newGameView.getPlayerName(i - 1).getText();
+
                 // If the variable is not empty, it will be added to the player list.
                 if (!playerName.isEmpty()) {
                     this.model.setPlayer(playerName);
                     this.model.setPawn();
                 }
             }
-            if (this.model.getplayers().size() < 2) {
-                throw new Exception();
-            }
         } catch (Exception e1) {
-            String errorMessage = "(writeErrorLog) No player names were entered. Please be advised.";
+            String errorMessage = "(writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.";
             Alert alert1 = new Alert(Alert.AlertType.WARNING);
             alert1.setHeaderText(errorMessage);
             alert1.setTitle("Player names ERROR");
