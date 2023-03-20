@@ -93,6 +93,9 @@ public class GameBoardView extends BorderPane {
 
         // Set gridGameBoard (GameBoard Layout) Center
         this.setCenter(this.gridGameBoard);
+        this.gridGameBoard.add(new ImageView(new Image("/path_x.png")), 5, 0);
+        this.gridGameBoard.add(new ImageView(new Image("/path_x.png")), 5, 5);
+        this.gridGameBoard.add(new ImageView(new Image("/path_x.png")), 0, 5);
 
         BorderPane bottom = new BorderPane(); // Making new BorderPane (BOTTOM)
         bottom.setId("background"); // Set CSS background
