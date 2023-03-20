@@ -46,7 +46,7 @@ public class GameLogPresenter {
                 writeErrorLog("resources/log/errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
             } catch (IOException e2) {
                 showAlert("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
-
+                showAlert(errorMessage);
             }
         }
 

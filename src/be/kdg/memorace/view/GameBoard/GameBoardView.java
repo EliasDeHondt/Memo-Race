@@ -75,20 +75,11 @@ public class GameBoardView extends BorderPane {
 
         // Initializing the correct cards related to the theme.
         if (cardTheme == null || cardTheme.equals("Meme Theme")) {
-            for (int i = 0; i < 8; i++) { // Add all card images into the array
-                this.cards[i] = new ImageView(new Image("/meme_card_" + (i + 1) + ".png"));
-                this.cards[i + 8] = new ImageView(new Image("/meme_card_" + (i + 1) + ".png"));
-            }
+            addCards("/meme_card_");
         } else if (cardTheme.equals("Fruit Theme")) {
-            for (int i = 0; i < 8; i++) { // Add all card images into the array
-                this.cards[i] = new ImageView(new Image("/fruit_card_" + (i + 1) + ".png"));
-                this.cards[i + 8] = new ImageView(new Image("/fruit_card_" + (i + 1) + ".png"));
-            }
+            addCards("/fruit_card_");
         } else if (cardTheme.equals("Teacher Theme")) {
-            for (int i = 0; i < 8; i++) { // Add all card images into the array
-                this.cards[i] = new ImageView(new Image("/teacher_card_" + (i + 1) + ".png"));
-                this.cards[i + 8] = new ImageView(new Image("/teacher_card_" + (i + 1) + ".png"));
-            }
+            addCards("/teacher_card_");
         }
         this.cards = shuffleCards();
 
@@ -110,6 +101,12 @@ public class GameBoardView extends BorderPane {
         this.instructions.setId("instructionButton");
         bottom.setCenter(this.instructions);
         bottom.setPadding(new Insets(10)); // Set padding for (buttom)
+    }
+    private void addCards(String image){
+        for (int i = 0; i < 8; i++) { // Add all card images into the array
+            this.cards[i] = new ImageView(new Image(image + (i + 1) + ".png"));
+            this.cards[i + 8] = new ImageView(new Image(image + (i + 1) + ".png"));
+        }
     }
 
     public void makeCards() {
@@ -199,39 +196,39 @@ public class GameBoardView extends BorderPane {
         return newCards;
     }
 
-    Button getRollButton() { // Get..
+    Button getRollButton() {
         return this.rollButton;
     }
 
-    ImageView getDieImg() { // Get..
+    ImageView getDieImg() {
         return this.dieImg;
     }
 
-    Label getPlayerName() { // Get..
+    Label getPlayerName() {
         return this.playerName;
     }
 
-    ImageView[] getCards() { // Get..
+    ImageView[] getCards() {
         return this.cards;
     }
 
-    GridPane getGridGameBoard() { // Get..
+    GridPane getGridGameBoard() {
         return gridGameBoard;
     }
 
-    ImageView[] getUnknownCards() { // Get..
+    ImageView[] getUnknownCards() {
         return unknownCards;
     }
 
-    Label getGameTime() { // Get..
+    Label getGameTime() {
         return this.gameTime;
     }
 
-    public Stage getCustomStage() { // Get..
+    public Stage getCustomStage() {
         return this.primaryStage;
     }
 
-    public void setCustomStage(Stage primaryStage) { // Set..
+    public void setCustomStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
 
