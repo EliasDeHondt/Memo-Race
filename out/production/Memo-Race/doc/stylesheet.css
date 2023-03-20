@@ -2,7 +2,6 @@
  * Javadoc style sheet
  */
 
-@import url('resources/fonts/dejavu.css');
 
 /*
  * Styles for individual HTML elements.
@@ -31,11 +30,11 @@ iframe {
 }
 a:link, a:visited {
     text-decoration:none;
-    color:#4A6782;
+    color:#4F94EF;
 }
 a[href]:hover, a[href]:focus {
     text-decoration:none;
-    color:#bb7a2a;
+    color:#cca0ff;
 }
 a[name] {
     color:#353833;
@@ -136,7 +135,7 @@ button {
     }
 }
 .top-nav {
-    background-color:#4D7A97;
+    background-color:#4F94EF;
     color:#FFFFFF;
     float:left;
     padding:0;
@@ -203,10 +202,10 @@ ul.sub-nav-list li {
     text-transform:uppercase;
 }
 .top-nav a:hover {
-    color:#bb7a2a;
+    color:#cca0ff;
 }
 .nav-bar-cell1-rev {
-    background-color:#F8981D;
+    background-color:#cca0ff;
     color:#253441;
     margin: auto 5px;
 }
@@ -376,7 +375,7 @@ ul.see-list-long li:not(:last-child):after {
     padding:5px 12px 7px 12px;
     display:inline-block;
     float:left;
-    background-color:#F8981D;
+    background-color:#cca0ff;
     border: none;
     height:16px;
 }
@@ -398,11 +397,11 @@ div.table-tabs > button {
    margin-right: 8px;
 }
 div.table-tabs > .active-table-tab {
-   background: #F8981D;
+   background: #cca0ff;
    color: #253441;
 }
 div.table-tabs > button.table-tab {
-   background: #4D7A97;
+   background: #4F94EF;
    color: #FFFFFF;
 }
 .two-column-search-results {
@@ -647,7 +646,7 @@ main, nav, header, footer, section {
     font-weight:bold;
     font-size:15px;
     padding:7px 0 7px 3px;
-    background-color:#4D7A97;
+    background-color:#4F94EF;
     color:#FFFFFF;
 }
 .ui-autocomplete {
@@ -757,14 +756,14 @@ div#result-container a.search-result-link {
     transition: all 0.2s ease;
 }
 div.table-tabs > button.table-tab {
-    background: #4D7A97;
+    background: #4F94EF;
     color: #FFFFFF;
 }
 .page-search-header {
     padding: 5px 12px 7px 12px;
     font-weight: bold;
     margin-right: 3px;
-    background-color:#4D7A97;
+    background-color:#4F94EF;
     color:#ffffff;
     display: inline-block;
 }
@@ -1068,10 +1067,10 @@ table.striped > tbody > tr > th {
         padding-left: 20px;
     }
     ul.sub-nav-list-small a:link, ul.sub-nav-list-small a:visited {
-        color:#4A6782;
+        color:#4F94EF;
     }
     ul.sub-nav-list-small a:hover {
-        color:#bb7a2a;
+        color:#cca0ff;
     }
     ul.sub-nav-list-small li {
         list-style:none;
