@@ -7,6 +7,8 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 /**
+ * The SettingsView class shows the window to select the players.
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022

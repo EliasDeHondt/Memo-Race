@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
+ * The SettingsView class shows the window to select the players.
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022

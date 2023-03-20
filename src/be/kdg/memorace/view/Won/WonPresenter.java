@@ -11,6 +11,8 @@ import static be.kdg.memorace.model.FileHandler.writePlayersLog;
 import static be.kdg.memorace.model.MusicHandler.*;
 
 /**
+ * The WonPresenter class that is a presenter for the WonView window.
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022
