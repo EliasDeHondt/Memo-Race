@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
+ * The main for the game.
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022
