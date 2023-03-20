@@ -41,17 +41,12 @@ public class GameLogPresenter {
 
         } catch (IOException e1) {
             String errorMessage = "(readLog) Our apologies, there seem to be an issue with our file system handler. :-(";
-            Alert alert1 = new Alert(Alert.AlertType.ERROR);
-            alert1.setHeaderText(errorMessage);
-            alert1.setTitle("File Handler ERROR");
-            alert1.showAndWait();
+            showAlert(errorMessage);
             try {
                 writeErrorLog("resources/log/errorLog.txt", errorMessage); // The file handler error will also be placed in a log.
             } catch (IOException e2) {
-                Alert alert2 = new Alert(Alert.AlertType.ERROR);
-                alert2.setHeaderText("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
-                alert2.setTitle("File Handler ERROR");
-                alert2.showAndWait();
+                showAlert("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
+
             }
         }
 
@@ -77,5 +72,12 @@ public class GameLogPresenter {
 
             Platform.exit(); // exit
         }));
+    }
+
+    private void showAlert(String text) {
+        Alert alert2 = new Alert(Alert.AlertType.ERROR);
+        alert2.setHeaderText(text);
+        alert2.setTitle("File Handler ERROR");
+        alert2.showAndWait();
     }
 }
