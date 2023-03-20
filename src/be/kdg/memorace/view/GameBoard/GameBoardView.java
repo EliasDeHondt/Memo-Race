@@ -34,7 +34,7 @@ public class GameBoardView extends BorderPane {
     }
 
     // Methods
-    public void initialiseNodes() {
+    private void initialiseNodes() {
         this.playerName = new Label();
         this.gameTime = new Label();
         this.path = new ImageView[18];
@@ -61,7 +61,7 @@ public class GameBoardView extends BorderPane {
 
     }
 
-    public void layoutNodes(String cardTheme) {
+    private void layoutNodes(String cardTheme) {
         BorderPane top = new BorderPane(); // Making new BorderPane (TOP)
         top.setLeft(this.playerName); // Set (this.playerName) on LEFT
         top.setRight(this.gameTime); // Set (this.gameTime) on RIGHT
@@ -109,7 +109,7 @@ public class GameBoardView extends BorderPane {
         }
     }
 
-    public void makeCards() {
+    private void makeCards() {
         ImageView[] imageView = getUnknownCards();
         int j = 1;
         for (int i = 0; i < 4; i++) {
@@ -122,7 +122,7 @@ public class GameBoardView extends BorderPane {
         }
     }
 
-    public void makeAllCardsNotVisible() {
+    void makeAllCardsNotVisible() {
         for (int i = 0; i < 16; i++) {
             if (this.getUnknownCards()[i].getImage() != null) {
                 this.getUnknownCards()[i].setImage(new Image("/question_mark.png"));
@@ -130,7 +130,7 @@ public class GameBoardView extends BorderPane {
         }
     }
 
-    public void makePath() {
+    void makePath() {
         // Set row 0. Example -> gridGameBoard.add(new ImageView(this.path1),1,0);
         for (int i = 0; i < 5; i++) {
             this.gridGameBoard.add(this.path[i], i, 0);
@@ -150,18 +150,17 @@ public class GameBoardView extends BorderPane {
             teller--;
         }
     }
-
-    public void showPawn(int position, int player) {
+    void showPawn(int position, int player) {
         this.path[position].setImage(new Image("/pawn_" + (player + 1) + ".png"));
     }
 
-    public void returnPosition() {
+    void returnPosition() {
         for (int i = 0; i < 17; i++) {
             this.path[i].setImage(new Image("/path_" + i + ".png"));
         }
     }
 
-    public void showDie(int side) {
+    void showDie(int side) {
         switch (side) {
             case 1 -> this.getDieImg().setImage(new Image("/die_1.png"));
             case 2 -> this.getDieImg().setImage(new Image("/die_2.png"));
@@ -172,12 +171,12 @@ public class GameBoardView extends BorderPane {
         }
     }
 
-    public void takeCard(int position) {
+    void takeCard(int position) {
         this.getCards()[position].setImage(null);
         this.getUnknownCards()[position].setImage(null);
     }
 
-    public ImageView[] shuffleCards() {
+    private ImageView[] shuffleCards() {
         Random random = new Random();
         int[] shuffleArray = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
         ImageView[] newCards = new ImageView[16];

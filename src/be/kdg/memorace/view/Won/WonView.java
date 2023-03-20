@@ -34,7 +34,7 @@ public class WonView extends BorderPane {
         this.playerScore = new Label();
     }
 
-    public void layoutNodes() {
+    private void layoutNodes() {
         // Menu opbouwen:
         Menu menu = new Menu("Help");
         menu.getItems().addAll(this.miBack, this.miExit);
