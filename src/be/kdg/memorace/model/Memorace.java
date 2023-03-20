@@ -215,11 +215,10 @@ public class Memorace {
     /**
      * Adds a Card object to the Board's cards collection.
      *
-     * @param i  - the index of the Card.
      * @param imageView - the ImageView object associated with the Card.
      */
-    public void setCards(int i, ImageView imageView) {
-        Card card = new Card(i, imageView);
+    public void setCards(ImageView imageView) {
+        Card card = new Card(imageView);
         this.cards.add(card);
     }
 

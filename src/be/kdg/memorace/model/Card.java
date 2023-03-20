@@ -19,29 +19,17 @@ import java.util.Objects;
 public class Card implements Comparator<Card> {
     // Attributes
     private final ImageView type;
-    private int id;
     // Constructors
 
     /**
      * Constructs a new Card object with the specified id and image view.
-     *
-     * @param id        the id of the card.
-     * @param imageView the ImageView object representing the image displayed on the card.
-     */
-    public Card(int id, ImageView imageView) {
-        this.id = id;
-        this.type = imageView;
-    }
-
-    /**
-     * Constructs a new Card object with the specified image view.
-     * The id of the card is set to 0 by default.
      *
      * @param imageView the ImageView object representing the image displayed on the card.
      */
     public Card(ImageView imageView) {
         this.type = imageView;
     }
+
     // Methods
 
     /**
@@ -54,7 +42,7 @@ public class Card implements Comparator<Card> {
     }
 
     /**
-     * Compares two Card objects based on their ImageView attributes.
+     * Compares two Card objects based on their Image path.
      * Used for sorting Card objects in a list.
      *
      * @param o1 the first Card object to compare.
@@ -69,10 +57,10 @@ public class Card implements Comparator<Card> {
 
     /**
      * Checks if the specified object is equal to this Card object.
-     * Two Card objects are considered equal if their ImageView attributes are equal.
+     * Two Card objects are considered equal if their Image paths are equal.
      *
      * @param o the object to compare to this Card object.
-     * @return true if the specified object is equal to this Card object, false otherwise.
+     * @return true if the specified object path is equal to this Card object path,otherwise false.
      */
     @Override
     public boolean equals(Object o) {

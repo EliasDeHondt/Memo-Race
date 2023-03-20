@@ -202,7 +202,7 @@ public class GameBoardPresenter {
 
         // put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
-            this.model.setCards(i, this.gameBoardView.getCards()[i]);
+            this.model.setCards(this.gameBoardView.getCards()[i]);
         }
     }
 
