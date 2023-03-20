@@ -121,18 +121,19 @@ public class NewGamePresenter {
             }
         } catch (Exception e1) {
             String errorMessage = "(writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.";
-            Alert alert1 = new Alert(Alert.AlertType.WARNING);
-            alert1.setHeaderText(errorMessage);
-            alert1.setTitle("Player names ERROR");
-            alert1.showAndWait();
+            showAlert("Player names ERROR",errorMessage,Alert.AlertType.WARNING);
+
             try {
                 writeErrorLog("resources/log/errorLog.txt", errorMessage); // The player name error will also be placed in a log.
             } catch (IOException e2) {
-                Alert alert2 = new Alert(Alert.AlertType.ERROR);
-                alert2.setHeaderText("(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(");
-                alert2.setTitle("File Handler ERROR");
-                alert2.showAndWait();
+                showAlert("File Handler ERROR","(writeErrorLog) Our apologies, there seem to be an issue with our file system handler. :-(",Alert.AlertType.ERROR);
             }
         }
+    }
+    private void showAlert(String title,String text, Alert.AlertType at) {
+        Alert alert = new Alert(at);
+        alert.setHeaderText(text);
+        alert.setTitle(title);
+        alert.showAndWait();
     }
 }
