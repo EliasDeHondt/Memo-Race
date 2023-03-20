@@ -179,6 +179,11 @@ public class Memorace {
             return addNewPos(newCards,(i),(i + 1),(i + 2),(i + 3));
         }
     }
+    /**
+     * Puts four positions in an Integer list that are then used in the getValidCardsIDs method
+     *
+     * @return an Integer list associated with the Board.
+     */
     private List<Integer> addNewPos(List<Integer> newCards,int pos1,int pos2,int pos3,int pos4){
         newCards.add(pos1);
         newCards.add(pos2);
