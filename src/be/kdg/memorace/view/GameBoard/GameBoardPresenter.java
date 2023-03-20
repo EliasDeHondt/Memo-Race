@@ -138,6 +138,9 @@ public class GameBoardPresenter {
                             for (int i1 = 0; i1 < gameBoardView.getCards().length; i1++) {
                                 int finalI1 = i1;
                                 gameBoardView.getUnknownCards()[finalI1].setOnMouseClicked(e -> {
+                                    if(gameBoardView.getUnknownCards()[finalI] == gameBoardView.getUnknownCards()[finalI1]){
+                                        return;
+                                    }
                                     gameBoardView.getUnknownCards()[finalI1].setImage(gameBoardView.getCards()[finalI1].getImage());
 
                                     limitCards();// Only 2 cards can be clicked at a time
