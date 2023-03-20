@@ -7,6 +7,8 @@ import javafx.application.Platform;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
+ * The SettingsPresenter class that is a presenter for the SettingsView window.
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022

@@ -5,7 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 
 /**
- * The AboutView class shows the about window
+ * The AboutView class shows the about window.
  *
  * @author Vera Wise
  * @author Elias De Hondt

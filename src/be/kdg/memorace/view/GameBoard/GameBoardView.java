@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.util.*;
 
 /**
- * The GameBoardView class shows the gameboard window
+ * The GameBoardView class shows the gameboard window.
  *
  * @author Vera Wise
  * @author Elias De Hondt

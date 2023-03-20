@@ -11,6 +11,8 @@ import static be.kdg.memorace.model.FileHandler.*;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
+ * The GameLogPresenter class that is a presenter for the GameLogView window.
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022

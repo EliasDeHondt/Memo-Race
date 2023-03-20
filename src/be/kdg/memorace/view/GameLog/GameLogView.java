@@ -5,6 +5,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
+ * The GameLogView class shows the log window.
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022
