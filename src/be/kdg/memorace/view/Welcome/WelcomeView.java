@@ -32,7 +32,7 @@ public class WelcomeView extends GridPane {
     }
 
     // Methods
-    public void initialiseNodes() {
+    private void initialiseNodes() {
         this.logo = new Image("/question_mark.png");
         this.playNewGame = new Button("Play new game");
         this.viewGameLog = new Button("View game log");
@@ -41,7 +41,7 @@ public class WelcomeView extends GridPane {
         this.exit = new Button("    Exit     ");
     }
 
-    public void layoutNodes() {
+    private void layoutNodes() {
         // Set Padding (20)
         setPadding(new Insets(60));
         // Creating the top layer of the screen to place the logo in.

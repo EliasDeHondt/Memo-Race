@@ -109,7 +109,7 @@ public class GameBoardView extends BorderPane {
         }
     }
 
-    private void makeCards() {
+    void makeCards() {
         ImageView[] imageView = getUnknownCards();
         int j = 1;
         for (int i = 0; i < 4; i++) {

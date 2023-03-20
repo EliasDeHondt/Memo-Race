@@ -34,7 +34,7 @@ public class NewGameView extends BorderPane {
     }
 
     // Methods
-    public void initialiseNodes() {
+    private void initialiseNodes() {
         this.miBack = new MenuItem("Back");
         this.miExit = new MenuItem("Exit");
 
@@ -52,7 +52,7 @@ public class NewGameView extends BorderPane {
         this.startGame = new Button("Start Game");
     }
 
-    public void layoutNodes() {
+    private void layoutNodes() {
         GridPane gridPane = new GridPane();
 
         // Menu opbouwen:

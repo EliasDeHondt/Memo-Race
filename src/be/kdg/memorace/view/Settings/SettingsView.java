@@ -30,7 +30,7 @@ public class SettingsView extends BorderPane {
     }
 
     // Methods
-    public void initialiseNodes() {
+    private void initialiseNodes() {
         this.miBack = new MenuItem("Back");
         this.miExit = new MenuItem("Exit");
 
@@ -55,7 +55,7 @@ public class SettingsView extends BorderPane {
         this.save = new Button("Save");
     }
 
-    public void layoutNodes() {
+    private void layoutNodes() {
         // Menu opbouwen:
         Menu menu = new Menu("Help");
         menu.getItems().addAll(this.miBack, this.miExit);

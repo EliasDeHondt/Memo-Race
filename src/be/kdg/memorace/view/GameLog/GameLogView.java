@@ -24,14 +24,14 @@ public class GameLogView extends BorderPane {
     }
 
     // Methods
-    public void initialiseNodes() {
+    private void initialiseNodes() {
         this.miBack = new MenuItem("Back");
         this.miExit = new MenuItem("Exit");
         this.startUpLog = new TextArea();
         this.errorLog = new TextArea();
     }
 
-    public void layoutNodes() {
+    private void layoutNodes() {
         // Menu opbouwen:
         Menu menu = new Menu("Help");
         menu.getItems().addAll(this.miBack, this.miExit);
