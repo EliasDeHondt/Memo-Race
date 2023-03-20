@@ -77,11 +77,7 @@ public class Card implements Comparator<Card> {
     @Override
     public boolean equals(Object o) {
         Card card = (Card) o;
-        if(this.id != ((Card) o).id){
-            return this.getType().getImage().getUrl().compareTo(card.getType().getImage().getUrl()) == 0;
-        }
-        return false;
-
+        return this.getType().getImage().getUrl().compareTo(card.getType().getImage().getUrl()) == 0;
     }
 
     /**

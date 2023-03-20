@@ -4,6 +4,8 @@ import static be.kdg.memorace.model.FileHandler.*;
 
 import be.kdg.memorace.model.Memorace;
 import be.kdg.memorace.view.Welcome.*;
+import be.kdg.memorace.view.Won.WonPresenter;
+import be.kdg.memorace.view.Won.WonView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -25,6 +27,14 @@ public class MainMemoRace extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException { // Start
         Memorace model = new Memorace(); // Making Model(Memorace.class).
+
+//        WonView wonView = new WonView(); // Making View (NewGameView.class).
+//        this.gameBoardView.getScene().setRoot(wonView); // Add (NewGameView.class) to (WelcomeView.class).
+//        wonView.getScene().getWindow().sizeToScene(); // Add new Size.
+//        this.gameBoardView.getCustomStage().setTitle("Memo-Race / Won"); // Making Title (Memo-Race / New Game).
+//        wonView.setCustomStage(this.gameBoardView.getCustomStage());  // Send primaryStage to (NewGameView.class)
+//        new WonPresenter(model, wonView); // Making Presenter (NewGamePresenter.class).
+
         WelcomeView welcomeView = new WelcomeView(); // Making View (WelcomeView.class).
         new WelcomePresenter(model, welcomeView); // Making Presenter (WelcomePresenter.class).
         Scene scene = new Scene(welcomeView); // Making Scene.

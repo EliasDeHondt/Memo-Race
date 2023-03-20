@@ -138,7 +138,7 @@ public class GameBoardPresenter {
                             for (int i1 = 0; i1 < gameBoardView.getCards().length; i1++) {
                                 int finalI1 = i1;
                                 gameBoardView.getUnknownCards()[finalI1].setOnMouseClicked(e -> {
-                                    if(gameBoardView.getUnknownCards()[finalI] == gameBoardView.getUnknownCards()[finalI1]){
+                                    if(finalI == finalI1){
                                         //you can't click the same card
                                         return;
                                     }
