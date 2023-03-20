@@ -5,6 +5,8 @@ import be.kdg.memorace.model.Memorace;
 import static be.kdg.memorace.model.MusicHandler.clickSound;
 
 /**
+ * The AboutPresenter class that is a presenter for the AboutView window
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022
