@@ -82,7 +82,7 @@ public class WelcomeView extends GridPane {
         return this.settings;
     }
 
-    Button getAbout() { // Get..
+    Button getAbout() {
         return this.about;
     }
 

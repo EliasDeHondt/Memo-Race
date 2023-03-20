@@ -146,7 +146,6 @@ public class GameBoardPresenter {
 
                                     limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false;
-
                                     ImageView secondCard = gameBoardView.getUnknownCards()[finalI1];
                                     if (model.compare2Cards(firstCard, secondCard)) { //compare if the 2 clicked cards are the same
                                         //if yes, place 1 card in the current player and remove the other 2
