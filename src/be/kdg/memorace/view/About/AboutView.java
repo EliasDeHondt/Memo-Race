@@ -52,11 +52,11 @@ public class AboutView extends BorderPane {
         // Set the text areas to be read-only
         this.data.setEditable(false);
 
-        setCenter(this.data);
-        setPadding(new Insets(10));
+        this.setCenter(this.data);
+        this.setPadding(new Insets(10));
         BorderPane.setAlignment(this.ok, Pos.CENTER_RIGHT);
         BorderPane.setMargin(this.ok, new Insets(10, 0, 0, 0));
-        setBottom(this.ok);
+        this.setBottom(this.ok);
     }
 
     Button getOk() {

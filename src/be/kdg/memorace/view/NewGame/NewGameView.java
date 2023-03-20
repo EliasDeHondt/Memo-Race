@@ -64,7 +64,7 @@ public class NewGameView extends BorderPane {
         this.setCenter(gridPane);
 
         // CSS
-        setId("pane");
+        this.setId("pane");
 
         // Set Padding (20)
         gridPane.setPadding(new Insets(20));
@@ -74,20 +74,20 @@ public class NewGameView extends BorderPane {
         gridPane.add(this.howManyPlayers, 0, 1, 3, 1);
 
         for (int i = 0; i < 3; i++) {
-            gridPane.add(playerLabels[i], 0, i + 2);
-            gridPane.add(playerLabels[i + 3], 3, (i + 2));
+            gridPane.add(this.playerLabels[i], 0, i + 2);
+            gridPane.add(this.playerLabels[i + 3], 3, (i + 2));
         }
 
         // Add (playerXName) in to (GridPane)
         for (int i = 0; i < 3; i++) {
-            gridPane.add(playerTxt[i], 1, i + 2);
-            gridPane.add(playerTxt[i + 3], 4, i + 2);
+            gridPane.add(this.playerTxt[i], 1, i + 2);
+            gridPane.add(this.playerTxt[i + 3], 4, i + 2);
         }
 
         // Add (pawnX) in to (GridPane)
         for (int i = 0; i < 3; i++) {
-            gridPane.add(new ImageView(pawnImages[i]), 2, i + 2);
-            gridPane.add(new ImageView(pawnImages[i + 3]), 6, i + 2);
+            gridPane.add(new ImageView(this.pawnImages[i]), 2, i + 2);
+            gridPane.add(new ImageView(this.pawnImages[i + 3]), 6, i + 2);
         }
 
         // Add (BorderPane) in to (GridPane)
@@ -109,31 +109,31 @@ public class NewGameView extends BorderPane {
         this.startGame.setId("button");
     }
 
-    MenuItem getMiBack() { // Get..
+    MenuItem getMiBack() {
         return this.miBack;
     }
 
-    MenuItem getMiExit() { // Get..
+    MenuItem getMiExit() {
         return this.miExit;
     }
 
-    TextField getPlayerName(int index) { // Get..
+    TextField getPlayerName(int index) {
         return this.playerTxt[index];
     }
 
-    TextField[] getPlayerTxt() { // Get..
+    TextField[] getPlayerTxt() {
         return this.playerTxt;
     }
 
-    Button getStartGame() { // Get..
+    Button getStartGame() {
         return this.startGame;
     }
 
-    public Stage getCustomStage() { // Get..
+    public Stage getCustomStage() {
         return this.primaryStage;
     }
 
-    public void setCustomStage(Stage primaryStage) { // Set..
+    public void setCustomStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
 }

@@ -63,6 +63,5 @@ public class WonPresenter {
             alert.setTitle("File Handler ERROR");
             alert.showAndWait();
         }
-
     }
 }

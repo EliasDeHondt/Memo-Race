@@ -12,9 +12,9 @@ import javafx.stage.Stage;
  * @since 08/12/2022
  */
 public class WonView extends BorderPane {
+    // Attributes
     private MenuItem miBack;
     private MenuItem miExit;
-    // Attributes
     private Label playerName;
     private Label playerScore;
     private Stage primaryStage;
@@ -69,27 +69,27 @@ public class WonView extends BorderPane {
 
     }
 
-    MenuItem getMiBack() { // Get
+    MenuItem getMiBack() {
         return this.miBack;
     }
 
-    MenuItem getMiExit() { // Get
+    MenuItem getMiExit() {
         return this.miExit;
     }
 
-    Label getPlayerName() { // Get..
+    Label getPlayerName() {
         return this.playerName;
     }
 
-    Label getPlayerScore() { // Get..
+    Label getPlayerScore() {
         return this.playerScore;
     }
 
-    public Stage getCustomStage() { // Get..
+    public Stage getCustomStage() {
         return primaryStage;
     }
 
-    public void setCustomStage(Stage primaryStage) { // Set..
+    public void setCustomStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
 }

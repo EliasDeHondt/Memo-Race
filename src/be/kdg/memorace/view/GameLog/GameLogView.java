@@ -43,34 +43,34 @@ public class GameLogView extends BorderPane {
         this.errorLog.setEditable(false);
 
         // Set TextArea (this.startUpLog) in Left
-        setLeft(this.startUpLog);
+        this.setLeft(this.startUpLog);
 
         // Set TextArea (this.errorLog) in Right
-        setRight(this.errorLog);
-        setPrefSize(600, 600);
+        this.setRight(this.errorLog);
+        this.setPrefSize(600, 600);
     }
 
-    MenuItem getMiBack() { // Get..
+    MenuItem getMiBack() {
         return this.miBack;
     }
 
-    MenuItem getMiExit() { // Get..
+    MenuItem getMiExit() {
         return this.miExit;
     }
 
-    public void setCustomStage(Stage primaryStage) { // Set..
-        this.primaryStage = primaryStage;
-    }
-
-    public Stage getCustomStage() { // Get..
-        return this.primaryStage;
-    }
-
-    TextArea getStartUpLog() { // Get
+    TextArea getStartUpLog() {
         return this.startUpLog;
     }
 
-    TextArea getErrorLog() { // Get
+    TextArea getErrorLog() {
         return this.errorLog;
+    }
+
+    public void setCustomStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
+
+    public Stage getCustomStage() {
+        return this.primaryStage;
     }
 }

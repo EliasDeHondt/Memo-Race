@@ -90,7 +90,7 @@ public class GameBoardView extends BorderPane {
         }
 
         // Set gridGameBoard (GameBoard Layout) Center
-        setCenter(this.gridGameBoard);
+        this.setCenter(this.gridGameBoard);
 
         BorderPane bottom = new BorderPane(); // Making new BorderPane (BOTTOM)
         bottom.setId("background"); // Set CSS background
@@ -113,12 +113,12 @@ public class GameBoardView extends BorderPane {
         ImageView[] imageView = getUnknownCards();
         int j = 1;
         for (int i = 0; i < 4; i++) {
-            gridGameBoard.add(imageView[i], i + 1, j);
-            gridGameBoard.add(imageView[i + 4], i + 1, j + 1);
+            this.gridGameBoard.add(imageView[i], i + 1, j);
+            this.gridGameBoard.add(imageView[i + 4], i + 1, j + 1);
         }
         for (int i = 4; i < 8; i++) {
-            gridGameBoard.add(imageView[i + 4], i - 3, j + 2);
-            gridGameBoard.add(imageView[i + 8], i - 3, j + 3);
+            this.gridGameBoard.add(imageView[i + 4], i - 3, j + 2);
+            this.gridGameBoard.add(imageView[i + 8], i - 3, j + 3);
         }
     }
 
@@ -133,20 +133,20 @@ public class GameBoardView extends BorderPane {
     public void makePath() {
         // Set row 0. Example -> gridGameBoard.add(new ImageView(this.path1),1,0);
         for (int i = 0; i < 5; i++) {
-            gridGameBoard.add(this.path[i], i, 0);
+            this.gridGameBoard.add(this.path[i], i, 0);
         }
 
         // Set row 1, 2, 3, 4. Example -> gridGameBoard.add(new ImageView(this.path16),0,1);
         int p1 = 16, p2 = 5;
         for (int i = 1; i < 5; i++) {
-            gridGameBoard.add(this.path[p1--], 0, i);
-            gridGameBoard.add(this.path[p2++], 5, i);
+            this.gridGameBoard.add(this.path[p1--], 0, i);
+            this.gridGameBoard.add(this.path[p2++], 5, i);
         }
 
         // Set row 5. Example -> gridGameBoard.add(new ImageView(this.path12),1,5);
         int teller = 12;
         for (int i = 1; i < 5; i++) {
-            gridGameBoard.add(this.path[teller], i, 5);
+            this.gridGameBoard.add(this.path[teller], i, 5);
             teller--;
         }
     }
@@ -224,19 +224,19 @@ public class GameBoardView extends BorderPane {
         return this.gameTime;
     }
 
+    Label getInstructions() {
+        return this.instructions;
+    }
+
+    Label getScore() {
+        return this.score;
+    }
+
     public Stage getCustomStage() {
         return this.primaryStage;
     }
 
     public void setCustomStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
-    }
-
-    public Label getInstructions() {
-        return this.instructions;
-    }
-
-    public Label getScore() {
-        return this.score;
     }
 }

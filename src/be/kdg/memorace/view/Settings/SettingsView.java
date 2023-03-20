@@ -84,38 +84,38 @@ public class SettingsView extends BorderPane {
         buttonsLayout.getChildren().addAll(this.save);
         settingsLayout.add(buttonsLayout, 0, 3, 2, 1);
 
-        setCenter(settingsLayout);
+        this.setCenter(settingsLayout);
     }
 
-    MenuItem getMiBack() { // Get..
+    MenuItem getMiBack() {
         return this.miBack;
     }
 
-    MenuItem getMiExit() { // Get..
+    MenuItem getMiExit() {
         return this.miExit;
     }
 
-    Slider getBackgroundSoundS() { // Get..
+    Slider getBackgroundSoundS() {
         return this.backgroundSoundS;
     }
 
-    Slider getButtonSoundS() { // Get..
+    Slider getButtonSoundS() {
         return this.buttonSoundS;
     }
 
-    ComboBox<String> getTheme() { // Get..
+    ComboBox<String> getTheme() {
         return this.themeC;
     }
 
-    Button getSave() { // Get..
+    Button getSave() {
         return this.save;
     }
 
-    public void setCustomStage(Stage primaryStage) { // Set..
+    public void setCustomStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
 
-    public Stage getCustomStage() { // Get..
+    public Stage getCustomStage() {
         return this.primaryStage;
     }
 }

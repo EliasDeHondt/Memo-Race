@@ -70,15 +70,15 @@ public class WelcomeView extends GridPane {
         ft.play();
     }
 
-    Button getPlayNewGame() { // Get..
+    Button getPlayNewGame() {
         return this.playNewGame;
     }
 
-    Button getViewGameLog() { // Get..
+    Button getViewGameLog() {
         return this.viewGameLog;
     }
 
-    Button getSettings() { // Get..
+    Button getSettings() {
         return this.settings;
     }
 
@@ -86,11 +86,11 @@ public class WelcomeView extends GridPane {
         return this.about;
     }
 
-    Button getExit() { // Get..
+    Button getExit() {
         return this.exit;
     }
 
-    public void setCustomStage(Stage primaryStage) { // Set..
+    public void setCustomStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
 

@@ -75,9 +75,9 @@ public class GameLogPresenter {
     }
 
     private void showAlert(String text) {
-        Alert alert2 = new Alert(Alert.AlertType.ERROR);
-        alert2.setHeaderText(text);
-        alert2.setTitle("File Handler ERROR");
-        alert2.showAndWait();
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(text);
+        alert.setTitle("File Handler ERROR");
+        alert.showAndWait();
     }
 }
