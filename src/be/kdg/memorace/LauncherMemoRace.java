@@ -1,6 +1,8 @@
 package be.kdg.memorace;
 
 /**
+ * The launcher for the game.
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022

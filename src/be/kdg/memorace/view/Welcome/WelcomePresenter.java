@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 import static be.kdg.memorace.model.MusicHandler.*;
 
 /**
+ * The WelcomePresenter class that is a presenter for the WelcomeView window.
+ *
  * @author Vera Wise
  * @author Elias De Hondt
  * @since 08/12/2022
