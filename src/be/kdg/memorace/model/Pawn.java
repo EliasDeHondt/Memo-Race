@@ -1,7 +1,7 @@
 package be.kdg.memorace.model;
 
 /**
- * Represents a pawn on the game board.
+ * Represents a pawn on the gameboard path.
  *
  * @author Vera Wise
  * @author Elias De Hondt
@@ -13,7 +13,7 @@ public class Pawn {
     // Constructors
 
     /**
-     * Creates a new Pawn object with a position of 0.
+     * Creates a new Pawn object with an initial position of 0.
      */
     public Pawn() {
         this.position = 0;
@@ -21,9 +21,9 @@ public class Pawn {
     // Methods
 
     /**
-     * Sets the position of the pawn on the game board.
+     * Sets the position of the pawn on the gameboard.
      *
-     * @param position the number of spaces the pawn will move.
+     * @param position the number of spaces the pawn will move corresponding to the number of eyes on the die.
      *                 If the resulting position is greater than or equal to 16, the pawn will be moved
      *                 to the end of the board and wrapped around to the start.
      */

@@ -3,7 +3,7 @@ package be.kdg.memorace.model;
 import java.util.ArrayList;
 
 /**
- * The Player class represents a player of the game.
+ * The Player class represents a player in the game.
  * It contains a name, a score and a list of cards that belong to the player.
  *
  * @author Vera Wise
