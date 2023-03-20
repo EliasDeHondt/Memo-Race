@@ -143,11 +143,7 @@ public class Memorace {
         List<Integer> newCards = new ArrayList<>(this.cards.size());
         // Top game board.
         if (i > 0 && i <= 4) {
-            newCards.add((i - 1));
-            newCards.add((i - 1 + 4));
-            newCards.add((i - 1 + 8));
-            newCards.add((i - 1 + 12));
-            return newCards;
+            return addNewPos(newCards,(i - 1),(i - 1 + 4),(i - 1 + 8),(i - 1 + 12));
         }
         // Right game board.
         else if (i >= 5 && i <= 8) {
@@ -158,11 +154,7 @@ public class Memorace {
                 case 8 -> i = 12;
                 default -> i = 0;
             }
-            newCards.add((i));
-            newCards.add((i + 1));
-            newCards.add((i + 2));
-            newCards.add((i + 3));
-            return newCards;
+            return addNewPos(newCards,(i),(i + 1),(i + 2),(i + 3));
         }
         // Bottom game board.
         else if (i >= 9 && i <= 12) {
@@ -173,11 +165,7 @@ public class Memorace {
                 case 12 -> i = 1;
                 default -> i = 0;
             }
-            newCards.add((i - 1));
-            newCards.add((i - 1 + 4));
-            newCards.add((i - 1 + 8));
-            newCards.add((i - 1 + 12));
-            return newCards;
+            return addNewPos(newCards,(i - 1),(i - 1 + 4),(i - 1 + 8),(i - 1 + 12));
         }
         // Left game board.
         else { // so (i >= 13 && i <= 16)
@@ -188,13 +176,17 @@ public class Memorace {
                 case 16 -> i = 0;
                 default -> i = 0;
             }
-            newCards.add((i));
-            newCards.add((i + 1));
-            newCards.add((i + 2));
-            newCards.add((i + 3));
-            return newCards;
+            return addNewPos(newCards,(i),(i + 1),(i + 2),(i + 3));
         }
     }
+    private List<Integer> addNewPos(List<Integer> newCards,int pos1,int pos2,int pos3,int pos4){
+        newCards.add(pos1);
+        newCards.add(pos2);
+        newCards.add(pos3);
+        newCards.add(pos4);
+        return newCards;
+    }
+
 
     /**
      * Returns the Die object associated with the Board.
