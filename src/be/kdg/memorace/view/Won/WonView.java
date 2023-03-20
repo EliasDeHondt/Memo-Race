@@ -66,7 +66,6 @@ public class WonView extends BorderPane {
         this.playerScore.setId("labelNSL");
         this.playerScore.setAlignment(Pos.CENTER);
         this.setId("pane");
-
     }
 
     MenuItem getMiBack() {

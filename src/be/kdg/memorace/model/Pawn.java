@@ -34,13 +34,6 @@ public class Pawn {
         } else this.position += position;
     }
 
-    /**
-     * Sets the position of the pawn on the game board.
-     *
-     * @param position the number of spaces the pawn will move.
-     *                 If the resulting position is greater than or equal to 16, the pawn will be moved
-     *                 to the end of the board and wrapped around to the start.
-     */
     public int getPosition() {
         return this.position;
     }
