@@ -30,7 +30,7 @@ public class FileHandler {
     }
 
     /**
-     * Writes a message to a log file with a timestamp.
+     * Writes a message to the startuplog file with a timestamp.
      *
      * @param filename the name of the file to be written to
      * @param message  the message to be written
@@ -41,7 +41,7 @@ public class FileHandler {
     }
 
     /**
-     * Writes an error message to a log file with a timestamp.
+     * Writes an error message to the errorlog file with a timestamp.
      *
      * @param filename     the name of the file to be written to
      * @param errorMessage the error message to be written
@@ -50,6 +50,14 @@ public class FileHandler {
     public static void writeErrorLog(String filename, String errorMessage) throws IOException { // Write
         write(filename, errorMessage);
     }
+
+    /**
+     * Writes the message for a log and is used in writeStartUpLog and writeErrorLog.
+     *
+     * @param filename     the name of the file to be written to
+     * @param errorMessage the error message to be written
+     * @throws IOException if an I/O error occurs
+     */
 
     private static void write(String filename, String errorMessage) throws IOException { // Write
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
