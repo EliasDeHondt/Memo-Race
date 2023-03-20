@@ -30,6 +30,7 @@ public class Memorace {
 
     /**
      * Initializes a new instance of the Memorace class.
+     * Initializes the turn with 0.
      * Creates a new player list, a new die, a new pawn list, and a new card map.
      * Sets the default background and button volume to 50% and 100%, respectively.
      * Creates a new music handler and plays the game music with the default button volume.
@@ -55,7 +56,7 @@ public class Memorace {
 
     /**
      * Returns the current player whose turn it is.
-     * If the current turn is greater than or equal to the number of players, sets the turn to 0.
+     * If the current turn is greater than or equal to the number of players, sets the turn back to the first player.
      *
      * @return The current player whose turn it is.
      */
@@ -67,9 +68,9 @@ public class Memorace {
     }
 
     /**
-     * Returns the player who is not currently taking their turn.
+     * Doesn't change the turn and just returns the player who was taking their turn before.
      *
-     * @return The player who is not currently taking their turn.
+     * @return The player who was taking their turn before.
      */
     public Player dontTurn() {
         return this.players.get(getPlayerID() - 1);
@@ -120,7 +121,7 @@ public class Memorace {
     /**
      * This method returns the player with the highest score among all the players.
      *
-     * @return The player with the highest score among all the players.
+     * @return The player with the highest score among all the players, so the winner of the game.
      */
     public Player winner() {
         Player winner = players.get(0);
@@ -191,7 +192,6 @@ public class Memorace {
         newCards.add(pos4);
         return newCards;
     }
-
 
     /**
      * Returns the Die object associated with the Board.
