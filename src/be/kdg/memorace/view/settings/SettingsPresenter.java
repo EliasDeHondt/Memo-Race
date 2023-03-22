@@ -1,7 +1,7 @@
-package be.kdg.memorace.view.Settings;
+package be.kdg.memorace.view.settings;
 
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.Welcome.*;
+import be.kdg.memorace.view.welcome.*;
 import javafx.application.Platform;
 
 import static be.kdg.memorace.model.MusicHandler.clickSound;

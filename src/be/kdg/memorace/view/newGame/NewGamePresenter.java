@@ -1,8 +1,8 @@
-package be.kdg.memorace.view.NewGame;
+package be.kdg.memorace.view.newGame;
 
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.GameBoard.*;
-import be.kdg.memorace.view.Welcome.*;
+import be.kdg.memorace.view.gameBoard.*;
+import be.kdg.memorace.view.welcome.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
@@ -92,6 +92,7 @@ public class NewGamePresenter {
 
             // Check if the count is greater than or equal to 2
             if (count < 2) {
+                this.model.getplayers().clear();
                 throw new Exception();
             }
 
@@ -99,16 +100,15 @@ public class NewGamePresenter {
             // This four loop is responsible for the six players.
             for (int i = 1; i <= this.newGameView.getPlayerTxt().length - 1; i++) {
 
-
-
                 // Check if each player name only contains alphabetical characters or is empty
                 if(!this.newGameView.getPlayerName(i - 1).getText().matches("[a-zA-Z]*")) {
+                    this.model.getplayers().clear();
                     throw new Exception();
                 }
 
-
                 // Checks if the length of the player's name entered greater than 20 characters.
                 if (this.newGameView.getPlayerName(i - 1).getText().length() > 20) {
+                    this.model.getplayers().clear();
                     throw new Exception();
                 }
 

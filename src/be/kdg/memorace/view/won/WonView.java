@@ -1,4 +1,4 @@
-package be.kdg.memorace.view.Won;
+package be.kdg.memorace.view.won;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.*;

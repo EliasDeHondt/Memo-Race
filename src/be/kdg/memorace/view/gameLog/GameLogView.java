@@ -1,4 +1,4 @@
-package be.kdg.memorace.view.GameLog;
+package be.kdg.memorace.view.gameLog;
 
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;

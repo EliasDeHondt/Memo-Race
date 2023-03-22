@@ -1,15 +1,13 @@
-package be.kdg.memorace.view.Welcome;
+package be.kdg.memorace.view.welcome;
 
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.model.MusicHandler;
-import be.kdg.memorace.view.About.*;
-import be.kdg.memorace.view.GameLog.*;
-import be.kdg.memorace.view.NewGame.*;
-import be.kdg.memorace.view.Settings.*;
+import be.kdg.memorace.view.about.*;
+import be.kdg.memorace.view.gameLog.*;
+import be.kdg.memorace.view.newGame.*;
+import be.kdg.memorace.view.settings.*;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 

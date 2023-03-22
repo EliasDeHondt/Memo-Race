@@ -1,7 +1,7 @@
-package be.kdg.memorace.view.Won;
+package be.kdg.memorace.view.won;
 
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.Welcome.*;
+import be.kdg.memorace.view.welcome.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 

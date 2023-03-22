@@ -1,4 +1,4 @@
-package be.kdg.memorace.view.Settings;
+package be.kdg.memorace.view.settings;
 
 import javafx.geometry.*;
 import javafx.scene.control.*;

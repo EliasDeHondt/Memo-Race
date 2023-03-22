@@ -1,4 +1,4 @@
-package be.kdg.memorace.view.GameBoard;
+package be.kdg.memorace.view.gameBoard;
 
 import javafx.geometry.*;
 import javafx.scene.control.*;

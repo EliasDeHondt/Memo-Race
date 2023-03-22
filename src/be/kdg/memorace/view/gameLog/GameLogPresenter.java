@@ -1,7 +1,7 @@
-package be.kdg.memorace.view.GameLog;
+package be.kdg.memorace.view.gameLog;
 
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.Welcome.*;
+import be.kdg.memorace.view.welcome.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 

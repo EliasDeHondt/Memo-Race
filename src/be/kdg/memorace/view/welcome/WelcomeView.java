@@ -1,12 +1,10 @@
-package be.kdg.memorace.view.Welcome;
+package be.kdg.memorace.view.welcome;
 
-import be.kdg.memorace.model.MusicHandler;
 import javafx.animation.FadeTransition;
 import javafx.geometry.*;
 import javafx.scene.control.Button;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 

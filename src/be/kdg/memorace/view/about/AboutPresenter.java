@@ -1,4 +1,4 @@
-package be.kdg.memorace.view.About;
+package be.kdg.memorace.view.about;
 
 import be.kdg.memorace.model.Memorace;
 

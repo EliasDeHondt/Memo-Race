@@ -3,9 +3,7 @@ package be.kdg.memorace;
 import static be.kdg.memorace.model.FileHandler.*;
 
 import be.kdg.memorace.model.Memorace;
-import be.kdg.memorace.view.Welcome.*;
-import be.kdg.memorace.view.Won.WonPresenter;
-import be.kdg.memorace.view.Won.WonView;
+import be.kdg.memorace.view.welcome.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;

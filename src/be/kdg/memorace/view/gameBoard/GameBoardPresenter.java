@@ -1,7 +1,7 @@
-package be.kdg.memorace.view.GameBoard;
+package be.kdg.memorace.view.gameBoard;
 
 import be.kdg.memorace.model.*;
-import be.kdg.memorace.view.Won.*;
+import be.kdg.memorace.view.won.*;
 import javafx.animation.*;
 import javafx.event.EventHandler;
 import javafx.scene.image.*;
