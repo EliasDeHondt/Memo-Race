@@ -156,6 +156,10 @@ public class GameBoardPresenter {
                                     gameBoardView.getRollButton().setDisable(false); // you can play again
                                     // Change instruction for the player
                                     gameBoardView.getInstructions().setText("The next player can \nroll the die now.");
+                                    if(checkIfAllNull(gameBoardView.getUnknownCards())){
+                                        gameBoardView.getInstructions().setText("Roll one last time \nto go to the won window.");
+                                    }
+
                                 });
                             }
                         }
