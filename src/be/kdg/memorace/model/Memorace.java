@@ -185,7 +185,7 @@ public class Memorace {
      *
      * @return an Integer list associated with the Board.
      */
-    private List<Integer> addNewPos(List<Integer> newCards,int pos1,int pos2,int pos3,int pos4){
+    private List<Integer> addNewPos(List<Integer> newCards, int pos1, int pos2, int pos3, int pos4){
         newCards.add(pos1);
         newCards.add(pos2);
         newCards.add(pos3);

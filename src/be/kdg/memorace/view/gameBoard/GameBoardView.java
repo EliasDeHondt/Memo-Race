@@ -221,7 +221,7 @@ public class GameBoardView extends BorderPane {
     }
 
     ImageView[] getUnknownCards() {
-        return unknownCards;
+        return this.unknownCards;
     }
 
     Label getGameTime() {
