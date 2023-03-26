@@ -99,30 +99,30 @@ public class GameBoardPresenter {
             this.gameBoardView.getGridGameBoard().setDisable(false);
             this.gameBoardView.makeAllCardsNotVisible();
 
-            boolean[] clicked = new boolean[1];
+            boolean[] clicked = new boolean[1]; // This had to be an array, otherwise it can't be used in the event handler.
 
-            List<Integer> validCardsFirstTurn = this.model.getValidCardsIDs(this.model.getPawn(this.model.getPlayerID() - 1).getPosition());
+            List<Integer> validCardsFirstTurn = this.model.getValidCardsIDs(this.model.getPawn(this.model.getPlayerID() - 1).getPosition()); // Which row or column are we on?
             int counter = 0;
-            for (Integer i : validCardsFirstTurn) {
+            for (Integer i : validCardsFirstTurn) { // Counts how many cards are zero in the row or column.
                 if (this.gameBoardView.getUnknownCards()[i].getImage() == null) {
                     counter++;
                 }
             }
-            if (counter >= 4) { // Zijn er wel kaarten op de rij of kolom?
+            if (counter >= 4) { // Are there any cards in the row or column?
                 this.gameBoardView.getRollButton().setDisable(false); // You can roll the die again
                 this.throwAgain = true; // The turn doesn't change
             }
 
-            for (int i = 0; i < this.gameBoardView.getCards().length; i++) {
+            for (int i = 0; i < this.gameBoardView.getCards().length; i++) { // Loop all cards
                 int finalI = i;
                 this.gameBoardView.getUnknownCards()[finalI].setOnMouseClicked(new EventHandler<>() {
                     private ImageView firstCard;
 
-                    @Override
-                    public void handle(MouseEvent mouseEvent) { // Click card
+                    @Override // Click card (16 card)
+                    public void handle(MouseEvent mouseEvent) {
                         clickSound(model.getVolumeButton()); // Play sound when you click the button
 
-                        for (int card : validCardsFirstTurn) {
+                        for (int card : validCardsFirstTurn) { // Here it is checked that you are allowed to click on this card. (row or column)
                             // If the clicked card is in the correct array
                             if (finalI == card) {
                                 // Show that card; else wait until the correct one is clicked
@@ -138,16 +138,16 @@ public class GameBoardPresenter {
                             for (int i1 = 0; i1 < gameBoardView.getCards().length; i1++) {
                                 int finalI1 = i1;
                                 gameBoardView.getUnknownCards()[finalI1].setOnMouseClicked(e -> {
-                                    if(finalI == finalI1){
+                                    if(finalI == finalI1) { // Checks that you are not clicking on the same card.
                                         // You can't click the same card
                                         return;
                                     }
-                                    gameBoardView.getUnknownCards()[finalI1].setImage(gameBoardView.getCards()[finalI1].getImage());
+                                    gameBoardView.getUnknownCards()[finalI1].setImage(gameBoardView.getCards()[finalI1].getImage()); // Show the second card you clicked.
 
                                     limitCards();// Only 2 cards can be clicked at a time
-                                    clicked[0] = false;
+                                    clicked[0] = false; // Will be set to false for the next player.
                                     ImageView secondCard = gameBoardView.getUnknownCards()[finalI1];
-                                    if (model.compare2Cards(firstCard, secondCard)) { //compare if the 2 clicked cards are the same
+                                    if (model.compare2Cards(firstCard, secondCard)) { // Compare if the 2 clicked cards are the same
                                         // If yes, place 1 card in the current player and remove the other 2
                                         model.addCardToPlayer(model.getPlayerID() - 1, firstCard);
                                         gameBoardView.takeCard(finalI);
@@ -204,7 +204,7 @@ public class GameBoardPresenter {
         int side = this.model.getDie().getSide();
         this.gameBoardView.showDie(side);
 
-        // put the cards and an unique name for each in a map
+        // Put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
             this.model.setCards(this.gameBoardView.getCards()[i]);
         }

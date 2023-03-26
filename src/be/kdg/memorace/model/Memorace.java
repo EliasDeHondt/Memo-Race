@@ -139,7 +139,7 @@ public class Memorace {
      * @param i The position on the game board
      * @return List of valid card IDs
      */
-    public List<Integer> getValidCardsIDs(int i) {
+    public List<Integer> getValidCardsIDs(int i) { // Controls which cards the pawn may turn (column row 4 cards).
         // Gives the card to draw options based on the position.
         List<Integer> newCards = new ArrayList<>(this.cards.size());
         // Top game board.
