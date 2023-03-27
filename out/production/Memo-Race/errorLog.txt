@@ -77,3 +77,5 @@
 2023-03-22 14:47:15 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
 2023-03-22 14:47:23 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
 2023-03-22 15:19:25 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-27 10:17:51 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.
+2023-03-27 10:18:03 (writeErrorLog) Sorry, error occurred. Need at least two players, and only 20 alphabetic characters allowed.

@@ -147,9 +147,9 @@ public class GameBoardPresenter {
                                     limitCards();// Only 2 cards can be clicked at a time
                                     clicked[0] = false; // Will be set to false for the next player.
                                     ImageView secondCard = gameBoardView.getUnknownCards()[finalI1];
-                                    if (model.compare2Cards(firstCard, secondCard)) { // Compare if the 2 clicked cards are the same
+                                    if (model.compare2Cards(new Card(firstCard) , new Card(secondCard))) { // Compare if the 2 clicked cards are the same
                                         // If yes, place 1 card in the current player and remove the other 2
-                                        model.addCardToPlayer(model.getPlayerID() - 1, firstCard);
+                                        model.addCardToPlayer(model.getPlayerID() - 1, new Card(firstCard));
                                         gameBoardView.takeCard(finalI);
                                         gameBoardView.takeCard(finalI1);
                                     }
@@ -206,7 +206,7 @@ public class GameBoardPresenter {
 
         // Put the cards and an unique name for each in a map
         for (int i = 0; i < 16; i++) {
-            this.model.setCards(this.gameBoardView.getCards()[i]);
+            this.model.setCards(new Card(this.gameBoardView.getCards()[i]));
         }
     }
 

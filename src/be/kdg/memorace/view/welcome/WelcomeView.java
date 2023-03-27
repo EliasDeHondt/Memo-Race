@@ -63,6 +63,7 @@ public class WelcomeView extends GridPane {
         this.about.setId("button");
         this.exit.setId("button");
         this.setId("pane");
+
         // Causes all Node to appear with a delay.
         FadeTransition ft = new FadeTransition(Duration.millis(3000), this);
         ft.setFromValue(0);

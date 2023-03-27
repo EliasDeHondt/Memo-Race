@@ -1,7 +1,5 @@
 package be.kdg.memorace.model;
 
-import javafx.scene.image.ImageView;
-
 import java.util.*;
 
 /**
@@ -99,11 +97,8 @@ public class Memorace {
      * @param imageView2 The second ImageView representing a card.
      * @return True if the cards match, false otherwise.
      */
-    public boolean compare2Cards(ImageView imageView1, ImageView imageView2) {
-        Card card1 = new Card(imageView1);
-        Card card2 = new Card(imageView2);
-
-        return card1.equals(card2);
+    public boolean compare2Cards(Card imageView1, Card imageView2) {
+        return imageView1.equals(imageView2);
     }
 
     /**
@@ -112,10 +107,9 @@ public class Memorace {
      * @param playerID  the ID of the player to add the card to
      * @param imageView the ImageView representing the card to be added
      */
-    public void addCardToPlayer(int playerID, ImageView imageView) {
+    public void addCardToPlayer(int playerID, Card imageView) {
         Player player = players.get(playerID);
-        Card card = new Card(imageView);
-        player.getCards().add(card);
+        player.getCards().add(imageView);
     }
 
     /**
@@ -217,9 +211,8 @@ public class Memorace {
      *
      * @param imageView - the ImageView object associated with the Card.
      */
-    public void setCards(ImageView imageView) {
-        Card card = new Card(imageView);
-        this.cards.add(card);
+    public void setCards(Card imageView) {
+        this.cards.add(imageView);
     }
 
     /**
